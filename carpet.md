@@ -55,14 +55,20 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 
-carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
-以下は使用できるコマンドのリスト
-| corlor | command                                       |
-|:------:|:----------------------------------------------|
-| gray   | `/info block ~ ~-1 ~`                         |
-| black  | `/spawn entities`                             |
-| brown  | `/distance from ~ ~ ~ `\|`/distance to ~ ~ ~` |
-| pink   | `/spawn list ~ ~-1 ~`                         |
+  carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
+  以下は使用できるコマンドのリスト
+  | corlor | command                                      |
+  |:------:|:---------------------------------------------|
+  | gray   | `/info block ~ ~-1 ~`                        |
+  | black  | `/spawn entities`                            |
+  | brown  | `/distance from ~ ~ ~ ` `/distance to ~ ~ ~` |
+  | pink   | `/spawn list ~ ~-1 ~`                        |
+### chainStone
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false` `stick_to_all`
+
+  `chain`を長いほうの端でスライムのように接続でき、かつほかのブロックとも接続できるようにする。`stick_to_all`を指定するとすべての方向について接続する。
+
 
 
 
