@@ -2,6 +2,7 @@
 
 このドキュメント内では
 `[]`を設定必須の値、`<>`を設定しなかった場合デフォルトの値が入力される値とする。
+編集段階で未解決なものは斜線で示す。
 
 [carpet公式ドキュメント](https://github.com/gnembon/fabric-carpet/wiki/Current-Available-Settings)
 
@@ -33,7 +34,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 
 ## rule
 `/carpet [rule] <value>`によって変更することができる。
-### allowSpawningOfflinePlayers
+### ~allowSpawningOfflinePlayers~
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 
@@ -69,6 +70,80 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 
   `chain`を長いほうの端でスライムのように接続でき、かつほかのブロックとも接続できるようにする。`stick_to_all`を指定するとすべての方向について接続する。
 
+### ~cleanLog~
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 
+  クライアントに対するコマンド。どのログがどのように消されるかは謎。
 
+### commandDistance
+  + 初期値 : `true`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
 
+  `/distance`を使用できるプレイヤーを指定する。`true` `false`ではopの所持の如何を問わず指定することができる。
+
+### commandDraw
+  + 初期値 : `ops`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/draw`を使用できるプレイヤーを指定する。
+  
+### commandInfo
+  + 初期値 : `true`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/info`を使用できるプレイヤーを指定する。
+
+  ### commandLog
+  + 初期値 : `true`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/log`を使用できるプレイヤーを指定する。
+
+ ### commandPerimeterInfo
+  + 初期値 : `true`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/perimeterinfo`を使用できるプレイヤーを指定する。
+  
+ ### commandPlayer
+  + 初期値 : `ops`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/player`を使用できるプレイヤーを指定する。
+
+ ### commandProfile
+  + 初期値 : `true`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/profile`を使用できるプレイヤーを指定する。
+  
+  ### commandScript
+  + 初期値 : `true`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/script`のscript作成を使用できるプレイヤーを指定する。
+
+  ### commandScriptACE
+  + 初期値 : `ops`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/script load` `/script run`を使用できるプレイヤーを指定する。appが実行するときのopレベルでもある。
+
+ ### commandSpawn
+  + 初期値 : `ops`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/spawn`を使用できるプレイヤーを指定する。
+
+  ### commandTick
+  + 初期値 : `ops`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/tick`を使用できるプレイヤーを指定する。
+
+  ### commandTrackingAI
+  + 初期値 : `ops`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+
+  `/track`を使用できるプレイヤーを指定する。
