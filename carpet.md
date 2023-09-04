@@ -25,7 +25,15 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 #### `/perimeterinfo <coordinate>　<mob>`
 `<coordinate>`を中心とした半径128の球体内に`<mob>`が湧くことができるブロックを表示する。
 `<coordinate>`を指定しなかった場合現在の座標(`~ ~ ~`)が、`<mob>`を指定しなかった場合すべての存在するmobが指定される。
-	
+### info
+指定した情報を表示する。opレベル0を要求する。WorldEditによって完全に代替される予定であるとのこと。
+#### `/info block [coordinate] <grep>`
+`[coordinate]`に関する情報を表示する。`<grep>`によって表示する情報を指定することが可能。
+#### `/info entity [target] <grep>`
+`[target]`に関する情報を表示する。`<grep>`によって表示する情報を指定することが可能。
+#### `/info world [ticking_order | weather]`
+ワールドの`[ticking_order | wehater]`に関する情報を表示する。
+
 ## rule
 `/carpet [rule] <value>`によって変更することができる。opレベル4以上で使用可能。
   ### allowSpawningOfflinePlayers
