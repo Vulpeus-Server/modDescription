@@ -94,56 +94,148 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 
   `/info`を使用できるプレイヤーを指定する。
 
-  ### commandLog
+### commandLog
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
 
   `/log`を使用できるプレイヤーを指定する。
 
- ### commandPerimeterInfo
+### commandPerimeterInfo
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
 
   `/perimeterinfo`を使用できるプレイヤーを指定する。
   
- ### commandPlayer
+### commandPlayer
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
 
   `/player`を使用できるプレイヤーを指定する。
 
- ### commandProfile
+### commandProfile
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
 
   `/profile`を使用できるプレイヤーを指定する。
   
-  ### commandScript
+### commandScript
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
 
   `/script`のscript作成を使用できるプレイヤーを指定する。
 
-  ### commandScriptACE
+### commandScriptACE
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
 
   `/script load` `/script run`を使用できるプレイヤーを指定する。appが実行するときのopレベルでもある。
 
- ### commandSpawn
+### commandSpawn
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
 
   `/spawn`を使用できるプレイヤーを指定する。
 
-  ### commandTick
+### commandTick
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
 
   `/tick`を使用できるプレイヤーを指定する。
 
-  ### commandTrackingAI
+### commandTrackingAI
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
 
   `/track`を使用できるプレイヤーを指定する。
+
+### creativeFlyDrag
+  + 初期値 : `0.09`
+  + 使用できる値 : `double`
+
+  クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、1でBEのようにストッピングができるようになる。
+
+  **clientのみ**
+  
+### creativeFlySpeed
+  + 初期値 : `1.0`
+  + 使用できる値 : `double`
+
+  クリエイティブにおける浮遊時の飛行速度を設定する。
+  
+  **clientのみ**
+  
+### reativeNoClip
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  クリエイティブにおける飛行状態でブロックを貫通できるようにする。
+  クライアントと鯖の双方に設定があるため、同じ設定にしないと動作が不安定になる。
+  
+### creativePlayersLoadChunks
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。
+  スペクテイターモードについては`/gamerule spectatorsGenerateChunks`によって設定可能。
+
+### ctrlQCraftingFix
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  ctrlQによる一括排出をクラフトの結果欄でも機能するようにする。
+### ~customMOTD~
+  + 初期値 : `_`
+  + 使用できる値 : 'string'
+
+  MOTD is なに
+### defaultLoggers
+  + 初期値 : 'none'
+  + 使用できる値 : 'string(defined)'
+
+鯖に入ったときに表示するログの初期値。ただしsetDefaultを設定しないと再起動によって初期値に戻る。
+
+### desertShrubs
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  苗木が砂漠を含めた暑い気候および水のアクセスができない場所で枯れ木にする。
+
+### explosionNoBlockDamage
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  爆発ダメージを起こさなくする。
+
+### fastRedstoneDust
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。壊れる回路があるので注意。
+  
+### fillLimit
+  + 初期値 : `32768`
+  + 使用できる値 : `integer`
+
+fillやcloneのブロック数制限を変更する。ただしゲームルールに同様の機能があり、そちらの数値に上書きされる。
+
+### fillUpdates
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  fillやclone、setblockによるblock updateを発生させないようにする。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
