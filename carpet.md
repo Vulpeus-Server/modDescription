@@ -30,8 +30,6 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 `[coordinate]`に関する情報を表示する。`<grep>`によって表示する情報を指定することが可能。
 #### `/info entity [target] <grep>`
 `[target]`に関する情報を表示する。`<grep>`によって表示する情報を指定することが可能。
-#### `/info world [ticking_order | weather]`
-ワールドの`[ticking_order | wehater]`に関する情報を表示する。
 
 ## rule
 `/carpet [rule] <value>`によって変更することができる。
@@ -53,8 +51,18 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   `/carpet`コマンドを使用できるパーミッションレベルを指定する。`ops`では`/op`で付与された人のみであるが、`2` `4`はそれぞれの数値以上のパーミッションを保持しているプレイヤーにが使うことができる。
 
   現在たいち鯖ではデフォルトのパーミッションレベルは3になっているとのこと。
+### carpets
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 
-
+carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
+以下は使用できるコマンドのリスト
+| corlor | command                                       |
+|:------:|:---------------------------------------------:|
+| gray   | `/info block ~ ~-1 ~`                         |
+| black  | `/spawn entities`                             |
+| brown  | `/distance from ~ ~ ~ `\|`/distance to ~ ~ ~` |
+| pink   | `/spawn list ~ ~-1 ~`                         |
 
 
 
