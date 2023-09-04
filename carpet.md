@@ -13,6 +13,12 @@
 + player
 + profile
 + log
++ info
++ distance
++ draw
++ spawn
++ perimeterinfo
++ script
 
 ## general
 ### carpet
