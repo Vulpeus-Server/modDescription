@@ -18,7 +18,7 @@
   ### carpet
   #### `/carpet`
   現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。
-  #### command: `/carpet list [category]`
+  #### `/carpet list [category]`
   `[category]`に紐づけられたruleを表示する。
   
 	
