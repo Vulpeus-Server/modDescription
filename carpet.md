@@ -2,7 +2,6 @@
 
 このドキュメント内では
 `[]`を設定必須の値、`<>`を設定しなかった場合デフォルトの値が入力される値とする。
-また、特に記述がない
 
 [carpet公式ドキュメント](https://github.com/gnembon/fabric-carpet/wiki/Current-Available-Settings)
 
@@ -35,7 +34,27 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 ワールドの`[ticking_order | wehater]`に関する情報を表示する。
 
 ## rule
-`/carpet [rule] <value>`によって変更することができる。opレベル4以上で使用可能。
-  ### allowSpawningOfflinePlayers
+`/carpet [rule] <value>`によって変更することができる。
+### allowSpawningOfflinePlayers
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
   オフラインのプレイヤーを召喚できるかを設定できる。
-  オフラインのプレイヤーとは、`/player [mcid] spawn`によるものではなく、
+  オフラインのプレイヤーは`/player [mcid] [spawn | shadow]`によるものではないことを確認。
+### antiCheatDisabled
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  バニラ標準のアンチチートを無効化する。アンチチートにはプレイヤーのリーチ制限や移動量制限などが含まれ、それぞれが数値上の最大値まで許容することができるようになる。
+### carpetCommandPermissionLevel
+  + 初期値 : `ops`
+  + 使用できる値 : `ops` `2` `4`
+
+  `/carpet`コマンドを使用できるパーミッションレベルを指定する。`ops`では`/op`で付与された人のみであるが、`2` `4`はそれぞれの数値以上のパーミッションを保持しているプレイヤーにが使うことができる。
+
+  現在たいち鯖ではデフォルトのパーミッションレベルは3になっているとのこと。
+
+
+
+
+
