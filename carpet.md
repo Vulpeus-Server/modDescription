@@ -13,7 +13,6 @@
 + player
 + profile
 + log
-+ info
 
 ## general
 ### carpet
