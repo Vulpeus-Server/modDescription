@@ -235,7 +235,7 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 
-  `cactus(サボテン)`をメインハンドに持っている時、方向をもつブロックの一部(たとえばホッパーやオブザーバーなど)を右クリックするとその方向をupdateなしで回転もしくは反転できるようにする。
+  サボテンをメインハンドに持っている時、方向をもつブロックの一部(たとえばホッパーやオブザーバーなど)を右クリックするとその方向をupdateなしで回転もしくは反転できるようにする。
 
 ### fogOff
   + 初期値 : `false`
@@ -479,7 +479,7 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   + 使用できる値 : `integer`
 
   サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の整数値である必要があり、`0`にすると無効になる。
-  [描画距離の変更]((https://github.com/TaichiServer/modDescription/blob/main/carpet.md#viewdistance)
+  [描画距離の変更](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#viewdistance)
 
 ### smoothClientAnimations
   + 初期値 : `false`
@@ -576,7 +576,7 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   + 使用できる値 : `integer`
 
   サーバーの描画距離をこの値でオーバーライドする。0から32の整数値である必要があり、`0`にすると無効になる。
-  [シミュレーション距離の変更]((https://github.com/TaichiServer/modDescription/blob/main/carpet.md#simulationdistance)
+  [シミュレーション距離の変更](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#simulationdistance)
 
 
 
