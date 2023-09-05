@@ -510,10 +510,59 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   + 使用できる値 : `integer`
 
   各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。
-  **[structureBlockIgnored]()をminecraft:airにすることを推奨。**
+  **[structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)をminecraft:airにすることを推奨。**
   **ストラクチャーブロックが常に読み込まれていなければ正しく動かない**
 
+### structureBlockOutlineDistance
+  + 初期値 : `96`
+  + 使用できる値 : `integer`
 
+  ストラクチャーブロックのアウトラインを視認できる距離を変更する。値は非負整数でなければならない。
+  **クライアントのみ**
+
+### summonNaturalLightning
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  `/summon lightning_bolt`で召喚した稲妻が自然発生した稲妻と同様の効果を与えるようにする。帯電化や炎上など。
+
+### superSecretSetting
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  u306Au3093u3082u308Fu304Bu3089u306Au3044u308821
+
+### thickFungusGrowth
+  + 初期値 : `false`
+  + 使用できる値 : `false` `random` `all`
+
+  ネザーの菌類を3x3のベースがあるときに太いネザーの菌糸に成長するようにする。　　
+ `false`で無効に、`random`で6%の確率で太く、`all`で条件を満たしていればすべて太くなる。 
+
+### tickSyncedWorldBorders
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+ワールドボーダーの見た目の移動が現実時間ではなくtickをもとにするようにする。これによりtpsを変更するとそれに従って見た目上のスピードが変わるようになる。
+
+### tntDoNotUpdate
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  tntが動力源のとなりに置かれたときに自身をupdateしなくする。
+
+### tntPrimerMomentumRemoved
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  着火によるtntの横方向のランダムなモーメントを0にする。
+
+### tntRandomRange
+  + 初期値 : `-1.0`
+  + 使用できる値 : `double`
+
+  tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない。
+  
 
 
 
