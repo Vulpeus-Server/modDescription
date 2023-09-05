@@ -8,12 +8,20 @@
 
 ## 目次
 
-<dl>
-  <dt>リンゴ</dt>
-  <dd>赤いフルーツ</dd>
-  <dt>オレンジ</dt>
-  <dd>橙色のフルーツ</dd>
-</dl>
+  <summary>Generic</summary>
+  ・carpetAccuratePlacementProtocol<br>
+  ・clientPlacementRotation<br>
+  ・fastLeftClickAllowTools<br>
+  ・fastPlacementRememberOrientation<br>
+  ・freeCameraPlayerInputs<br>
+  ・freeCameraPlayerMovement<br>
+  ・handRestockPre<br>
+  ・hangableEntityBypassInverse<br>
+  ・itemUsePacketCheckBypass<br>
+  ・permanentSneakAllowInGUIs<br>
+  ・placementRestrictionTiedToFast<br>
+  ・potionWarningBeneficialOnly
+</details>
 
 + general
 + rule
