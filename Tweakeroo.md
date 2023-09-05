@@ -14,7 +14,7 @@
   ・permanentSneakAllowInGUIs<br>
   ・placementRestrictionTiedToFast<br>
   <a id="M" style="height:100vh"></a>
-  ・potionWarningBeneficialOnly<br><br><br><br><br><br><br><br><br>
+  ・potionWarningBeneficialOnly<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </details>
 <details>
   <summary>Fixes</summary>
