@@ -509,8 +509,8 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   + 初期値 : `48`
   + 使用できる値 : `integer`
 
-  各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。　　
-  **[structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)をminecraft:airにすることを推奨。**　　
+  各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。  
+  **[structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)をminecraft:airにすることを推奨。**  
   **ストラクチャーブロックが常に読み込まれていなければ正しく動かない**
 
 ### structureBlockOutlineDistance
