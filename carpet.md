@@ -36,20 +36,16 @@
 ## general
 ### carpet
   + `/carpet`
-  + `/carpet list <category | default>`
+    現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。
+  + `/carpet list <category>`
+    利用できるcarpet ruleを**すべて**表示する。`<category>`を指定した場合、紐づけられたruleを表示する。
+  + `/carpet list default`
+    `carpet.conf`に記録されているルールを表示する。
   + `/carpet setDefault [rule] [value]`
+    `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。<br>
+    `/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが設定される。
   + `/carpet removeDefault <rule>`
-現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。
-### `/carpet list <category>`
-利用できるcarpet ruleを**すべて**表示する。`<category>`を指定した場合、紐づけられたruleを表示する。
-### `/carpet list defaults`
-`carpet.conf`に記録されているルールを表示する。
-### `/carpet setDefault [rule] [value]`
-`[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。  
-`/carpet [rule] [value]`を使用し値が正常に変更された知らせとともに通知される`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが設定される。
-### `/carpet rmeoveDeffault [rule]`
-`[rule]`で指定したcarpet ruleのデフォルトの値を`carpet.conf`から削除し、初期値にする。
-
+    `[rule]`で指定したcarpet ruleのデフォルトの値を`carpet.conf`から削除し、初期値にする。
 
 <!--
 ### perimeter info
