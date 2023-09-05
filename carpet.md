@@ -342,11 +342,11 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
 
   tntが同じ座標や流体内で爆発したときの最適化をする。
 
-### -perfPermissionLevel-
+### ~~perfPermissionLevel~~
   + 初期値 : `4`
   + 使用できる値 : `2` `4`
 
-  `/perf`が使用できる権限を変更する。~~`しかし/perf`が確認できなかった。~~
+  `/perf`が使用できる権限を変更する。~~しかし`/perf`が確認できなかった。~~
 
 ### persistentParrots
   + 初期値 : `false`
@@ -478,7 +478,7 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   + 初期値 : `0`
   + 使用できる値 : `integer`
 
-  サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の整数値である必要があり、`0`にすると無効になる。
+  サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の整数値である必要があり、`0`にすると無効になる。  
   [描画距離の変更](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#viewdistance)
 
 ### smoothClientAnimations
@@ -575,7 +575,7 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   + 初期値 : `0`
   + 使用できる値 : `integer`
 
-  サーバーの描画距離をこの値でオーバーライドする。0から32の整数値である必要があり、`0`にすると無効になる。
+  サーバーの描画距離をこの値でオーバーライドする。0から32の整数値である必要があり、`0`にすると無効になる。  
   [シミュレーション距離の変更](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#simulationdistance)
 
 
