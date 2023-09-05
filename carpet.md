@@ -578,6 +578,18 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   サーバーの描画距離をこの値でオーバーライドする。0から32の整数値である必要があり、`0`にすると無効になる。  
   [シミュレーション距離の変更](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#simulationdistance)
 
+### xpFromExplosions
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  xpをドロップするブロックはどんな爆発からでもxpをドロップするようにする。
+
+### xpNoCooldown
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  xpの吸収のクールダウンを消すことができる。
+
 
 
 
