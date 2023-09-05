@@ -3,7 +3,7 @@
 <details>
   <summary>Generic</summary>
   <a href="#ギャハハ">・carpetAccuratePlacementProtocol</a><br>
-  <p id="hoo">・clientPlacementRotation</p><br>
+  <p id="hoo">・clientPlacementRotation</p>
   ・fastLeftClickAllowTools<br>
   ・fastPlacementRememberOrientation<br>
   ・freeCameraPlayerInputs<br>
