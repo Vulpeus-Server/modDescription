@@ -11,6 +11,10 @@
   <summary>general</summary>
   <li><a href="https://github.com/TaichiServer/modDescription/edit/main/carpet.md#carpet-1">/carpet</a></li>
 </details>
+<details>
+  <summary>rules</summary>
+  <li><a href="https://github.com/TaichiServer/modDescription/edit/main/carpet.md#carpet-1">/carpet</a></li>
+</details>
 
 
 <!--
@@ -57,7 +61,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 `[target]`に関する情報を表示する。`<grep>`によって表示する情報を指定することが可能。
 -->
 
-## rule
+## rules
 `/carpet [rule] <value>`によって変更することができる。
 ### ~allowSpawningOfflinePlayers~
   + 初期値 : `false`
