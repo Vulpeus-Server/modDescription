@@ -11,8 +11,13 @@
   <summary>general</summary>
   <li>/carpet</li>
   <li>/carpet list &lt;category&gt;</li>
+  <li>/carpet list defaults</li>
+  <li>/carpet setDefault [rule] [value]</li>
+  <li>/carpet rmeoveDeffault [rule]</li>
 </details>
 
+
+<!--
 + general
 + rule
 + counter
@@ -26,6 +31,7 @@
 + spawn
 + perimeterinfo
 + script
+-->
 
 ## general
 ### `/carpet`
@@ -34,13 +40,14 @@
 利用できるcarpet ruleを**すべて**表示する。`<category>`を指定した場合、紐づけられたruleを表示する。
 ### `/carpet list defaults`
 `carpet.conf`に記録されているルールを表示する。
-### `/carpet setDeffault [rule] [value]`
+### `/carpet setDefault [rule] [value]`
 `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。  
 `/carpet [rule] [value]`を使用し値が正常に変更された知らせとともに通知される`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが設定される。
 ### `/carpet rmeoveDeffault [rule]`
 `[rule]`で指定したcarpet ruleのデフォルトの値を`carpet.conf`から削除し、初期値にする。
 
 
+<!--
 ### perimeter info
 perimeterに関する情報を表示する。opレベル0を要求する。
 #### `/perimeterinfo <coordinate>　<mob>`
@@ -52,6 +59,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 `[coordinate]`に関する情報を表示する。`<grep>`によって表示する情報を指定することが可能。
 #### `/info entity [target] <grep>`
 `[target]`に関する情報を表示する。`<grep>`によって表示する情報を指定することが可能。
+-->
 
 ## rule
 `/carpet [rule] <value>`によって変更することができる。
