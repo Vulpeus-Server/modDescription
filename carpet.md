@@ -11,7 +11,7 @@
   <summary>general</summary>
   <li>[/carpet](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpet-1)</li>
   <li>/carpet list &lt;category&gt;</li>
-  <li><a href="https://github.com/TaichiServer/modDescription/edit/main/carpet.md#carpet-1">アンカーテキスト</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/edit/main/carpet.md#carpet-1">/carpet</a></li>
   <li>/carpet setDefault [rule] [value]</li>
   <li>/carpet rmeoveDeffault [rule]</li>
 </details>
