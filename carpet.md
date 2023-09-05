@@ -9,7 +9,6 @@
 ## 目次
 <details>
   <summary>general</summary>
-  <li>/carpet list &lt;category&gt;</li>
   <li><a href="https://github.com/TaichiServer/modDescription/edit/main/carpet.md#carpet-1">/carpet</a></li>
 </details>
 
