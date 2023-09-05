@@ -8,19 +8,13 @@
 
 ## 目次
 <details>
-  <summary>Generic</summary>
-  ・carpetAccuratePlacementProtocol<br>
-  ・clientPlacementRotation<br>
-  ・fastLeftClickAllowTools<br>
-  ・fastPlacementRememberOrientation<br>
-  ・freeCameraPlayerInputs<br>
-  ・freeCameraPlayerMovement<br>
-  ・handRestockPre<br>
-  ・hangableEntityBypassInverse<br>
-  ・itemUsePacketCheckBypass<br>
-  ・permanentSneakAllowInGUIs<br>
-  ・placementRestrictionTiedToFast<br>
-  ・potionWarningBeneficialOnly
+  <summary>
+    + general
+      <summary>
+        + /carpet
+      </summary>
+      /carpet list
+  </summary>
 </details>
 
 + general
@@ -38,18 +32,19 @@
 + script
 
 ## general
-### carpet
-#### `/carpet`
+### `/carpet`
 現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。
-#### `/carpet list <category>`
+### `/carpet list <category>`
 利用できるcarpet ruleを**すべて**表示する。`<category>`を指定した場合、紐づけられたruleを表示する。
-#### `/carpet list defaults`
+### `/carpet list defaults`
 `carpet.conf`に記録されているルールを表示する。
-#### `/carpet setDeffault [rule] [value]`
+### `/carpet setDeffault [rule] [value]`
 `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。  
 `/carpet [rule] [value]`を使用し値が正常に変更された知らせとともに通知される`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが設定される。
-#### `/carpet rmeoveDeffault [rule]`
+### `/carpet rmeoveDeffault [rule]`
 `[rule]`で指定したcarpet ruleのデフォルトの値を`carpet.conf`から削除し、初期値にする。
+
+
 ### perimeter info
 perimeterに関する情報を表示する。opレベル0を要求する。
 #### `/perimeterinfo <coordinate>　<mob>`
