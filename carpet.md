@@ -9,11 +9,11 @@
 ## 目次
 <details>
   <summary>general</summary>
-  <li><a href="https://github.com/TaichiServer/modDescription/edit/main/carpet.md#carpet-1">/carpet</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpet-1">/carpet</a></li>
 </details>
 <details>
   <summary>rules</summary>
-  <li><a href="https://github.com/TaichiServer/modDescription/edit/main/carpet.md#carpet-1">/carpet</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></li>
 </details>
 
 
