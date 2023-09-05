@@ -294,6 +294,19 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
 　[MC-206922](https://bugs.mojang.com/browse/MC-206922)を修正する。
  落雷がmobをキルした場合もmobがドロップすべきアイテムをドロップするようにする。
 
+### liquidDamageDisabled
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  流体によるブロックの破壊を起こさなくする。
+
+### maxEntityCollisions
+  + 初期値 : `0`
+  + 使用できる値 : `interger`
+
+  ワールドに存在する最大のentityのcollisionを指定する。0で無制限。非不整数でなければいけない。
+
+  
 
 
 
