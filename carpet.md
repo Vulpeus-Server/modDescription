@@ -19,6 +19,7 @@
 + spawn
 + perimeterinfo
 + script
++ counter
 
 ## general
 ### carpet
@@ -216,7 +217,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 
-  redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。壊れる回路があるので注意。
+  redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。~壊れる回路があるので注意。~
   
 ### fillLimit
   + 初期値 : `32768`
@@ -230,10 +231,37 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
 
   fillやclone、setblockによるblock updateを発生させないようにする。
 
+### flippinCactus
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 
+  `cactus(サボテン)`をメインハンドに持っている時、方向をもつブロックの一部(たとえばホッパーやオブザーバーなど)を右クリックするとその方向をupdateなしで回転もしくは反転できるようにする。
 
+### fogOff
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 
+  ネザーにおよびエンドにおけるfog(霧)を消すようにする。
 
+  ~クライアントのみ~
+
+### forceloadLimit
+  + 初期値 : `256`
+  + 使用できる値 : `integer`
+
+  forceloadの上限を変更する。
+  
+### hardcodeTNTangle
+  + 初期値 : `-1.0`
+  + 使用できる値 : `0 < θ < 2π`
+
+  tntの着火時に起きる水平方向の移動の計算方式を変更する。デフォルトは-1.0であり、これは変更しない(=ランダムである)ことを意味する。使用できる値の範囲内によりその回転を指定できる。
+
+### hopperCounters
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+    
+  `/counter`を有効にする。
 
 
 
