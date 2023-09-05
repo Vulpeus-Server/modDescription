@@ -318,7 +318,20 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
 
   ガラスの適正ツールがつるはしとなる。
 
+### moreBlueSkulls
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 
+  witherによって出される青いskullの確率を上げる。
 
+### movableAmethyst
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 
+　　芽の生えたアメジストをピストンによって移動できるようにする。また、シルクタッチのついた適正ツールで掘られた場合にはアイテムとしてドロップするようにする。
 
+### movableBlockEntities
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  block entityをピストンにより移動可能にする。
