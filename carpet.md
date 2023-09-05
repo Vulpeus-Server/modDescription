@@ -217,7 +217,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 
-  redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。~壊れる回路があるので注意。~
+  redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。**壊れる回路があるので注意。**
   
 ### fillLimit
   + 初期値 : `32768`
@@ -243,7 +243,7 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
 
   ネザーにおよびエンドにおけるfog(霧)を消すようにする。
 
-  ~クライアントのみ~
+  **クライアントのみ**
 
 ### forceloadLimit
   + 初期値 : `256`
@@ -263,6 +263,29 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
     
   `/counter`を有効にする。
 
+### huskSpawningInTemples
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  ピラミッドではハスクのみがスポーンできるようにする。
+
+### interactionUpdates
+  + 初期値 : `true`
+  + 使用できる値 : `true` `false`
+
+  ブロックを置くときにblock updateを発生させないようにする。
+
+### lagFreeSpawning
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  mobのスポーンを最適化する。
+
+### language
+  + 初期値 : `en_us`
+  + 使用できる値 : `en_us` `fr_fr` `pt_br` `zh_cn` `zh_tw`
+
+  carpetで使用する言語を変更する。
 
 
 
