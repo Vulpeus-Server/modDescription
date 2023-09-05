@@ -13,8 +13,8 @@
   ・itemUsePacketCheckBypass<br>
   ・permanentSneakAllowInGUIs<br>
   ・placementRestrictionTiedToFast<br>
-  <a id="M"></a>
-  ・potionWarningBeneficialOnly<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <a id="M" style="height:100vh"></a>
+  ・potionWarningBeneficialOnly
 </details>
 <details>
   <summary>Fixes</summary>
