@@ -7,7 +7,7 @@
 [carpet公式ドキュメント](https://github.com/gnembon/fabric-carpet/wiki/Current-Available-Settings)
 
 ## 目次
-
+<details>
   <summary>Generic</summary>
   ・carpetAccuratePlacementProtocol<br>
   ・clientPlacementRotation<br>
