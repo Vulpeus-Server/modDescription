@@ -10,7 +10,7 @@
 <details>
   <summary>general</summary>
   <li>/carpet</li>
-  <li>/carpet list <category></li>
+  <li>/carpet list &lt;category&gt;</li>
 </details>
 
 + general
