@@ -47,6 +47,48 @@
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#ogoff">ogOff</a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#forceloadlimit">forceloadLimit</a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#hardcodetntangle">hardcodeTNTangle</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#hoppercounters">hopperCounters</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#huskspawningintemples">huskSpawningInTemples</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#interactionUpdates">interactionUpdates</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#lagfreespawning">lagFreeSpawning</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#lightningKkllsdropsfix">lightningKillsDropsFix</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#liquiddamagedisabled<">liquidDamageDisabled</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
   
@@ -254,11 +296,11 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 
   MOTD is なに
 ### defaultLoggers
-  + 初期値 : 'none'
-  + 使用できる値 : `tps` `mobcaps` `mobcaps,tps`
+  + 初期値 : `none`
+  + 使用できる値 : `string`
 
 鯖に入ったときに表示するログの初期値。ただしsetDefaultを設定しないと再起動によって初期値に戻る。
-定義はcsvによって
+`tps,mobcaps,counter`のように、カンマで常げることでサジェストされたもの以外も指定できる。
 
 ### desertShrubs
   + 初期値 : `false`
