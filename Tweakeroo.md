@@ -1,8 +1,8 @@
-# TweakerooとTweakmoreの機能一覧(日本語)
+# TweakerooとTweakmoreの機能一覧(日本語) 
 # Tweakeroo
 <details>
   <summary>Generic</summary>
-  ・[carpetAccuratePlacementProtocol](#Tweakeroo)<br>
+  <a href="#ギャハハ">・carpetAccuratePlacementProtocol</a><br>
   ・clientPlacementRotation<br>
   ・fastLeftClickAllowTools<br>
   ・fastPlacementRememberOrientation<br>
@@ -31,4 +31,4 @@
   <summary>Yeets</summary>
 </details>
 
-<a id="Tweakeroo">あははは！！</a>
+<a id="ギャハハ">I'm Perfect human</a>
