@@ -8,13 +8,8 @@
 
 ## 目次
 <details>
-  <summary>
-    + general
-      <summary>
-        + /carpet
-      </summary>
-      /carpet list
-  </summary>
+  <summary>- general</summary>
+  - /carpet
 </details>
 
 + general
