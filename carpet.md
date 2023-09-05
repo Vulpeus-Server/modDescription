@@ -34,7 +34,11 @@
 -->
 
 ## general
-### `/carpet`
+### carpet
+  + `/carpet`
+  + `/carpet list <category | default>`
+  + `/carpet setDefault [rule] [value]`
+  + `/carpet removeDefault <rule>`
 現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。
 ### `/carpet list <category>`
 利用できるcarpet ruleを**すべて**表示する。`<category>`を指定した場合、紐づけられたruleを表示する。
