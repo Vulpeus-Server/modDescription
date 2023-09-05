@@ -335,3 +335,196 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   + 使用できる値 : `true` `false`
 
   block entityをピストンにより移動可能にする。
+  
+### optimizedTNT
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  tntが同じ座標や流体内で爆発したときの最適化をする。
+
+### -perfPermissionLevel-
+  + 初期値 : `4`
+  + 使用できる値 : `2` `4`
+
+  `/perf`が使用できる権限を変更する。~~`しかし/perf`が確認できなかった。~~
+
+### persistentParrots
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  オウムがダメージをうけるまで常に肩に乗るようにする。
+
+### piglinsSpawningInBastions
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  ピグリン、ピグリンブルート、ホグリンがbastionで自然スポーンすることができるようにする。
+
+### pingPlayerListLimit
+  + 初期値 : `12`
+  + 使用できる値 : `integer`
+
+  ping playerのサンプル数の上限を設定する。非負整数である必要がある。
+  
+### placementRotationFix
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  プレイヤーが高速で視点を動かしたときに設置されたブロックが回転するバグを修正する。
+
+### portalCreativeDelay
+  + 初期値 : `0`
+  + 使用できる値 : `integer`
+
+  プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までの整数値をとる。
+
+### portalSurvivalDelay
+  + 初期値 : `80`
+  + 使用できる値 : `integer`
+
+  プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までの整数値をとる。
+
+### pushLimit
+  + 初期値 : `12`
+  + 使用できる値 : `integer`
+
+  ピストンが押せるブロックの最大量を決める必要がある。1から1024までの整数値をとる。
+
+### quasiConnectivity
+  + 初期値 : `true`
+  + 使用できる値 : `true` `false`
+
+  ピストンとドロッパー、ディスペンサーの準接続をおこさないようにする。
+
+### railPowerLimit
+  + 初期値 : `9`
+  + 使用できる値 : `integer`
+
+  レールの動力がどこまで動力を伝達できるかを設定する。1から1024までの整数値をとる。
+
+### renewableBlackstone
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+　溶岩流が青氷に流れるときブラックストーンを生成する。
+
+### renewableCoral
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false` `expanded`
+
+  サンゴに骨粉を与えることでサンゴブロック(ストラクチャー)になるようにする。`expanded`にするとウチワサンゴでも可能になる。
+
+### renewableDeepslate
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+　通常の丸石製造機がy0以下で深層岩を生成する。
+
+### renewableSponges
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+　ガーディアンが雷に打たれるとエルダーガーディアンになるようにする。
+
+### rotatorBlock
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  サボテンのはいったディスペンサーの正面に方向のあるブロックがあると、トリガーされたときに正面のブロックの方向を変える。ほかのアイテムがはいっているときはそちらが優先され、確率も含めサボテンは無視される。
+
+### scriptsAppStore
+  + 初期値 : `gnembon/scarpet/contents/programs`
+  + 使用できる値 : `string`
+
+  scriptをゲーム内でダウンロードするさいの場所を指定する。コンソールにおける`cd`に同じ。github上の有効なパブリックリポジトリのリンクのみ受け付ける。`none`とした場合無効になる。
+
+### scriptsAutoload
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  `/script`が有効になっている場合、serverがリスタートもしくはワールドが読み込まれたときに自動的に読み込まれるようにする。
+
+### scriptsDebugging
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  スクリプトのデバッグメッセージを表示するようにする。
+  
+### scriptsOptimization
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  スクリプトを最適化する。**一部正常に起動しなくなるスクリプトがあることに注意。**
+
+### sculkSensorRange
+  + 初期値 : `8`
+  + 使用できる値 : `integer`
+
+  スカルくセンサーの振動を伝える半径を変更する。1から1024の整数値である必要がある。
+
+### shulkerSpawningInEndCities
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  シュルカーがエンドシティーでリスポーンするようにする。
+  
+### silverFishDropGravel
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  シルバーフィッシュがブロックから抜け出すときに砂利をドロップするようにする。
+
+### simulationDistance
+  + 初期値 : `0`
+  + 使用できる値 : `integer`
+
+  サーバーのシミュレーション距離の設定をこの値でオーバーライドする。0から32の整数値である必要があり、`0`にすると無効になる。
+
+### smoothClientAnimations
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+
+  低いtpsでアニメーションをスムーズにする。さらにシングルプレイではtpsにあわせてプレイヤーの飛行速度が変動するようになる。
+  **クライアントのみ**
+
+### spawnChunksSize
+  + 初期値 : `11`
+  + 使用できる値 : `integer`
+
+  スポーンチャンクの半径を指定する。`0`にするとスポーンチャンクを無効にできる。
+
+### stackableShulkerBoxes
+  + 初期値 : `false`
+  + 使用できる値 : `string`
+
+  中身のはいっていないシュルカーを地面になげたとき重ねることができる。2から64までの数値または`true` `false`のみを受け付ける。`true`にすると64になる。
+
+### structureBlockIgnored
+  + 初期値 : `minecraft:structure_void`
+  + 使用できる値 : `string`
+
+  ストラクチャーブロックが無視するブロックのidを指定する。複数指定することはできない。
+
+### structureBlockLimit
+  + 初期値 : `48`
+  + 使用できる値 : `integer`
+
+  各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。
+  **[structureBlockIgnored]()をminecraft:airにすることを推奨。**
+  **ストラクチャーブロックが常に読み込まれていなければ正しく動かない**
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
