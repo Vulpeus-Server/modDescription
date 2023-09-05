@@ -287,8 +287,12 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
 
   carpetで使用する言語を変更する。
 
+### lightningKillsDropsFix
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 
-
+　[MC-206922](https://bugs.mojang.com/browse/MC-206922)を修正する。
+ 落雷がmobをキルした場合もmobがドロップすべきアイテムをドロップするようにする。
 
 
 
