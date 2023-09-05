@@ -509,8 +509,8 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   + 初期値 : `48`
   + 使用できる値 : `integer`
 
-  各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。
-  **[structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)をminecraft:airにすることを推奨。**
+  各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。　　
+  **[structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)をminecraft:airにすることを推奨。**　　
   **ストラクチャーブロックが常に読み込まれていなければ正しく動かない**
 
 ### structureBlockOutlineDistance
@@ -561,7 +561,8 @@ fillやcloneのブロック数制限を変更する。ただしゲームルー�
   + 初期値 : `-1.0`
   + 使用できる値 : `double`
 
-  tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない。
+  tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない。  
+  **[optimizedTNT](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#optimizedtnt)を有効にする必要がある。**
   
 
 
