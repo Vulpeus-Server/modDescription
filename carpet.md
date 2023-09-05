@@ -9,7 +9,7 @@
 ## 目次
 <details>
   <summary>general</summary>
-  <li>/carpet</li>
+  <li>[/carpet](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpet-1)</li>
   <li>/carpet list &lt;category&gt;</li>
   <li>/carpet list defaults</li>
   <li>/carpet setDefault [rule] [value]</li>
