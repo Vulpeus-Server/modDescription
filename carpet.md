@@ -21,7 +21,35 @@
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#cleanlog">cleanLog</a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commanddistance">commandDistance</a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commanddraw">commandDraw</a></li>
-
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandinfo">commandInfo</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandlog">commandLog</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandPerimeterinfo">commandPerimeterInfo</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandplayer">commandPlayer</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandprofile">commandProfile</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscript">commandScript</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscriptace">commandScriptACE</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandspawn">commandSpawn</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandtick">commandTick</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandtrackingai">commandTrackingAI</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#creativeflydrag">creativeFlyDrag</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#creativeflyspeed">creativeFlySpeed</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#creativenoclip">creativeNoClip</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#creativeplayersloadchunks">creativePlayersLoadChunks</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#ctrlqcraftingfix">ctrlQCraftingFix</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#custommotd">customMOTD</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#defaultloggers">defaultLoggers</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#desertshrubs">desertShrubs</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#explosionNoblockdamage">explosionNoBlockDamage</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#fastredstonedust">fastRedstoneDust</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#filllimit">fillLimit</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#fillupdates">fillUpdates</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#flippincactus">flippinCactus</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#ogoff">ogOff</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#forceloadlimit">forceloadLimit</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#hardcodetntangle">hardcodeTNTangle</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#"></a></li>
+  
 </details>
 
 
@@ -191,7 +219,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 
   クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、1でBEのようにストッピングができるようになる。
 
-  **clientのみ**
+  **クライアントのみ**
   
 ### creativeFlySpeed
   + 初期値 : `1.0`
@@ -199,9 +227,9 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 
   クリエイティブにおける浮遊時の飛行速度を設定する。
   
-  **clientのみ**
+  **クライアントのみ**
   
-### reativeNoClip
+### creativeNoClip
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 
@@ -212,7 +240,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 
-  クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。
+  クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。<br>
   スペクテイターモードについては`/gamerule spectatorsGenerateChunks`によって設定可能。
 
 ### ctrlQCraftingFix
@@ -222,14 +250,15 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   ctrlQによる一括排出をクラフトの結果欄でも機能するようにする。
 ### ~customMOTD~
   + 初期値 : `_`
-  + 使用できる値 : 'string'
+  + 使用できる値 : `string`
 
   MOTD is なに
 ### defaultLoggers
   + 初期値 : 'none'
-  + 使用できる値 : 'string(defined)'
+  + 使用できる値 : `tps` `mobcaps` `mobcaps,tps`
 
 鯖に入ったときに表示するログの初期値。ただしsetDefaultを設定しないと再起動によって初期値に戻る。
+定義はcsvによって
 
 ### desertShrubs
   + 初期値 : `false`
