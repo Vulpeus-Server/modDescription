@@ -1,21 +1,24 @@
-<link href="https://github.com/TaichiServer/modDescription/blob/main/Tweakeroo.css"></link>
+<link href="Tweakeroo.css" rel="stylesheet"></link>
+
 # TweakerooとTweakmoreの機能一覧
 # Tweakeroo
+## 目次
 <details>
   <summary>Generic</summary>
   <ul class="column">
-<li><a href="#carpetAccuratePlacementProtocol">carpetAccuratePlacementProtocol</a><li>
-<li>clientPlacementRotation<br>
-fastLeftClickAllowTools<br>
-fastPlacementRememberOrientation<br>
-freeCameraPlayerInputs<br>
-freeCameraPlayerMovement<br>
-handRestockPre<br>
-hangableEntityBypassInverse<br>
-itemUsePacketCheckBypass<br>
-permanentSneakAllowInGUIs<br>
-placementRestrictionTiedToFast<br>
-potionWarningBeneficialOnly
+<li><a href="#carpetAccuratePlacementProtocol">carpetAccuratePlacementProtocol</a></li>
+<li><a>clientPlacementRotation</a></li>
+<li><a href="#fastLeftClickAllowTools">fastLeftClickAllowTools</a>
+<li><a href="#fastPlacementRememberOrientation">fastPlacementRememberOrientation</a>
+<li><a href="#freeCameraPlayerInputs">freeCameraPlayerInputs</a>
+<li>freeCameraPlayerMovement
+<li>handRestockPre
+<li>hangableEntityBypassInverse
+<li>itemUsePacketCheckBypass
+<li>permanentSneakAllowInGUIs
+<li>placementRestrictionTiedToFast
+<li>potionWarningBeneficialOnly
+</ul>
 </details>
 
 <details>
