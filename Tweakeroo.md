@@ -1,4 +1,4 @@
-# TweakerooとTweakmoreの機能一覧(日本語) 
+# TweakerooとTweakmoreの機能一覧
 # Tweakeroo
 <details>
   <summary>Generic</summary>
@@ -13,8 +13,7 @@
   ・itemUsePacketCheckBypass<br>
   ・permanentSneakAllowInGUIs<br>
   ・placementRestrictionTiedToFast<br>
-  <a id="M" style="height:100vh"></a>
-  ・potionWarningBeneficialOnly<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  ・potionWarningBeneficialOnly
 </details>
 <details>
   <summary>Fixes</summary>
@@ -31,6 +30,3 @@
 <details>
   <summary>Yeets</summary>
 </details>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<a id="ギャハハ">I'm Perfect human</a>
-<a href="#M">TEST</a>
