@@ -9,8 +9,9 @@
 ## 目次
 <details>
   <summary>general</summary>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpet-1">/carpet</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpet-1">carpet</a></li>
 </details>
+
 <details>
   <summary>rules</summary>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></li>
@@ -102,20 +103,25 @@
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#xpnocooldown">xpNoCooldown</a></li>
 </details>
 
+<details>
+  <summary>counter</summary>
+  <li>realtime</li>
+  <li>reset</li>
+</details>
 
 <!--
 + general
 + rule
 + counter
-+ tick
-+ player
-+ profile
-+ log
-+ info
 + distance
 + draw
-+ spawn
++ info
++ log
++ tick
 + perimeterinfo
++ profile
++ player
++ spawn
 + script
 -->
 
@@ -175,7 +181,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   | pink   | `/spawn list ~ ~-1 ~`                        |
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
-  + 関連情報
+  + 関連項目
     + info
     + spawn
     + distance
@@ -193,73 +199,73 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   `/distance`を使用できるプレイヤーを指定する。`true` `false`ではopの所持の如何を問わず指定することができる。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + distance
 ### commandDraw
   `/draw`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + draw
 ### commandInfo
   `/info`を使用できるプレイヤーを指定する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + info
 ### commandLog
   `/log`を使用できるプレイヤーを指定する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + log
 ### commandPerimeterInfo
   `/perimeterinfo`を使用できるプレイヤーを指定する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + perimeterInfo
 ### commandPlayer
   `/player`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + player
 ### commandProfile
   `/profile`を使用できるプレイヤーを指定する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + profile
 ### commandScript
   `/script`のscript作成を使用できるプレイヤーを指定する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + script
 ### commandScriptACE
   `/script load` `/script run`を使用できるプレイヤーを指定する。appが実行するときのopレベルでもある。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + script
 ### commandSpawn
   `/spawn`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + spawn
 ### commandTick
   `/tick`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + tick
 ### commandTrackingAI
   `/track`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
-  + 関連情報
+  + 関連項目
     + track
 ### creativeFlyDrag
   クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、1でBEのようにストッピングができるようになる。
@@ -296,7 +302,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   `tps,mobcaps,counter`のように、カンマで常げることでサジェストされたもの以外も指定できる。
   + 初期値 : `none`
   + 使用できる値 : `string`
-  + 関連情報
+  + 関連項目
     + log
 ### desertShrubs
   苗木が砂漠を含めた暑い気候および水のアクセスができない場所で枯れ木にする。
@@ -320,14 +326,14 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   fillやclone、setblockによるblock updateを発生させないようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
-  + 関連情報
-    + interactionUpdates
+  + 関連項目
+    + [interactionUpdates](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#interactionupdates)
 ### flippinCactus
   サボテンをメインハンドに持っている時、ホッパーやオブザーバーなど、方向をもつブロックの一部を右クリックするとその方向をupdateなしで回転もしくは反転できるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
-  + 関連情報
-    + rotatorBlock
+  + 関連項目
+    + [rotatorCactus](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#rotatorblock)
 ### fogOff
   ネザーにおよびエンドにおけるfog(霧)を消すようにする。
 
@@ -346,8 +352,8 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   `/counter`を有効にする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
-  + 関連情報
-    + counter
+  + 関連項目
+    + [counter](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#counters)
 ### huskSpawningInTemples
   ピラミッドではハスクのみがスポーンできるようにする。
   + 初期値 : `false`
@@ -356,8 +362,8 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   ブロックを置くときにblock updateを発生させないようにする。
   + 初期値 : `true`
   + 使用できる値 : `true` `false`
-  + 関連情報
-    + fillUpdates
+  + 関連項目
+    + [fillUpdates](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#fillupdates)
 ### lagFreeSpawning
   mobのスポーンを最適化する。
   + 初期値 : `false`
@@ -427,14 +433,14 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までをとる。
   + 初期値 : `0`
   + 使用できる値 : `integer`
-  + 関連情報
-    + portalSurvivalDelay
+  + 関連項目
+    + [portalSurvivalDelay](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#portalsurvivaldelay)
 ### portalSurvivalDelay
   プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までの整数値をとる。
   + 初期値 : `80`
   + 使用できる値 : `integer`
-  + 関連情報
-    + creativePortalDelay
+  + 関連項目
+    + [creativePortalDelay](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#portalcreativedelay)
 ### pushLimit
   ピストンが押せるブロックの最大量を決める必要がある。1から1024までの整数値をとる。
   + 初期値 : `12`
@@ -467,28 +473,28 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   サボテンのはいったディスペンサーの正面に方向のあるブロックがあると、トリガーされたときに正面のブロックの方向を変える。ほかのアイテムがはいっているときはそちらが優先され、確率も含めサボテンは無視される。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
-  + 関連情報
-    + flippinCactus
+  + 関連項目
+    + [flippinCactus](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#flippincactus)
 ### scriptsAppStore
   scriptをゲーム内でダウンロードするさいの場所を指定する。コンソールにおける`cd`に同じ。github上の有効なパブリックリポジトリのリンクのみ受け付ける。`none`とした場合無効になる。
   + 初期値 : `gnembon/scarpet/contents/programs`
   + 使用できる値 : `string`
-  + 関連情報
-    + commandScript
+  + 関連項目
+    + [commandScript](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscript)
     + script
 ### scriptsAutoload
   `/script`が有効になっている場合、serverがリスタートもしくはワールドが読み込まれたときに自動的に読み込まれるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
-  + 関連情報
-    + commandScript
+  + 関連項目
+    + [commandScript](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscript)
     + script
 ### scriptsDebugging
   スクリプトのデバッグメッセージを表示するようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false` 
-  + 関連情報
-    + commandScript
+  + 関連項目
+    + [commandScript](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscript)
     + script 
 ### scriptsOptimization
   スクリプトを最適化する。
@@ -496,8 +502,8 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   **一部正常に起動しなくなるスクリプトがあることに注意。**
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
-  + 関連情報
-    + commandScript
+  + 関連項目
+    + [commandScript](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscript)
     + script
 ### sculkSensorRange
   スカルくセンサーの振動を伝える半径を変更する。1から1024の整数値である必要がある。
@@ -512,12 +518,11 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### simulationDistance
-  サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の整数値である必要があり、`0`にすると無効になる。  
-  [描画距離の変更](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#viewdistance)
+  サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の間である必要があり、`0`にすると無効になる。  
   + 初期値 : `0`
   + 使用できる値 : `integer`
-  + 関連情報
-    + viewDistance
+  + 関連項目
+    + [viewDistance](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#viewdistance)
 ### smoothClientAnimations
   低いtpsでアニメーションをスムーズにする。さらにシングルプレイではtpsにあわせてプレイヤーの飛行速度が変動するようになる。
   
@@ -536,9 +541,9 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   ストラクチャーブロックが無視するブロックのidを指定する。複数指定することはできない。
   + 初期値 : `minecraft:structure_void`
   + 使用できる値 : `string`
-  + 関連情報
-    + structureBlockLimit
-    + structureBlockOutlineDistance
+  + 関連項目
+    + [structureBlockLimit](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblocklimit)
+    + [structureBlockOutlineDistance](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockoutlinedistance)
 ### structureBlockLimit
   各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。  
 
@@ -546,18 +551,18 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   **ストラクチャーブロックが常に読み込まれていなければ正しく動かない**
   + 初期値 : `48`
   + 使用できる値 : `integer`
-  + 関連情報
-    + structureBlockIgnored
-    + structureBlockOutlineDistance
+  + 関連項目
+    + [structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)
+    + [structureBlockOutlineDistance](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockoutlinedistance)
 ### structureBlockOutlineDistance
   ストラクチャーブロックのアウトラインを視認できる距離を変更する。値は非負整数でなければならない。
   
   **クライアントのみ**
   + 初期値 : `96`
   + 使用できる値 : `integer`
-  + 関連情報
-    + structureBlockIgnored
-    + structureBlockLimit
+  + 関連項目
+    + [structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)
+    + [structureBlockLimit](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblocklimit)
 ### summonNaturalLightning
   `/summon lightning_bolt`で召喚した稲妻が自然発生した稲妻と同様の効果を与えるようにする。帯電化や炎上など。
   + 初期値 : `false`
@@ -594,12 +599,11 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `-1`
   + 使用できる値 : `integer`
 ### viewDistance
-  サーバーの描画距離をこの値でオーバーライドする。0から32の整数値である必要があり、`0`にすると無効になる。  
-  [シミュレーション距離の変更](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#simulationdistance)
+  サーバーの描画距離をこの値でオーバーライドする。0から32の間である必要があり、`0`にすると無効になる。  
   + 初期値 : `0`
   + 使用できる値 : `integer`
-  + 関連情報
-    + simulationDistance
+  + 関連項目
+    + [simulationDistance](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#simulationdistance)
 ### xpFromExplosions
   xpをドロップするブロックはどんな爆発からでもxpをドロップするようにする。
   + 初期値 : `false`
@@ -608,3 +612,27 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   xpの吸収のクールダウンを消すことができる。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
+
+## counter
+  `/counter <color> <realtime | reset>` <br>
+  で使用する。ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントし、それらから効率を計算する。複数のホッパーを同じチャンネルで作動させることも可能。
+  + `color` <br>
+    16色の羊毛で16チャンネルを扱うことができる。指定しなかった場合現在アクティブなすべてのチャンネルのcounterを表示する。
+    + `white`
+    + `light_gray`
+    + `gray`
+    + `black`
+    + `brown`
+    + `red`
+    + `orange`
+    + `yellow`
+    + `lime`
+    + `green`
+    + `cyan`
+    + `light_blue`
+    + `blue`
+    + `purple`
+    + `magenta`
+    + `pink`
+  + 関連項目
+    + [hopperCounters](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#hoppercounters)
