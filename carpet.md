@@ -134,7 +134,8 @@
   + `/carpet list default`<br>
     `carpet.conf`に記録されているルールを表示する。
   + `/carpet setDefault [rule] [value]`<br>
-    `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。<br>
+    `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。
+
     >[!note]
     >`/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが準備される。
   + `/carpet removeDefault <rule>`<br>
@@ -168,7 +169,8 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 ### carpetCommandPermissionLevel
   `/carpet`コマンドを使用できるパーミッションレベルを指定する。`ops`では`/op`で付与された人のみであるが、`2` `4`はそれぞれの数値以上のパーミッションを保持しているプレイヤーにが使うことができる。
 
-  現在たいち鯖ではデフォルトのパーミッションレベルは3になっているとのこと。
+  >[!note]
+  >現在たいち鯖では最大のパーミッションレベルが3になっている。
   + 初期値 : `ops`
   + 使用できる値 : `ops` `2` `4`
 ### carpets
@@ -286,8 +288,9 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### creativePlayersLoadChunks
-  クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。<br>
-  スペクテイターモードについては`/gamerule spectatorsGenerateChunks`によって設定可能。
+  クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。
+  >[!note]
+  >スペクテイターモードについては`/gamerule spectatorsGenerateChunks`によって設定可能。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### ctrlQCraftingFix
@@ -314,9 +317,9 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### fastRedstoneDust
-  redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。
-  
-  **壊れる回路があるので注意。**
+  redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。 
+  >[!note]
+  >壊れる回路があるので注意。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`  
 ### fillLimit
@@ -411,7 +414,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### ~~perfPermissionLevel~~
-  `/perf`が使用できる権限を変更する。~~しかし`/perf`が確認できなかった。~~
+  `/perf`が使用できる権限を変更する。**しかし`/perf`が確認できなかった。**
   + 初期値 : `4`
   + 使用できる値 : `2` `4`
 ### persistentParrots
@@ -547,9 +550,11 @@ perimeterに関する情報を表示する。opレベル0を要求する。
     + [structureBlockOutlineDistance](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockoutlinedistance)
 ### structureBlockLimit
   各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。  
+  >[!important]
+  >[structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)をminecraft:airにすることを推奨。
 
-  **[structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)をminecraft:airにすることを推奨。**<br>
-  **ストラクチャーブロックが常に読み込まれていなければ正しく動かない**
+  >[!note]
+  >ストラクチャーブロックが常に読み込まれていなければ正しく動かない
   + 初期値 : `48`
   + 使用できる値 : `integer`
   + 関連項目
@@ -591,8 +596,8 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 使用できる値 : `true` `false`
 ### tntRandomRange
   tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない
-
-  **[optimizedTNT](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#optimizedtnt)を有効にする必要がある。**
+  >[!important]
+  >[optimizedTNT](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#optimizedtnt)を有効にする必要がある。
   + 初期値 : `-1.0`
   + 使用できる値 : `double`
 ### updateSuppressionBlock
