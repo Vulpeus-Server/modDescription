@@ -14,7 +14,7 @@
 
 <details>
   <summary>rules</summary>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></li>
+  <li><a href="#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#anticheatdisabled">antiCheatDisabled</a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpetcommandpermissionlevel">carpetCommandPermissionLevel</a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpets">carpets</a></li>
@@ -338,7 +338,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + [interactionUpdates](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#interactionupdates)
+    + [interactionUpdates]#interactionupdates)
 ### flippinCactus
   サボテンをメインハンドに持っている時、ホッパーやオブザーバーなど、方向をもつブロックの一部を右クリックするとその方向をupdateなしで回転もしくは反転できるようにする。
   + 初期値 : `false`
