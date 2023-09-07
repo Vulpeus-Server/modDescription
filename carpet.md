@@ -127,17 +127,18 @@
 
 ## general
 ### carpet
-  + `/carpet`  
-    + 現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。
-  + `/carpet list <category>`  
-    + 利用できるcarpet ruleを**すべて**表示する。`<category>`を指定した場合、紐づけられたruleを表示する。
-  + `/carpet list default`  
-    + `carpet.conf`に記録されているルールを表示する。
-  + `/carpet setDefault [rule] [value]`  
-    + `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。  
-    + `/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが設定される。
-  + `/carpet removeDefault <rule>`  
-    + `[rule]`で指定したcarpet ruleのデフォルトの値を`carpet.conf`から削除し、初期値にする。
+  + `/carpet`<br>
+    現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。
+  + `/carpet list <category>`<br>
+    利用できるcarpet ruleを**すべて**表示する。`<category>`を指定した場合、紐づけられたruleを表示する。
+  + `/carpet list default`<br>
+    `carpet.conf`に記録されているルールを表示する。
+  + `/carpet setDefault [rule] [value]`<br>
+    `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。<br>
+    >[!note]
+    >`/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが準備される。
+  + `/carpet removeDefault <rule>`<br>
+    `[rule]`で指定したcarpet ruleのデフォルトの値を`carpet.conf`から削除し、初期値にする。
 
 <!--
 ### perimeter info
@@ -615,24 +616,13 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 
 ## counter
   `/counter <color> <realtime | reset>` <br>
-  で使用する。ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントし、それらから効率を計算する。複数のホッパーを同じチャンネルで作動させることも可能。
-  + `color` <br>
-    16色の羊毛で16チャンネルを扱うことができる。指定しなかった場合現在アクティブなすべてのチャンネルのcounterを表示する。
-    + `white`
-    + `light_gray`
-    + `gray`
-    + `black`
-    + `brown`
-    + `red`
-    + `orange`
-    + `yellow`
-    + `lime`
-    + `green`
-    + `cyan`
-    + `light_blue`
-    + `blue`
-    + `purple`
-    + `magenta`
-    + `pink`
+  で使用する。ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントし、それらから効率を計算する。複数のホッパーを同じチャンネルで作動させることも可能。羊毛16色を用いて16チャンネルを同時に使うことができる。
+  + `<color>` <br>
+    割愛
+  + `<realtime | reset>`
+    + `realtime` <br>
+      リアルタイムでの効率を計測する。このフラグをつけない場合、tpsが20以外になるとデフォルトの単位時間が72000gtなので実際の1hの効率ではなくなる。このフラグによってそれを是正し、実際の1hの効率を求めることができる。
+    + `reset` <br>
+      指定したチャンネルもしくはすべてのチャンネルの計測をリセットする。
   + 関連項目
     + [hopperCounters](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#hoppercounters)
