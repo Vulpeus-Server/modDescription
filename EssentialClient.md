@@ -22,105 +22,103 @@ carpetのゲームルールをGUIで変更できる。ただしサーバーにca
 
 MinecraftのゲームルールをGUIで変更できる。ただしサーバー環境においてはEssentialAddonsがインストールされている必要がある、
 
-## Options
+## Essential Client Options
 
-### Essential Client Options
-
-#### afkLogout
+### afkLogout
 
 設定したtick数無操作の状態が続くと自動的に切断する。
 
 - 初期値: `0`
 - 有効な値: `200`以上の整数値
 
-#### announceAFK
+### announceAFK
 
 指定したtick数プレイヤーの位置が変わらなかった場合に[announceAFKMessage](#announceafkmessage)で指定したメッセージをチャットに送信する。
 
 - 初期値: `0`
 - 有効な値: `Integer`
 
-#### announceAFKMessage
+### announceAFKMessage
 
 [announceAFK](#announceafk)で送信するメッセージ。
 
 - 初期値: `I am now AFK`
 - 有効な値: `String`
 
-#### announceBackMessage
+### announceBackMessage
 
 [announceAFK](#announceafk)によるAFK状態が解除されたときに送信するメッセージ。
 
 - 初期値: ` `
 - 有効な値: `String`
 
-#### autoWalk
+### autoWalk
 
 指定したtick数前進を入力し続けると自動で前進するようになる。再び前進を入力するか後退を入力すると停止できる。
 
 - 初期値: `0`
 - 有効な値: `Integer`
 
-#### betterAccurateBlockPlacement
+### betterAccurateBlockPlacement
 
 tweakerooのaccurate block placement機能と同じ。
 
-#### carpetAlwaysSetDefault
+### carpetAlwaysSetDefault
 
 carpetのゲームルールを変更した際にそれをデフォルトの設定値にする。同modのCarpet Server Optionsで変更した場合にも有効。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### chunkDebugMinimapBackground
+### chunkDebugMinimapBackground
 
 chunk debugミニマップで背景を描画する。
 
 - 初期値: `true`
 - 有効な値: `Boolean`
 
-#### clientDebugShowUnloadedChunks
+### clientDebugShowUnloadedChunks
 
 ChunkDebugでアンロードされているチャンクを表示する。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### clientScriptAnnouncements
+### clientScriptAnnouncements
 
 [client script](#client-script)が開始/終了した際にチャットを送信する。
 
 - 初期値: `true`
 - 有効な値: `Boolean`
 
-#### clientScriptFont
+### clientScriptFont
 
 [client script](#client-script)のエラーメッセージのフォントを変更する。
 
 - 初期値: `Minecraft`
 - 有効な値: `Minecraft` `Jetbrains`
 
-#### clientScriptRepos
+### clientScriptRepos
 
 scriptをダウンロードするレポジトリを指定する。レポジトリは複数指定できる。
 
 - 初期値: `https://api.github.com/repos/senseiwells/clientscript/contents/scripts`
 
-#### commandAlternateDimension
+### commandAlternateDimension
 
 自分がいる座標の別ディメンション(オーバーワールドかネザー)での値を取得するコマンド`/alternatedimension`を有効にする。出力された座標をクリックするか、`/alternatedimension teleport`を実行することでそのディメンションの座標にテレポートする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### commandClientNick
+### commandClientNick
 
 クライアント上でのプレイヤーのニックネームを変更する`/clientnick`コマンドを有効にする。ニックネームには任意の文字列を指定できる。(ただしMinecraft装飾コードの`§`は`&`に置き換えて使用する)
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### commandPlayerClient
+### commandPlayerClient
 
 carpetの`/player`コマンドを保存し実行する`/playerclient`コマンドを有効にする。
 
@@ -130,7 +128,7 @@ carpetの`/player`コマンドを保存し実行する`/playerclient`コマン�
 <details>
 <summary>コマンドの詳細</summary>
 
-#### `/playerclient`コマンドの使い方
+### `/playerclient`コマンドの使い方
 
 [wiki](https://github.com/senseiwells/EssentialClient/wiki/CommandPlayerClient)
 
@@ -175,7 +173,7 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 ```
 </details>
 
-#### commandPlayerList
+### commandPlayerList
 
 `/playerclient`コマンドで保存した複数のプレイヤーを一度にスポーンさせる`/playerlist`コマンドを有効にする。
 
@@ -185,7 +183,7 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <details>
 <summary>コマンドの詳細</summary>
 
-#### `/playerlist`コマンドの使い方
+### `/playerlist`コマンドの使い方
 
 [wiki](https://github.com/senseiwells/EssentialClient/wiki/CommandPlayerList)
 
@@ -229,28 +227,28 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 ```
 </details>
 
-#### commandRegion
+### commandRegion
 
 プレイヤーがいる座標あるいは指定した座標のregionを取得するコマンド`/region`を有効にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### commandSuggesterIgnoresSpaces
+### commandSuggesterIgnoresSpaces
 
 コマンドの入力時に余分なスペースを入れても補完されるようにする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### craftingHax
+### craftingHax
 
 Ctrlキーを押しながらレシピをクリックすることでアイテムをクラフトしてドロップする。Shiftキーも同時に押すことでスタックごとクラフトしてドロップする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### customClientCape
+### customClientCape
 
 指定したマントを着用する。自分のクライアント側でのみ描画される。
 マントのデザインは[マント - Minecraft Wiki](https://minecraft.fandom.com/ja/wiki/%E3%83%9E%E3%83%B3%E3%83%88#%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3)で確認できる。
@@ -261,249 +259,249 @@ Ctrlキーを押しながらレシピをクリックすることでアイテム�
 `Cheapsh0t` `MrMessiah` `Prismarine` `Birthday` `Translator` `Scrolls` `Cobalt` `Mojira`
 `Turtle` `Migrator` `Christmas 2010` `New Year 2011`
 
-#### disableArmourRendering
+### disableArmourRendering
 
 指定したエンティティのアーマーの描画を無効にする。
 
 - 初期値: `None`
 - 有効な値: `None` `You` `Players` `Entities`
 
-#### disableBobViewWhenHurt
+### disableBobViewWhenHurt
 
 自分がダメージを受けた際のカメラの揺れを無効にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableBossBar
+### disableBossBar
 
 ボスバーの描画を無効にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableHotbarScrolling
+### disableHotbarScrolling
 
 ホットバーのスクロールを無効にする。ホットキーを使うことを学ぼう😀
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableJoinLeaveMessage
+### disableJoinLeaveMessage
 
 参加/退出のメッセージを非表示にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableMapRendering
+### disableMapRendering
 
 地図を入れた額縁の描画を無効にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableNameTags
+### disableNameTags
 
 プレイヤーのネームタグを非表示にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableNarrator
+### disableNarrator
 
 Ctrl + Bを入力した際のナレーター切り替えを無効にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableNightVisionFlash
+### disableNightVisionFlash
 
 暗視効果が切れる前の画面の点滅を無効にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableOpMessages
+### disableOpMessages
 
 システムメッセージを非表示にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableRecipeNotifications
+### disableRecipeNotifications
 
 レシピを解放した際のトースト通知を非表示にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableScreenshotMessage
+### disableScreenshotMessage
 
 スクリーンショットを撮影した際のメッセージを無効にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### disableTutorialNotifications
+### disableTutorialNotifications
 
 チュートリアルのトースト通知を非表示にする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### displayRuleType
+### displayRuleType
 
 ゲームルールの表示順を切り替える。
 
 - 初期値: `Alphabetical`
 - 有効な値: `Alphabetical` `Rule Type` `Categories`
 
-#### displayTimePlayed
+### displayTimePlayed
 
 ポーズメニューを開いた際に現在のプレイ時間を表示する。これによりどれだけの時間を~~無駄にしたか~~生産的に過ごしたかを知ることができる。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### essentialClientButton
+### essentialClientButton
 
 ポーズメニューとメインメニューでEssential Client Buttonを表示する。
 
 - 初期値: `true`
 - 有効な値: `Boolean`
 
-#### highlightLavaSources
+### highlightLavaSources
 
 溶岩源をハイライトする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### highlightWaterSources
+### highlightWaterSources
 
 水源をハイライトする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### increaseSpectatorScrollSensitivity
+### increaseSpectatorScrollSensitivity
 
 スペクテイターモードでより速く移動するためにマウスホイールをスクロールする時の感度を上げる。尚Minecraft標準ではダッシュキーありでの最高速度が87.111 m/sとなっている。 (参考: [スペクテイター - Minecraft Wiki](https://minecraft.fandom.com/ja/wiki/%E3%82%B9%E3%83%9A%E3%82%AF%E3%83%86%E3%82%A4%E3%82%BF%E3%83%BC#%E9%A3%9B%E8%A1%8C))
 
 - 初期値: `0`
 - 有効な値: `Integer`
 
-#### increaseSpectatorScrollSpeed
+### increaseSpectatorScrollSpeed
 
 スペクテイターモードでより速く移動するためにスクロールできる限度を上げる。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### openScreenshotDirectory
+### openScreenshotDirectory
 
 スクリーンショットのメッセージリンクをクリックした際にスクリーンショットのディレクトリを開くようにする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### overrideCreativeWalkSpeed
+### overrideCreativeWalkSpeed
 
 クリエイティブモードでの移動速度を変更する。クリエイティブモード限定なのでずるをしようとは考えないように。
 
 - 初期値: `0.0`
 - 有効な値: `Double`
 
-#### permanentChatHud
+### permanentChatHud
 
 ワールドやサーバーから退出した時も含めて常にチャット履歴が残るようにする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### permanentTime
+### permanentTime
 
 クライアント側の時間を指定した値で固定する。
 
 - 初期値: `-1`
 - 有効な値: `-1` `0-23999`
 
-#### quickLockRecipe
+### quickLockRecipe
 
 レシピをホイールクリックした際に検索欄をそのレシピで固定する。レシピ以外の場所や他のレシピをホイールクリックすることで固定を変更することができる。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### removeWarnReceivedPassengers
+### removeWarnReceivedPassengers
 
 クライアントの"Received passengers for unknown entity"の警告を削除する。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### soulSpeedFovMultiplier
+### soulSpeedFovMultiplier
 
 ソウルスピードによる視野角の倍率を変更する。
 
 - 初期値: `0.0`
 - 有効な値: `0.00-1.00`
 
-#### stackableShulkersInPlayerInventories
+### stackableShulkersInPlayerInventories
 
 空のシュルカーボックスのItemsタグを削除することによりインベントリ内でのシュルカーボックスのスタックを有効にする。ただしサーバー側にEssentialAddonsがインストールされておりかつサーバー側で`stackableShulkersInPlayerInventories`が有効になっている必要がある。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### stackableShulkersWithItems
+### stackableShulkersWithItems
 
 インベントリ内でのアイテムが入っているシュルカーボックスのスタックを有効にする。ただし[stackableShulkersInPlayerInventories](#stackableshulkersinplayerinventories)が有効になっている必要がある。
 
-#### startSelectedScriptsOnJoin
+### startSelectedScriptsOnJoin
 
 ワールドに入った際に指定したClientScriptを実行する。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### survivalInventoryInCreative
+### survivalInventoryInCreative
 
 クリエイティブモードでサバイバルモードのインベントリを開くことができるようにする。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### switchToTotem
+### switchToTotem
 
 体力が指定した値を下回った際に不死のトーテムに持ち替える。
 
 - 初期値: `0`
 - 有効な値: `Integer`
 
-#### titleTextToTop
+### titleTextToTop
 
 MinecraftのバージョンとMojangのテキストの表示をスクリーン上部に変更する。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### toggleTab
+### toggleTab
 
 TABを長押し式からトグル式に切り替える。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### unlockAllRecipesOnJoin
+### unlockAllRecipesOnJoin
 
 ワールドに入った際に全てのレシピを解放する。
 
 - 初期値: `false`
 - 有効な値: `Boolean`
 
-#### waterFovMultiplier
+### waterFovMultiplier
 
 水中での視野角の倍率を変更する。
 
