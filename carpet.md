@@ -15,7 +15,7 @@
 <details>
   <summary>rules</summary>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#aanticheatdisabled">antiCheatDisabled</a></li>
+  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#anticheatdisabled">antiCheatDisabled</a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpetcommandpermissionlevel">carpetCommandPermissionLevel</a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpets">carpets</a></li>
   <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#chainstone">chainStone</a></li>
