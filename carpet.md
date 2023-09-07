@@ -9,108 +9,108 @@
 ## 目次
 <details>
   <summary>general</summary>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpet-1">carpet</a></li>
+  <li><a href="#carpet-1">carpet</a></li>
 </details>
 
 <details>
   <summary>rules</summary>
   <li><a href="#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#anticheatdisabled">antiCheatDisabled</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpetcommandpermissionlevel">carpetCommandPermissionLevel</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#carpets">carpets</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#chainstone">chainStone</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#cleanlog">cleanLog</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commanddistance">commandDistance</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commanddraw">commandDraw</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandinfo">commandInfo</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandlog">commandLog</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandPerimeterinfo">commandPerimeterInfo</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandplayer">commandPlayer</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandprofile">commandProfile</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscript">commandScript</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscriptace">commandScriptACE</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandspawn">commandSpawn</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandtick">commandTick</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandtrackingai">commandTrackingAI</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#creativeflydrag">creativeFlyDrag</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#creativeflyspeed">creativeFlySpeed</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#creativenoclip">creativeNoClip</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#creativeplayersloadchunks">creativePlayersLoadChunks</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#ctrlqcraftingfix">ctrlQCraftingFix</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#custommotd">customMOTD</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#defaultloggers">defaultLoggers</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#desertshrubs">desertShrubs</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#explosionNoblockdamage">explosionNoBlockDamage</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#fastredstonedust">fastRedstoneDust</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#filllimit">fillLimit</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#fillupdates">fillUpdates</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#flippincactus">flippinCactus</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#fogoff">fogOff</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#forceloadlimit">forceloadLimit</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#hardcodetntangle">hardcodeTNTangle</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#hoppercounters">hopperCounters</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#huskspawningintemples">huskSpawningInTemples</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#interactionUpdates">interactionUpdates</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#lagfreespawning">lagFreeSpawning</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#lightningKkllsdropsfix">lightningKillsDropsFix</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#liquiddamagedisabled<">liquidDamageDisabled</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#maxentitycollisions">maxEntityCollisions</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#mergetnt">mergeTNT</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#missingtools">missingTools</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#moreblueskulls">moreBlueSkulls</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#movableamethyst">movableAmethyst</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#movableblockentities">movableBlockEntities</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#optimizedtnt">optimizedTNT</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#perfpermissionlevel">perfPermissionLevel</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#persistentparrots">persistentParrots</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#piglinsspawninginbastions">piglinsSpawningInBastions</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#pingplayerlistlimit">pingPlayerListLimit</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#placementrotationfix">placementRotationFix</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#portalcreativedelay">portalCreativeDelay</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#portalsurvivaldelay">portalSurvivalDelay</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#pushlimit">pushLimit</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#quasiconnectivity">quasiConnectivity</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#railpowerlimit">railPowerLimit</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#renewableblackstone">renewableBlackstone</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#renewablecoral">renewableCoral</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#renewabledeepslate">renewableDeepslate</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#renewablesponges">renewableSponges</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#rotatorblock">rotatorBlock</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#scriptsappstore">scriptsAppStore</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#scriptsautoload">scriptsAutoload</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#scriptsdebugging">scriptsDebugging</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#scriptsoptimization">scriptsOptimization</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#sculksensorrange">sculkSensorRange</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#shulkerspawninginendcities">shulkerSpawningInEndCities</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#silverfishdropgravel">silverFishDropGravel</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#simulationdistance">simulationDistance</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#smoothclientanimations">smoothClientAnimations</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#spawnchunkssize">spawnChunksSize</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#stackableshulkerboxes">stackableShulkerBoxes</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored">structureBlockIgnored</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblocklimit">structureBlockLimit</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockoutlinedistance">structureBlockOutlineDistance</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#summonnaturallightning">summonNaturalLightning</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#supersecretsetting">superSecretSetting</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#thickfungusgrowth">thickFungusGrowth</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#ticksyncedworldborders">tickSyncedWorldBorders</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#tntdonotupdate">tntDoNotUpdate</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#tntprimermomentumremoved">tntPrimerMomentumRemoved</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#tntrandomrange">tntRandomRange</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#updatesuppressionblock">updateSuppressionBlock</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#viewdistance">viewDistance</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#xpfromexplosions">xpFromExplosions</a></li>
-  <li><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#xpnocooldown">xpNoCooldown</a></li>
+  <li><a href="#anticheatdisabled">antiCheatDisabled</a></li>
+  <li><a href="#carpetcommandpermissionlevel">carpetCommandPermissionLevel</a></li>
+  <li><a href="#carpets">carpets</a></li>
+  <li><a href="#chainstone">chainStone</a></li>
+  <li><a href="#cleanlog">cleanLog</a></li>
+  <li><a href="#commanddistance">commandDistance</a></li>
+  <li><a href="#commanddraw">commandDraw</a></li>
+  <li><a href="#commandinfo">commandInfo</a></li>
+  <li><a href="#commandlog">commandLog</a></li>
+  <li><a href="#commandPerimeterinfo">commandPerimeterInfo</a></li>
+  <li><a href="#commandplayer">commandPlayer</a></li>
+  <li><a href="#commandprofile">commandProfile</a></li>
+  <li><a href="#commandscript">commandScript</a></li>
+  <li><a href="#commandscriptace">commandScriptACE</a></li>
+  <li><a href="#commandspawn">commandSpawn</a></li>
+  <li><a href="#commandtick">commandTick</a></li>
+  <li><a href="#commandtrackingai">commandTrackingAI</a></li>
+  <li><a href="#creativeflydrag">creativeFlyDrag</a></li>
+  <li><a href="#creativeflyspeed">creativeFlySpeed</a></li>
+  <li><a href="#creativenoclip">creativeNoClip</a></li>
+  <li><a href="#creativeplayersloadchunks">creativePlayersLoadChunks</a></li>
+  <li><a href="#ctrlqcraftingfix">ctrlQCraftingFix</a></li>
+  <li><a href="#custommotd">customMOTD</a></li>
+  <li><a href="#defaultloggers">defaultLoggers</a></li>
+  <li><a href="#desertshrubs">desertShrubs</a></li>
+  <li><a href="#explosionNoblockdamage">explosionNoBlockDamage</a></li>
+  <li><a href="#fastredstonedust">fastRedstoneDust</a></li>
+  <li><a href="#filllimit">fillLimit</a></li>
+  <li><a href="#fillupdates">fillUpdates</a></li>
+  <li><a href="#flippincactus">flippinCactus</a></li>
+  <li><a href="#fogoff">fogOff</a></li>
+  <li><a href="#forceloadlimit">forceloadLimit</a></li>
+  <li><a href="#hardcodetntangle">hardcodeTNTangle</a></li>
+  <li><a href="#hoppercounters">hopperCounters</a></li>
+  <li><a href="#huskspawningintemples">huskSpawningInTemples</a></li>
+  <li><a href="#interactionUpdates">interactionUpdates</a></li>
+  <li><a href="#lagfreespawning">lagFreeSpawning</a></li>
+  <li><a href="#lightningKkllsdropsfix">lightningKillsDropsFix</a></li>
+  <li><a href="#liquiddamagedisabled<">liquidDamageDisabled</a></li>
+  <li><a href="#maxentitycollisions">maxEntityCollisions</a></li>
+  <li><a href="#mergetnt">mergeTNT</a></li>
+  <li><a href="#missingtools">missingTools</a></li>
+  <li><a href="#moreblueskulls">moreBlueSkulls</a></li>
+  <li><a href="#movableamethyst">movableAmethyst</a></li>
+  <li><a href="#movableblockentities">movableBlockEntities</a></li>
+  <li><a href="#optimizedtnt">optimizedTNT</a></li>
+  <li><a href="#perfpermissionlevel">perfPermissionLevel</a></li>
+  <li><a href="#persistentparrots">persistentParrots</a></li>
+  <li><a href="#piglinsspawninginbastions">piglinsSpawningInBastions</a></li>
+  <li><a href="#pingplayerlistlimit">pingPlayerListLimit</a></li>
+  <li><a href="#placementrotationfix">placementRotationFix</a></li>
+  <li><a href="#portalcreativedelay">portalCreativeDelay</a></li>
+  <li><a href="#portalsurvivaldelay">portalSurvivalDelay</a></li>
+  <li><a href="#pushlimit">pushLimit</a></li>
+  <li><a href="#quasiconnectivity">quasiConnectivity</a></li>
+  <li><a href="#railpowerlimit">railPowerLimit</a></li>
+  <li><a href="#renewableblackstone">renewableBlackstone</a></li>
+  <li><a href="#renewablecoral">renewableCoral</a></li>
+  <li><a href="#renewabledeepslate">renewableDeepslate</a></li>
+  <li><a href="#renewablesponges">renewableSponges</a></li>
+  <li><a href="#rotatorblock">rotatorBlock</a></li>
+  <li><a href="#scriptsappstore">scriptsAppStore</a></li>
+  <li><a href="#scriptsautoload">scriptsAutoload</a></li>
+  <li><a href="#scriptsdebugging">scriptsDebugging</a></li>
+  <li><a href="#scriptsoptimization">scriptsOptimization</a></li>
+  <li><a href="#sculksensorrange">sculkSensorRange</a></li>
+  <li><a href="#shulkerspawninginendcities">shulkerSpawningInEndCities</a></li>
+  <li><a href="#silverfishdropgravel">silverFishDropGravel</a></li>
+  <li><a href="#simulationdistance">simulationDistance</a></li>
+  <li><a href="#smoothclientanimations">smoothClientAnimations</a></li>
+  <li><a href="#spawnchunkssize">spawnChunksSize</a></li>
+  <li><a href="#stackableshulkerboxes">stackableShulkerBoxes</a></li>
+  <li><a href="#structureblockignored">structureBlockIgnored</a></li>
+  <li><a href="#structureblocklimit">structureBlockLimit</a></li>
+  <li><a href="#structureblockoutlinedistance">structureBlockOutlineDistance</a></li>
+  <li><a href="#summonnaturallightning">summonNaturalLightning</a></li>
+  <li><a href="#supersecretsetting">superSecretSetting</a></li>
+  <li><a href="#thickfungusgrowth">thickFungusGrowth</a></li>
+  <li><a href="#ticksyncedworldborders">tickSyncedWorldBorders</a></li>
+  <li><a href="#tntdonotupdate">tntDoNotUpdate</a></li>
+  <li><a href="#tntprimermomentumremoved">tntPrimerMomentumRemoved</a></li>
+  <li><a href="#tntrandomrange">tntRandomRange</a></li>
+  <li><a href="#updatesuppressionblock">updateSuppressionBlock</a></li>
+  <li><a href="#viewdistance">viewDistance</a></li>
+  <li><a href="#xpfromexplosions">xpFromExplosions</a></li>
+  <li><a href="#xpnocooldown">xpNoCooldown</a></li>
 </details>
 
 <details>
-  <summary>counter</summary>
+  <summary>[counter](#counter)</summary>
   <li>realtime</li>
   <li>reset</li>
 </details>
 
 <details>
-  <summary>distance</summary>
+  <summary>[distance](#distance)</summary>
   <li>to</li>
   <li>from</li>
 </details>
@@ -194,7 +194,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 関連項目
     + info
     + spawn
-    + distance
+    + [distance](#distance)
 ### chainStone
 チェーンを長いほうの端でスライムのように接続でき、かつほかのブロックとも接続できるようにする。`stick_to_all`を指定するとすべての方向について接続する。
   + 初期値 : `false`
@@ -210,7 +210,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + distance
+    + [distance](#distance)
 ### commandDraw
   `/draw`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
@@ -338,13 +338,13 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + [interactionUpdates]#interactionupdates)
+    + [interactionUpdates](#interactionupdates)
 ### flippinCactus
   サボテンをメインハンドに持っている時、ホッパーやオブザーバーなど、方向をもつブロックの一部を右クリックするとその方向をupdateなしで回転もしくは反転できるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + [rotatorCactus](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#rotatorblock)
+    + [rotatorCactus](#rotatorblock)
 ### fogOff
   ネザーにおよびエンドにおけるfog(霧)を消すようにする。
 
@@ -364,7 +364,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + [counter](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#counters)
+    + [counter](#counters)
 ### huskSpawningInTemples
   ピラミッドではハスクのみがスポーンできるようにする。
   + 初期値 : `false`
@@ -374,7 +374,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + [fillUpdates](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#fillupdates)
+    + [fillUpdates](#fillupdates)
 ### lagFreeSpawning
   mobのスポーンを最適化する。
   + 初期値 : `false`
@@ -445,13 +445,13 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `0`
   + 使用できる値 : `integer`
   + 関連項目
-    + [portalSurvivalDelay](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#portalsurvivaldelay)
+    + [portalSurvivalDelay](#portalsurvivaldelay)
 ### portalSurvivalDelay
   プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までの整数値をとる。
   + 初期値 : `80`
   + 使用できる値 : `integer`
   + 関連項目
-    + [creativePortalDelay](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#portalcreativedelay)
+    + [creativePortalDelay](#portalcreativedelay)
 ### pushLimit
   ピストンが押せるブロックの最大量を決める必要がある。1から1024までの整数値をとる。
   + 初期値 : `12`
@@ -485,27 +485,27 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + [flippinCactus](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#flippincactus)
+    + [flippinCactus](#flippincactus)
 ### scriptsAppStore
   scriptをゲーム内でダウンロードするさいの場所を指定する。コンソールにおける`cd`に同じ。github上の有効なパブリックリポジトリのリンクのみ受け付ける。`none`とした場合無効になる。
   + 初期値 : `gnembon/scarpet/contents/programs`
   + 使用できる値 : `string`
   + 関連項目
-    + [commandScript](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscript)
+    + [commandScript](#commandscript)
     + script
 ### scriptsAutoload
   `/script`が有効になっている場合、serverがリスタートもしくはワールドが読み込まれたときに自動的に読み込まれるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + [commandScript](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscript)
+    + [commandScript](#commandscript)
     + script
 ### scriptsDebugging
   スクリプトのデバッグメッセージを表示するようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false` 
   + 関連項目
-    + [commandScript](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscript)
+    + [commandScript](#commandscript)
     + script 
 ### scriptsOptimization
   スクリプトを最適化する。
@@ -514,7 +514,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + [commandScript](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#commandscript)
+    + [commandScript](#commandscript)
     + script
 ### sculkSensorRange
   スカルくセンサーの振動を伝える半径を変更する。1から1024の整数値である必要がある。
@@ -533,7 +533,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `0`
   + 使用できる値 : `integer`
   + 関連項目
-    + [viewDistance](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#viewdistance)
+    + [viewDistance](#viewdistance)
 ### smoothClientAnimations
   低いtpsでアニメーションをスムーズにする。さらにシングルプレイではtpsにあわせてプレイヤーの飛行速度が変動するようになる。
   
@@ -553,20 +553,20 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `minecraft:structure_void`
   + 使用できる値 : `string`
   + 関連項目
-    + [structureBlockLimit](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblocklimit)
-    + [structureBlockOutlineDistance](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockoutlinedistance)
+    + [structureBlockLimit](#structureblocklimit)
+    + [structureBlockOutlineDistance](#structureblockoutlinedistance)
 ### structureBlockLimit
   各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。  
   >[!note]
-  >値が大きい場合、負荷軽減の目的で[structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)をminecraft:airにすることを推奨。
+  >値が大きい場合、負荷軽減の目的で[structureBlockIgnored](#structureblockignored)をminecraft:airにすることを推奨。
 
   >[!note]
   >ストラクチャーブロックが常に読み込まれていなければ正しく動かない。
   + 初期値 : `48`
   + 使用できる値 : `integer`
   + 関連項目
-    + [structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)
-    + [structureBlockOutlineDistance](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockoutlinedistance)
+    + [structureBlockIgnored](#structureblockignored)
+    + [structureBlockOutlineDistance](#structureblockoutlinedistance)
 ### structureBlockOutlineDistance
   ストラクチャーブロックのアウトラインを視認できる距離を変更する。値は非負整数でなければならない。
   
@@ -574,8 +574,8 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `96`
   + 使用できる値 : `integer`
   + 関連項目
-    + [structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)
-    + [structureBlockLimit](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblocklimit)
+    + [structureBlockIgnored](#structureblockignored)
+    + [structureBlockLimit](#structureblocklimit)
 ### summonNaturalLightning
   `/summon lightning_bolt`で召喚した稲妻が自然発生した稲妻と同様の効果を与えるようにする。帯電化や炎上など。
   + 初期値 : `false`
@@ -604,7 +604,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 ### tntRandomRange
   tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない
   >[!important]
-  >[optimizedTNT](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#optimizedtnt)を有効にする必要がある。
+  >[optimizedTNT](#optimizedtnt)を有効にする必要がある。
   + 初期値 : `-1.0`
   + 使用できる値 : `double`
 ### updateSuppressionBlock
@@ -616,7 +616,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `0`
   + 使用できる値 : `integer`
   + 関連項目
-    + [simulationDistance](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#simulationdistance)
+    + [simulationDistance](#simulationdistance)
 ### xpFromExplosions
   xpをドロップするブロックはどんな爆発からでもxpをドロップするようにする。
   + 初期値 : `false`
@@ -637,7 +637,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
     + `reset` <br>
       指定したチャンネルもしくは指定しなかった場合すべてのチャンネルの計測をリセットする。
   + 関連項目
-    + [hopperCounters](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#hoppercounters)
+    + [hopperCounters](#hoppercounters)
 
 ## distance
 `/distance <from> <to>`<br>
@@ -651,7 +651,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   >`<from>`のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。
 
 + 実行結果<br>
-  正しく計算されると三つの値が生成される。ただし計算には入力された座標を小数第一位までに丸めて使用され、出力も小数第一位までとなる。
+  正しく計算されると三つの値が生成される。ただし計算には入力された座標を小数第二位までに丸めて使用され、出力は小数第一位までとなる。
   + `Spherical`<br>
     ユークリッド距離で算出。
     始点を$P_1(x_1,y_1,z_1)$、終点を$P_2(x_2,y_2,z_2)$とすると距離$d_m(P_1,P_2)$は
@@ -665,4 +665,4 @@ perimeterに関する情報を表示する。opレベル0を要求する。
     マンハッタン距離で算出。
     $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
 + 関連項目
-  + commandDistance
+  + [commandDistance](#commanddistance)
