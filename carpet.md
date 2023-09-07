@@ -104,15 +104,13 @@
 </details>
 
 <details>
-  <summary>[counter](#counter)</summary>
-  <li>realtime</li>
-  <li>reset</li>
+  <summary>counter</summary>
+  <li>[counter](#counter)</li>
 </details>
 
 <details>
-  <summary>[distance](#distance)</summary>
-  <li>to</li>
-  <li>from</li>
+  <summary>distance</summary>
+  <li>[distance](#distance)</li>
 </details>
 
 
@@ -216,7 +214,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + draw
+    + [draw](#draw)
 ### commandInfo
   `/info`を使用できるプレイヤーを指定する。
   + 初期値 : `true`
@@ -666,3 +664,91 @@ perimeterに関する情報を表示する。opレベル0を要求する。
     $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
 + 関連項目
   + [commandDistance](#commanddistance)
+
+
+## draw
+`/draw [shape] [coordinate] [block]`<br>
+で`実行できる。
+### ball
+  中が満たされた球体を生成する。
+  `/draw ball [center] [radius] [block] <replace>`<br>
+  で利用可能。
+  + `[center]`<br>
+    生成物、ここでは球体の中心となる座標を指定する。絶対座標と相対座標のどちらも使うことができる。小数で入力した場合その座標を含むブロックの座標が選択される。
+  + `[radius]`<br>
+    半径を指定する。値は0より大きい整数でなければならない。
+  + `[block]`<br>
+    描くブロックを指定する。WorldEditのように複数をランダムに指定することはできない。
+    >[!note]
+    >あとからWorldEdit等を用いることで割合指定でランダムに変更することができる。
+  + `<replace>`<br>
+    特定のブロック***を***置き換えるかを指定する。指定しなかった場合全てのブロックを置き換える。
+  + 関連項目
+    + [draw sphere](#sphere)
+### cone
+  中が満たされた円柱を生成する。
+  `/draw cone [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
+  で利用可能。
+  + `[center]`<br>
+    生成物の底面の中心となる座標を指定する。
+  + `[radius]`<br>
+    底面の半径を指定する。
+  + `[height]`<br>
+    生成物の高さを指定する。
+  + `[pointing]`<br>
+    + `down`<br>
+      先端が`[axis]`の座標マイナス方向を向く。
+    + `up`<br>
+      先端が`[axis]`の座標プラス方向を向く。
+  + `[axis]`<br>
+    + `x`<br>
+      生成物がx軸を基準とする。
+    + `y`<br>
+      生成物がy軸を基準とする。
+    + `z`<br>
+      生成物がz軸を基準とする。
+  + `[block]`<br>
+    描くブロックを指定する。
+  + `<replace>`<br>
+    特定のブロック**を**置き換えるかを指定する。
+### cuboid
+  中が満たされた四角柱を生成する。
+  `/draw cuboid [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
+  で利用可能。
+  + `[center]`<br>
+    生成物の底面の中心となる座標を指定する。
+  + `[radius]`<br>
+    底面の半径を指定する。
+  + `[height]`<br>
+    生成物の高さを指定する。
+  + `[pointing]`<br>
+    + `down`<br>
+      先端が`[axis]`の座標マイナス方向を向く。
+    + `up`<br>
+      先端が`[axis]`の座標プラス方向を向く。
+  + `[axis]`<br>
+    + `x`<br>
+      生成物がx軸を基準とする。
+    + `y`<br>
+      生成物がy軸を基準とする。
+    + `z`<br>
+      生成物がz軸を基準とする。
+  + `[block]`<br>
+    描くブロックを指定する。
+  + `<replace>`<br>
+    特定のブロック**を**置き換えるかを指定する。
+
+### sphere
+  中空の球体を生成する。
+  `/draw sphere [center] [radius] [block] <replace>`<br>
+  で利用可能。
+  + `[center]`<br>
+    球体の中心となる座標を指定する。
+  + `[radius]`<br>
+    半径を指定する。
+  + `[block]`<br>
+    描くブロックを指定する。
+  + `<replace>`<br>
+    特定のブロック**を**置き換えるかを指定する。
+  + 関連項目
+    + [draw sphere](#ball)
