@@ -109,6 +109,13 @@
   <li>reset</li>
 </details>
 
+<details>
+  <summary>distance</summary>
+  <li>to</li>
+  <li>from</li>
+</details>
+
+
 <!--
 + general
 + rule
@@ -550,11 +557,11 @@ perimeterに関する情報を表示する。opレベル0を要求する。
     + [structureBlockOutlineDistance](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockoutlinedistance)
 ### structureBlockLimit
   各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。  
-  >[!important]
-  >[structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)をminecraft:airにすることを推奨。
+  >[!note]
+  >値が大きい場合、負荷軽減の目的で[structureBlockIgnored](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#structureblockignored)をminecraft:airにすることを推奨。
 
   >[!note]
-  >ストラクチャーブロックが常に読み込まれていなければ正しく動かない
+  >ストラクチャーブロックが常に読み込まれていなければ正しく動かない。
   + 初期値 : `48`
   + 使用できる値 : `integer`
   + 関連項目
@@ -623,11 +630,39 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   `/counter <color> <realtime | reset>` <br>
   で使用する。ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントし、それらから効率を計算する。複数のホッパーを同じチャンネルで作動させることも可能。羊毛16色を用いて16チャンネルを同時に使うことができる。
   + `<color>` <br>
-    割愛
+    割愛。複数選択はできない。
   + `<realtime | reset>`
     + `realtime` <br>
       リアルタイムでの効率を計測する。このフラグをつけない場合、tpsが20以外になるとデフォルトの単位時間が72000gtなので実際の1hの効率ではなくなる。このフラグによってそれを是正し、実際の1hの効率を求めることができる。
     + `reset` <br>
-      指定したチャンネルもしくはすべてのチャンネルの計測をリセットする。
+      指定したチャンネルもしくは指定しなかった場合すべてのチャンネルの計測をリセットする。
   + 関連項目
     + [hopperCounters](https://github.com/TaichiServer/modDescription/blob/main/carpet.md#hoppercounters)
+
+## distance
+`/distance <from> <to>`<br>
+で`<from>`から`<to>`までの距離を複数の方法で測ることができる。
++ `<from>`<br>
+  距離の始点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合`~ ~ ~`が補われる。
++ `<to>`<br>
+  距離の終点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合`~ ~ ~`が補われる。
+
+  >[!note]
+  >`<from>`のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。
+
++ 実行結果<br>
+  正しく計算されると三つの値が生成される。ただし計算には入力された座標を小数第一位までに丸めて使用され、出力も小数第一位までとなる。
+  + `Spherical`<br>
+    ユークリッド距離で算出。
+    始点を$P_1(x_1,y_1,z_1)$、終点を$P_2(x_2,y_2,z_2)$とすると距離$d_m(P_1,P_2)$は
+    $$d_E(P_1 , P_2)\coloneqq\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$$
+    >[!note]
+    >minecraftではほとんどがユークリッド距離を利用している。`CanSpawnArea`もユークリッド距離である。
+  + `Cyrindrical`<br>
+    $x$座標および$z$座標のみを用いてユークリッド距離で算出。
+    $$d_C(P_1 , P_2)\coloneqq\sqrt{(x_1-x_2)^2+(z_1-z_2)^2}$$
+  + `Manhattan`<br>
+    マンハッタン距離で算出。
+    $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
++ 関連項目
+  + commandDistance
