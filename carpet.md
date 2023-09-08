@@ -9,108 +9,130 @@
 ## 目次
 <details>
   <summary>general</summary>
-  <li><a href="#carpet-1">carpet</a></li>
+
+  + [carpet](#carpet-1)
 </details>
 
 <details>
   <summary>rules</summary>
-  <li><a href="#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></li>
-  <li><a href="#anticheatdisabled">antiCheatDisabled</a></li>
-  <li><a href="#carpetcommandpermissionlevel">carpetCommandPermissionLevel</a></li>
-  <li><a href="#carpets">carpets</a></li>
-  <li><a href="#chainstone">chainStone</a></li>
-  <li><a href="#cleanlog">cleanLog</a></li>
-  <li><a href="#commanddistance">commandDistance</a></li>
-  <li><a href="#commanddraw">commandDraw</a></li>
-  <li><a href="#commandinfo">commandInfo</a></li>
-  <li><a href="#commandlog">commandLog</a></li>
-  <li><a href="#commandPerimeterinfo">commandPerimeterInfo</a></li>
-  <li><a href="#commandplayer">commandPlayer</a></li>
-  <li><a href="#commandprofile">commandProfile</a></li>
-  <li><a href="#commandscript">commandScript</a></li>
-  <li><a href="#commandscriptace">commandScriptACE</a></li>
-  <li><a href="#commandspawn">commandSpawn</a></li>
-  <li><a href="#commandtick">commandTick</a></li>
-  <li><a href="#commandtrackingai">commandTrackingAI</a></li>
-  <li><a href="#creativeflydrag">creativeFlyDrag</a></li>
-  <li><a href="#creativeflyspeed">creativeFlySpeed</a></li>
-  <li><a href="#creativenoclip">creativeNoClip</a></li>
-  <li><a href="#creativeplayersloadchunks">creativePlayersLoadChunks</a></li>
-  <li><a href="#ctrlqcraftingfix">ctrlQCraftingFix</a></li>
-  <li><a href="#custommotd">customMOTD</a></li>
-  <li><a href="#defaultloggers">defaultLoggers</a></li>
-  <li><a href="#desertshrubs">desertShrubs</a></li>
-  <li><a href="#explosionNoblockdamage">explosionNoBlockDamage</a></li>
-  <li><a href="#fastredstonedust">fastRedstoneDust</a></li>
-  <li><a href="#filllimit">fillLimit</a></li>
-  <li><a href="#fillupdates">fillUpdates</a></li>
-  <li><a href="#flippincactus">flippinCactus</a></li>
-  <li><a href="#fogoff">fogOff</a></li>
-  <li><a href="#forceloadlimit">forceloadLimit</a></li>
-  <li><a href="#hardcodetntangle">hardcodeTNTangle</a></li>
-  <li><a href="#hoppercounters">hopperCounters</a></li>
-  <li><a href="#huskspawningintemples">huskSpawningInTemples</a></li>
-  <li><a href="#interactionUpdates">interactionUpdates</a></li>
-  <li><a href="#lagfreespawning">lagFreeSpawning</a></li>
-  <li><a href="#lightningKkllsdropsfix">lightningKillsDropsFix</a></li>
-  <li><a href="#liquiddamagedisabled<">liquidDamageDisabled</a></li>
-  <li><a href="#maxentitycollisions">maxEntityCollisions</a></li>
-  <li><a href="#mergetnt">mergeTNT</a></li>
-  <li><a href="#missingtools">missingTools</a></li>
-  <li><a href="#moreblueskulls">moreBlueSkulls</a></li>
-  <li><a href="#movableamethyst">movableAmethyst</a></li>
-  <li><a href="#movableblockentities">movableBlockEntities</a></li>
-  <li><a href="#optimizedtnt">optimizedTNT</a></li>
-  <li><a href="#perfpermissionlevel">perfPermissionLevel</a></li>
-  <li><a href="#persistentparrots">persistentParrots</a></li>
-  <li><a href="#piglinsspawninginbastions">piglinsSpawningInBastions</a></li>
-  <li><a href="#pingplayerlistlimit">pingPlayerListLimit</a></li>
-  <li><a href="#placementrotationfix">placementRotationFix</a></li>
-  <li><a href="#portalcreativedelay">portalCreativeDelay</a></li>
-  <li><a href="#portalsurvivaldelay">portalSurvivalDelay</a></li>
-  <li><a href="#pushlimit">pushLimit</a></li>
-  <li><a href="#quasiconnectivity">quasiConnectivity</a></li>
-  <li><a href="#railpowerlimit">railPowerLimit</a></li>
-  <li><a href="#renewableblackstone">renewableBlackstone</a></li>
-  <li><a href="#renewablecoral">renewableCoral</a></li>
-  <li><a href="#renewabledeepslate">renewableDeepslate</a></li>
-  <li><a href="#renewablesponges">renewableSponges</a></li>
-  <li><a href="#rotatorblock">rotatorBlock</a></li>
-  <li><a href="#scriptsappstore">scriptsAppStore</a></li>
-  <li><a href="#scriptsautoload">scriptsAutoload</a></li>
-  <li><a href="#scriptsdebugging">scriptsDebugging</a></li>
-  <li><a href="#scriptsoptimization">scriptsOptimization</a></li>
-  <li><a href="#sculksensorrange">sculkSensorRange</a></li>
-  <li><a href="#shulkerspawninginendcities">shulkerSpawningInEndCities</a></li>
-  <li><a href="#silverfishdropgravel">silverFishDropGravel</a></li>
-  <li><a href="#simulationdistance">simulationDistance</a></li>
-  <li><a href="#smoothclientanimations">smoothClientAnimations</a></li>
-  <li><a href="#spawnchunkssize">spawnChunksSize</a></li>
-  <li><a href="#stackableshulkerboxes">stackableShulkerBoxes</a></li>
-  <li><a href="#structureblockignored">structureBlockIgnored</a></li>
-  <li><a href="#structureblocklimit">structureBlockLimit</a></li>
-  <li><a href="#structureblockoutlinedistance">structureBlockOutlineDistance</a></li>
-  <li><a href="#summonnaturallightning">summonNaturalLightning</a></li>
-  <li><a href="#supersecretsetting">superSecretSetting</a></li>
-  <li><a href="#thickfungusgrowth">thickFungusGrowth</a></li>
-  <li><a href="#ticksyncedworldborders">tickSyncedWorldBorders</a></li>
-  <li><a href="#tntdonotupdate">tntDoNotUpdate</a></li>
-  <li><a href="#tntprimermomentumremoved">tntPrimerMomentumRemoved</a></li>
-  <li><a href="#tntrandomrange">tntRandomRange</a></li>
-  <li><a href="#updatesuppressionblock">updateSuppressionBlock</a></li>
-  <li><a href="#viewdistance">viewDistance</a></li>
-  <li><a href="#xpfromexplosions">xpFromExplosions</a></li>
-  <li><a href="#xpnocooldown">xpNoCooldown</a></li>
+
+  + [allowSpawningOfflinePlayers](#allowspawningofflineplayers)
+  + [antiCheatDisabled](#anticheatdisabled)
+  + [carpetCommandPermissionLevel](#carpetcommandpermissionlevel)
+  + [carpets](#carpets)
+  + [chainStone](#chainstone)
+  + [cleanLog](#cleanlog)
+  + [commandDistance](#commanddistance)
+  + [commandDraw](#commandDraw)
+  + [commandInfo](#commandInfo)
+  + [commandLog](#commandLog)
+  + [commandPerimeterInfo](#commandperimeterinfo)
+  + [commandPlayer](#commandplayer)
+  + [commandProfile](#commandprofile)
+  + [commandScript](#commandscript)
+  + [commandScriptACE](#commandscriptace)
+  + [commandSpawn](#commandspawn)
+  + [commandTick](#commandtick)
+  + [commandTrackingAI](#commandtrackingai)
+  + [creativeFlyDrag](#creativeflydrag)
+  + [creativeFlySpeed](#creativeflyspeed)
+  + [creativeNoClip](#creativenoclip)
+  + [creativePlayersLoadChunks](#creativeplayersloadchunks)
+  + [ctrlQCraftingFix](#ctrlqcraftingfix)
+  + [customMOTD](#custommotd)
+  + [defaultLoggers](#defaultloggers)
+  + [desertShrubs](#desertshrubs)
+  + [explosionNoBlockDamage](#explosionnoblockdamage)
+  + [fastRedstoneDust](#fastredstonedust)
+  + [fillLimit](#filllimit)
+  + [fillUpdates](#fillupdates)
+  + [flippinCactus](#flippincactus)
+  + [fogOff](#fogoff)
+  + [forceloadLimit](#forceloadlimit)
+  + [hardcodeTNTangle](#hardcodetntangle)
+  + [hopperCounters](#hoppercounters)
+  + [huskSpawningInTemples](#huskspawningintemples)
+  + [interactionUpdates](#interactionupdates)
+  + [lagFreeSpawning](#lagfreespawning)
+  + [lightningKillsDropsFix](#lightningkillsdropsfix)
+  + [liquidDamageDisabled](#liquiddamagedisabled)
+  + [maxEntityCollisions](#maxentitycollisions)
+  + [mergeTNT](#mergetnt)
+  + [missingTools](#missingtools)
+  + [moreBlueSkulls](#moreblueskulls)
+  + [movableAmethyst](#movableamethyst)
+  + [movableBlockEntities](#movableblockentities)
+  + [optimizedTNT](#optimizedtnt)
+  + [perfPermissionLevel](#perfpermissionlevel)
+  + [persistentParrots](#persistentparrots)
+  + [piglinsSpawningInBastions](#piglinsspawninginbastions)
+  + [pingPlayerListLimit](#pingplayerlistlimit)
+  + [placementRotationFix](#placementrotationfix)
+  + [portalCreativeDelay](#portalcreativedelay)
+  + [portalSurvivalDelay](#portalsurvivaldelay)
+  + [pushLimit](#pushlimit)
+  + [quasiConnectivity](#quasiconnectivity)
+  + [railPowerLimit](#railpowerlimit)
+  + [renewableBlackstone](#renewableblackstone)
+  + [renewableCoral](#renewablecoral)
+  + [renewableDeepslate](#renewabledeepslate)
+  + [renewableSponges](#renewablesponges)
+  + [rotatorBlock](#rotatorblock)
+  + [scriptsAppStore](#scriptsappstore)
+  + [scriptsAutoload](#scriptsautoload)
+  + [scriptsDebugging](#scriptsdebugging)
+  + [scriptsOptimization](#scriptsoptimization)
+  + [sculkSensorRange](#sculksensorrange)
+  + [shulkerSpawningInEndCities](#shulkerspawninginendcities)
+  + [silverFishDropGravel](#silverfishdropgravel)
+  + [simulationDistance](#simulationdistance)
+  + [smoothClientAnimations](#smoothclientanimations)
+  + [spawnChunksSize](#spawnchunkssize)
+  + [stackableShulkerBoxes](#stackableshulkerboxes)
+  + [structureBlockIgnored](#structureblockignored)
+  + [structureBlockLimit](#structureblocklimit)
+  + [structureBlockOutlineDistance](#structureblockoutlinedistance)
+  + [summonNaturalLightning](#summonnaturallightning)
+  + [superSecretSetting](#supersecretsetting)
+  + [thickFungusGrowth](#thickfungusgrowth)
+  + [tickSyncedWorldBorders](#ticksyncedworldborders)
+  + [tntDoNotUpdate](#tntdonotupdate)
+  + [tntPrimerMomentumRemoved](#tntprimermomentumremoved)
+  + [tntRandomRange](#tntrandomrange)
+  + [updateSuppressionBlock](#updatesuppressionblock)
+  + [viewDistance](#viewdistance)
+  + [xpFromExplosions](#xpfromexplosions)
+  + [xpNoCooldown](#xpnocooldown)
 </details>
 
 <details>
   <summary>counter</summary>
-  <li>[counter](#counter)</li>
+
+  + [counter](#counter)
 </details>
 
 <details>
   <summary>distance</summary>
-  <li>[distance](#distance)</li>
+
+  + [distance](#distance)
+</details>
+
+<details>
+  <summary>draw</summary>
+
+  + [draw](#draw)
+    + [ball](#ball)
+    + [cone](#cone)
+    + [cuboid](#cuboid)
+    + [diamond](#diamond)
+    + [pyramid](#pyramid)
+    + [sphere](#sphere)
+</details>
+
+<details>
+  <summary>info</summary>
+
+  + [info](#info)
 </details>
 
 
@@ -140,7 +162,6 @@
     `carpet.conf`に記録されているルールを表示する。
   + `/carpet setDefault [rule] [value]`<br>
     `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。
-
     >[!note]
     >`/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが準備される。
   + `/carpet removeDefault <rule>`<br>
@@ -152,12 +173,6 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 #### `/perimeterinfo <coordinate>　<mob>`
 `<coordinate>`を中心とした半径128の球体内に`<mob>`が湧くことができるブロックを表示する。
 `<coordinate>`を指定しなかった場合現在の座標(`~ ~ ~`)が、`<mob>`を指定しなかった場合すべての存在するmobが指定される。
-### info
-指定した情報を表示する。opレベル0を要求する。WorldEditによって完全に代替される予定であるとのこと。
-#### `/info block [coordinate] <grep>`
-`[coordinate]`に関する情報を表示する。`<grep>`によって表示する情報を指定することが可能。
-#### `/info entity [target] <grep>`
-`[target]`に関する情報を表示する。`<grep>`によって表示する情報を指定することが可能。
 -->
 
 ## rules
@@ -190,7 +205,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + info
+    + [info](#info)
     + spawn
     + [distance](#distance)
 ### chainStone
@@ -220,13 +235,13 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + info
+    + [info](#info)
 ### commandLog
   `/log`を使用できるプレイヤーを指定する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + log
+    + [log](#log)
 ### commandPerimeterInfo
   `/perimeterinfo`を使用できるプレイヤーを指定する。
   + 初期値 : `true`
@@ -654,21 +669,23 @@ perimeterに関する情報を表示する。opレベル0を要求する。
     ユークリッド距離で算出。
     始点を $P_1(x_1,y_1,z_1)$、終点を $P_2(x_2,y_2,z_2)$とすると距離 $d_S(P_1,P_2)$は
     $$d_S(P_1 , P_2)\coloneqq\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$$
-    >[!note]
-    >minecraftではほとんどがユークリッド距離を利用している。`CanSpawnArea`もユークリッド距離である。
+
   + `Cyrindrical`<br>
     $x$座標および $z$座標のみを用いてユークリッド距離で算出。
     $$d_C(P_1 , P_2)\coloneqq\sqrt{(x_1-x_2)^2+(z_1-z_2)^2}$$
   + `Manhattan`<br>
     マンハッタン距離で算出。
     $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
+  >[!note]
+  >minecraftではほとんどがユークリッド距離を利用している。`CanSpawnArea`もユークリッド距離である。
 + 関連項目
   + [commandDistance](#commanddistance)
 
 
 ## draw
-`/draw [shape] [coordinate] [block]`<br>
-で`実行できる。
+[ball](#ball)、[cone](#cnoe)、[cuboid](#cuboid)、[cylinder](#cylinder)、[diamond](#diamond)、[pyramid](#pyramid)、そして[sphere](#sphere)の形状をコマンドで作ることができる。ほとんどにおいてWorldEditで代替可能であるが、diamondやconeなどはこれでつくったほうが　はやいだろう。
++ 関連項目
+  + [commandDraw](#commanddraw)
 ### ball
   中が満たされた球体を生成する。
   `/draw ball [center] [radius] [block] <replace>`<br>
@@ -695,18 +712,16 @@ perimeterに関する情報を表示する。opレベル0を要求する。
     底面の半径を指定する。
   + `[height]`<br>
     生成物の高さを指定する。
-  + `[pointing]`<br>
+  + `[pointing]`
     + `down`<br>
       先端が`[axis]`の座標マイナス方向を向く。
     + `up`<br>
       先端が`[axis]`の座標プラス方向を向く。
   + `[axis]`<br>
-    + `x`<br>
-      生成物がx軸を基準とする。
-    + `y`<br>
-      生成物がy軸を基準とする。
-    + `z`<br>
-      生成物がz軸を基準とする。
+    生成物がx軸を基準とする。
+    + `x`
+    + `y`
+    + `z`
   + `[block]`<br>
     描くブロックを指定する。
   + `<replace>`<br>
@@ -718,26 +733,85 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + `[center]`<br>
     生成物の底面の中心となる座標を指定する。
   + `[radius]`<br>
-    底面の半径を指定する。
+    底面の一辺の長さを指定する。
+    >[!important]
+    >この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。
   + `[height]`<br>
     生成物の高さを指定する。
-  + `[pointing]`<br>
+  + `[pointing]`
     + `down`<br>
       先端が`[axis]`の座標マイナス方向を向く。
     + `up`<br>
       先端が`[axis]`の座標プラス方向を向く。
   + `[axis]`<br>
-    + `x`<br>
-      生成物がx軸を基準とする。
-    + `y`<br>
-      生成物がy軸を基準とする。
-    + `z`<br>
-      生成物がz軸を基準とする。
+    生成物がその軸を中心にする。
+    + `x`
+    + `y`
+    + `z`
   + `[block]`<br>
     描くブロックを指定する。
   + `<replace>`<br>
     特定のブロック**を**置き換えるかを指定する。
-
+### cylinder
+  中が満たされた円柱を生成する。
+  `/draw cylinder [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
+  で利用可能。
+  + `[center]`<br>
+    生成物の中心となる座標を指定する。
+  + `[radius]`<br>
+    底面の半径を指定する。
+  + `[height]`<br>
+    生成物の高さを指定する。
+  + `[pointing]`<br>
+    + `down`<br>
+    `[axis]`の座標の負の方向に生成する。
+    + `up`<br>
+    `[axis]`の座標の正の方向に生成する。
+  + `[axis]`<br>
+    + `x`
+    + `y`
+    + `z`
+  + `[block]`<br>
+    描くブロックを指定する。
+  + `<replace>`<br>
+    特定のブロック***を***置き換えるかを指定する。
+### diamond
+  中空の正八面体を生成する。
+  `/draw diamond [center] [radius] [block] <replace>`<br>
+  で利用可能。
+  + `[center]`<br>
+    生成物の中心となる座標を指定する。
+  + `[radius]`<br>
+    中心からの最大距離を指定する。
+  + `[block]`<br>
+    描くブロックを指定する。
+  + `<replace>`<br>
+    特定のブロック***を***置き換えるかを指定する。
+### pyramid
+  中が満たされた円柱を生成する。
+  `/draw pyramid [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
+  で利用可能。
+  + `[center]`<br>
+    生成物の中心となる座標を指定する。
+  + `[radius]`<br>
+    底面の一辺の長さを指定する。
+    >[!important]
+    >この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。
+  + `[height]`<br>
+    生成物の高さを指定する。
+  + `[pointing]`<br>
+    + `down`<br>
+    `[axis]`の座標の負の方向に生成する。
+    + `up`<br>
+    `[axis]`の座標の正の方向に生成する。
+  + `[axis]`<br>
+    + `x`
+    + `y`
+    + `z`
+  + `[block]`<br>
+    描くブロックを指定する。
+  + `<replace>`<br>
+    特定のブロック***を***置き換えるかを指定する。
 ### sphere
   中空の球体を生成する。
   `/draw sphere [center] [radius] [block] <replace>`<br>
@@ -752,3 +826,35 @@ perimeterに関する情報を表示する。opレベル0を要求する。
     特定のブロック**を**置き換えるかを指定する。
   + 関連項目
     + [draw sphere](#ball)
+
+## info
+指定した情報を表示する。opレベル0を要求する。WorldEditによって完全に代替される予定であるとのこと。
+`/info [block | entity] [target] <grep>`
+で実行可能。`<grep>`によって表示する情報を制限することが可能。
++ `[block | entity]`
+  + `block`<br>
+    `[target]`は表示したいブロックの座標となる。絶対座標もしくは相対座標を使うことができる。
+  + `entity`<br>
+    `[target]`は表示したいエンティティとなる。一つのエンティティのみを選択する必要がある。
+    >[!note]
+    >ターゲットセレクタで指定する場合`[limit=1]`と追記することで一つのエンティティに絞ることができる。
++ 関連項目
+  + [commandInfo](#commandinfo)
+
+## log
+`/log [subject]`で`[subject]`に関する情報をさまざまなところに表示する。
+<details>
+  <summary>subject</summary>
+
+  + `counter`<br>
+    `/log counter <color> <mcid>`で利用可能。
+    + `<color>`<br>
+    チャンネルを指定する。指定しなかった場合`white`もしくはそれが無効であるならばほかの有効なチャンネルが選択される。さらに有効なチャンネルが一切ない場合は`white`が表示される。
+    + `<mcid>`<br>
+</details>
+
+
+
+
+
+
