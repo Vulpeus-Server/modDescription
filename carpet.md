@@ -135,6 +135,36 @@
   + [info](#info)
 </details>
 
+<details>
+  <summary>log</summary>
+
+  + [counter](#counter-1)
+  + [fallingBlocks](#fallingblocks)
+  + [mobcaps](#mobcaps)
+  + [packets](#packets)
+  + [pathfinding](#pathfinding)
+  + [projectiles](#projectiles)
+  + [tnt](#tnt)
+  + [tps](#tps)
+</details>
+
+<details>
+  <summary>perimeterInfo</summary>
+
+  + [perimeterInfo](#perimeterinfo)
+</details>
+
+<details>
+  <summary>profile</summary>
+
+  + [profile](#profile)
+</details>
+
+<details>
+  <summary>player</summary>
+
+  + [player](#player)
+</details>
 
 <!--
 + general
@@ -146,8 +176,8 @@
 + log
 + tick
 + perimeterinfo
-+ profile
 + player
++ profile
 + spawn
 + script
 -->
@@ -166,14 +196,6 @@
     >`/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが準備される。
   + `/carpet removeDefault <rule>`<br>
     `[rule]`で指定したcarpet ruleのデフォルトの値を`carpet.conf`から削除し、初期値にする。
-
-<!--
-### perimeter info
-perimeterに関する情報を表示する。opレベル0を要求する。
-#### `/perimeterinfo <coordinate>　<mob>`
-`<coordinate>`を中心とした半径128の球体内に`<mob>`が湧くことができるブロックを表示する。
-`<coordinate>`を指定しなかった場合現在の座標(`~ ~ ~`)が、`<mob>`を指定しなかった場合すべての存在するmobが指定される。
--->
 
 ## rules
 `/carpet [rule] <value>`によって変更することができる。
@@ -247,19 +269,19 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + perimeterInfo
+    + [perimeterInfo](#perimeterinfo)
 ### commandPlayer
   `/player`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + player
+    + [player](#player)
 ### commandProfile
   `/profile`を使用できるプレイヤーを指定する。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + profile
+    + [profile](#profile)
 ### commandScript
   `/script`のscript作成を使用できるプレイヤーを指定する。
   + 初期値 : `true`
@@ -327,7 +349,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 初期値 : `none`
   + 使用できる値 : `string`
   + 関連項目
-    + log
+    + [log](#log)
 ### desertShrubs
   苗木が砂漠を含めた暑い気候および水のアクセスができない場所で枯れ木にする。
   + 初期値 : `false`
@@ -686,6 +708,9 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 [ball](#ball)、[cone](#cnoe)、[cuboid](#cuboid)、[cylinder](#cylinder)、[diamond](#diamond)、[pyramid](#pyramid)、そして[sphere](#sphere)の形状をコマンドで作ることができる。ほとんどにおいてWorldEditで代替可能であるが、diamondやconeなどはこれでつくったほうが　はやいだろう。
 + 関連項目
   + [commandDraw](#commanddraw)
+<details>
+  <summary>詳細</summary>
+
 ### ball
   中が満たされた球体を生成する。
   `/draw ball [center] [radius] [block] <replace>`<br>
@@ -827,6 +852,9 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + 関連項目
     + [draw sphere](#ball)
 
+</details>
+
+
 ## info
 指定した情報を表示する。opレベル0を要求する。WorldEditによって完全に代替される予定であるとのこと。
 `/info [block | entity] [target] <grep>`
@@ -842,20 +870,219 @@ perimeterに関する情報を表示する。opレベル0を要求する。
   + [commandInfo](#commandinfo)
 
 ## log
-`/log [subject]`で`[subject]`に関する情報をさまざまなところに表示する。
+`/log [subject] <mcid>`で`[subject]`に関する情報をさまざまなところに表示する。
++ `/log clear`<br>
+  全てのlogの表示を停止させることができる。
+  >[!note]
+  >`/log [subject] clear`とすることでそのlog表示を消すことができる。
++ `<mcid>`<br>
+  指定することでその人に表示させることができる。
++ 関連項目
+  + [commandLog](#commandlog)
+  + [defaultLoggers](#defaultloggers)
 <details>
   <summary>subject</summary>
   
-  ## `counter`
-  `/log counter <color> <mcid>`で利用可能。
-  + `<color>`<br>
+  ### `counter`
+  `/log counter <color> <mcid>`で利用可能。特定のチャンネルに対して収集されたアイテム数とその効率、計測時間を表示する。
+  + `<color | clear>`<br>
     チャンネルを指定する。指定しなかった場合`white`もしくはそれが無効であるならばほかの有効なチャンネルが選択される。さらに有効なチャンネルが一切ない場合は`white`が表示される。
-  + `<mcid>`<br>
-    指定することでその人に対して表示させることができる。指定しなかった場合自身が選択される。`clear`とすることで表示を消すことができる。
+  + 表示場所<br>
+    プレイヤーリスト
+  + 関連項目
+    + [counter](#counter)
+  
+  ### `fallingBlocks`
+  `/log fallingBlocks <brief | full> <mcid>`で利用可能。falling blockの生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。
+  + `<brief | full>`<br>
+    表現の方法を指定する。指定しなかった場合`brief`が指定される。
+    + `brief`<br>
+      省略して表示する。ホバーすることで正確な情報が得られる。
+    + `full`<br>
+      省略せずにすべてを表示する。
+  + 表示場所<br>
+    チャット
+  
+  ### `mobcaps`
+  `/log mobcaps <dimension | dynamic> <mcid>`で利用可能。指定したディメンションのmobcapを表示する。
+  + `<dimension | dynamic>`<br>
+  そのディメンションにおけるmobcapを表示する。指定しないと`dynamic`が指定される。
+    + `dimension`<br>
+      そのディメンションにおけるmobcapを表示する。カスタムディメンションをdatapack等であらたに作成した場合そのディメンションidが入力できるようになる。
+    + `dynamic`<br>
+      自身のいるディメンションが自動的に選択され、ディメンションを移動すると表示されるディメンションも変わる。
+  + 表示場所<br>
+    プレイヤーリスト
+  + 関連項目
+    + spawn
+
+  ### `packets`
+  `/log packets <mcid>`で利用可能。通信時のパケット量を単位を/sとして表示する.。Iが鯖へ、Oがクライアントへのパケット量。
+  + 表示場所<br>
+    プレイヤーリスト
+
+  ### `pathfinding`
+  `/log pathfinding [count] <mcid>`で利用可能。pathfindingは行動探索であるが、どういった挙動を示すかは不明。
+  + `[count]`<br>
+    おそらくlogに流すentityの量。
+  + 表示場所<br>
+    わがらん
+
+  ### `projectiles`
+  `/log projectiles <brief | full> <mcid>`で利用可能。飛び道具、主にポーションや矢のentity生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。当たったとき、その座標も表示する。
+  + `<brief | full>`<br>
+    表現の方法を指定する。指定しなかった場合`brief`が指定される。
+    + `brief`<br>
+      省略して表示する。ホバーすることで正確な情報が得られる。
+    + `full`<br>
+      省略せずにすべてを表示する。
+  + 表示場所<br>
+    チャット
+
+  ### `tnt`
+  `/log tnt <brief | full> <mcid>`で利用可能。tntがいつ、どこで、誰によって、どのようにして、ベクトルの始点がどこであるかを表示する。
+  + `<brief | full>`<br>
+    表現の方法を指定する。指定しなかった場合`brief`が指定される。
+    + `brief`<br>
+      省略して表示する。ホバーすることで正確な情報が得られる。
+    + `full`<br>
+      省略せずにすべてを表示する。値がより詳細になる。
+  + 表示場所<br>
+    チャット
+
+  ### `tps`
+  `/log tps <mcid>`で利用可能。tpsとmsptを表示する。
+  + 表示場所<br>
+    プレイヤーリスト
+  + 関連項目
+    + tick
+
 </details>
 
+## perimeterInfo
+`/perimeterinfo <coordinate>　<mob>`で利用可能。perimeterについて湧くことが可能なブロックを表示する。
++ `<coordinate>`<br>
+  perimeterの中心、プレイヤーが立つ座標を入力する。この座標を中心に半径128ブロ空の球体内に関して表示する。指定しなかった場合現在の座標`~ ~ ~`が指定される。
++ `<mob>`<br>
+  この`<mob>`が湧くことができるブロックを表示するようにする。指定しなかった場合すべての存在するmobが指定される。
++ 関連項目
+  + [commandPerimeterInfo](#commandperimeterinfo)
 
+## profile
+`/profile [entities | health]`で`/tick <entities | health>`と同様の働きをする。詳しくは[tick](#tick)を参照。
++ 関連項目
+  + [commandProfile](#commandprofile)
+  + [tick](#tick)
 
+## player
+  `/player [mcid] [action]`で様々なプレイヤーに関する操作を行える。
+  + `[action]`
+    + [`attack`](#attack)
+    + [`dismount`](#dismount)
+    + [`drop`](#drop)
+    + [`dropStack`](#dropstack)
+    + [`hotbar`](#hotbar)
+    + [`jump`](#jump)
+    + [`kill`](#kill)
+    + [`look`](#look)
+    + [`mount`](#mount)
+    + [`move`](#move)
+    + [`shadow`](#shadow)
+    + [`sneak`](#sneak)
+    + [`spawn`](#spawn)
+    + [`sprint`](#sprint)
+    + [`stop`](#stop)
+    + [`swapHands`](#swaphands)
+    + [`turn`](#turn)
+    + [`unsneak`](#unsneak)
+    + [`unsprint`](#unsprint)
+    + [`use`](#use)
+  + 関連項目
+    + [commandPlayer](#commandplayer)
 
+<details>
+  <summary>詳細</summary>
 
-
+### attack
+  なにも指定しなかった場合、`once`が指定される。
+  + continuous<br>
+    `/player [mcid] attack continuous`<br>
+    連続的に攻撃させる。
+  + interval<br>
+    `/player [mcid] attack interval [count]`<br>
+    `[counter]`gt毎に攻撃させる。
+  + once<br>
+    `/player [mcid] attack once`<br>
+    一回だけ攻撃させる。
+### dismount
+  現在乗っているエンティティから降ろさせる。なににものっていなかった場合なにもおきない。<br>
+  `/player [mcid] dismount`
+### drop
+  今メインハンドにもっているものを一つその場に落とさせる。<br>
+  `/player [mcid] drop`
+### dropStack
+  今メインハンドにもっているものを1スタックその場に落させる。<br>
+  `/player [mcid] dropStack`
+### hotbar
+  今手にもっているスロットを変更させる。<br>
+  `/player [mcid] hotbar [number]`
+### jump
+  その場でジャンプさせる。<br>
+  `/player [mcid] jump`
+### kill
+  対象をkillする。<br>
+  `/player [mcid] kill`
+### look
+  特定の方向を向かせる。<br>
+  `/player [mcid] look [[pitch yaw] | up | down | north | south | east | west | at [x y z]]`
+  + `[pitch yaw]`<br>
+    ピッチとヨーを指定する。数字はそれぞれ-90から90の間でなければいけない。
+  + `up | down | north | south | east | west`<br>
+    特定の方向を向かせる。
+  + `at [x y z]`<br>
+    特定の座標に視線を向かせる。
+### mount
+  一番近い乗ることができるエンティティに乗る。よみこまれているエンティティのすべてが乗れない場合、失敗する。<br>
+  `/player [mcid] mount`
+### move
+  指定された方向へ移動する。
+  `/player <name> move [backward | forward | left | right]`
+### shadow
+  全ての動作を引き継いで同名のbotを出す。
+  `/player [mcid] shadow`
+### sneak
+  スニークをさせる。
+  `/player [mcid] sneak`
+### spawn
+  botとしてplayerを召喚する。
+  `/player [mcid] spawn`
+### sprint
+  ダッシュさせる。
+  `/player [mcid] sprint`
+### stop
+  今`[mcid]`に`/player`によって実行されているコマンドを全て停止させる。
+  `/player [mcid] stop`
+### swapHands
+  オフハンドとメインハンドを入れ替える。
+  `/player [mcid] swapHands`
+### turn
+  指定した方向を向かせる。
+  `/player [mcid] turn [back | left | right]`
+### unsneak
+  スニークを解除させる。
+  `/player [mcid] unsneak`
+### unsprint
+  ダッシュを解除させる。
+  `/player [mcid] unsprint`
+### use
+  なにも指定しなかった場合、`once`が指定される。
+  + continuous<br>
+    `/player [mcid] use continuous`<br>
+    連続的に使用させる。
+  + interval<br>
+    `/player [mcid] use interval [count]`<br>
+    `[counter]`gt毎に使用させる。
+  + once<br>
+    `/player [mcid] use once`<br>
+    一回だけ使用させる。
+</details>
