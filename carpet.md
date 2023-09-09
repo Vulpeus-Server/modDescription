@@ -1,5 +1,7 @@
 # carpet
 
+version : carpet 1.4.1.12+v230608
+
 このドキュメント内では
 `[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。
@@ -166,21 +168,36 @@
   + [player](#player)
 </details>
 
-<!--
-+ general
-+ rule
-+ counter
-+ distance
-+ draw
-+ info
-+ log
-+ tick
-+ perimeterinfo
-+ player
-+ profile
-+ spawn
-+ script
--->
+<details>
+  <summary>script</summary>
+
+  + [script](#script)
+</details>
+
+<details>
+  <summary>spawn</summary>
+
+  + [spawn](#spawn-1)
+</details>
+
+<details>
+  <summary>tick</summary>
+
+  + [entities](#entities)
+  + [freeze](#freeze)
+  + [health](#health)
+  + [rate](#rate)
+  + `step`(#step)
+  + `superHot`(#superhot)
+  + [warp](#warp)
+</details>
+
+<details>
+  <summary>track</summary>
+
+  + [track](#track)
+</details>
+
 
 ## general
 ### carpet
@@ -228,7 +245,7 @@
   + 使用できる値 : `true` `false`
   + 関連項目
     + [info](#info)
-    + spawn
+    + [spawn](#spawn-1)
     + [distance](#distance)
 ### chainStone
 チェーンを長いほうの端でスライムのように接続でき、かつほかのブロックとも接続できるようにする。`stick_to_all`を指定するとすべての方向について接続する。
@@ -287,31 +304,31 @@
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + script
+    + [script](#script)
 ### commandScriptACE
   `/script load` `/script run`を使用できるプレイヤーを指定する。appが実行するときのopレベルでもある。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + script
+    + [script](#script)
 ### commandSpawn
   `/spawn`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + spawn
+    + [spawn](#spawn-1)
 ### commandTick
   `/tick`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + tick
+    + [tick](#tick)
 ### commandTrackingAI
   `/track`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + track
+    + [track](#track)
 ### creativeFlyDrag
   クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、1でBEのようにストッピングができるようになる。
 
@@ -527,21 +544,21 @@
   + 使用できる値 : `string`
   + 関連項目
     + [commandScript](#commandscript)
-    + script
+    + [script](#script)
 ### scriptsAutoload
   `/script`が有効になっている場合、serverがリスタートもしくはワールドが読み込まれたときに自動的に読み込まれるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
     + [commandScript](#commandscript)
-    + script
+    + [script](#script)
 ### scriptsDebugging
   スクリプトのデバッグメッセージを表示するようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false` 
   + 関連項目
     + [commandScript](#commandscript)
-    + script 
+    + [script](#script) 
 ### scriptsOptimization
   スクリプトを最適化する。
   
@@ -550,7 +567,7 @@
   + 使用できる値 : `true` `false`
   + 関連項目
     + [commandScript](#commandscript)
-    + script
+    + [script](#script)
 ### sculkSensorRange
   スカルくセンサーの振動を伝える半径を変更する。1から1024の整数値である必要がある。
   + 初期値 : `8`
@@ -1086,3 +1103,64 @@
     `/player [mcid] use once`<br>
     一回だけ使用させる。
 </details>
+
+## script
+  carpet内で動作するスクリプトを操作する。ゲーム内で作成することができるが、ここでは省略。
+
+## spawn
+  `/spawn [subject]`によって実行可能。spawningに関する情報および設定を変更する。
+  + 関連項目
+    + [commandSpawn](#commandspawn)
+  <details>
+    <summary>subject</summary>
+
+  + `entities`<br>
+    `/spawn entities <mob_type>`で実行可能。mobcapの占有率や`<mob_type>`を指定した場合そのmob_typeに属するmobの座標を取得できる。
+  + `list`<br>
+    `/spawn list [coordinate]`で実行可能。そのブロックに対して理論上湧くことのできるentityを一覧形式で表示する。
+  + `mobcaps`<br>
+    `/spawn mobcaps <dimension>`で実行可能。指定されたdimensionに対するmobcapを表示する。
+  + `mobcapLocal`<br>
+    `/spawn mobcapLocal [selector]`で実行可能。プレイヤーの周りに発生するmobcapを計測する。
+  + `rate`<br>
+    `/spawn rate [mob_type] [round]`で実行可能。`[mob_type]`の1tickに試行されるspawning回数を`[round]`の値に変更する。
+  + `tracking`<br>
+    `/spawn tracking [mob_type | action]`で実行可能。`[mob_type]`のspawn回数やspawn率を表示する。
+
+  </details>
+
+  ## tick
+  `/tick [action]`によりminecraftのtickに関する制御をする。
+  + `[action]`
+    + `entities`
+    + `freeze`
+    + `health`
+    + `rate`
+    + `step`
+    + `superHot`
+    + `warp`
+  + 関連項目
+    + [commandTick](#commandtick)
+
+  <details>
+    <summary>action</summary>
+
+  ### entities
+  `/tick entities <tick>`で実行可能。`<tick>`gtの間entityの量や種類などを計算し、その上位を表示する。指定しなかった場合300gtで計算する。
+  ### freeze
+  `/tick freeze <true | false | deep | status>`で実行可能。`true`もしくは`false`を選択することで現在のtickで停止もしくは再開させることができる。`status`は現在freezeしているかの確認ができ、`deep`ではより深いタイミングでのfreezeを可能にする。指定しなかった場合trueとfalseがトグルとなる。
+  ### health
+  `/tick health <tick>`で実行可能。`<tick>`gtの間どの処理が負荷となっているかを計測し、その上位を表示する。指定しなかった場合300gtで計測する。
+  ### rate
+  `/tick rate [count]`で実行可能。現在のtick rateを`[count]`の値にする。ただしtickはmsptに基づいて計算されるため正確な値が反映されるわけではないことに注意。
+  ### step
+  freeze中に`\tick step [count]`で実行可能。`[count]`の数だけtickを進める。
+  ### superHot
+  `/tick superHot [true | false]`で実行可能。プレイヤーが移動するまでtickがfreezeするsuperHotモードを有効にできる。ゲーム「super hot」から。
+  ### warp
+  `/tick warp [count]`で実行可能。最適化をしたうえでできるだけ最速で`[count]`の数字分だけ早送りしようとする。
+
+  </details>
+
+  ## track
+    `/track [entity_type] [tracker]`で実行可能。ただしscriptなしでは`[entity_type]`はvillagerのみとなっている。`[tracker]`によって表示するtracking情報はことなるが多いので割愛。
