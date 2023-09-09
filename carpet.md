@@ -845,12 +845,13 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 `/log [subject]`で`[subject]`に関する情報をさまざまなところに表示する。
 <details>
   <summary>subject</summary>
-
+  
   ## `counter`
-    `/log counter <color> <mcid>`で利用可能。
-    + `<color>`<br>
+  `/log counter <color> <mcid>`で利用可能。
+  + `<color>`<br>
     チャンネルを指定する。指定しなかった場合`white`もしくはそれが無効であるならばほかの有効なチャンネルが選択される。さらに有効なチャンネルが一切ない場合は`white`が表示される。
-    + `<mcid>`<br>
+  + `<mcid>`<br>
+    指定することでその人に対して表示させることができる。指定しなかった場合自身が選択される。`clear`とすることで表示を消すことができる。
 </details>
 
 
