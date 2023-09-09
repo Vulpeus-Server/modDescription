@@ -846,7 +846,7 @@ perimeterに関する情報を表示する。opレベル0を要求する。
 <details>
   <summary>subject</summary>
 
-  + `counter`<br>
+  ## `counter`
     `/log counter <color> <mcid>`で利用可能。
     + `<color>`<br>
     チャンネルを指定する。指定しなかった場合`white`もしくはそれが無効であるならばほかの有効なチャンネルが選択される。さらに有効なチャンネルが一切ない場合は`white`が表示される。
