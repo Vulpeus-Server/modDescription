@@ -30,9 +30,8 @@ Carpet modが入っていない鯖またはシングルプレイで[`tweakFlexib
   + [](#) -->
 ### freeCameraPlayerMovement
 [`tweakFreeCamera`](#tweakFreeCamera)を使用している際にプレイヤーを移動させることができるようになる
-:::note warn
-注意
+[!note]
 画面の移動はできないので見やすい位置に移動させたり、ホットキーに設定すること
-:::
+
 + 関連機能
   + [](#)
