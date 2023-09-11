@@ -1,38 +1,38 @@
 <link href="Tweakeroo.css" rel="stylesheet"></link>
 
 # TweakerooとTweakmoreの機能一覧
-# Tweakeroo
 ## 目次
-<details>
-  <summary>Generic</summary>
-  <ul class="column">
-<li><a href="#carpetAccuratePlacementProtocol">carpetAccuratePlacementProtocol</a></li>
-<li><a>clientPlacementRotation</a></li>
-<li><a href="#fastLeftClickAllowTools">fastLeftClickAllowTools</a>
-<li><a href="#fastPlacementRememberOrientation">fastPlacementRememberOrientation</a>
-<li><a href="#freeCameraPlayerInputs">freeCameraPlayerInputs</a>
-<li>freeCameraPlayerMovement
-<li>handRestockPre
-<li>hangableEntityBypassInverse
-<li>itemUsePacketCheckBypass
-<li>permanentSneakAllowInGUIs
-<li>placementRestrictionTiedToFast
-<li>potionWarningBeneficialOnly
-</ul>
-</details>
-
-<details>
-  <summary>Fixes</summary>
-</details>
-<details>
-  <summary>Lists</summary>
-</details>
-<details>
-  <summary>Tweaks</summary>
-</details>
-<details>
-  <summary>Hotkeys</summary>
-</details>
-<details>
-  <summary>Yeets</summary>
-</details>
+# Tweakeroo
+## Generic
+### carpetAccuratePlacementProtocol
+Carpet modを使用している場合に[`tweakFlexibleBlockPlacement`](#tweakFlexibleBlockPlacement)と[`tweakAccurateBlockPlacement`](#tweakAccurateBlockPlacement)を機能させる
++ 関連機能
+  + [`tweakFlexibleBlockPlacement`](#tweakFlexibleBlockPlacement)
+  + [`tweakAccurateBlockPlacement`](#tweakAccurateBlockPlacement)
+### clientPlacementRotation
+Carpet modが入っていない鯖またはシングルプレイで[`tweakFlexibleBlockPlacement`](#tweakFlexibleBlockPlacement)と[`tweakAccurateBlockPlacement`](#tweakAccurateBlockPlacement)を機能させる
++ 関連機能
+  + [`tweakFlexibleBlockPlacement`](#tweakFlexibleBlockPlacement)
+  + [`tweakAccurateBlockPlacement`](#tweakAccurateBlockPlacement)
+### fastLeftClickAllowTools
+ツールをメインハンドに所持している場合でも[`tweakFastLeftClick`](#tweakFastLeftclick)を機能させる
++ 関連機能
+  +  [`tweakFastLeftClick`](#tweakFastLeftclick)
+### fastPlacementRememberOrientation
+[`tweakFastBlockPlacement`](`tweakFastBlockPlacement`)を使用したとき、最初に置いたブロックの向きを保存する
++ 関連機能
+  +  [`tweakFastBlockPlacement`](#tweakFastBlockPlacement)
+### freeCameraPlayerInputs
+[`tweakFreeCamera`](#tweakFreeCamera)を使用している際に右クリックと左クリックを使用できるようにする
++ 関連機能
+  + [](#) 
+<!-- + 関連機能
+  + [](#) -->
+### freeCameraPlayerMovement
+[`tweakFreeCamera`](#tweakFreeCamera)を使用している際にプレイヤーを移動させることができるようになる
+:::note warn
+注意
+画面の移動はできないので見やすい位置に移動させたり、ホットキーに設定すること
+:::
++ 関連機能
+  + [](#)
