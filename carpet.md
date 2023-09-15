@@ -1,12 +1,20 @@
 # carpet
 
+![carpet_icon](https://github.com/RS-256/image/blob/main/modDescription/carpet_icon.png)<br>
 version : carpet 1.4.1.12+v230608
 
 このドキュメント内では
 `[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。
 
-[carpet公式ドキュメント](https://github.com/gnembon/fabric-carpet/wiki/Current-Available-Settings)
+|mod|download|document|docs-JP|
+|:---:|:---:|:---:|:---:|
+|carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|here|
+|carpet TIS addition|[modrinth](https://modrinth.com/mod/carpet-tis-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition)<br>[github](https://github.com/TISUnion/Carpet-TIS-Addition)|[docs](https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs)||
+|carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)||
+|gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)||
+
+
 
 ## 目次
 <details>
@@ -108,94 +116,21 @@ version : carpet 1.4.1.12+v230608
 </details>
 
 <details>
-  <summary>counter</summary>
+<summary>command</summary>
 
   + [counter](#counter)
-</details>
-
-<details>
-  <summary>distance</summary>
-
   + [distance](#distance)
-</details>
-
-<details>
-  <summary>draw</summary>
-
   + [draw](#draw)
-    + [ball](#ball)
-    + [cone](#cone)
-    + [cuboid](#cuboid)
-    + [diamond](#diamond)
-    + [pyramid](#pyramid)
-    + [sphere](#sphere)
-</details>
-
-<details>
-  <summary>info</summary>
-
   + [info](#info)
-</details>
-
-<details>
-  <summary>log</summary>
-
-  + [counter](#counter-1)
-  + [fallingBlocks](#fallingblocks)
-  + [mobcaps](#mobcaps)
-  + [packets](#packets)
-  + [pathfinding](#pathfinding)
-  + [projectiles](#projectiles)
-  + [tnt](#tnt)
-  + [tps](#tps)
-</details>
-
-<details>
-  <summary>perimeterInfo</summary>
-
+  + [log](#log)
   + [perimeterInfo](#perimeterinfo)
-</details>
-
-<details>
-  <summary>profile</summary>
-
   + [profile](#profile)
-</details>
-
-<details>
-  <summary>player</summary>
-
   + [player](#player)
-</details>
-
-<details>
-  <summary>script</summary>
-
   + [script](#script)
-</details>
-
-<details>
-  <summary>spawn</summary>
-
   + [spawn](#spawn-1)
-</details>
-
-<details>
-  <summary>tick</summary>
-
-  + [entities](#entities)
-  + [freeze](#freeze)
-  + [health](#health)
-  + [rate](#rate)
-  + `step`(#step)
-  + `superHot`(#superhot)
-  + [warp](#warp)
-</details>
-
-<details>
-  <summary>track</summary>
-
+  + [tick](#tick)
   + [track](#track)
+
 </details>
 
 
@@ -678,7 +613,8 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 
-## counter
+## command
+### counter
   `/counter <color> <realtime | reset>` <br>
   で使用する。ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントし、それらから効率を計算する。複数のホッパーを同じチャンネルで作動させることも可能。羊毛16色を用いて16チャンネルを同時に使うことができる。
   + `<color>` <br>
@@ -691,7 +627,7 @@ version : carpet 1.4.1.12+v230608
   + 関連項目
     + [hopperCounters](#hoppercounters)
 
-## distance
+### distance
 `/distance <from> <to>`<br>
 で`<from>`から`<to>`までの距離を複数の方法で測ることができる。
 + `<from>`<br>
@@ -703,7 +639,10 @@ version : carpet 1.4.1.12+v230608
   >`<from>`のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。
 
 + 実行結果<br>
-  正しく計算されると三つの値が生成される。ただし計算には入力された座標を小数第二位までに丸めて使用され、出力は小数第一位までとなる。
+  正しく計算されると三つの距離空間に基づく値が表示される。ただし計算には入力された座標を小数第二位までに丸めて使用され、出力は小数第一位までとなる。
+
+  <details>
+  <summary>距離空間と定義</summary>
   + `Spherical`<br>
     ユークリッド距離で算出。
     始点を $P_1(x_1,y_1,z_1)$、終点を $P_2(x_2,y_2,z_2)$とすると距離 $d_S(P_1,P_2)$は
@@ -717,18 +656,27 @@ version : carpet 1.4.1.12+v230608
     $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
   >[!note]
   >minecraftではほとんどがユークリッド距離を利用している。`CanSpawnArea`もユークリッド距離である。
+
+  </details>
 + 関連項目
   + [commandDistance](#commanddistance)
 
-
-## draw
-[ball](#ball)、[cone](#cnoe)、[cuboid](#cuboid)、[cylinder](#cylinder)、[diamond](#diamond)、[pyramid](#pyramid)、そして[sphere](#sphere)の形状をコマンドで作ることができる。ほとんどにおいてWorldEditで代替可能であるが、diamondやconeなどはこれでつくったほうが　はやいだろう。
+### draw
+`/draw [shape] [coordinate]`で利用可能。`[shape]`の図形を生成できる。ときにはWorldEditに負ける。ほとんどにおいてWorldEditで代替可能であるが、diamondやconeなどはこれでつくったほうが　はやいだろう。
++ `[shape]`
+  + [ball](#ball)
+  + [cone](#cone)
+  + [cuboid](#cuboid)
+  + [cylinder](#cylinder)
+  + [diamond](#diamond)
+  + [pyramid](#pyramid)
+  + [sphere](#sphere)
 + 関連項目
   + [commandDraw](#commanddraw)
 <details>
   <summary>詳細</summary>
 
-### ball
+#### ball
   中が満たされた球体を生成する。
   `/draw ball [center] [radius] [block] <replace>`<br>
   で利用可能。
@@ -744,7 +692,7 @@ version : carpet 1.4.1.12+v230608
     特定のブロック***を***置き換えるかを指定する。指定しなかった場合全てのブロックを置き換える。
   + 関連項目
     + [draw sphere](#sphere)
-### cone
+#### cone
   中が満たされた円柱を生成する。
   `/draw cone [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
   で利用可能。
@@ -768,7 +716,7 @@ version : carpet 1.4.1.12+v230608
     描くブロックを指定する。
   + `<replace>`<br>
     特定のブロック**を**置き換えるかを指定する。
-### cuboid
+#### cuboid
   中が満たされた四角柱を生成する。
   `/draw cuboid [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
   で利用可能。
@@ -794,7 +742,7 @@ version : carpet 1.4.1.12+v230608
     描くブロックを指定する。
   + `<replace>`<br>
     特定のブロック**を**置き換えるかを指定する。
-### cylinder
+#### cylinder
   中が満たされた円柱を生成する。
   `/draw cylinder [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
   で利用可能。
@@ -817,7 +765,7 @@ version : carpet 1.4.1.12+v230608
     描くブロックを指定する。
   + `<replace>`<br>
     特定のブロック***を***置き換えるかを指定する。
-### diamond
+#### diamond
   中空の正八面体を生成する。
   `/draw diamond [center] [radius] [block] <replace>`<br>
   で利用可能。
@@ -829,7 +777,7 @@ version : carpet 1.4.1.12+v230608
     描くブロックを指定する。
   + `<replace>`<br>
     特定のブロック***を***置き換えるかを指定する。
-### pyramid
+#### pyramid
   中が満たされた円柱を生成する。
   `/draw pyramid [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
   で利用可能。
@@ -854,7 +802,7 @@ version : carpet 1.4.1.12+v230608
     描くブロックを指定する。
   + `<replace>`<br>
     特定のブロック***を***置き換えるかを指定する。
-### sphere
+#### sphere
   中空の球体を生成する。
   `/draw sphere [center] [radius] [block] <replace>`<br>
   で利用可能。
@@ -867,12 +815,11 @@ version : carpet 1.4.1.12+v230608
   + `<replace>`<br>
     特定のブロック**を**置き換えるかを指定する。
   + 関連項目
-    + [draw sphere](#ball)
+    + [draw ball](#ball)
 
 </details>
 
-
-## info
+### info
 指定した情報を表示する。opレベル0を要求する。WorldEditによって完全に代替される予定であるとのこと。
 `/info [block | entity] [target] <grep>`
 で実行可能。`<grep>`によって表示する情報を制限することが可能。
@@ -886,7 +833,7 @@ version : carpet 1.4.1.12+v230608
 + 関連項目
   + [commandInfo](#commandinfo)
 
-## log
+### log
 `/log [subject] <mcid>`で`[subject]`に関する情報をさまざまなところに表示する。
 + `/log clear`<br>
   全てのlogの表示を停止させることができる。
@@ -900,7 +847,7 @@ version : carpet 1.4.1.12+v230608
 <details>
   <summary>subject</summary>
   
-  ### `counter`
+  #### `counter`
   `/log counter <color> <mcid>`で利用可能。特定のチャンネルに対して収集されたアイテム数とその効率、計測時間を表示する。
   + `<color | clear>`<br>
     チャンネルを指定する。指定しなかった場合`white`もしくはそれが無効であるならばほかの有効なチャンネルが選択される。さらに有効なチャンネルが一切ない場合は`white`が表示される。
@@ -908,8 +855,7 @@ version : carpet 1.4.1.12+v230608
     プレイヤーリスト
   + 関連項目
     + [counter](#counter)
-  
-  ### `fallingBlocks`
+  #### `fallingBlocks`
   `/log fallingBlocks <brief | full> <mcid>`で利用可能。falling blockの生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。
   + `<brief | full>`<br>
     表現の方法を指定する。指定しなかった場合`brief`が指定される。
@@ -919,8 +865,7 @@ version : carpet 1.4.1.12+v230608
       省略せずにすべてを表示する。
   + 表示場所<br>
     チャット
-  
-  ### `mobcaps`
+  #### `mobcaps`
   `/log mobcaps <dimension | dynamic> <mcid>`で利用可能。指定したディメンションのmobcapを表示する。
   + `<dimension | dynamic>`<br>
   そのディメンションにおけるmobcapを表示する。指定しないと`dynamic`が指定される。
@@ -932,20 +877,17 @@ version : carpet 1.4.1.12+v230608
     プレイヤーリスト
   + 関連項目
     + spawn
-
-  ### `packets`
+  #### `packets`
   `/log packets <mcid>`で利用可能。通信時のパケット量を単位を/sとして表示する.。Iが鯖へ、Oがクライアントへのパケット量。
   + 表示場所<br>
     プレイヤーリスト
-
-  ### `pathfinding`
+  #### `pathfinding`
   `/log pathfinding [count] <mcid>`で利用可能。pathfindingは行動探索であるが、どういった挙動を示すかは不明。
   + `[count]`<br>
     おそらくlogに流すentityの量。
   + 表示場所<br>
     わがらん
-
-  ### `projectiles`
+  #### `projectiles`
   `/log projectiles <brief | full> <mcid>`で利用可能。飛び道具、主にポーションや矢のentity生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。当たったとき、その座標も表示する。
   + `<brief | full>`<br>
     表現の方法を指定する。指定しなかった場合`brief`が指定される。
@@ -955,8 +897,7 @@ version : carpet 1.4.1.12+v230608
       省略せずにすべてを表示する。
   + 表示場所<br>
     チャット
-
-  ### `tnt`
+  #### `tnt`
   `/log tnt <brief | full> <mcid>`で利用可能。tntがいつ、どこで、誰によって、どのようにして、ベクトルの始点がどこであるかを表示する。
   + `<brief | full>`<br>
     表現の方法を指定する。指定しなかった場合`brief`が指定される。
@@ -966,8 +907,7 @@ version : carpet 1.4.1.12+v230608
       省略せずにすべてを表示する。値がより詳細になる。
   + 表示場所<br>
     チャット
-
-  ### `tps`
+  #### `tps`
   `/log tps <mcid>`で利用可能。tpsとmsptを表示する。
   + 表示場所<br>
     プレイヤーリスト
@@ -976,7 +916,7 @@ version : carpet 1.4.1.12+v230608
 
 </details>
 
-## perimeterInfo
+### perimeterInfo
 `/perimeterinfo <coordinate>　<mob>`で利用可能。perimeterについて湧くことが可能なブロックを表示する。
 + `<coordinate>`<br>
   perimeterの中心、プレイヤーが立つ座標を入力する。この座標を中心に半径128ブロ空の球体内に関して表示する。指定しなかった場合現在の座標`~ ~ ~`が指定される。
@@ -985,42 +925,42 @@ version : carpet 1.4.1.12+v230608
 + 関連項目
   + [commandPerimeterInfo](#commandperimeterinfo)
 
-## profile
+### profile
 `/profile [entities | health]`で`/tick <entities | health>`と同様の働きをする。詳しくは[tick](#tick)を参照。
 + 関連項目
   + [commandProfile](#commandprofile)
   + [tick](#tick)
 
-## player
+### player
   `/player [mcid] [action]`で様々なプレイヤーに関する操作を行える。
   + `[action]`
-    + [`attack`](#attack)
-    + [`dismount`](#dismount)
-    + [`drop`](#drop)
-    + [`dropStack`](#dropstack)
-    + [`hotbar`](#hotbar)
-    + [`jump`](#jump)
-    + [`kill`](#kill)
-    + [`look`](#look)
-    + [`mount`](#mount)
-    + [`move`](#move)
-    + [`shadow`](#shadow)
-    + [`sneak`](#sneak)
-    + [`spawn`](#spawn)
-    + [`sprint`](#sprint)
-    + [`stop`](#stop)
-    + [`swapHands`](#swaphands)
-    + [`turn`](#turn)
-    + [`unsneak`](#unsneak)
-    + [`unsprint`](#unsprint)
-    + [`use`](#use)
+    + `attack`
+    + `dismount`
+    + `drop`
+    + `dropStack`
+    + `hotbar`
+    + `jump`
+    + `kill`
+    + `look`
+    + `mount`
+    + `move`
+    + `shadow`
+    + `sneak`
+    + `spawn`
+    + `sprint`
+    + `stop`
+    + `swapHands`
+    + `turn`
+    + `unsneak`
+    + `unsprint`
+    + `use`
   + 関連項目
     + [commandPlayer](#commandplayer)
 
 <details>
-  <summary>詳細</summary>
+  <summary>action</summary>
 
-### attack
+#### attack
   なにも指定しなかった場合、`once`が指定される。
   + continuous<br>
     `/player [mcid] attack continuous`<br>
@@ -1031,25 +971,25 @@ version : carpet 1.4.1.12+v230608
   + once<br>
     `/player [mcid] attack once`<br>
     一回だけ攻撃させる。
-### dismount
+#### dismount
   現在乗っているエンティティから降ろさせる。なににものっていなかった場合なにもおきない。<br>
   `/player [mcid] dismount`
-### drop
+#### drop
   今メインハンドにもっているものを一つその場に落とさせる。<br>
   `/player [mcid] drop`
-### dropStack
+#### dropStack
   今メインハンドにもっているものを1スタックその場に落させる。<br>
   `/player [mcid] dropStack`
-### hotbar
+#### hotbar
   今手にもっているスロットを変更させる。<br>
   `/player [mcid] hotbar [number]`
-### jump
+#### jump
   その場でジャンプさせる。<br>
   `/player [mcid] jump`
-### kill
+#### kill
   対象をkillする。<br>
   `/player [mcid] kill`
-### look
+#### look
   特定の方向を向かせる。<br>
   `/player [mcid] look [[pitch yaw] | up | down | north | south | east | west | at [x y z]]`
   + `[pitch yaw]`<br>
@@ -1058,40 +998,41 @@ version : carpet 1.4.1.12+v230608
     特定の方向を向かせる。
   + `at [x y z]`<br>
     特定の座標に視線を向かせる。
-### mount
+#### mount
   一番近い乗ることができるエンティティに乗る。よみこまれているエンティティのすべてが乗れない場合、失敗する。<br>
   `/player [mcid] mount`
-### move
+#### move
   指定された方向へ移動する。
   `/player <name> move [backward | forward | left | right]`
-### shadow
+#### shadow
   全ての動作を引き継いで同名のbotを出す。
   `/player [mcid] shadow`
-### sneak
+#### sneak
   スニークをさせる。
   `/player [mcid] sneak`
-### spawn
+#### spawn
   botとしてplayerを召喚する。
   `/player [mcid] spawn`
-### sprint
+#### sprint
   ダッシュさせる。
   `/player [mcid] sprint`
-### stop
+#### stop
   今`[mcid]`に`/player`によって実行されているコマンドを全て停止させる。
   `/player [mcid] stop`
-### swapHands
+#### swapHands
   オフハンドとメインハンドを入れ替える。
   `/player [mcid] swapHands`
-### turn
+#### turn
   指定した方向を向かせる。
   `/player [mcid] turn [back | left | right]`
-### unsneak
+#### unsneak
   スニークを解除させる。
   `/player [mcid] unsneak`
-### unsprint
+#### unsprint
+
   ダッシュを解除させる。
   `/player [mcid] unsprint`
-### use
+#### use
   なにも指定しなかった場合、`once`が指定される。
   + continuous<br>
     `/player [mcid] use continuous`<br>
@@ -1102,65 +1043,72 @@ version : carpet 1.4.1.12+v230608
   + once<br>
     `/player [mcid] use once`<br>
     一回だけ使用させる。
+
 </details>
 
-## script
+### script
   carpet内で動作するスクリプトを操作する。ゲーム内で作成することができるが、ここでは省略。
 
-## spawn
+### spawn
   `/spawn [subject]`によって実行可能。spawningに関する情報および設定を変更する。
+  + `[subject]`
+    + `entities`
+    + `list`
+    + `mobcaps`
+    + `mobcapLocal`
+    + `rate`
+    + `tracking`
   + 関連項目
     + [commandSpawn](#commandspawn)
   <details>
     <summary>subject</summary>
 
-  + `entities`<br>
-    `/spawn entities <mob_type>`で実行可能。mobcapの占有率や`<mob_type>`を指定した場合そのmob_typeに属するmobの座標を取得できる。
-  + `list`<br>
-    `/spawn list [coordinate]`で実行可能。そのブロックに対して理論上湧くことのできるentityを一覧形式で表示する。
-  + `mobcaps`<br>
-    `/spawn mobcaps <dimension>`で実行可能。指定されたdimensionに対するmobcapを表示する。
-  + `mobcapLocal`<br>
-    `/spawn mobcapLocal [selector]`で実行可能。プレイヤーの周りに発生するmobcapを計測する。
-  + `rate`<br>
-    `/spawn rate [mob_type] [round]`で実行可能。`[mob_type]`の1tickに試行されるspawning回数を`[round]`の値に変更する。
-  + `tracking`<br>
-    `/spawn tracking [mob_type | action]`で実行可能。`[mob_type]`のspawn回数やspawn率を表示する。
-
+#### `entities`<br>
+`/spawn entities <mob_type>`で実行可能。mobcapの占有率や`<mob_type>`を指定した場合そのmob_typeに属するmobの座標を取得できる。
+#### `list`<br>
+`/spawn list [coordinate]`で実行可能。そのブロックに対して理論上湧くことのできるentityを一覧形式で表示する。
+#### `mobcaps`<br>
+`/spawn mobcaps <dimension>`で実行可能。指定されたdimensionに対するmobcapを表示する。
+#### `mobcapLocal`<br>
+`/spawn mobcapLocal [selector]`で実行可能。プレイヤーの周りに発生するmobcapを計測する。
+#### `rate`<br>
+`/spawn rate [mob_type] [round]`で実行可能。`[mob_type]`の1tickに試行されるspawning回数を`[round]`の値に変更する。
+#### `tracking`<br>
+`/spawn tracking [mob_type | action]`で実行可能。`[mob_type]`のspawn回数やspawn率を表示す。 
   </details>
 
-  ## tick
-  `/tick [action]`によりminecraftのtickに関する制御をする。
-  + `[action]`
-    + `entities`
-    + `freeze`
-    + `health`
-    + `rate`
-    + `step`
-    + `superHot`
-    + `warp`
-  + 関連項目
-    + [commandTick](#commandtick)
+### tick
+`/tick [action]`によりminecraftのtickに関する制御をする。
++ `[action]`
+  + `entities`
+  + `freeze`
+  + `health`
+  + `rate`
+  + `step`
+  + `superHot`
+  + `warp`
++ 関連項目
+  + [commandTick](#commandtick)
 
-  <details>
-    <summary>action</summary>
+<details>
+   <summary>action</summary>
 
-  ### entities
+  #### entities
   `/tick entities <tick>`で実行可能。`<tick>`gtの間entityの量や種類などを計算し、その上位を表示する。指定しなかった場合300gtで計算する。
-  ### freeze
+  #### freeze
   `/tick freeze <true | false | deep | status>`で実行可能。`true`もしくは`false`を選択することで現在のtickで停止もしくは再開させることができる。`status`は現在freezeしているかの確認ができ、`deep`ではより深いタイミングでのfreezeを可能にする。指定しなかった場合trueとfalseがトグルとなる。
-  ### health
+  #### health
   `/tick health <tick>`で実行可能。`<tick>`gtの間どの処理が負荷となっているかを計測し、その上位を表示する。指定しなかった場合300gtで計測する。
-  ### rate
+  #### rate
   `/tick rate [count]`で実行可能。現在のtick rateを`[count]`の値にする。ただしtickはmsptに基づいて計算されるため正確な値が反映されるわけではないことに注意。
-  ### step
+  #### step
   freeze中に`\tick step [count]`で実行可能。`[count]`の数だけtickを進める。
-  ### superHot
+  #### superHot
   `/tick superHot [true | false]`で実行可能。プレイヤーが移動するまでtickがfreezeするsuperHotモードを有効にできる。ゲーム「super hot」から。
-  ### warp
+  #### warp
   `/tick warp [count]`で実行可能。最適化をしたうえでできるだけ最速で`[count]`の数字分だけ早送りしようとする。
 
-  </details>
+</details>
 
-  ## track
-    `/track [entity_type] [tracker]`で実行可能。ただしscriptなしでは`[entity_type]`はvillagerのみとなっている。`[tracker]`によって表示するtracking情報はことなるが多いので割愛。
+### track
+`/track [entity_type] [tracker]`で実行可能。ただしscriptなしでは`[entity_type]`はvillagerのみとなっている。`[tracker]`によって表示するtracking情報はことなるが多いので割愛。
