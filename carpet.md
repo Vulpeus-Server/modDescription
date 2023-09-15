@@ -643,6 +643,7 @@ version : carpet 1.4.1.12+v230608
 
   <details>
   <summary>距離空間と定義</summary>
+  
   + `Spherical`<br>
     ユークリッド距離で算出。
     始点を $P_1(x_1,y_1,z_1)$、終点を $P_2(x_2,y_2,z_2)$とすると距離 $d_S(P_1,P_2)$は
