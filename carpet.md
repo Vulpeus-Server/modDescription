@@ -7,12 +7,13 @@ version : carpet 1.4.1.12+v230608
 `[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。
 
+以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
 |mod|download|document|docs-JP|
 |:---:|:---:|:---:|:---:|
 |carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|here|
 |carpet TIS addition|[modrinth](https://modrinth.com/mod/carpet-tis-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition)<br>[github](https://github.com/TISUnion/Carpet-TIS-Addition)|[docs](https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs)||
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)||
-|gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)||
+|gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|[GCA](https://github.com/TaichiServer/modDescription/blob/main/gugle-carpet-addition.md)|
 
 
 
@@ -150,7 +151,7 @@ version : carpet 1.4.1.12+v230608
     `[rule]`で指定したcarpet ruleのデフォルトの値を`carpet.conf`から削除し、初期値にする。
 
 ## rules
-`/carpet [rule] <value>`によって変更することができる。
+全てのルールは`/carpet [rule] <value>`によって変更することができる。
 ### ~~allowSpawningOfflinePlayers~~
   オフラインのプレイヤーを召喚できるかを設定できる。
   オフラインのプレイヤーは`/player [mcid] [spawn | shadow]`によるものではないことを確認。
@@ -278,7 +279,7 @@ version : carpet 1.4.1.12+v230608
   + 使用できる値 : `double`
 ### creativeNoClip
   クリエイティブにおける飛行状態でブロックを貫通できるようにする。
-  クライアントと鯖の双方に設定があるため、同じ設定にしないと動作が不安定になる。
+  クライアントとサーバーの双方に設定があるため、同じ設定にしないと動作が不安定になる。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### creativePlayersLoadChunks
@@ -296,7 +297,7 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `_`
   + 使用できる値 : `string`
 ### defaultLoggers
-  鯖に入ったときに表示するログの初期値。ただしsetDefaultを設定しないと再起動によって初期値に戻る。
+  サーバーに入ったときに表示するログの初期値。ただしsetDefaultを設定しないと再起動によって初期値に戻る。
   `tps,mobcaps,counter`のように、カンマで常げることでサジェストされたもの以外も指定できる。
   + 初期値 : `none`
   + 使用できる値 : `string`
@@ -643,7 +644,7 @@ version : carpet 1.4.1.12+v230608
 
   <details>
   <summary>距離空間と定義</summary>
-  
+
   + `Spherical`<br>
     ユークリッド距離で算出。
     始点を $P_1(x_1,y_1,z_1)$、終点を $P_2(x_2,y_2,z_2)$とすると距離 $d_S(P_1,P_2)$は
@@ -879,7 +880,7 @@ version : carpet 1.4.1.12+v230608
   + 関連項目
     + spawn
   #### `packets`
-  `/log packets <mcid>`で利用可能。通信時のパケット量を単位を/sとして表示する.。Iが鯖へ、Oがクライアントへのパケット量。
+  `/log packets <mcid>`で利用可能。通信時のパケット量を単位を/sとして表示する.。Iがサーバーへ、Oがクライアントへのパケット量。
   + 表示場所<br>
     プレイヤーリスト
   #### `pathfinding`
