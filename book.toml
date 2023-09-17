@@ -8,3 +8,4 @@ src = "src"
 
 [output.html]
 git-repository-url = "https://github.com/TaichiServer/modDescription"
+mathjax-support = true
