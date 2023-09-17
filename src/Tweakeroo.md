@@ -40,7 +40,7 @@ Carpet modが入っていない鯖またはシングルプレイで[`tweakFlexib
   + [`handRestockPreThreshold`](#handRestockPreThreshold)
   + [`tweakHandRestock`](#tweakHandRestock)
 ### hangableEntityBypassInverse
-スニーク時に額縁や絵画をターゲットするかどうかを切り替える
+スニーク時に額縁や絵画をターゲットするかどうかを切り替える  
 
 |True/false|ターゲット|
 |:--:|:--:|
