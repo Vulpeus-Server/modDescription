@@ -882,13 +882,14 @@ version : carpet 1.4.1.12+v230608</p>
 <p>このドキュメント内では
 <code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
-<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
-|mod|download|document|docs-JP|
-|:---:|:---:|:---:|:---:|
-|carpet|<a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a>|<a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a>|here|
-|carpet TIS addition|<a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a>|<a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a>||
-|carpet extra|<a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a>|<a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a>||
-|gugle-carpet-addition|<a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a>|<a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a>|<a href="https://github.com/TaichiServer/modDescription/blob/main/gugle-carpet-addition.md">GCA</a>|</p>
+<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
+<tr><td style="text-align: center">carpet</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center">here</td></tr>
+<tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">carpet extra</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">gugle-carpet-addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a></td><td style="text-align: center"><a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a></td><td style="text-align: center"><a href="https://github.com/TaichiServer/modDescription/blob/main/gugle-carpet-addition.md">GCA</a></td></tr>
+</tbody></table>
+</div>
 <h2 id="目次-1"><a class="header" href="#目次-1">目次</a></h2>
 <details>
   <summary>general</summary>
@@ -1008,18 +1009,30 @@ version : carpet 1.4.1.12+v230608</p>
 <h2 id="general"><a class="header" href="#general">general</a></h2>
 <h3 id="carpet-1"><a class="header" href="#carpet-1">carpet</a></h3>
 <ul>
-<li><code>/carpet</code><br>
-現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。</li>
-<li><code>/carpet list &lt;category&gt;</code><br>
-利用できるcarpet ruleを<strong>すべて</strong>表示する。<code>&lt;category&gt;</code>を指定した場合、紐づけられたruleを表示する。</li>
-<li><code>/carpet list default</code><br>
-<code>carpet.conf</code>に記録されているルールを表示する。</li>
-<li><code>/carpet setDefault [rule] [value]</code><br>
-<code>[rule]</code>で指定したcarpet ruleのデフォルトの値を<code>[value]</code>で指定した値にする。
-&gt;[!note]
-&gt;<code>/carpet [rule] [value]</code>を使用し値が正常に変更された場合、通知とともにそえられる<code>change permanently?</code>を右クリックすることでその値がすでに入力されたコマンドが準備される。</li>
-<li><code>/carpet removeDefault &lt;rule&gt;</code><br>
-<code>[rule]</code>で指定したcarpet ruleのデフォルトの値を<code>carpet.conf</code>から削除し、初期値にする。</li>
+<li>
+<p><code>/carpet</code><br>
+現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。</p>
+</li>
+<li>
+<p><code>/carpet list &lt;category&gt;</code><br>
+利用できるcarpet ruleを<strong>すべて</strong>表示する。<code>&lt;category&gt;</code>を指定した場合、紐づけられたruleを表示する。</p>
+</li>
+<li>
+<p><code>/carpet list default</code><br>
+<code>carpet.conf</code>に記録されているルールを表示する。</p>
+</li>
+<li>
+<p><code>/carpet setDefault [rule] [value]</code><br>
+<code>[rule]</code>で指定したcarpet ruleのデフォルトの値を<code>[value]</code>で指定した値にする。</p>
+<blockquote>
+<p>[!note]
+<code>/carpet [rule] [value]</code>を使用し値が正常に変更された場合、通知とともにそえられる<code>change permanently?</code>を右クリックすることでその値がすでに入力されたコマンドが準備される。</p>
+</blockquote>
+</li>
+<li>
+<p><code>/carpet removeDefault &lt;rule&gt;</code><br>
+<code>[rule]</code>で指定したcarpet ruleのデフォルトの値を<code>carpet.conf</code>から削除し、初期値にする。</p>
+</li>
 </ul>
 <h2 id="rules"><a class="header" href="#rules">rules</a></h2>
 <p>全てのルールは<code>/carpet [rule] &lt;value&gt;</code>によって変更することができる。</p>
@@ -1048,13 +1061,14 @@ version : carpet 1.4.1.12+v230608</p>
 </ul>
 <h3 id="carpets"><a class="header" href="#carpets">carpets</a></h3>
 <p>carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
-以下は使用できるコマンドのリストである。
-| color  | command                                      |
-|:------:|:---------------------------------------------|
-| gray   | <code>/info block ~ ~-1 ~</code>                        |
-| black  | <code>/spawn entities</code>                            |
-| brown  | <code>/distance from ~ ~ ~ </code> <code>/distance to ~ ~ ~</code> |
-| pink   | <code>/spawn list ~ ~-1 ~</code>                        |</p>
+以下は使用できるコマンドのリストである。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">color</th><th style="text-align: left">command</th></tr></thead><tbody>
+<tr><td style="text-align: center">gray</td><td style="text-align: left"><code>/info block ~ ~-1 ~</code></td></tr>
+<tr><td style="text-align: center">black</td><td style="text-align: left"><code>/spawn entities</code></td></tr>
+<tr><td style="text-align: center">brown</td><td style="text-align: left"><code>/distance from ~ ~ ~ </code> <code>/distance to ~ ~ ~</code></td></tr>
+<tr><td style="text-align: center">pink</td><td style="text-align: left"><code>/spawn list ~ ~-1 ~</code></td></tr>
+</tbody></table>
+</div>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1709,9 +1723,11 @@ version : carpet 1.4.1.12+v230608</p>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="tntrandomrange"><a class="header" href="#tntrandomrange">tntRandomRange</a></h3>
-<p>tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない
-&gt;[!important]
-&gt;<a href="carpet.html#optimizedtnt">optimizedTNT</a>を有効にする必要がある。</p>
+<p>tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない</p>
+<blockquote>
+<p>[!important]
+<a href="carpet.html#optimizedtnt">optimizedTNT</a>を有効にする必要がある。</p>
+</blockquote>
 <ul>
 <li>初期値 : <code>-1.0</code></li>
 <li>使用できる値 : <code>double</code></li>
@@ -2394,13 +2410,14 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <p>このドキュメント内では
 <code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
-<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
-|mod|download|document|docs-JP|
-|:---:|:---:|:---:|:---:|
-|carpet|<a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a>|<a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a>|<a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md">carpet</a>|
-|carpet TIS addition|<a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a>|<a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a>||
-|carpet extra|<a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a>|<a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a>||
-|gugle-carpet-addition|<a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a>|<a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a>|here|</p>
+<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
+<tr><td style="text-align: center">carpet</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center"><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md">carpet</a></td></tr>
+<tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">carpet extra</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">gugle-carpet-addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a></td><td style="text-align: center"><a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a></td><td style="text-align: center">here</td></tr>
+</tbody></table>
+</div>
 <h2 id="目次-2"><a class="header" href="#目次-2">目次</a></h2>
 <details>
 <summary>rules</summary>
