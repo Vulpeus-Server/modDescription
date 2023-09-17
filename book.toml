@@ -9,4 +9,5 @@ src = "src"
 [output.html]
 git-repository-url = "https://github.com/TaichiServer/modDescription"
 mathjax-support = true
-additional-css = ["css/style.css"]
+additional-css = ["theme/style.css"]
+additional-js = ["theme/md_alert.js"]
