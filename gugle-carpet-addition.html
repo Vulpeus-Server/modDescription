@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>GugleCarpetAddition - ModDescription</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Mod descriptions written in Markdown.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">modDescription</a></li><li class="chapter-item expanded "><a href="EssentialClient.html"><strong aria-hidden="true">1.</strong> EssentialClient</a></li><li class="chapter-item expanded "><a href="Tweakeroo.html"><strong aria-hidden="true">2.</strong> Tweakeroo</a></li><li class="chapter-item expanded "><a href="carpet.html"><strong aria-hidden="true">3.</strong> Carpet</a></li><li class="chapter-item expanded "><a href="gugle-carpet-addition.html" class="active"><strong aria-hidden="true">4.</strong> GugleCarpetAddition</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ModDescription</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/TaichiServer/modDescription" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="gugle-carpet-addition"><a class="header" href="#gugle-carpet-addition">gugle-carpet-addition</a></h1>
+<p>version : GCA 2.7.0</p>
+<p>carpetのaddonであるため、carpetが前提modとなる。</p>
+<p>このドキュメント内では
+<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
+編集段階で未解決なものはストライクラインで示す。</p>
+<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+|mod|download|document|docs-JP|
+|:---:|:---:|:---:|:---:|
+|carpet|<a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a>|<a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a>|<a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md">carpet</a>|
+|carpet TIS addition|<a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a>|<a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a>||
+|carpet extra|<a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a>|<a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a>||
+|gugle-carpet-addition|<a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a>|<a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a>|here|</p>
+<h2 id="目次"><a class="header" href="#目次">目次</a></h2>
+<details>
+<summary>rules</summary>
+<ul>
+<li><a href="#openfakeplayerinventory">openFakePlayerInventory</a></li>
+<li><a href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
+<li><a href="#fakeplayerresident">fakePlayerResident</a></li>
+<li><a href="#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></li>
+<li><a href="#fakeplayerautofish">fakePlayerAutoFish</a></li>
+<li><a href="#fakeplayerautoreplacetool">fakePlayerAutoReplaceTool</a></li>
+</ul>
+</details>
+<h2 id="rules"><a class="header" href="#rules">rules</a></h2>
+<p>全てのルールは<code>/carpet [rule] [value]</code>によって変更することができる。</p>
+<h3 id="openfakeplayerinventory"><a class="header" href="#openfakeplayerinventory">openFakePlayerInventory</a></h3>
+<p>fake playerを右クリックすることでそのプレイヤーのインベントリをGUIで表示・操作できるようにする。すなわちcarpetの<code>/player</code>などを介して一つずつ操作する必要をなくすことができる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+<li><a href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="openfakeplayerenderchest"><a class="header" href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></h3>
+<p>fake playerを右クリックすることでそのプレイヤーのエンダーチェストをGUIで表示・操作できるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+<li><a href="#openfakeplayerinventory">openFakePlayerInventory</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerresident"><a class="header" href="#fakeplayerresident">fakePlayerResident</a></h3>
+<p>fake playerがサーバー再起動によっていなくなった時、次回起動時に自動でplayerを配置し、そのplayerが実行しているactionを再実行させる。ただし正しいtickで実行されるのではなく、もう一度コマンドをたたいているだけなので信用はできない。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerautoreplenishment"><a class="header" href="#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></h3>
+<p>fake playerがtweakerooの<code>tweakHandRestock</code>と同様の操作をできるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerautofish"><a class="header" href="#fakeplayerautofish">fakePlayerAutoFish</a></h3>
+<p>fake playerが釣りでなにかを引き当てたときに自動で釣り上げ、もう一度糸を垂らすようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerautoreplacetool"><a class="header" href="#fakeplayerautoreplacetool">fakePlayerAutoReplaceTool</a></h3>
+<p>fake playerの使用しているツールがこわれたときに、同種のtoolに持ち変えるようにする。ただし耐久が少し残る等はない。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="carpet.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="carpet.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

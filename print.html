@@ -1,0 +1,2530 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ModDescription</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Mod descriptions written in Markdown.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">modDescription</a></li><li class="chapter-item expanded "><a href="EssentialClient.html"><strong aria-hidden="true">1.</strong> EssentialClient</a></li><li class="chapter-item expanded "><a href="Tweakeroo.html"><strong aria-hidden="true">2.</strong> Tweakeroo</a></li><li class="chapter-item expanded "><a href="carpet.html"><strong aria-hidden="true">3.</strong> Carpet</a></li><li class="chapter-item expanded "><a href="gugle-carpet-addition.html"><strong aria-hidden="true">4.</strong> GugleCarpetAddition</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ModDescription</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/TaichiServer/modDescription" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="moddescription"><a class="header" href="#moddescription">modDescription</a></h1>
+<p>Mod descriptions written in Markdown.
+These descriptions are contributed by RS256,Kinchan_Ramen and leis3.</p>
+<ul>
+<li><a href="./EssentialClient.html">EssentialClient</a></li>
+<li><a href="./Tweakeroo.html">Tweakeroo</a></li>
+<li><a href="./carpet.html">Carpet</a></li>
+<li><a href="./gugle-carpet-addition.html">GugleCarpetAddition</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="essential-client"><a class="header" href="#essential-client">Essential Client</a></h1>
+<p>Version 1.3.6</p>
+<ul>
+<li><a href="https://modrinth.com/mod/essentialclient">Modrinth</a></li>
+<li><a href="https://github.com/senseiwells/EssentialClient">GitHub</a></li>
+</ul>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<h3 id="client-script"><a class="header" href="#client-script">client script</a></h3>
+<p>クライアント用のスクリプトを実行することができる。スクリプトには<a href="https://github.com/senseiwells/Arucas">Arucas</a>という言語を使う。詳細なドキュメントは<a href="https://github.com/senseiwells/EssentialClient/blob/main/docs/Full.md">EssentialClient/docs/Full.md</a>から確認できる。またClient Script Optionsメニューからいくつかのサンプルスクリプトをダウンロードできる。</p>
+<h3 id="chunk-debug"><a class="header" href="#chunk-debug">chunk debug</a></h3>
+<p>ロードされているチャンクを監視できる機能。ミニマップとして表示することもできる。</p>
+<h3 id="carpet-client"><a class="header" href="#carpet-client">carpet client</a></h3>
+<p>carpetのゲームルールをGUIで変更できる。ただしサーバーにcarpetがインストールされておりかつ適切な権限を持っている必要がある。変更できるゲームルールは<a href="https://carpet-rules.crec.dev/">Carpet Rules Database</a>を参照している。</p>
+<h3 id="gamerule-screen"><a class="header" href="#gamerule-screen">gamerule screen</a></h3>
+<p>MinecraftのゲームルールをGUIで変更できる。ただしサーバー環境においてはEssentialAddonsがインストールされている必要がある、</p>
+<h2 id="essential-client-options"><a class="header" href="#essential-client-options">Essential Client Options</a></h2>
+<h3 id="afklogout"><a class="header" href="#afklogout">afkLogout</a></h3>
+<p>設定したtick数無操作の状態が続くと自動的に切断する。</p>
+<ul>
+<li>初期値: <code>0</code></li>
+<li>有効な値: <code>200</code>以上の整数値</li>
+</ul>
+<h3 id="announceafk"><a class="header" href="#announceafk">announceAFK</a></h3>
+<p>指定したtick数プレイヤーの位置が変わらなかった場合に<a href="EssentialClient.html#announceafkmessage">announceAFKMessage</a>で指定したメッセージをチャットに送信する。</p>
+<ul>
+<li>初期値: <code>0</code></li>
+<li>有効な値: <code>Integer</code></li>
+</ul>
+<h3 id="announceafkmessage"><a class="header" href="#announceafkmessage">announceAFKMessage</a></h3>
+<p><a href="EssentialClient.html#announceafk">announceAFK</a>で送信するメッセージ。</p>
+<ul>
+<li>初期値: <code>I am now AFK</code></li>
+<li>有効な値: <code>String</code></li>
+</ul>
+<h3 id="announcebackmessage"><a class="header" href="#announcebackmessage">announceBackMessage</a></h3>
+<p><a href="EssentialClient.html#announceafk">announceAFK</a>によるAFK状態が解除されたときに送信するメッセージ。</p>
+<ul>
+<li>初期値: <code> </code></li>
+<li>有効な値: <code>String</code></li>
+</ul>
+<h3 id="autowalk"><a class="header" href="#autowalk">autoWalk</a></h3>
+<p>指定したtick数前進を入力し続けると自動で前進するようになる。再び前進を入力するか後退を入力すると停止できる。</p>
+<ul>
+<li>初期値: <code>0</code></li>
+<li>有効な値: <code>Integer</code></li>
+</ul>
+<h3 id="betteraccurateblockplacement"><a class="header" href="#betteraccurateblockplacement">betterAccurateBlockPlacement</a></h3>
+<p>tweakerooのaccurate block placement機能と同じ。</p>
+<h3 id="carpetalwayssetdefault"><a class="header" href="#carpetalwayssetdefault">carpetAlwaysSetDefault</a></h3>
+<p>carpetのゲームルールを変更した際にそれをデフォルトの設定値にする。同modのCarpet Server Optionsで変更した場合にも有効。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="chunkdebugminimapbackground"><a class="header" href="#chunkdebugminimapbackground">chunkDebugMinimapBackground</a></h3>
+<p>chunk debugミニマップで背景を描画する。</p>
+<ul>
+<li>初期値: <code>true</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="clientdebugshowunloadedchunks"><a class="header" href="#clientdebugshowunloadedchunks">clientDebugShowUnloadedChunks</a></h3>
+<p>ChunkDebugでアンロードされているチャンクを表示する。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="clientscriptannouncements"><a class="header" href="#clientscriptannouncements">clientScriptAnnouncements</a></h3>
+<p><a href="EssentialClient.html#client-script">client script</a>が開始/終了した際にチャットを送信する。</p>
+<ul>
+<li>初期値: <code>true</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="clientscriptfont"><a class="header" href="#clientscriptfont">clientScriptFont</a></h3>
+<p><a href="EssentialClient.html#client-script">client script</a>のエラーメッセージのフォントを変更する。</p>
+<ul>
+<li>初期値: <code>Minecraft</code></li>
+<li>有効な値: <code>Minecraft</code> <code>Jetbrains</code></li>
+</ul>
+<h3 id="clientscriptrepos"><a class="header" href="#clientscriptrepos">clientScriptRepos</a></h3>
+<p>scriptをダウンロードするレポジトリを指定する。レポジトリは複数指定できる。</p>
+<ul>
+<li>初期値: <code>https://api.github.com/repos/senseiwells/clientscript/contents/scripts</code></li>
+</ul>
+<h3 id="commandalternatedimension"><a class="header" href="#commandalternatedimension">commandAlternateDimension</a></h3>
+<p>自分がいる座標の別ディメンション(オーバーワールドかネザー)での値を取得するコマンド<code>/alternatedimension</code>を有効にする。出力された座標をクリックするか、<code>/alternatedimension teleport</code>を実行することでそのディメンションの座標にテレポートする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="commandclientnick"><a class="header" href="#commandclientnick">commandClientNick</a></h3>
+<p>クライアント上でのプレイヤーのニックネームを変更する<code>/clientnick</code>コマンドを有効にする。ニックネームには任意の文字列を指定できる。(ただしMinecraft装飾コードの<code>§</code>は<code>&amp;</code>に置き換えて使用する)</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="commandplayerclient"><a class="header" href="#commandplayerclient">commandPlayerClient</a></h3>
+<p>carpetの<code>/player</code>コマンドを保存し実行する<code>/playerclient</code>コマンドを有効にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<details>
+<summary>コマンドの詳細</summary>
+<h3 id="playerclientコマンドの使い方"><a class="header" href="#playerclientコマンドの使い方"><code>/playerclient</code>コマンドの使い方</a></h3>
+<p><a href="https://github.com/senseiwells/EssentialClient/wiki/CommandPlayerClient">wiki</a></p>
+<ul>
+<li><code>/playerclient add...</code>
+指定したプレイヤーをconfigに保存する。スポーンする座標、顔の向き、スポーンするディメンション、ゲームモードも合わせて指定して保存できる。</li>
+</ul>
+<pre><code>/playerclient add [name] spawn at [x] [y] [z] facing [yaw] [pitch] in [dimension] in [gamemode]
+
+/playerclient add [name] spawn here in [gamemode]
+</code></pre>
+<ul>
+<li><code>/playerclient remove...</code>
+指定したプレイヤーをconfigから削除する。</li>
+</ul>
+<pre><code>/playerclient remove [name]
+</code></pre>
+<ul>
+<li><code>/playerclient spawn...</code>
+configに保存されたプレイヤーを指定してスポーンさせる。保存されている座標からのオフセットを指定してその座標にスポーンさせることもできる。</li>
+</ul>
+<pre><code>/playerclient spawn [name]
+/playerclient spawn [name] offset [x] [y] [z]
+</code></pre>
+<p>保存した情報は<code>config/EssentialClient/PlayerClient.json</code>に保存されている。
+例</p>
+<pre><code class="language-json">{
+  &quot;steve&quot;: {
+    &quot;x&quot;: 0.5,
+    &quot;y&quot;: 73.0,
+    &quot;z&quot;: 0.5,
+    &quot;yaw&quot;: 0.0,
+    &quot;pitch&quot;: 0.0,
+    &quot;dimension&quot;: &quot;overworld&quot;,
+    &quot;gamemode&quot;: &quot;creative&quot;
+  }
+}
+</code></pre>
+</details>
+<h3 id="commandplayerlist"><a class="header" href="#commandplayerlist">commandPlayerList</a></h3>
+<p><code>/playerclient</code>コマンドで保存した複数のプレイヤーを一度にスポーンさせる<code>/playerlist</code>コマンドを有効にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<details>
+<summary>コマンドの詳細</summary>
+<h3 id="playerlistコマンドの使い方"><a class="header" href="#playerlistコマンドの使い方"><code>/playerlist</code>コマンドの使い方</a></h3>
+<p><a href="https://github.com/senseiwells/EssentialClient/wiki/CommandPlayerList">wiki</a></p>
+<ul>
+<li><code>/playerlist createlist...</code>
+リストを新規作成する。</li>
+</ul>
+<pre><code>/playerlist createlist [list_name]
+</code></pre>
+<ul>
+<li><code>/playerlist deletelist...</code>
+リストを削除する。</li>
+</ul>
+<pre><code>/playerlist deletelist [list_name]
+</code></pre>
+<ul>
+<li><code>/playerlist addplayer...</code>
+プレイヤーをリストに加える。指定するプレイヤーは先に<code>/playerclient</code>コマンドで保存しておく必要がある。</li>
+</ul>
+<pre><code>/playerlist addplayer [list_name] [player_name]
+</code></pre>
+<ul>
+<li><code>/playerlist spawnlist...</code>
+リストに登録されているプレイヤー全員をスポーンさせる。</li>
+</ul>
+<pre><code>/playerlist spawnlist [list_name]
+</code></pre>
+<p>保存した情報は<code>config/EssentialClient/PlayerList.json</code>に保存されている。
+例</p>
+<pre><code class="language-json">{
+  &quot;foo&quot;: [
+    &quot;alex&quot;,
+    &quot;steve&quot;
+  ]
+}
+</code></pre>
+</details>
+<h3 id="commandregion"><a class="header" href="#commandregion">commandRegion</a></h3>
+<p>プレイヤーがいる座標あるいは指定した座標のregionを取得するコマンド<code>/region</code>を有効にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="commandsuggesterignoresspaces"><a class="header" href="#commandsuggesterignoresspaces">commandSuggesterIgnoresSpaces</a></h3>
+<p>コマンドの入力時に余分なスペースを入れても補完されるようにする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="craftinghax"><a class="header" href="#craftinghax">craftingHax</a></h3>
+<p>Ctrlキーを押しながらレシピをクリックすることでアイテムをクラフトしてドロップする。Shiftキーも同時に押すことでスタックごとクラフトしてドロップする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="customclientcape"><a class="header" href="#customclientcape">customClientCape</a></h3>
+<p>指定したマントを着用する。自分のクライアント側でのみ描画される。
+マントのデザインは<a href="https://minecraft.fandom.com/ja/wiki/%E3%83%9E%E3%83%B3%E3%83%88#%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3">マント - Minecraft Wiki</a>で確認できる。</p>
+<ul>
+<li>初期値: <code>None</code></li>
+<li>有効な値: <code>None</code> <code>Old Mojang</code> <code>Mojang</code> <code>Mojang Studios</code> <code>Minecon 2011</code> <code>Minecon 2012</code>
+<code>Minecon 2013</code> <code>Minecon 2015</code> <code>Minecon 2016</code> <code>Bacon</code> <code>Millionth</code> <code>DannyB</code> <code>Julian</code>
+<code>Cheapsh0t</code> <code>MrMessiah</code> <code>Prismarine</code> <code>Birthday</code> <code>Translator</code> <code>Scrolls</code> <code>Cobalt</code> <code>Mojira</code>
+<code>Turtle</code> <code>Migrator</code> <code>Christmas 2010</code> <code>New Year 2011</code></li>
+</ul>
+<h3 id="disablearmourrendering"><a class="header" href="#disablearmourrendering">disableArmourRendering</a></h3>
+<p>指定したエンティティのアーマーの描画を無効にする。</p>
+<ul>
+<li>初期値: <code>None</code></li>
+<li>有効な値: <code>None</code> <code>You</code> <code>Players</code> <code>Entities</code></li>
+</ul>
+<h3 id="disablebobviewwhenhurt"><a class="header" href="#disablebobviewwhenhurt">disableBobViewWhenHurt</a></h3>
+<p>自分がダメージを受けた際のカメラの揺れを無効にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disablebossbar"><a class="header" href="#disablebossbar">disableBossBar</a></h3>
+<p>ボスバーの描画を無効にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disablehotbarscrolling"><a class="header" href="#disablehotbarscrolling">disableHotbarScrolling</a></h3>
+<p>ホットバーのスクロールを無効にする。ホットキーを使うことを学ぼう😀</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disablejoinleavemessage"><a class="header" href="#disablejoinleavemessage">disableJoinLeaveMessage</a></h3>
+<p>参加/退出のメッセージを非表示にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disablemaprendering"><a class="header" href="#disablemaprendering">disableMapRendering</a></h3>
+<p>地図を入れた額縁の描画を無効にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disablenametags"><a class="header" href="#disablenametags">disableNameTags</a></h3>
+<p>プレイヤーのネームタグを非表示にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disablenarrator"><a class="header" href="#disablenarrator">disableNarrator</a></h3>
+<p>Ctrl + Bを入力した際のナレーター切り替えを無効にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disablenightvisionflash"><a class="header" href="#disablenightvisionflash">disableNightVisionFlash</a></h3>
+<p>暗視効果が切れる前の画面の点滅を無効にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disableopmessages"><a class="header" href="#disableopmessages">disableOpMessages</a></h3>
+<p>システムメッセージを非表示にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disablerecipenotifications"><a class="header" href="#disablerecipenotifications">disableRecipeNotifications</a></h3>
+<p>レシピを解放した際のトースト通知を非表示にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disablescreenshotmessage"><a class="header" href="#disablescreenshotmessage">disableScreenshotMessage</a></h3>
+<p>スクリーンショットを撮影した際のメッセージを無効にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="disabletutorialnotifications"><a class="header" href="#disabletutorialnotifications">disableTutorialNotifications</a></h3>
+<p>チュートリアルのトースト通知を非表示にする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="displayruletype"><a class="header" href="#displayruletype">displayRuleType</a></h3>
+<p>ゲームルールの表示順を切り替える。</p>
+<ul>
+<li>初期値: <code>Alphabetical</code></li>
+<li>有効な値: <code>Alphabetical</code> <code>Rule Type</code> <code>Categories</code></li>
+</ul>
+<h3 id="displaytimeplayed"><a class="header" href="#displaytimeplayed">displayTimePlayed</a></h3>
+<p>ポーズメニューを開いた際に現在のプレイ時間を表示する。これによりどれだけの時間を~~無駄にしたか~~生産的に過ごしたかを知ることができる。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="essentialclientbutton"><a class="header" href="#essentialclientbutton">essentialClientButton</a></h3>
+<p>ポーズメニューとメインメニューでEssential Client Buttonを表示する。</p>
+<ul>
+<li>初期値: <code>true</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="highlightlavasources"><a class="header" href="#highlightlavasources">highlightLavaSources</a></h3>
+<p>溶岩源をハイライトする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="highlightwatersources"><a class="header" href="#highlightwatersources">highlightWaterSources</a></h3>
+<p>水源をハイライトする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="increasespectatorscrollsensitivity"><a class="header" href="#increasespectatorscrollsensitivity">increaseSpectatorScrollSensitivity</a></h3>
+<p>スペクテイターモードでより速く移動するためにマウスホイールをスクロールする時の感度を上げる。尚Minecraft標準ではダッシュキーありでの最高速度が87.111 m/sとなっている。 (参考: <a href="https://minecraft.fandom.com/ja/wiki/%E3%82%B9%E3%83%9A%E3%82%AF%E3%83%86%E3%82%A4%E3%82%BF%E3%83%BC#%E9%A3%9B%E8%A1%8C">スペクテイター - Minecraft Wiki</a>)</p>
+<ul>
+<li>初期値: <code>0</code></li>
+<li>有効な値: <code>Integer</code></li>
+</ul>
+<h3 id="increasespectatorscrollspeed"><a class="header" href="#increasespectatorscrollspeed">increaseSpectatorScrollSpeed</a></h3>
+<p>スペクテイターモードでより速く移動するためにスクロールできる限度を上げる。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="openscreenshotdirectory"><a class="header" href="#openscreenshotdirectory">openScreenshotDirectory</a></h3>
+<p>スクリーンショットのメッセージリンクをクリックした際にスクリーンショットのディレクトリを開くようにする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="overridecreativewalkspeed"><a class="header" href="#overridecreativewalkspeed">overrideCreativeWalkSpeed</a></h3>
+<p>クリエイティブモードでの移動速度を変更する。クリエイティブモード限定なのでずるをしようとは考えないように。</p>
+<ul>
+<li>初期値: <code>0.0</code></li>
+<li>有効な値: <code>Double</code></li>
+</ul>
+<h3 id="permanentchathud"><a class="header" href="#permanentchathud">permanentChatHud</a></h3>
+<p>ワールドやサーバーから退出した時も含めて常にチャット履歴が残るようにする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="permanenttime"><a class="header" href="#permanenttime">permanentTime</a></h3>
+<p>クライアント側の時間を指定した値で固定する。</p>
+<ul>
+<li>初期値: <code>-1</code></li>
+<li>有効な値: <code>-1</code> <code>0-23999</code></li>
+</ul>
+<h3 id="quicklockrecipe"><a class="header" href="#quicklockrecipe">quickLockRecipe</a></h3>
+<p>レシピをホイールクリックした際に検索欄をそのレシピで固定する。レシピ以外の場所や他のレシピをホイールクリックすることで固定を変更することができる。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="removewarnreceivedpassengers"><a class="header" href="#removewarnreceivedpassengers">removeWarnReceivedPassengers</a></h3>
+<p>クライアントの&quot;Received passengers for unknown entity&quot;の警告を削除する。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="soulspeedfovmultiplier"><a class="header" href="#soulspeedfovmultiplier">soulSpeedFovMultiplier</a></h3>
+<p>ソウルスピードによる視野角の倍率を変更する。</p>
+<ul>
+<li>初期値: <code>0.0</code></li>
+<li>有効な値: <code>0.00-1.00</code></li>
+</ul>
+<h3 id="stackableshulkersinplayerinventories"><a class="header" href="#stackableshulkersinplayerinventories">stackableShulkersInPlayerInventories</a></h3>
+<p>空のシュルカーボックスのItemsタグを削除することによりインベントリ内でのシュルカーボックスのスタックを有効にする。ただしサーバー側にEssentialAddonsがインストールされておりかつサーバー側で<code>stackableShulkersInPlayerInventories</code>が有効になっている必要がある。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="stackableshulkerswithitems"><a class="header" href="#stackableshulkerswithitems">stackableShulkersWithItems</a></h3>
+<p>インベントリ内でのアイテムが入っているシュルカーボックスのスタックを有効にする。ただし<a href="EssentialClient.html#stackableshulkersinplayerinventories">stackableShulkersInPlayerInventories</a>が有効になっている必要がある。</p>
+<h3 id="startselectedscriptsonjoin"><a class="header" href="#startselectedscriptsonjoin">startSelectedScriptsOnJoin</a></h3>
+<p>ワールドに入った際に指定したClientScriptを実行する。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="survivalinventoryincreative"><a class="header" href="#survivalinventoryincreative">survivalInventoryInCreative</a></h3>
+<p>クリエイティブモードでサバイバルモードのインベントリを開くことができるようにする。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="switchtototem"><a class="header" href="#switchtototem">switchToTotem</a></h3>
+<p>体力が指定した値を下回った際に不死のトーテムに持ち替える。</p>
+<ul>
+<li>初期値: <code>0</code></li>
+<li>有効な値: <code>Integer</code></li>
+</ul>
+<h3 id="titletexttotop"><a class="header" href="#titletexttotop">titleTextToTop</a></h3>
+<p>MinecraftのバージョンとMojangのテキストの表示をスクリーン上部に変更する。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="toggletab"><a class="header" href="#toggletab">toggleTab</a></h3>
+<p>TABを長押し式からトグル式に切り替える。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="unlockallrecipesonjoin"><a class="header" href="#unlockallrecipesonjoin">unlockAllRecipesOnJoin</a></h3>
+<p>ワールドに入った際に全てのレシピを解放する。</p>
+<ul>
+<li>初期値: <code>false</code></li>
+<li>有効な値: <code>Boolean</code></li>
+</ul>
+<h3 id="waterfovmultiplier"><a class="header" href="#waterfovmultiplier">waterFovMultiplier</a></h3>
+<p>水中での視野角の倍率を変更する。</p>
+<ul>
+<li>初期値: <code>0.0</code></li>
+<li>有効な値: <code>0.00-1.00</code></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><link href="Tweakeroo.css" rel="stylesheet"></link>
+<h1 id="tweakerooとtweakmoreの機能一覧"><a class="header" href="#tweakerooとtweakmoreの機能一覧">TweakerooとTweakmoreの機能一覧</a></h1>
+<h2 id="目次"><a class="header" href="#目次">目次</a></h2>
+<h1 id="tweakeroo"><a class="header" href="#tweakeroo">Tweakeroo</a></h1>
+<h2 id="generic"><a class="header" href="#generic">Generic</a></h2>
+<h3 id="carpetaccurateplacementprotocol"><a class="header" href="#carpetaccurateplacementprotocol">carpetAccuratePlacementProtocol</a></h3>
+<p>Carpet modを使用している場合に<a href="Tweakeroo.html#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a>と<a href="Tweakeroo.html#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a>を機能させる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a></li>
+<li><a href="Tweakeroo.html#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="clientplacementrotation"><a class="header" href="#clientplacementrotation">clientPlacementRotation</a></h3>
+<p>Carpet modが入っていない鯖またはシングルプレイで<a href="Tweakeroo.html#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a>と<a href="Tweakeroo.html#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a>を機能させる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a></li>
+<li><a href="Tweakeroo.html#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fastleftclickallowtools"><a class="header" href="#fastleftclickallowtools">fastLeftClickAllowTools</a></h3>
+<p>ツールをメインハンドに所持している場合でも<a href="Tweakeroo.html#tweakFastLeftclick"><code>tweakFastLeftClick</code></a>を機能させる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakFastLeftclick"><code>tweakFastLeftClick</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fastplacementrememberorientation"><a class="header" href="#fastplacementrememberorientation">fastPlacementRememberOrientation</a></h3>
+<p><a href="%60tweakFastBlockPlacement%60"><code>tweakFastBlockPlacement</code></a>を使用したとき、最初に置いたブロックの向きを保存する</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakFastBlockPlacement"><code>tweakFastBlockPlacement</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="freecameraplayerinputs"><a class="header" href="#freecameraplayerinputs">freeCameraPlayerInputs</a></h3>
+<p><a href="Tweakeroo.html#tweakFreeCamera"><code>tweakFreeCamera</code></a>を使用している際に右クリックと左クリックを使用できるようにする</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakFreeCamera"><code>tweakFreeCamera</code></a> </li>
+</ul>
+</li>
+</ul>
+<!-- + 関連機能
+  + [](#) -->
+<h3 id="freecameraplayermovement"><a class="header" href="#freecameraplayermovement">freeCameraPlayerMovement</a></h3>
+<p><a href="Tweakeroo.html#tweakFreeCamera"><code>tweakFreeCamera</code></a>を使用している際にプレイヤーを移動させることができるようになる
+&gt;[!note]
+&gt;画面の移動はできないので見やすい位置に移動させたり、ホットキーに設定すること</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakFreeCamera"><code>tweakFreeCamera</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="handrestockpre"><a class="header" href="#handrestockpre">handRestockPre</a></h3>
+<p><a href="Tweakeroo.html#handRestockPreThreshold"><code>handRestockPreThreshold</code></a>で設定した値までスタックできるアイテムが減った時、<a href="Tweakeroo.html#tweakHandRestock"><code>tweakHandRestock</code></a>を発動させる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#handRestockPreThreshold"><code>handRestockPreThreshold</code></a></li>
+<li><a href="Tweakeroo.html#tweakHandRestock"><code>tweakHandRestock</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="hangableentitybypassinverse"><a class="header" href="#hangableentitybypassinverse">hangableEntityBypassInverse</a></h3>
+<p>スニーク時に額縁や絵画をターゲットするかどうかを切り替える
+|True/false|ターゲット|
+|:--:|:--:|
+|True|しない|
+|False|する|</p>
+<h3 id="itemusepacketcheckbypass"><a class="header" href="#itemusepacketcheckbypass">itemUsePacketCheckBypass</a></h3>
+<p>1.18.2で追加された新たな距離・座標チェックを回避する。このチェックにより<a href="Tweakeroo.html#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a>を有効化した状態で置いたブロックはゴーストブロックになり正しく機能しなくなる。</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a></li>
+</ul>
+</li>
+<li>推奨される値:<code>true</code></li>
+</ul>
+<h3 id="permanentsneakallowinguis"><a class="header" href="#permanentsneakallowinguis">permanentSneakAllowInGUIs</a></h3>
+<p><a href="Tweakeroo.html#tweakPermanentSneak"><code>tweakPermanentSneak</code></a>を有効にしている場合にGUI(インベントリなど)を開いてもスニークし続ける</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakPermanentSneak"><code>tweakPermanentSneak</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="placementrestrictiontiedtofast"><a class="header" href="#placementrestrictiontiedtofast">placementRestrictionTiedToFast</a></h3>
+<p><a href="Tweakeroo.html#tweakFastBlockPlacement"><code>tweakFastBlockPlacement</code></a>のtrue/falseを切り替えたときに<a href="Tweakeroo.html#tweakPlacementRestriction"><code>tweakPlacementRestriction</code></a>のtrue/falseも一緒に切り替える</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakFastBlockPlacement"><code>tweakFastBlockPlacement</code></a></li>
+<li><a href="Tweakeroo.html#tweakPlacementRestriction"><code>tweakPlacementRestriction</code></a></li>
+</ul>
+</li>
+<li>推奨される値:<code>true</code></li>
+</ul>
+<h3 id="potionwarningbeneficialonly"><a class="header" href="#potionwarningbeneficialonly">potionWarningBeneficialOnly</a></h3>
+<p><a href="Tweakeroo.html#tweakPotionWarning"><code>tweakPotionWarning</code></a>で警告するポーションの効果を有益なもの(毒などのマイナスな効果以外の効果)だけにする</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakPotionWarning"><code>tweakPotionWarning</code></a></li>
+</ul>
+</li>
+<li>推奨される値:<code>true</code></li>
+</ul>
+<h3 id="rememberflexiblefromclick"><a class="header" href="#rememberflexiblefromclick">rememberFlexibleFromClick</a></h3>
+<p><a href="Tweakeroo.html#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a>を使用中、最初に置いたブロックの状態を保存する。右クリックを離さずに次のブロックを置くと最初のブロックと同じ状態になる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="shulkerdisplaybgcolor"><a class="header" href="#shulkerdisplaybgcolor">shulkerDisplayBgColor</a></h3>
+<p><a href="Tweakeroo.html#tweakshulkerboxdisplay"><code>tweakShulkerBoxDisplay</code></a>でシュルカーボックスの中身を見たときのインベントリの色をシュルカーボックスの色と同じにする。Falseにするとプレイヤーのインベントリと同じ色が適用される</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakshulkerboxdisplay"><code>tweakShulkerBoxDisplay</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="shulkerdisplayrequireshift"><a class="header" href="#shulkerdisplayrequireshift">shulkerDisplayRequireShift</a></h3>
+<p><a href="Tweakeroo.html#tweakshulkerboxdisplay"><code>tweakShulkerBoxDisplay</code></a>でシュルカーボックスの中身を覗くときにshiftキーを必要とするかどうか。Falseにするとカーソルを合わせるだけでシュルカーボックスの中身を覗くことができる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakshulkerboxdisplay"><code>tweakShulkerBoxDisplay</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="slotsyncworkaround"><a class="header" href="#slotsyncworkaround">slotSyncWorkaround</a></h3>
+<p>サーバーが<a href="Tweakeroo.html#tweakfastrightclick"><code>tweakFastRightClick</code></a>などで高速使用されるアイテムの耐久値やスタック数をオーバーライドするのを防ぐ</p>
+<h3 id="slotsyncworkaround-1"><a class="header" href="#slotsyncworkaround-1">slotSyncWorkaround</a></h3>
+<p>[<code>slotSyncWorkaround</code>]の適用範囲をTweakerooに存在する高速設置機能以外のmodの機能にも広げる。例えばLitematicaのEasy Place modeなど</p>
+<h3 id="snapaimindicator"><a class="header" href="#snapaimindicator">snapAimIndicator</a></h3>
+<p><a href="Tweakeroo.html#tweaksnapaim"><code>tweakSnapAim</code></a>を使用した際に表示されるインジケーターを表示するかどうか</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweaksnapaim"><code>tweakSnapAim</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="snapaimonlyclosetoangle"><a class="header" href="#snapaimonlyclosetoangle">snapAimOnlyCloseToAngle</a></h3>
+<p><a href="Tweakeroo.html#tweaksnapaim"><code>tweakSnapAim</code></a>でスナップが効く範囲を<a href="Tweakeroo.html#snapaimthresholdyaw"><code>snapAimThresholdYaw</code></a>で設定した範囲にする。スナップする角度を変更するわけではないので注意。Falseにすると全ての角度でスナップする</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweaksnapaim"><code>tweakSnapAim</code></a></li>
+<li><a href="Tweakeroo.html#snapaimthresholdyaw"><code>snapAimThresholdYaw</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="snapaimpitchovershoot"><a class="header" href="#snapaimpitchovershoot">snapAimPitchOvershoot</a></h3>
+<p><a href="Tweakeroo.html#snapaimmode"><code>snapAimMode</code></a>を<code>Pitch</code>か<code>Yaw &amp; Pitch</code>にした際にPitchの角度を<code>-90~90</code>から<code>-180~180</code>に変更する。化け物になりたい用設定</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweaksnapaim"><code>tweakSnapAim</code></a></li>
+<li><a href="Tweakeroo.html#snapaimmode"><code>snapAimMode</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="zoomadjustmousesensitivity"><a class="header" href="#zoomadjustmousesensitivity">zoomAdjustMouseSensitivity</a></h3>
+<p><a href="Tweakeroo.html#tweakzoom"><code>tweakZoom</code></a>でズーム中にマウスの感度を減少させる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakzoom"><code>tweakZoom</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="blocktypebreakrestrictionwarn"><a class="header" href="#blocktypebreakrestrictionwarn">blockTypeBreakRestrictionWarn</a></h3>
+<p><a href="Tweakeroo.html#tweakblocktypebreakrestriction"><code>tweakBlockTypeBreakRestriction</code></a>の警告文の表示位置を変更する</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakblocktypebreakrestriction"><code>tweakBlockTypeBreakRestriction</code></a></li>
+</ul>
+</li>
+<li>選択肢: <code>Message</code> <code>None</code> <code>Actionbar</code></li>
+</ul>
+<h3 id="breakingrestrictionmode"><a class="header" href="#breakingrestrictionmode">breakingRestrictionMode</a></h3>
+<p><a href="Tweakeroo.html#tweakbreakingrestriction"><code>tweakBreakingRestriction</code></a>のモードを切り替える</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakbreakingrestriction"><code>tweakBreakingRestriction</code></a></li>
+</ul>
+</li>
+<li>選択肢: <code>Line</code> <code>Layer</code> <code>Diagonal</code> <code>Plane</code> <code>Face</code> <code>Column</code></li>
+</ul>
+<h3 id="elytracameraindicator"><a class="header" href="#elytracameraindicator">elytraCameraIndicator</a></h3>
+<p><a href="Tweakeroo.html#tweakelytracamera"><code>tweakElytraCamera</code></a>を使用中に表示されるインジケーターの表示タイミングを切り替える。<code>With Key</code>では<a href="Tweakeroo.html#hotkeys"><code>Hotkeys</code></a>タブの<a href="Tweakeroo.html#elytracamera"><code>elytraCamera</code></a>で設定したキーを押したとき。 <code>Always</code>はずっと。 <code>Never</code>は表示しない。</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakelytracamera"><code>tweakElytraCamera</code></a></li>
+<li><a href="Tweakeroo.html#elytraCamera"><code>elytraCamera</code></a></li>
+</ul>
+</li>
+<li>選択肢: <code>With Key</code> <code>Always</code> <code>Never</code></li>
+</ul>
+<h3 id="entitytypeattackrestrictionwarn"><a class="header" href="#entitytypeattackrestrictionwarn">entityTypeAttackRestrictionWarn</a></h3>
+<p><a href="Tweakeroo.html#tweakentitytypeattackrestriction"><code>tweakEntityTypeAttackRestriction</code></a>の警告文の表示位置を変更する</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakentitytypeattackrestriction"><code>tweakEntityTypeAttackRestriction</code></a></li>
+<li>選択肢:<code>Message</code> <code>None</code> <code>Actionbar</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="placementrestrictionmode"><a class="header" href="#placementrestrictionmode">placementRestrictionMode</a></h3>
+<p><a href="Tweakeroo.html#tweakplacementrestriction"><code>tweakPlacementRestriction</code></a>のモードを切り替える</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakplacementrestriction"><code>tweakPlacementRestriction</code></a></li>
+<li><code>Line</code> <code>Layer</code> <code>Diagonal</code> <code>Plane</code> <code>Face</code> <code>Column</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="hotbarswapoverlayalignment"><a class="header" href="#hotbarswapoverlayalignment">hotbarSwapOverlayAlignment</a></h3>
+<p><a href="Tweakeroo.html#tweakhotbarswap"><code>tweakHotbarSwap</code></a>が<code>True</code>のときに<a href="Tweakeroo.html#hotbarswapbase"><code>hotbarSwapBase</code></a>で設定したキーを押下した際に表示されるオーバーレイの表示位置を変える</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakhotbarswap"><code>tweakHotbarSwap</code></a></li>
+<li><a href="Tweakeroo.html#hotbarswapbase"><code>hotbarSwapBase</code></a></li>
+</ul>
+</li>
+<li>選択肢:<code>Bottom Right</code> <code>Center</code> <code>Top Left</code> <code>Top Right</code> <code>Bottom Left</code></li>
+</ul>
+<h3 id="snapaimmode"><a class="header" href="#snapaimmode">snapAimMode</a></h3>
+<p><a href="Tweakeroo.html#tweaksnapaim"><code>tweakSnapAim</code></a>のモードを切り替える</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweaksnapaim"><code>tweakSnapAim</code></a></li>
+</ul>
+</li>
+<li>選択肢:<code>Yaw</code> <code>Pitch</code></li>
+</ul>
+<h3 id="chattimeformat"><a class="header" href="#chattimeformat">chatTimeFormat</a></h3>
+<p><a href="Tweakeroo.html#tweakchattimestamp"><code>tweakChatTimestamp</code></a>を有効化した際に表示されるタイムスタンプのフォーマットを変更する</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="Tweakeroo.html#tweakchattimestamp"><code>tweakChatTimestamp</code></a></li>
+</ul>
+</li>
+<li>初期値:<code>[HH:mm:ss]</code></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="carpet"><a class="header" href="#carpet">carpet</a></h1>
+<p><img src="https://github.com/RS-256/image/blob/main/modDescription/carpet_icon.png" alt="carpet_icon" /><br>
+version : carpet 1.4.1.12+v230608</p>
+<p>このドキュメント内では
+<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
+編集段階で未解決なものはストライクラインで示す。</p>
+<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+|mod|download|document|docs-JP|
+|:---:|:---:|:---:|:---:|
+|carpet|<a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a>|<a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a>|here|
+|carpet TIS addition|<a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a>|<a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a>||
+|carpet extra|<a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a>|<a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a>||
+|gugle-carpet-addition|<a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a>|<a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a>|<a href="https://github.com/TaichiServer/modDescription/blob/main/gugle-carpet-addition.md">GCA</a>|</p>
+<h2 id="目次-1"><a class="header" href="#目次-1">目次</a></h2>
+<details>
+  <summary>general</summary>
+<ul>
+<li><a href="carpet.html#carpet-1">carpet</a></li>
+</ul>
+</details>
+<details>
+  <summary>rules</summary>
+<ul>
+<li><a href="carpet.html#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></li>
+<li><a href="carpet.html#anticheatdisabled">antiCheatDisabled</a></li>
+<li><a href="carpet.html#carpetcommandpermissionlevel">carpetCommandPermissionLevel</a></li>
+<li><a href="carpet.html#carpets">carpets</a></li>
+<li><a href="carpet.html#chainstone">chainStone</a></li>
+<li><a href="carpet.html#cleanlog">cleanLog</a></li>
+<li><a href="carpet.html#commanddistance">commandDistance</a></li>
+<li><a href="carpet.html#commandDraw">commandDraw</a></li>
+<li><a href="carpet.html#commandInfo">commandInfo</a></li>
+<li><a href="carpet.html#commandLog">commandLog</a></li>
+<li><a href="carpet.html#commandperimeterinfo">commandPerimeterInfo</a></li>
+<li><a href="carpet.html#commandplayer">commandPlayer</a></li>
+<li><a href="carpet.html#commandprofile">commandProfile</a></li>
+<li><a href="carpet.html#commandscript">commandScript</a></li>
+<li><a href="carpet.html#commandscriptace">commandScriptACE</a></li>
+<li><a href="carpet.html#commandspawn">commandSpawn</a></li>
+<li><a href="carpet.html#commandtick">commandTick</a></li>
+<li><a href="carpet.html#commandtrackingai">commandTrackingAI</a></li>
+<li><a href="carpet.html#creativeflydrag">creativeFlyDrag</a></li>
+<li><a href="carpet.html#creativeflyspeed">creativeFlySpeed</a></li>
+<li><a href="carpet.html#creativenoclip">creativeNoClip</a></li>
+<li><a href="carpet.html#creativeplayersloadchunks">creativePlayersLoadChunks</a></li>
+<li><a href="carpet.html#ctrlqcraftingfix">ctrlQCraftingFix</a></li>
+<li><a href="carpet.html#custommotd">customMOTD</a></li>
+<li><a href="carpet.html#defaultloggers">defaultLoggers</a></li>
+<li><a href="carpet.html#desertshrubs">desertShrubs</a></li>
+<li><a href="carpet.html#explosionnoblockdamage">explosionNoBlockDamage</a></li>
+<li><a href="carpet.html#fastredstonedust">fastRedstoneDust</a></li>
+<li><a href="carpet.html#filllimit">fillLimit</a></li>
+<li><a href="carpet.html#fillupdates">fillUpdates</a></li>
+<li><a href="carpet.html#flippincactus">flippinCactus</a></li>
+<li><a href="carpet.html#fogoff">fogOff</a></li>
+<li><a href="carpet.html#forceloadlimit">forceloadLimit</a></li>
+<li><a href="carpet.html#hardcodetntangle">hardcodeTNTangle</a></li>
+<li><a href="carpet.html#hoppercounters">hopperCounters</a></li>
+<li><a href="carpet.html#huskspawningintemples">huskSpawningInTemples</a></li>
+<li><a href="carpet.html#interactionupdates">interactionUpdates</a></li>
+<li><a href="carpet.html#lagfreespawning">lagFreeSpawning</a></li>
+<li><a href="carpet.html#lightningkillsdropsfix">lightningKillsDropsFix</a></li>
+<li><a href="carpet.html#liquiddamagedisabled">liquidDamageDisabled</a></li>
+<li><a href="carpet.html#maxentitycollisions">maxEntityCollisions</a></li>
+<li><a href="carpet.html#mergetnt">mergeTNT</a></li>
+<li><a href="carpet.html#missingtools">missingTools</a></li>
+<li><a href="carpet.html#moreblueskulls">moreBlueSkulls</a></li>
+<li><a href="carpet.html#movableamethyst">movableAmethyst</a></li>
+<li><a href="carpet.html#movableblockentities">movableBlockEntities</a></li>
+<li><a href="carpet.html#optimizedtnt">optimizedTNT</a></li>
+<li><a href="carpet.html#perfpermissionlevel">perfPermissionLevel</a></li>
+<li><a href="carpet.html#persistentparrots">persistentParrots</a></li>
+<li><a href="carpet.html#piglinsspawninginbastions">piglinsSpawningInBastions</a></li>
+<li><a href="carpet.html#pingplayerlistlimit">pingPlayerListLimit</a></li>
+<li><a href="carpet.html#placementrotationfix">placementRotationFix</a></li>
+<li><a href="carpet.html#portalcreativedelay">portalCreativeDelay</a></li>
+<li><a href="carpet.html#portalsurvivaldelay">portalSurvivalDelay</a></li>
+<li><a href="carpet.html#pushlimit">pushLimit</a></li>
+<li><a href="carpet.html#quasiconnectivity">quasiConnectivity</a></li>
+<li><a href="carpet.html#railpowerlimit">railPowerLimit</a></li>
+<li><a href="carpet.html#renewableblackstone">renewableBlackstone</a></li>
+<li><a href="carpet.html#renewablecoral">renewableCoral</a></li>
+<li><a href="carpet.html#renewabledeepslate">renewableDeepslate</a></li>
+<li><a href="carpet.html#renewablesponges">renewableSponges</a></li>
+<li><a href="carpet.html#rotatorblock">rotatorBlock</a></li>
+<li><a href="carpet.html#scriptsappstore">scriptsAppStore</a></li>
+<li><a href="carpet.html#scriptsautoload">scriptsAutoload</a></li>
+<li><a href="carpet.html#scriptsdebugging">scriptsDebugging</a></li>
+<li><a href="carpet.html#scriptsoptimization">scriptsOptimization</a></li>
+<li><a href="carpet.html#sculksensorrange">sculkSensorRange</a></li>
+<li><a href="carpet.html#shulkerspawninginendcities">shulkerSpawningInEndCities</a></li>
+<li><a href="carpet.html#silverfishdropgravel">silverFishDropGravel</a></li>
+<li><a href="carpet.html#simulationdistance">simulationDistance</a></li>
+<li><a href="carpet.html#smoothclientanimations">smoothClientAnimations</a></li>
+<li><a href="carpet.html#spawnchunkssize">spawnChunksSize</a></li>
+<li><a href="carpet.html#stackableshulkerboxes">stackableShulkerBoxes</a></li>
+<li><a href="carpet.html#structureblockignored">structureBlockIgnored</a></li>
+<li><a href="carpet.html#structureblocklimit">structureBlockLimit</a></li>
+<li><a href="carpet.html#structureblockoutlinedistance">structureBlockOutlineDistance</a></li>
+<li><a href="carpet.html#summonnaturallightning">summonNaturalLightning</a></li>
+<li><a href="carpet.html#supersecretsetting">superSecretSetting</a></li>
+<li><a href="carpet.html#thickfungusgrowth">thickFungusGrowth</a></li>
+<li><a href="carpet.html#ticksyncedworldborders">tickSyncedWorldBorders</a></li>
+<li><a href="carpet.html#tntdonotupdate">tntDoNotUpdate</a></li>
+<li><a href="carpet.html#tntprimermomentumremoved">tntPrimerMomentumRemoved</a></li>
+<li><a href="carpet.html#tntrandomrange">tntRandomRange</a></li>
+<li><a href="carpet.html#updatesuppressionblock">updateSuppressionBlock</a></li>
+<li><a href="carpet.html#viewdistance">viewDistance</a></li>
+<li><a href="carpet.html#xpfromexplosions">xpFromExplosions</a></li>
+<li><a href="carpet.html#xpnocooldown">xpNoCooldown</a></li>
+</ul>
+</details>
+<details>
+<summary>command</summary>
+<ul>
+<li><a href="carpet.html#counter">counter</a></li>
+<li><a href="carpet.html#distance">distance</a></li>
+<li><a href="carpet.html#draw">draw</a></li>
+<li><a href="carpet.html#info">info</a></li>
+<li><a href="carpet.html#log">log</a></li>
+<li><a href="carpet.html#perimeterinfo">perimeterInfo</a></li>
+<li><a href="carpet.html#profile">profile</a></li>
+<li><a href="carpet.html#player">player</a></li>
+<li><a href="carpet.html#script">script</a></li>
+<li><a href="carpet.html#spawn-1">spawn</a></li>
+<li><a href="carpet.html#tick">tick</a></li>
+<li><a href="carpet.html#track">track</a></li>
+</ul>
+</details>
+<h2 id="general"><a class="header" href="#general">general</a></h2>
+<h3 id="carpet-1"><a class="header" href="#carpet-1">carpet</a></h3>
+<ul>
+<li><code>/carpet</code><br>
+現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。</li>
+<li><code>/carpet list &lt;category&gt;</code><br>
+利用できるcarpet ruleを<strong>すべて</strong>表示する。<code>&lt;category&gt;</code>を指定した場合、紐づけられたruleを表示する。</li>
+<li><code>/carpet list default</code><br>
+<code>carpet.conf</code>に記録されているルールを表示する。</li>
+<li><code>/carpet setDefault [rule] [value]</code><br>
+<code>[rule]</code>で指定したcarpet ruleのデフォルトの値を<code>[value]</code>で指定した値にする。
+&gt;[!note]
+&gt;<code>/carpet [rule] [value]</code>を使用し値が正常に変更された場合、通知とともにそえられる<code>change permanently?</code>を右クリックすることでその値がすでに入力されたコマンドが準備される。</li>
+<li><code>/carpet removeDefault &lt;rule&gt;</code><br>
+<code>[rule]</code>で指定したcarpet ruleのデフォルトの値を<code>carpet.conf</code>から削除し、初期値にする。</li>
+</ul>
+<h2 id="rules"><a class="header" href="#rules">rules</a></h2>
+<p>全てのルールは<code>/carpet [rule] &lt;value&gt;</code>によって変更することができる。</p>
+<h3 id="allowspawningofflineplayers"><a class="header" href="#allowspawningofflineplayers"><del>allowSpawningOfflinePlayers</del></a></h3>
+<p>オフラインのプレイヤーを召喚できるかを設定できる。
+オフラインのプレイヤーは<code>/player [mcid] [spawn | shadow]</code>によるものではないことを確認。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="anticheatdisabled"><a class="header" href="#anticheatdisabled">antiCheatDisabled</a></h3>
+<p>バニラ標準のアンチチートを無効化する。アンチチートにはプレイヤーのリーチ制限や移動量制限などが含まれ、それぞれが数値上の最大値まで許容することができるようになる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="carpetcommandpermissionlevel"><a class="header" href="#carpetcommandpermissionlevel">carpetCommandPermissionLevel</a></h3>
+<p><code>/carpet</code>コマンドを使用できるパーミッションレベルを指定する。<code>ops</code>では<code>/op</code>で付与された人のみであるが、<code>2</code> <code>4</code>はそれぞれの数値以上のパーミッションを保持しているプレイヤーにが使うことができる。</p>
+<blockquote>
+<p>[!note]
+現在たいち鯖では最大のパーミッションレベルが3になっている。</p>
+</blockquote>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>ops</code> <code>2</code> <code>4</code></li>
+</ul>
+<h3 id="carpets"><a class="header" href="#carpets">carpets</a></h3>
+<p>carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
+以下は使用できるコマンドのリストである。
+| color  | command                                      |
+|:------:|:---------------------------------------------|
+| gray   | <code>/info block ~ ~-1 ~</code>                        |
+| black  | <code>/spawn entities</code>                            |
+| brown  | <code>/distance from ~ ~ ~ </code> <code>/distance to ~ ~ ~</code> |
+| pink   | <code>/spawn list ~ ~-1 ~</code>                        |</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#info">info</a></li>
+<li><a href="carpet.html#spawn-1">spawn</a></li>
+<li><a href="carpet.html#distance">distance</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="chainstone"><a class="header" href="#chainstone">chainStone</a></h3>
+<p>チェーンを長いほうの端でスライムのように接続でき、かつほかのブロックとも接続できるようにする。<code>stick_to_all</code>を指定するとすべての方向について接続する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>stick_to_all</code></li>
+</ul>
+<h3 id="cleanlog"><a class="header" href="#cleanlog"><del>cleanLog</del></a></h3>
+<p>どのログがどのように消されるかは謎。</p>
+<p><strong>クライアントのみ</strong></p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="commanddistance"><a class="header" href="#commanddistance">commandDistance</a></h3>
+<p><code>/distance</code>を使用できるプレイヤーを指定する。<code>true</code> <code>false</code>ではopの所持の如何を問わず指定することができる。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#distance">distance</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commanddraw"><a class="header" href="#commanddraw">commandDraw</a></h3>
+<p><code>/draw</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#draw">draw</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandinfo"><a class="header" href="#commandinfo">commandInfo</a></h3>
+<p><code>/info</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#info">info</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandlog"><a class="header" href="#commandlog">commandLog</a></h3>
+<p><code>/log</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#log">log</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandperimeterinfo"><a class="header" href="#commandperimeterinfo">commandPerimeterInfo</a></h3>
+<p><code>/perimeterinfo</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#perimeterinfo">perimeterInfo</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandplayer"><a class="header" href="#commandplayer">commandPlayer</a></h3>
+<p><code>/player</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandprofile"><a class="header" href="#commandprofile">commandProfile</a></h3>
+<p><code>/profile</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#profile">profile</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandscript"><a class="header" href="#commandscript">commandScript</a></h3>
+<p><code>/script</code>のscript作成を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#script">script</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandscriptace"><a class="header" href="#commandscriptace">commandScriptACE</a></h3>
+<p><code>/script load</code> <code>/script run</code>を使用できるプレイヤーを指定する。appが実行するときのopレベルでもある。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#script">script</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandspawn"><a class="header" href="#commandspawn">commandSpawn</a></h3>
+<p><code>/spawn</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#spawn-1">spawn</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandtick"><a class="header" href="#commandtick">commandTick</a></h3>
+<p><code>/tick</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#tick">tick</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandtrackingai"><a class="header" href="#commandtrackingai">commandTrackingAI</a></h3>
+<p><code>/track</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#track">track</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="creativeflydrag"><a class="header" href="#creativeflydrag">creativeFlyDrag</a></h3>
+<p>クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、1でBEのようにストッピングができるようになる。</p>
+<p><strong>クライアントのみ</strong></p>
+<ul>
+<li>初期値 : <code>0.09</code></li>
+<li>使用できる値 : <code>double</code></li>
+</ul>
+<h3 id="creativeflyspeed"><a class="header" href="#creativeflyspeed">creativeFlySpeed</a></h3>
+<p>クリエイティブにおける浮遊時の飛行速度を設定する。</p>
+<p><strong>クライアントのみ</strong></p>
+<ul>
+<li>初期値 : <code>1.0</code></li>
+<li>使用できる値 : <code>double</code></li>
+</ul>
+<h3 id="creativenoclip"><a class="header" href="#creativenoclip">creativeNoClip</a></h3>
+<p>クリエイティブにおける飛行状態でブロックを貫通できるようにする。
+クライアントとサーバーの双方に設定があるため、同じ設定にしないと動作が不安定になる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="creativeplayersloadchunks"><a class="header" href="#creativeplayersloadchunks">creativePlayersLoadChunks</a></h3>
+<p>クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。
+&gt;[!note]
+&gt;スペクテイターモードについては<code>/gamerule spectatorsGenerateChunks</code>によって設定可能。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="ctrlqcraftingfix"><a class="header" href="#ctrlqcraftingfix">ctrlQCraftingFix</a></h3>
+<p>ctrlQによる一括排出をクラフトの結果欄でも機能するようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="custommotd"><a class="header" href="#custommotd"><del>customMOTD</del></a></h3>
+<p>MOTD is なに</p>
+<ul>
+<li>初期値 : <code>_</code></li>
+<li>使用できる値 : <code>string</code></li>
+</ul>
+<h3 id="defaultloggers"><a class="header" href="#defaultloggers">defaultLoggers</a></h3>
+<p>サーバーに入ったときに表示するログの初期値。ただしsetDefaultを設定しないと再起動によって初期値に戻る。
+<code>tps,mobcaps,counter</code>のように、カンマで常げることでサジェストされたもの以外も指定できる。</p>
+<ul>
+<li>初期値 : <code>none</code></li>
+<li>使用できる値 : <code>string</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#log">log</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="desertshrubs"><a class="header" href="#desertshrubs">desertShrubs</a></h3>
+<p>苗木が砂漠を含めた暑い気候および水のアクセスができない場所で枯れ木にする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="explosionnoblockdamage"><a class="header" href="#explosionnoblockdamage">explosionNoBlockDamage</a></h3>
+<p>爆発ダメージを起こさなくする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="fastredstonedust"><a class="header" href="#fastredstonedust">fastRedstoneDust</a></h3>
+<p>redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。 
+&gt;[!note]
+&gt;壊れる回路があるので注意。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="filllimit"><a class="header" href="#filllimit">fillLimit</a></h3>
+<p>fillやcloneのブロック数制限を変更する。ただしゲームルールに同様の機能があり、そちらの数値に上書きされる。</p>
+<ul>
+<li>初期値 : <code>32768</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="fillupdates"><a class="header" href="#fillupdates">fillUpdates</a></h3>
+<p>fillやclone、setblockによるblock updateを発生させないようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#interactionupdates">interactionUpdates</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="flippincactus"><a class="header" href="#flippincactus">flippinCactus</a></h3>
+<p>サボテンをメインハンドに持っている時、ホッパーやオブザーバーなど、方向をもつブロックの一部を右クリックするとその方向をupdateなしで回転もしくは反転できるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#rotatorblock">rotatorCactus</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fogoff"><a class="header" href="#fogoff">fogOff</a></h3>
+<p>ネザーにおよびエンドにおけるfog(霧)を消すようにする。</p>
+<p><strong>クライアントのみ</strong></p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="forceloadlimit"><a class="header" href="#forceloadlimit">forceloadLimit</a></h3>
+<p><code>/forceload</code>の上限を変更する。</p>
+<ul>
+<li>初期値 : <code>256</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="hardcodetntangle"><a class="header" href="#hardcodetntangle">hardcodeTNTangle</a></h3>
+<p>tntの着火時に起きる水平方向の移動の計算方式を変更する。デフォルトは-1.0であり、これは変更しない(=ランダムである)ことを意味する。0から2πの範囲でその回転を指定できる。</p>
+<ul>
+<li>初期値 : <code>-1.0</code></li>
+<li>使用できる値 : <code>double</code></li>
+</ul>
+<h3 id="hoppercounters"><a class="header" href="#hoppercounters">hopperCounters</a></h3>
+<p><code>/counter</code>を有効にする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#counters">counter</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="huskspawningintemples"><a class="header" href="#huskspawningintemples">huskSpawningInTemples</a></h3>
+<p>ピラミッドではハスクのみがスポーンできるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="interactionupdates"><a class="header" href="#interactionupdates">interactionUpdates</a></h3>
+<p>ブロックを置くときにblock updateを発生させないようにする。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#fillupdates">fillUpdates</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="lagfreespawning"><a class="header" href="#lagfreespawning">lagFreeSpawning</a></h3>
+<p>mobのスポーンを最適化する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="language"><a class="header" href="#language">language</a></h3>
+<p>carpetで使用する言語を変更する。</p>
+<ul>
+<li>初期値 : <code>en_us</code></li>
+<li>使用できる値 : <code>en_us</code> <code>fr_fr</code> <code>pt_br</code> <code>zh_cn</code> <code>zh_tw</code></li>
+</ul>
+<h3 id="lightningkillsdropsfix"><a class="header" href="#lightningkillsdropsfix">lightningKillsDropsFix</a></h3>
+<p><a href="https://bugs.mojang.com/browse/MC-206922">MC-206922</a>を修正する。
+落雷がmobをキルした場合もmobがドロップすべきアイテムをドロップするようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="liquiddamagedisabled"><a class="header" href="#liquiddamagedisabled">liquidDamageDisabled</a></h3>
+<p>流体によるブロックの破壊を起こさなくする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="maxentitycollisions"><a class="header" href="#maxentitycollisions">maxEntityCollisions</a></h3>
+<p>一つのentityが持つ最大の当たり判定の数。0で無制限。非不整数でなければいけない。</p>
+<ul>
+<li>初期値 : <code>0</code></li>
+<li>使用できる値 : <code>interger</code></li>
+</ul>
+<h3 id="mergetnt"><a class="header" href="#mergetnt">mergeTNT</a></h3>
+<p>着火されたtntが同一のfuseを持つ場合それらを起爆したときに同様の爆発ダメージ及びモーメントを与える一つのentityとする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="missingtools"><a class="header" href="#missingtools">missingTools</a></h3>
+<p>ガラスの適正ツールがつるはしとなる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="moreblueskulls"><a class="header" href="#moreblueskulls">moreBlueSkulls</a></h3>
+<p>witherによって出される青いskullの確率を上げる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="movableamethyst"><a class="header" href="#movableamethyst">movableAmethyst</a></h3>
+<p>芽の生えたアメジストをピストンによって移動できるようにする。また、シルクタッチのついた適正ツールで掘られた場合にはアイテムとしてドロップするようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="movableblockentities"><a class="header" href="#movableblockentities">movableBlockEntities</a></h3>
+<p>block entityをピストンにより移動可能にする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="optimizedtnt"><a class="header" href="#optimizedtnt">optimizedTNT</a></h3>
+<p>tntが同じ座標や流体内で爆発したときの最適化をする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="perfpermissionlevel"><a class="header" href="#perfpermissionlevel"><del>perfPermissionLevel</del></a></h3>
+<p><code>/perf</code>が使用できる権限を変更する。<strong>しかし<code>/perf</code>が確認できなかった。</strong></p>
+<ul>
+<li>初期値 : <code>4</code></li>
+<li>使用できる値 : <code>2</code> <code>4</code></li>
+</ul>
+<h3 id="persistentparrots"><a class="header" href="#persistentparrots">persistentParrots</a></h3>
+<p>オウムがダメージをうけるまで常に肩に乗るようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="piglinsspawninginbastions"><a class="header" href="#piglinsspawninginbastions">piglinsSpawningInBastions</a></h3>
+<p>ピグリン、ピグリンブルート、ホグリンがbastionで自然スポーンすることができるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="pingplayerlistlimit"><a class="header" href="#pingplayerlistlimit">pingPlayerListLimit</a></h3>
+<p>ping playerのサンプル数の上限を設定する。非負整数である必要がある。</p>
+<ul>
+<li>初期値 : <code>12</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="placementrotationfix"><a class="header" href="#placementrotationfix">placementRotationFix</a></h3>
+<p>プレイヤーが高速で視点を動かしたときに設置されたブロックが回転するバグを修正する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="portalcreativedelay"><a class="header" href="#portalcreativedelay">portalCreativeDelay</a></h3>
+<p>プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までをとる。</p>
+<ul>
+<li>初期値 : <code>0</code></li>
+<li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#portalsurvivaldelay">portalSurvivalDelay</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="portalsurvivaldelay"><a class="header" href="#portalsurvivaldelay">portalSurvivalDelay</a></h3>
+<p>プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までの整数値をとる。</p>
+<ul>
+<li>初期値 : <code>80</code></li>
+<li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#portalcreativedelay">creativePortalDelay</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="pushlimit"><a class="header" href="#pushlimit">pushLimit</a></h3>
+<p>ピストンが押せるブロックの最大量を決める必要がある。1から1024までの整数値をとる。</p>
+<ul>
+<li>初期値 : <code>12</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="quasiconnectivity"><a class="header" href="#quasiconnectivity">quasiConnectivity</a></h3>
+<p>ピストンとドロッパー、ディスペンサーの準接続をおこさないようにする。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="railpowerlimit"><a class="header" href="#railpowerlimit">railPowerLimit</a></h3>
+<p>レールの動力がどこまで動力を伝達できるかを設定する。1から1024までの整数値をとる。</p>
+<ul>
+<li>初期値 : <code>9</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="renewableblackstone"><a class="header" href="#renewableblackstone">renewableBlackstone</a></h3>
+<p>　溶岩流が青氷に流れるときブラックストーンを生成する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="renewablecoral"><a class="header" href="#renewablecoral">renewableCoral</a></h3>
+<p>サンゴに骨粉を与えることでサンゴブロック(ストラクチャー)になるようにする。<code>expanded</code>にするとウチワサンゴでも可能になる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>expanded</code></li>
+</ul>
+<h3 id="renewabledeepslate"><a class="header" href="#renewabledeepslate">renewableDeepslate</a></h3>
+<p>　通常の丸石製造機がy0以下で深層岩を生成する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="renewablesponges"><a class="header" href="#renewablesponges">renewableSponges</a></h3>
+<p>ガーディアンが雷に打たれるとエルダーガーディアンになるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="rotatorblock"><a class="header" href="#rotatorblock">rotatorBlock</a></h3>
+<p>サボテンのはいったディスペンサーの正面に方向のあるブロックがあると、トリガーされたときに正面のブロックの方向を変える。ほかのアイテムがはいっているときはそちらが優先され、確率も含めサボテンは無視される。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#flippincactus">flippinCactus</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="scriptsappstore"><a class="header" href="#scriptsappstore">scriptsAppStore</a></h3>
+<p>scriptをゲーム内でダウンロードするさいの場所を指定する。コンソールにおける<code>cd</code>に同じ。github上の有効なパブリックリポジトリのリンクのみ受け付ける。<code>none</code>とした場合無効になる。</p>
+<ul>
+<li>初期値 : <code>gnembon/scarpet/contents/programs</code></li>
+<li>使用できる値 : <code>string</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandscript">commandScript</a></li>
+<li><a href="carpet.html#script">script</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="scriptsautoload"><a class="header" href="#scriptsautoload">scriptsAutoload</a></h3>
+<p><code>/script</code>が有効になっている場合、serverがリスタートもしくはワールドが読み込まれたときに自動的に読み込まれるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandscript">commandScript</a></li>
+<li><a href="carpet.html#script">script</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="scriptsdebugging"><a class="header" href="#scriptsdebugging">scriptsDebugging</a></h3>
+<p>スクリプトのデバッグメッセージを表示するようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> </li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandscript">commandScript</a></li>
+<li><a href="carpet.html#script">script</a> </li>
+</ul>
+</li>
+</ul>
+<h3 id="scriptsoptimization"><a class="header" href="#scriptsoptimization">scriptsOptimization</a></h3>
+<p>スクリプトを最適化する。</p>
+<p><strong>一部正常に起動しなくなるスクリプトがあることに注意。</strong></p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandscript">commandScript</a></li>
+<li><a href="carpet.html#script">script</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="sculksensorrange"><a class="header" href="#sculksensorrange">sculkSensorRange</a></h3>
+<p>スカルくセンサーの振動を伝える半径を変更する。1から1024の整数値である必要がある。</p>
+<ul>
+<li>初期値 : <code>8</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="shulkerspawninginendcities"><a class="header" href="#shulkerspawninginendcities">shulkerSpawningInEndCities</a></h3>
+<p>シュルカーがエンドシティーでリスポーンするようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="silverfishdropgravel"><a class="header" href="#silverfishdropgravel">silverFishDropGravel</a></h3>
+<p>シルバーフィッシュがブロックから抜け出すときに砂利をドロップするようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="simulationdistance"><a class="header" href="#simulationdistance">simulationDistance</a></h3>
+<p>サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の間である必要があり、<code>0</code>にすると無効になる。</p>
+<ul>
+<li>初期値 : <code>0</code></li>
+<li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#viewdistance">viewDistance</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="smoothclientanimations"><a class="header" href="#smoothclientanimations">smoothClientAnimations</a></h3>
+<p>低いtpsでアニメーションをスムーズにする。さらにシングルプレイではtpsにあわせてプレイヤーの飛行速度が変動するようになる。</p>
+<p><strong>クライアントのみ</strong></p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="spawnchunkssize"><a class="header" href="#spawnchunkssize">spawnChunksSize</a></h3>
+<p>スポーンチャンクの半径を指定する。<code>0</code>にするとスポーンチャンクを無効にできる。</p>
+<ul>
+<li>初期値 : <code>11</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="stackableshulkerboxes"><a class="header" href="#stackableshulkerboxes">stackableShulkerBoxes</a></h3>
+<p>中身のはいっていないシュルカーを地面になげたとき重ねることができる。2から64までの数値または<code>true</code> <code>false</code>のみを受け付ける。<code>true</code>にすると64になる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>string</code></li>
+</ul>
+<h3 id="structureblockignored"><a class="header" href="#structureblockignored">structureBlockIgnored</a></h3>
+<p>ストラクチャーブロックが無視するブロックのidを指定する。複数指定することはできない。</p>
+<ul>
+<li>初期値 : <code>minecraft:structure_void</code></li>
+<li>使用できる値 : <code>string</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#structureblocklimit">structureBlockLimit</a></li>
+<li><a href="carpet.html#structureblockoutlinedistance">structureBlockOutlineDistance</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="structureblocklimit"><a class="header" href="#structureblocklimit">structureBlockLimit</a></h3>
+<p>各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。<br />
+&gt;[!note]
+&gt;値が大きい場合、負荷軽減の目的で<a href="carpet.html#structureblockignored">structureBlockIgnored</a>をminecraft:airにすることを推奨。</p>
+<blockquote>
+<p>[!note]
+ストラクチャーブロックが常に読み込まれていなければ正しく動かない。</p>
+</blockquote>
+<ul>
+<li>初期値 : <code>48</code></li>
+<li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#structureblockignored">structureBlockIgnored</a></li>
+<li><a href="carpet.html#structureblockoutlinedistance">structureBlockOutlineDistance</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="structureblockoutlinedistance"><a class="header" href="#structureblockoutlinedistance">structureBlockOutlineDistance</a></h3>
+<p>ストラクチャーブロックのアウトラインを視認できる距離を変更する。値は非負整数でなければならない。</p>
+<p><strong>クライアントのみ</strong></p>
+<ul>
+<li>初期値 : <code>96</code></li>
+<li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#structureblockignored">structureBlockIgnored</a></li>
+<li><a href="carpet.html#structureblocklimit">structureBlockLimit</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="summonnaturallightning"><a class="header" href="#summonnaturallightning">summonNaturalLightning</a></h3>
+<p><code>/summon lightning_bolt</code>で召喚した稲妻が自然発生した稲妻と同様の効果を与えるようにする。帯電化や炎上など。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="supersecretsetting"><a class="header" href="#supersecretsetting">superSecretSetting</a></h3>
+<p>u306Au3093u3082u308Fu304Bu3089u306Au3044u308821</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="thickfungusgrowth"><a class="header" href="#thickfungusgrowth">thickFungusGrowth</a></h3>
+<p>ネザーの菌類を3x3のベースがあるときに太いネザーの菌糸に成長するようにする。　　
+<code>false</code>で無効に、<code>random</code>で6%の確率で太く、<code>all</code>で条件を満たしていればすべて太くなる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>false</code> <code>random</code> <code>all</code></li>
+</ul>
+<h3 id="ticksyncedworldborders"><a class="header" href="#ticksyncedworldborders">tickSyncedWorldBorders</a></h3>
+<p>ワールドボーダーの見た目の移動が現実時間ではなくtickをもとにするようにする。これによりtpsを変更するとそれに従って見た目上のスピードが変わるようになる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="tntdonotupdate"><a class="header" href="#tntdonotupdate">tntDoNotUpdate</a></h3>
+<p>tntが動力源のとなりに置かれたときに自身をupdateしなくする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="tntprimermomentumremoved"><a class="header" href="#tntprimermomentumremoved">tntPrimerMomentumRemoved</a></h3>
+<p>着火によるtntの横方向のランダムなモーメントを0にする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="tntrandomrange"><a class="header" href="#tntrandomrange">tntRandomRange</a></h3>
+<p>tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない
+&gt;[!important]
+&gt;<a href="carpet.html#optimizedtnt">optimizedTNT</a>を有効にする必要がある。</p>
+<ul>
+<li>初期値 : <code>-1.0</code></li>
+<li>使用できる値 : <code>double</code></li>
+</ul>
+<h3 id="updatesuppressionblock"><a class="header" href="#updatesuppressionblock">updateSuppressionBlock</a></h3>
+<p>アクティベータレールをバリアブロックの上に置くと、レールがオフになったときに<code>neighor update stack</code>が埋められる。この値はスタックに残すべき更新の量。</p>
+<ul>
+<li>初期値 : <code>-1</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="viewdistance"><a class="header" href="#viewdistance">viewDistance</a></h3>
+<p>サーバーの描画距離をこの値でオーバーライドする。0から32の間である必要があり、<code>0</code>にすると無効になる。</p>
+<ul>
+<li>初期値 : <code>0</code></li>
+<li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#simulationdistance">simulationDistance</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="xpfromexplosions"><a class="header" href="#xpfromexplosions">xpFromExplosions</a></h3>
+<p>xpをドロップするブロックはどんな爆発からでもxpをドロップするようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="xpnocooldown"><a class="header" href="#xpnocooldown">xpNoCooldown</a></h3>
+<p>xpの吸収のクールダウンを消すことができる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h2 id="command"><a class="header" href="#command">command</a></h2>
+<h3 id="counter"><a class="header" href="#counter">counter</a></h3>
+<p><code>/counter &lt;color&gt; &lt;realtime | reset&gt;</code> <br>
+で使用する。ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントし、それらから効率を計算する。複数のホッパーを同じチャンネルで作動させることも可能。羊毛16色を用いて16チャンネルを同時に使うことができる。</p>
+<ul>
+<li><code>&lt;color&gt;</code> <br>
+割愛。複数選択はできない。</li>
+<li><code>&lt;realtime | reset&gt;</code>
+<ul>
+<li><code>realtime</code> <br>
+リアルタイムでの効率を計測する。このフラグをつけない場合、tpsが20以外になるとデフォルトの単位時間が72000gtなので実際の1hの効率ではなくなる。このフラグによってそれを是正し、実際の1hの効率を求めることができる。</li>
+<li><code>reset</code> <br>
+指定したチャンネルもしくは指定しなかった場合すべてのチャンネルの計測をリセットする。</li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#hoppercounters">hopperCounters</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="distance"><a class="header" href="#distance">distance</a></h3>
+<p><code>/distance &lt;from&gt; &lt;to&gt;</code><br>
+で<code>&lt;from&gt;</code>から<code>&lt;to&gt;</code>までの距離を複数の方法で測ることができる。</p>
+<ul>
+<li>
+<p><code>&lt;from&gt;</code><br>
+距離の始点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合<code>~ ~ ~</code>が補われる。</p>
+</li>
+<li>
+<p><code>&lt;to&gt;</code><br>
+距離の終点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合<code>~ ~ ~</code>が補われる。</p>
+<blockquote>
+<p>[!note]
+<code>&lt;from&gt;</code>のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。</p>
+</blockquote>
+</li>
+<li>
+<p>実行結果<br>
+正しく計算されると三つの距離空間に基づく値が表示される。ただし計算には入力された座標を小数第二位までに丸めて使用され、出力は小数第一位までとなる。</p>
+<details>
+<summary>距離空間と定義</summary>
+<ul>
+<li>
+<p><code>Spherical</code><br>
+ユークリッド距離で算出。
+始点を $P_1(x_1,y_1,z_1)$、終点を $P_2(x_2,y_2,z_2)$とすると距離 $d_S(P_1,P_2)$は
+$$d_S(P_1 , P_2)\coloneqq\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$$</p>
+</li>
+<li>
+<p><code>Cyrindrical</code><br>
+$x$座標および $z$座標のみを用いてユークリッド距離で算出。
+$$d_C(P_1 , P_2)\coloneqq\sqrt{(x_1-x_2)^2+(z_1-z_2)^2}$$</p>
+</li>
+<li>
+<p><code>Manhattan</code><br>
+マンハッタン距離で算出。
+$$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
+&gt;[!note]
+&gt;minecraftではほとんどがユークリッド距離を利用している。<code>CanSpawnArea</code>もユークリッド距離である。</p>
+</li>
+</ul>
+</details>
+</li>
+<li>
+<p>関連項目</p>
+<ul>
+<li><a href="carpet.html#commanddistance">commandDistance</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="draw"><a class="header" href="#draw">draw</a></h3>
+<p><code>/draw [shape] [coordinate]</code>で利用可能。<code>[shape]</code>の図形を生成できる。ときにはWorldEditに負ける。ほとんどにおいてWorldEditで代替可能であるが、diamondやconeなどはこれでつくったほうが　はやいだろう。</p>
+<ul>
+<li><code>[shape]</code>
+<ul>
+<li><a href="carpet.html#ball">ball</a></li>
+<li><a href="carpet.html#cone">cone</a></li>
+<li><a href="carpet.html#cuboid">cuboid</a></li>
+<li><a href="carpet.html#cylinder">cylinder</a></li>
+<li><a href="carpet.html#diamond">diamond</a></li>
+<li><a href="carpet.html#pyramid">pyramid</a></li>
+<li><a href="carpet.html#sphere">sphere</a></li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commanddraw">commandDraw</a></li>
+</ul>
+</li>
+</ul>
+<details>
+  <summary>詳細</summary>
+<h4 id="ball"><a class="header" href="#ball">ball</a></h4>
+<p>中が満たされた球体を生成する。
+<code>/draw ball [center] [radius] [block] &lt;replace&gt;</code><br>
+で利用可能。</p>
+<ul>
+<li><code>[center]</code><br>
+生成物、ここでは球体の中心となる座標を指定する。絶対座標と相対座標のどちらも使うことができる。小数で入力した場合その座標を含むブロックの座標が選択される。</li>
+<li><code>[radius]</code><br>
+半径を指定する。値は0より大きい整数でなければならない。</li>
+<li><code>[block]</code><br>
+描くブロックを指定する。WorldEditのように複数をランダムに指定することはできない。
+&gt;[!note]
+&gt;あとからWorldEdit等を用いることで割合指定でランダムに変更することができる。</li>
+<li><code>&lt;replace&gt;</code><br>
+特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。指定しなかった場合全てのブロックを置き換える。</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#sphere">draw sphere</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="cone"><a class="header" href="#cone">cone</a></h4>
+<p>中が満たされた円柱を生成する。
+<code>/draw cone [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code><br>
+で利用可能。</p>
+<ul>
+<li><code>[center]</code><br>
+生成物の底面の中心となる座標を指定する。</li>
+<li><code>[radius]</code><br>
+底面の半径を指定する。</li>
+<li><code>[height]</code><br>
+生成物の高さを指定する。</li>
+<li><code>[pointing]</code>
+<ul>
+<li><code>down</code><br>
+先端が<code>[axis]</code>の座標マイナス方向を向く。</li>
+<li><code>up</code><br>
+先端が<code>[axis]</code>の座標プラス方向を向く。</li>
+</ul>
+</li>
+<li><code>[axis]</code><br>
+生成物がx軸を基準とする。
+<ul>
+<li><code>x</code></li>
+<li><code>y</code></li>
+<li><code>z</code></li>
+</ul>
+</li>
+<li><code>[block]</code><br>
+描くブロックを指定する。</li>
+<li><code>&lt;replace&gt;</code><br>
+特定のブロック<strong>を</strong>置き換えるかを指定する。</li>
+</ul>
+<h4 id="cuboid"><a class="header" href="#cuboid">cuboid</a></h4>
+<p>中が満たされた四角柱を生成する。
+<code>/draw cuboid [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code><br>
+で利用可能。</p>
+<ul>
+<li><code>[center]</code><br>
+生成物の底面の中心となる座標を指定する。</li>
+<li><code>[radius]</code><br>
+底面の一辺の長さを指定する。
+&gt;[!important]
+&gt;この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。</li>
+<li><code>[height]</code><br>
+生成物の高さを指定する。</li>
+<li><code>[pointing]</code>
+<ul>
+<li><code>down</code><br>
+先端が<code>[axis]</code>の座標マイナス方向を向く。</li>
+<li><code>up</code><br>
+先端が<code>[axis]</code>の座標プラス方向を向く。</li>
+</ul>
+</li>
+<li><code>[axis]</code><br>
+生成物がその軸を中心にする。
+<ul>
+<li><code>x</code></li>
+<li><code>y</code></li>
+<li><code>z</code></li>
+</ul>
+</li>
+<li><code>[block]</code><br>
+描くブロックを指定する。</li>
+<li><code>&lt;replace&gt;</code><br>
+特定のブロック<strong>を</strong>置き換えるかを指定する。</li>
+</ul>
+<h4 id="cylinder"><a class="header" href="#cylinder">cylinder</a></h4>
+<p>中が満たされた円柱を生成する。
+<code>/draw cylinder [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code><br>
+で利用可能。</p>
+<ul>
+<li><code>[center]</code><br>
+生成物の中心となる座標を指定する。</li>
+<li><code>[radius]</code><br>
+底面の半径を指定する。</li>
+<li><code>[height]</code><br>
+生成物の高さを指定する。</li>
+<li><code>[pointing]</code><br>
+<ul>
+<li><code>down</code><br>
+<code>[axis]</code>の座標の負の方向に生成する。</li>
+<li><code>up</code><br>
+<code>[axis]</code>の座標の正の方向に生成する。</li>
+</ul>
+</li>
+<li><code>[axis]</code><br>
+<ul>
+<li><code>x</code></li>
+<li><code>y</code></li>
+<li><code>z</code></li>
+</ul>
+</li>
+<li><code>[block]</code><br>
+描くブロックを指定する。</li>
+<li><code>&lt;replace&gt;</code><br>
+特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。</li>
+</ul>
+<h4 id="diamond"><a class="header" href="#diamond">diamond</a></h4>
+<p>中空の正八面体を生成する。
+<code>/draw diamond [center] [radius] [block] &lt;replace&gt;</code><br>
+で利用可能。</p>
+<ul>
+<li><code>[center]</code><br>
+生成物の中心となる座標を指定する。</li>
+<li><code>[radius]</code><br>
+中心からの最大距離を指定する。</li>
+<li><code>[block]</code><br>
+描くブロックを指定する。</li>
+<li><code>&lt;replace&gt;</code><br>
+特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。</li>
+</ul>
+<h4 id="pyramid"><a class="header" href="#pyramid">pyramid</a></h4>
+<p>中が満たされた円柱を生成する。
+<code>/draw pyramid [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code><br>
+で利用可能。</p>
+<ul>
+<li><code>[center]</code><br>
+生成物の中心となる座標を指定する。</li>
+<li><code>[radius]</code><br>
+底面の一辺の長さを指定する。
+&gt;[!important]
+&gt;この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。</li>
+<li><code>[height]</code><br>
+生成物の高さを指定する。</li>
+<li><code>[pointing]</code><br>
+<ul>
+<li><code>down</code><br>
+<code>[axis]</code>の座標の負の方向に生成する。</li>
+<li><code>up</code><br>
+<code>[axis]</code>の座標の正の方向に生成する。</li>
+</ul>
+</li>
+<li><code>[axis]</code><br>
+<ul>
+<li><code>x</code></li>
+<li><code>y</code></li>
+<li><code>z</code></li>
+</ul>
+</li>
+<li><code>[block]</code><br>
+描くブロックを指定する。</li>
+<li><code>&lt;replace&gt;</code><br>
+特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。</li>
+</ul>
+<h4 id="sphere"><a class="header" href="#sphere">sphere</a></h4>
+<p>中空の球体を生成する。
+<code>/draw sphere [center] [radius] [block] &lt;replace&gt;</code><br>
+で利用可能。</p>
+<ul>
+<li><code>[center]</code><br>
+球体の中心となる座標を指定する。</li>
+<li><code>[radius]</code><br>
+半径を指定する。</li>
+<li><code>[block]</code><br>
+描くブロックを指定する。</li>
+<li><code>&lt;replace&gt;</code><br>
+特定のブロック<strong>を</strong>置き換えるかを指定する。</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#ball">draw ball</a></li>
+</ul>
+</li>
+</ul>
+</details>
+<h3 id="info"><a class="header" href="#info">info</a></h3>
+<p>指定した情報を表示する。opレベル0を要求する。WorldEditによって完全に代替される予定であるとのこと。
+<code>/info [block | entity] [target] &lt;grep&gt;</code>
+で実行可能。<code>&lt;grep&gt;</code>によって表示する情報を制限することが可能。</p>
+<ul>
+<li><code>[block | entity]</code>
+<ul>
+<li><code>block</code><br>
+<code>[target]</code>は表示したいブロックの座標となる。絶対座標もしくは相対座標を使うことができる。</li>
+<li><code>entity</code><br>
+<code>[target]</code>は表示したいエンティティとなる。一つのエンティティのみを選択する必要がある。
+&gt;[!note]
+&gt;ターゲットセレクタで指定する場合<code>[limit=1]</code>と追記することで一つのエンティティに絞ることができる。</li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandinfo">commandInfo</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="log"><a class="header" href="#log">log</a></h3>
+<p><code>/log [subject] &lt;mcid&gt;</code>で<code>[subject]</code>に関する情報をさまざまなところに表示する。</p>
+<ul>
+<li><code>/log clear</code><br>
+全てのlogの表示を停止させることができる。
+&gt;[!note]
+&gt;<code>/log [subject] clear</code>とすることでそのlog表示を消すことができる。</li>
+<li><code>&lt;mcid&gt;</code><br>
+指定することでその人に表示させることができる。</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandlog">commandLog</a></li>
+<li><a href="carpet.html#defaultloggers">defaultLoggers</a></li>
+</ul>
+</li>
+</ul>
+<details>
+  <summary>subject</summary>
+<h4 id="counter-1"><a class="header" href="#counter-1"><code>counter</code></a></h4>
+<p><code>/log counter &lt;color&gt; &lt;mcid&gt;</code>で利用可能。特定のチャンネルに対して収集されたアイテム数とその効率、計測時間を表示する。</p>
+<ul>
+<li><code>&lt;color | clear&gt;</code><br>
+チャンネルを指定する。指定しなかった場合<code>white</code>もしくはそれが無効であるならばほかの有効なチャンネルが選択される。さらに有効なチャンネルが一切ない場合は<code>white</code>が表示される。</li>
+<li>表示場所<br>
+プレイヤーリスト</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#counter">counter</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="fallingblocks"><a class="header" href="#fallingblocks"><code>fallingBlocks</code></a></h4>
+<p><code>/log fallingBlocks &lt;brief | full&gt; &lt;mcid&gt;</code>で利用可能。falling blockの生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。</p>
+<ul>
+<li><code>&lt;brief | full&gt;</code><br>
+表現の方法を指定する。指定しなかった場合<code>brief</code>が指定される。
+<ul>
+<li><code>brief</code><br>
+省略して表示する。ホバーすることで正確な情報が得られる。</li>
+<li><code>full</code><br>
+省略せずにすべてを表示する。</li>
+</ul>
+</li>
+<li>表示場所<br>
+チャット</li>
+</ul>
+<h4 id="mobcaps"><a class="header" href="#mobcaps"><code>mobcaps</code></a></h4>
+<p><code>/log mobcaps &lt;dimension | dynamic&gt; &lt;mcid&gt;</code>で利用可能。指定したディメンションのmobcapを表示する。</p>
+<ul>
+<li><code>&lt;dimension | dynamic&gt;</code><br>
+そのディメンションにおけるmobcapを表示する。指定しないと<code>dynamic</code>が指定される。
+<ul>
+<li><code>dimension</code><br>
+そのディメンションにおけるmobcapを表示する。カスタムディメンションをdatapack等であらたに作成した場合そのディメンションidが入力できるようになる。</li>
+<li><code>dynamic</code><br>
+自身のいるディメンションが自動的に選択され、ディメンションを移動すると表示されるディメンションも変わる。</li>
+</ul>
+</li>
+<li>表示場所<br>
+プレイヤーリスト</li>
+<li>関連項目
+<ul>
+<li>spawn</li>
+</ul>
+</li>
+</ul>
+<h4 id="packets"><a class="header" href="#packets"><code>packets</code></a></h4>
+<p><code>/log packets &lt;mcid&gt;</code>で利用可能。通信時のパケット量を単位を/sとして表示する.。Iがサーバーへ、Oがクライアントへのパケット量。</p>
+<ul>
+<li>表示場所<br>
+プレイヤーリスト</li>
+</ul>
+<h4 id="pathfinding"><a class="header" href="#pathfinding"><code>pathfinding</code></a></h4>
+<p><code>/log pathfinding [count] &lt;mcid&gt;</code>で利用可能。pathfindingは行動探索であるが、どういった挙動を示すかは不明。</p>
+<ul>
+<li><code>[count]</code><br>
+おそらくlogに流すentityの量。</li>
+<li>表示場所<br>
+わがらん</li>
+</ul>
+<h4 id="projectiles"><a class="header" href="#projectiles"><code>projectiles</code></a></h4>
+<p><code>/log projectiles &lt;brief | full&gt; &lt;mcid&gt;</code>で利用可能。飛び道具、主にポーションや矢のentity生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。当たったとき、その座標も表示する。</p>
+<ul>
+<li><code>&lt;brief | full&gt;</code><br>
+表現の方法を指定する。指定しなかった場合<code>brief</code>が指定される。
+<ul>
+<li><code>brief</code><br>
+省略して表示する。ホバーすることで正確な情報が得られる。</li>
+<li><code>full</code><br>
+省略せずにすべてを表示する。</li>
+</ul>
+</li>
+<li>表示場所<br>
+チャット</li>
+</ul>
+<h4 id="tnt"><a class="header" href="#tnt"><code>tnt</code></a></h4>
+<p><code>/log tnt &lt;brief | full&gt; &lt;mcid&gt;</code>で利用可能。tntがいつ、どこで、誰によって、どのようにして、ベクトルの始点がどこであるかを表示する。</p>
+<ul>
+<li><code>&lt;brief | full&gt;</code><br>
+表現の方法を指定する。指定しなかった場合<code>brief</code>が指定される。
+<ul>
+<li><code>brief</code><br>
+省略して表示する。ホバーすることで正確な情報が得られる。</li>
+<li><code>full</code><br>
+省略せずにすべてを表示する。値がより詳細になる。</li>
+</ul>
+</li>
+<li>表示場所<br>
+チャット</li>
+</ul>
+<h4 id="tps"><a class="header" href="#tps"><code>tps</code></a></h4>
+<p><code>/log tps &lt;mcid&gt;</code>で利用可能。tpsとmsptを表示する。</p>
+<ul>
+<li>表示場所<br>
+プレイヤーリスト</li>
+<li>関連項目
+<ul>
+<li>tick</li>
+</ul>
+</li>
+</ul>
+</details>
+<h3 id="perimeterinfo"><a class="header" href="#perimeterinfo">perimeterInfo</a></h3>
+<p><code>/perimeterinfo &lt;coordinate&gt;　&lt;mob&gt;</code>で利用可能。perimeterについて湧くことが可能なブロックを表示する。</p>
+<ul>
+<li><code>&lt;coordinate&gt;</code><br>
+perimeterの中心、プレイヤーが立つ座標を入力する。この座標を中心に半径128ブロ空の球体内に関して表示する。指定しなかった場合現在の座標<code>~ ~ ~</code>が指定される。</li>
+<li><code>&lt;mob&gt;</code><br>
+この<code>&lt;mob&gt;</code>が湧くことができるブロックを表示するようにする。指定しなかった場合すべての存在するmobが指定される。</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandperimeterinfo">commandPerimeterInfo</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="profile"><a class="header" href="#profile">profile</a></h3>
+<p><code>/profile [entities | health]</code>で<code>/tick &lt;entities | health&gt;</code>と同様の働きをする。詳しくは<a href="carpet.html#tick">tick</a>を参照。</p>
+<ul>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandprofile">commandProfile</a></li>
+<li><a href="carpet.html#tick">tick</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="player"><a class="header" href="#player">player</a></h3>
+<p><code>/player [mcid] [action]</code>で様々なプレイヤーに関する操作を行える。</p>
+<ul>
+<li><code>[action]</code>
+<ul>
+<li><code>attack</code></li>
+<li><code>dismount</code></li>
+<li><code>drop</code></li>
+<li><code>dropStack</code></li>
+<li><code>hotbar</code></li>
+<li><code>jump</code></li>
+<li><code>kill</code></li>
+<li><code>look</code></li>
+<li><code>mount</code></li>
+<li><code>move</code></li>
+<li><code>shadow</code></li>
+<li><code>sneak</code></li>
+<li><code>spawn</code></li>
+<li><code>sprint</code></li>
+<li><code>stop</code></li>
+<li><code>swapHands</code></li>
+<li><code>turn</code></li>
+<li><code>unsneak</code></li>
+<li><code>unsprint</code></li>
+<li><code>use</code></li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandplayer">commandPlayer</a></li>
+</ul>
+</li>
+</ul>
+<details>
+  <summary>action</summary>
+<h4 id="attack"><a class="header" href="#attack">attack</a></h4>
+<p>なにも指定しなかった場合、<code>once</code>が指定される。</p>
+<ul>
+<li>continuous<br>
+<code>/player [mcid] attack continuous</code><br>
+連続的に攻撃させる。</li>
+<li>interval<br>
+<code>/player [mcid] attack interval [count]</code><br>
+<code>[counter]</code>gt毎に攻撃させる。</li>
+<li>once<br>
+<code>/player [mcid] attack once</code><br>
+一回だけ攻撃させる。</li>
+</ul>
+<h4 id="dismount"><a class="header" href="#dismount">dismount</a></h4>
+<p>現在乗っているエンティティから降ろさせる。なににものっていなかった場合なにもおきない。<br>
+<code>/player [mcid] dismount</code></p>
+<h4 id="drop"><a class="header" href="#drop">drop</a></h4>
+<p>今メインハンドにもっているものを一つその場に落とさせる。<br>
+<code>/player [mcid] drop</code></p>
+<h4 id="dropstack"><a class="header" href="#dropstack">dropStack</a></h4>
+<p>今メインハンドにもっているものを1スタックその場に落させる。<br>
+<code>/player [mcid] dropStack</code></p>
+<h4 id="hotbar"><a class="header" href="#hotbar">hotbar</a></h4>
+<p>今手にもっているスロットを変更させる。<br>
+<code>/player [mcid] hotbar [number]</code></p>
+<h4 id="jump"><a class="header" href="#jump">jump</a></h4>
+<p>その場でジャンプさせる。<br>
+<code>/player [mcid] jump</code></p>
+<h4 id="kill"><a class="header" href="#kill">kill</a></h4>
+<p>対象をkillする。<br>
+<code>/player [mcid] kill</code></p>
+<h4 id="look"><a class="header" href="#look">look</a></h4>
+<p>特定の方向を向かせる。<br>
+<code>/player [mcid] look [[pitch yaw] | up | down | north | south | east | west | at [x y z]]</code></p>
+<ul>
+<li><code>[pitch yaw]</code><br>
+ピッチとヨーを指定する。数字はそれぞれ-90から90の間でなければいけない。</li>
+<li><code>up | down | north | south | east | west</code><br>
+特定の方向を向かせる。</li>
+<li><code>at [x y z]</code><br>
+特定の座標に視線を向かせる。</li>
+</ul>
+<h4 id="mount"><a class="header" href="#mount">mount</a></h4>
+<p>一番近い乗ることができるエンティティに乗る。よみこまれているエンティティのすべてが乗れない場合、失敗する。<br>
+<code>/player [mcid] mount</code></p>
+<h4 id="move"><a class="header" href="#move">move</a></h4>
+<p>指定された方向へ移動する。
+<code>/player &lt;name&gt; move [backward | forward | left | right]</code></p>
+<h4 id="shadow"><a class="header" href="#shadow">shadow</a></h4>
+<p>全ての動作を引き継いで同名のbotを出す。
+<code>/player [mcid] shadow</code></p>
+<h4 id="sneak"><a class="header" href="#sneak">sneak</a></h4>
+<p>スニークをさせる。
+<code>/player [mcid] sneak</code></p>
+<h4 id="spawn"><a class="header" href="#spawn">spawn</a></h4>
+<p>botとしてplayerを召喚する。
+<code>/player [mcid] spawn</code></p>
+<h4 id="sprint"><a class="header" href="#sprint">sprint</a></h4>
+<p>ダッシュさせる。
+<code>/player [mcid] sprint</code></p>
+<h4 id="stop"><a class="header" href="#stop">stop</a></h4>
+<p>今<code>[mcid]</code>に<code>/player</code>によって実行されているコマンドを全て停止させる。
+<code>/player [mcid] stop</code></p>
+<h4 id="swaphands"><a class="header" href="#swaphands">swapHands</a></h4>
+<p>オフハンドとメインハンドを入れ替える。
+<code>/player [mcid] swapHands</code></p>
+<h4 id="turn"><a class="header" href="#turn">turn</a></h4>
+<p>指定した方向を向かせる。
+<code>/player [mcid] turn [back | left | right]</code></p>
+<h4 id="unsneak"><a class="header" href="#unsneak">unsneak</a></h4>
+<p>スニークを解除させる。
+<code>/player [mcid] unsneak</code></p>
+<h4 id="unsprint"><a class="header" href="#unsprint">unsprint</a></h4>
+<p>ダッシュを解除させる。
+<code>/player [mcid] unsprint</code></p>
+<h4 id="use"><a class="header" href="#use">use</a></h4>
+<p>なにも指定しなかった場合、<code>once</code>が指定される。</p>
+<ul>
+<li>continuous<br>
+<code>/player [mcid] use continuous</code><br>
+連続的に使用させる。</li>
+<li>interval<br>
+<code>/player [mcid] use interval [count]</code><br>
+<code>[counter]</code>gt毎に使用させる。</li>
+<li>once<br>
+<code>/player [mcid] use once</code><br>
+一回だけ使用させる。</li>
+</ul>
+</details>
+<h3 id="script"><a class="header" href="#script">script</a></h3>
+<p>carpet内で動作するスクリプトを操作する。ゲーム内で作成することができるが、ここでは省略。</p>
+<h3 id="spawn-1"><a class="header" href="#spawn-1">spawn</a></h3>
+<p><code>/spawn [subject]</code>によって実行可能。spawningに関する情報および設定を変更する。</p>
+<ul>
+<li><code>[subject]</code>
+<ul>
+<li><code>entities</code></li>
+<li><code>list</code></li>
+<li><code>mobcaps</code></li>
+<li><code>mobcapLocal</code></li>
+<li><code>rate</code></li>
+<li><code>tracking</code></li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandspawn">commandSpawn</a></li>
+</ul>
+</li>
+</ul>
+<details>
+    <summary>subject</summary>
+<h4 id="entities"><a class="header" href="#entities"><code>entities</code><br></a></h4>
+<p><code>/spawn entities &lt;mob_type&gt;</code>で実行可能。mobcapの占有率や<code>&lt;mob_type&gt;</code>を指定した場合そのmob_typeに属するmobの座標を取得できる。</p>
+<h4 id="list"><a class="header" href="#list"><code>list</code><br></a></h4>
+<p><code>/spawn list [coordinate]</code>で実行可能。そのブロックに対して理論上湧くことのできるentityを一覧形式で表示する。</p>
+<h4 id="mobcaps-1"><a class="header" href="#mobcaps-1"><code>mobcaps</code><br></a></h4>
+<p><code>/spawn mobcaps &lt;dimension&gt;</code>で実行可能。指定されたdimensionに対するmobcapを表示する。</p>
+<h4 id="mobcaplocal"><a class="header" href="#mobcaplocal"><code>mobcapLocal</code><br></a></h4>
+<p><code>/spawn mobcapLocal [selector]</code>で実行可能。プレイヤーの周りに発生するmobcapを計測する。</p>
+<h4 id="rate"><a class="header" href="#rate"><code>rate</code><br></a></h4>
+<p><code>/spawn rate [mob_type] [round]</code>で実行可能。<code>[mob_type]</code>の1tickに試行されるspawning回数を<code>[round]</code>の値に変更する。</p>
+<h4 id="tracking"><a class="header" href="#tracking"><code>tracking</code><br></a></h4>
+<p><code>/spawn tracking [mob_type | action]</code>で実行可能。<code>[mob_type]</code>のspawn回数やspawn率を表示す。 </p>
+</details>
+<h3 id="tick"><a class="header" href="#tick">tick</a></h3>
+<p><code>/tick [action]</code>によりminecraftのtickに関する制御をする。</p>
+<ul>
+<li><code>[action]</code>
+<ul>
+<li><code>entities</code></li>
+<li><code>freeze</code></li>
+<li><code>health</code></li>
+<li><code>rate</code></li>
+<li><code>step</code></li>
+<li><code>superHot</code></li>
+<li><code>warp</code></li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="carpet.html#commandtick">commandTick</a></li>
+</ul>
+</li>
+</ul>
+<details>
+   <summary>action</summary>
+<h4 id="entities-1"><a class="header" href="#entities-1">entities</a></h4>
+<p><code>/tick entities &lt;tick&gt;</code>で実行可能。<code>&lt;tick&gt;</code>gtの間entityの量や種類などを計算し、その上位を表示する。指定しなかった場合300gtで計算する。</p>
+<h4 id="freeze"><a class="header" href="#freeze">freeze</a></h4>
+<p><code>/tick freeze &lt;true | false | deep | status&gt;</code>で実行可能。<code>true</code>もしくは<code>false</code>を選択することで現在のtickで停止もしくは再開させることができる。<code>status</code>は現在freezeしているかの確認ができ、<code>deep</code>ではより深いタイミングでのfreezeを可能にする。指定しなかった場合trueとfalseがトグルとなる。</p>
+<h4 id="health"><a class="header" href="#health">health</a></h4>
+<p><code>/tick health &lt;tick&gt;</code>で実行可能。<code>&lt;tick&gt;</code>gtの間どの処理が負荷となっているかを計測し、その上位を表示する。指定しなかった場合300gtで計測する。</p>
+<h4 id="rate-1"><a class="header" href="#rate-1">rate</a></h4>
+<p><code>/tick rate [count]</code>で実行可能。現在のtick rateを<code>[count]</code>の値にする。ただしtickはmsptに基づいて計算されるため正確な値が反映されるわけではないことに注意。</p>
+<h4 id="step"><a class="header" href="#step">step</a></h4>
+<p>freeze中に<code>\tick step [count]</code>で実行可能。<code>[count]</code>の数だけtickを進める。</p>
+<h4 id="superhot"><a class="header" href="#superhot">superHot</a></h4>
+<p><code>/tick superHot [true | false]</code>で実行可能。プレイヤーが移動するまでtickがfreezeするsuperHotモードを有効にできる。ゲーム「super hot」から。</p>
+<h4 id="warp"><a class="header" href="#warp">warp</a></h4>
+<p><code>/tick warp [count]</code>で実行可能。最適化をしたうえでできるだけ最速で<code>[count]</code>の数字分だけ早送りしようとする。</p>
+</details>
+<h3 id="track"><a class="header" href="#track">track</a></h3>
+<p><code>/track [entity_type] [tracker]</code>で実行可能。ただしscriptなしでは<code>[entity_type]</code>はvillagerのみとなっている。<code>[tracker]</code>によって表示するtracking情報はことなるが多いので割愛。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gugle-carpet-addition"><a class="header" href="#gugle-carpet-addition">gugle-carpet-addition</a></h1>
+<p>version : GCA 2.7.0</p>
+<p>carpetのaddonであるため、carpetが前提modとなる。</p>
+<p>このドキュメント内では
+<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
+編集段階で未解決なものはストライクラインで示す。</p>
+<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+|mod|download|document|docs-JP|
+|:---:|:---:|:---:|:---:|
+|carpet|<a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a>|<a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a>|<a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md">carpet</a>|
+|carpet TIS addition|<a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a>|<a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a>||
+|carpet extra|<a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a>|<a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a>||
+|gugle-carpet-addition|<a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a>|<a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a>|here|</p>
+<h2 id="目次-2"><a class="header" href="#目次-2">目次</a></h2>
+<details>
+<summary>rules</summary>
+<ul>
+<li><a href="gugle-carpet-addition.html#openfakeplayerinventory">openFakePlayerInventory</a></li>
+<li><a href="gugle-carpet-addition.html#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
+<li><a href="gugle-carpet-addition.html#fakeplayerresident">fakePlayerResident</a></li>
+<li><a href="gugle-carpet-addition.html#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></li>
+<li><a href="gugle-carpet-addition.html#fakeplayerautofish">fakePlayerAutoFish</a></li>
+<li><a href="gugle-carpet-addition.html#fakeplayerautoreplacetool">fakePlayerAutoReplaceTool</a></li>
+</ul>
+</details>
+<h2 id="rules-1"><a class="header" href="#rules-1">rules</a></h2>
+<p>全てのルールは<code>/carpet [rule] [value]</code>によって変更することができる。</p>
+<h3 id="openfakeplayerinventory"><a class="header" href="#openfakeplayerinventory">openFakePlayerInventory</a></h3>
+<p>fake playerを右クリックすることでそのプレイヤーのインベントリをGUIで表示・操作できるようにする。すなわちcarpetの<code>/player</code>などを介して一つずつ操作する必要をなくすことができる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+<li><a href="gugle-carpet-addition.html#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="openfakeplayerenderchest"><a class="header" href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></h3>
+<p>fake playerを右クリックすることでそのプレイヤーのエンダーチェストをGUIで表示・操作できるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+<li><a href="gugle-carpet-addition.html#openfakeplayerinventory">openFakePlayerInventory</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerresident"><a class="header" href="#fakeplayerresident">fakePlayerResident</a></h3>
+<p>fake playerがサーバー再起動によっていなくなった時、次回起動時に自動でplayerを配置し、そのplayerが実行しているactionを再実行させる。ただし正しいtickで実行されるのではなく、もう一度コマンドをたたいているだけなので信用はできない。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerautoreplenishment"><a class="header" href="#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></h3>
+<p>fake playerがtweakerooの<code>tweakHandRestock</code>と同様の操作をできるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerautofish"><a class="header" href="#fakeplayerautofish">fakePlayerAutoFish</a></h3>
+<p>fake playerが釣りでなにかを引き当てたときに自動で釣り上げ、もう一度糸を垂らすようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerautoreplacetool"><a class="header" href="#fakeplayerautoreplacetool">fakePlayerAutoReplaceTool</a></h3>
+<p>fake playerの使用しているツールがこわれたときに、同種のtoolに持ち変えるようにする。ただし耐久が少し残る等はない。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

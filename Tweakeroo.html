@@ -1,0 +1,495 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Tweakeroo - ModDescription</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Mod descriptions written in Markdown.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">modDescription</a></li><li class="chapter-item expanded "><a href="EssentialClient.html"><strong aria-hidden="true">1.</strong> EssentialClient</a></li><li class="chapter-item expanded "><a href="Tweakeroo.html" class="active"><strong aria-hidden="true">2.</strong> Tweakeroo</a></li><li class="chapter-item expanded "><a href="carpet.html"><strong aria-hidden="true">3.</strong> Carpet</a></li><li class="chapter-item expanded "><a href="gugle-carpet-addition.html"><strong aria-hidden="true">4.</strong> GugleCarpetAddition</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ModDescription</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/TaichiServer/modDescription" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link href="Tweakeroo.css" rel="stylesheet"></link>
+<h1 id="tweakerooとtweakmoreの機能一覧"><a class="header" href="#tweakerooとtweakmoreの機能一覧">TweakerooとTweakmoreの機能一覧</a></h1>
+<h2 id="目次"><a class="header" href="#目次">目次</a></h2>
+<h1 id="tweakeroo"><a class="header" href="#tweakeroo">Tweakeroo</a></h1>
+<h2 id="generic"><a class="header" href="#generic">Generic</a></h2>
+<h3 id="carpetaccurateplacementprotocol"><a class="header" href="#carpetaccurateplacementprotocol">carpetAccuratePlacementProtocol</a></h3>
+<p>Carpet modを使用している場合に<a href="#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a>と<a href="#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a>を機能させる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a></li>
+<li><a href="#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="clientplacementrotation"><a class="header" href="#clientplacementrotation">clientPlacementRotation</a></h3>
+<p>Carpet modが入っていない鯖またはシングルプレイで<a href="#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a>と<a href="#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a>を機能させる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a></li>
+<li><a href="#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fastleftclickallowtools"><a class="header" href="#fastleftclickallowtools">fastLeftClickAllowTools</a></h3>
+<p>ツールをメインハンドに所持している場合でも<a href="#tweakFastLeftclick"><code>tweakFastLeftClick</code></a>を機能させる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakFastLeftclick"><code>tweakFastLeftClick</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fastplacementrememberorientation"><a class="header" href="#fastplacementrememberorientation">fastPlacementRememberOrientation</a></h3>
+<p><a href="%60tweakFastBlockPlacement%60"><code>tweakFastBlockPlacement</code></a>を使用したとき、最初に置いたブロックの向きを保存する</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakFastBlockPlacement"><code>tweakFastBlockPlacement</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="freecameraplayerinputs"><a class="header" href="#freecameraplayerinputs">freeCameraPlayerInputs</a></h3>
+<p><a href="#tweakFreeCamera"><code>tweakFreeCamera</code></a>を使用している際に右クリックと左クリックを使用できるようにする</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakFreeCamera"><code>tweakFreeCamera</code></a> </li>
+</ul>
+</li>
+</ul>
+<!-- + 関連機能
+  + [](#) -->
+<h3 id="freecameraplayermovement"><a class="header" href="#freecameraplayermovement">freeCameraPlayerMovement</a></h3>
+<p><a href="#tweakFreeCamera"><code>tweakFreeCamera</code></a>を使用している際にプレイヤーを移動させることができるようになる
+&gt;[!note]
+&gt;画面の移動はできないので見やすい位置に移動させたり、ホットキーに設定すること</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakFreeCamera"><code>tweakFreeCamera</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="handrestockpre"><a class="header" href="#handrestockpre">handRestockPre</a></h3>
+<p><a href="#handRestockPreThreshold"><code>handRestockPreThreshold</code></a>で設定した値までスタックできるアイテムが減った時、<a href="#tweakHandRestock"><code>tweakHandRestock</code></a>を発動させる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#handRestockPreThreshold"><code>handRestockPreThreshold</code></a></li>
+<li><a href="#tweakHandRestock"><code>tweakHandRestock</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="hangableentitybypassinverse"><a class="header" href="#hangableentitybypassinverse">hangableEntityBypassInverse</a></h3>
+<p>スニーク時に額縁や絵画をターゲットするかどうかを切り替える
+|True/false|ターゲット|
+|:--:|:--:|
+|True|しない|
+|False|する|</p>
+<h3 id="itemusepacketcheckbypass"><a class="header" href="#itemusepacketcheckbypass">itemUsePacketCheckBypass</a></h3>
+<p>1.18.2で追加された新たな距離・座標チェックを回避する。このチェックにより<a href="#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a>を有効化した状態で置いたブロックはゴーストブロックになり正しく機能しなくなる。</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakAccurateBlockPlacement"><code>tweakAccurateBlockPlacement</code></a></li>
+</ul>
+</li>
+<li>推奨される値:<code>true</code></li>
+</ul>
+<h3 id="permanentsneakallowinguis"><a class="header" href="#permanentsneakallowinguis">permanentSneakAllowInGUIs</a></h3>
+<p><a href="#tweakPermanentSneak"><code>tweakPermanentSneak</code></a>を有効にしている場合にGUI(インベントリなど)を開いてもスニークし続ける</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakPermanentSneak"><code>tweakPermanentSneak</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="placementrestrictiontiedtofast"><a class="header" href="#placementrestrictiontiedtofast">placementRestrictionTiedToFast</a></h3>
+<p><a href="#tweakFastBlockPlacement"><code>tweakFastBlockPlacement</code></a>のtrue/falseを切り替えたときに<a href="#tweakPlacementRestriction"><code>tweakPlacementRestriction</code></a>のtrue/falseも一緒に切り替える</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakFastBlockPlacement"><code>tweakFastBlockPlacement</code></a></li>
+<li><a href="#tweakPlacementRestriction"><code>tweakPlacementRestriction</code></a></li>
+</ul>
+</li>
+<li>推奨される値:<code>true</code></li>
+</ul>
+<h3 id="potionwarningbeneficialonly"><a class="header" href="#potionwarningbeneficialonly">potionWarningBeneficialOnly</a></h3>
+<p><a href="#tweakPotionWarning"><code>tweakPotionWarning</code></a>で警告するポーションの効果を有益なもの(毒などのマイナスな効果以外の効果)だけにする</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakPotionWarning"><code>tweakPotionWarning</code></a></li>
+</ul>
+</li>
+<li>推奨される値:<code>true</code></li>
+</ul>
+<h3 id="rememberflexiblefromclick"><a class="header" href="#rememberflexiblefromclick">rememberFlexibleFromClick</a></h3>
+<p><a href="#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a>を使用中、最初に置いたブロックの状態を保存する。右クリックを離さずに次のブロックを置くと最初のブロックと同じ状態になる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakFlexibleBlockPlacement"><code>tweakFlexibleBlockPlacement</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="shulkerdisplaybgcolor"><a class="header" href="#shulkerdisplaybgcolor">shulkerDisplayBgColor</a></h3>
+<p><a href="#tweakshulkerboxdisplay"><code>tweakShulkerBoxDisplay</code></a>でシュルカーボックスの中身を見たときのインベントリの色をシュルカーボックスの色と同じにする。Falseにするとプレイヤーのインベントリと同じ色が適用される</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakshulkerboxdisplay"><code>tweakShulkerBoxDisplay</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="shulkerdisplayrequireshift"><a class="header" href="#shulkerdisplayrequireshift">shulkerDisplayRequireShift</a></h3>
+<p><a href="#tweakshulkerboxdisplay"><code>tweakShulkerBoxDisplay</code></a>でシュルカーボックスの中身を覗くときにshiftキーを必要とするかどうか。Falseにするとカーソルを合わせるだけでシュルカーボックスの中身を覗くことができる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakshulkerboxdisplay"><code>tweakShulkerBoxDisplay</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="slotsyncworkaround"><a class="header" href="#slotsyncworkaround">slotSyncWorkaround</a></h3>
+<p>サーバーが<a href="#tweakfastrightclick"><code>tweakFastRightClick</code></a>などで高速使用されるアイテムの耐久値やスタック数をオーバーライドするのを防ぐ</p>
+<h3 id="slotsyncworkaround-1"><a class="header" href="#slotsyncworkaround-1">slotSyncWorkaround</a></h3>
+<p>[<code>slotSyncWorkaround</code>]の適用範囲をTweakerooに存在する高速設置機能以外のmodの機能にも広げる。例えばLitematicaのEasy Place modeなど</p>
+<h3 id="snapaimindicator"><a class="header" href="#snapaimindicator">snapAimIndicator</a></h3>
+<p><a href="#tweaksnapaim"><code>tweakSnapAim</code></a>を使用した際に表示されるインジケーターを表示するかどうか</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweaksnapaim"><code>tweakSnapAim</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="snapaimonlyclosetoangle"><a class="header" href="#snapaimonlyclosetoangle">snapAimOnlyCloseToAngle</a></h3>
+<p><a href="#tweaksnapaim"><code>tweakSnapAim</code></a>でスナップが効く範囲を<a href="#snapaimthresholdyaw"><code>snapAimThresholdYaw</code></a>で設定した範囲にする。スナップする角度を変更するわけではないので注意。Falseにすると全ての角度でスナップする</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweaksnapaim"><code>tweakSnapAim</code></a></li>
+<li><a href="#snapaimthresholdyaw"><code>snapAimThresholdYaw</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="snapaimpitchovershoot"><a class="header" href="#snapaimpitchovershoot">snapAimPitchOvershoot</a></h3>
+<p><a href="#snapaimmode"><code>snapAimMode</code></a>を<code>Pitch</code>か<code>Yaw &amp; Pitch</code>にした際にPitchの角度を<code>-90~90</code>から<code>-180~180</code>に変更する。化け物になりたい用設定</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweaksnapaim"><code>tweakSnapAim</code></a></li>
+<li><a href="#snapaimmode"><code>snapAimMode</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="zoomadjustmousesensitivity"><a class="header" href="#zoomadjustmousesensitivity">zoomAdjustMouseSensitivity</a></h3>
+<p><a href="#tweakzoom"><code>tweakZoom</code></a>でズーム中にマウスの感度を減少させる</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakzoom"><code>tweakZoom</code></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="blocktypebreakrestrictionwarn"><a class="header" href="#blocktypebreakrestrictionwarn">blockTypeBreakRestrictionWarn</a></h3>
+<p><a href="#tweakblocktypebreakrestriction"><code>tweakBlockTypeBreakRestriction</code></a>の警告文の表示位置を変更する</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakblocktypebreakrestriction"><code>tweakBlockTypeBreakRestriction</code></a></li>
+</ul>
+</li>
+<li>選択肢: <code>Message</code> <code>None</code> <code>Actionbar</code></li>
+</ul>
+<h3 id="breakingrestrictionmode"><a class="header" href="#breakingrestrictionmode">breakingRestrictionMode</a></h3>
+<p><a href="#tweakbreakingrestriction"><code>tweakBreakingRestriction</code></a>のモードを切り替える</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakbreakingrestriction"><code>tweakBreakingRestriction</code></a></li>
+</ul>
+</li>
+<li>選択肢: <code>Line</code> <code>Layer</code> <code>Diagonal</code> <code>Plane</code> <code>Face</code> <code>Column</code></li>
+</ul>
+<h3 id="elytracameraindicator"><a class="header" href="#elytracameraindicator">elytraCameraIndicator</a></h3>
+<p><a href="#tweakelytracamera"><code>tweakElytraCamera</code></a>を使用中に表示されるインジケーターの表示タイミングを切り替える。<code>With Key</code>では<a href="#hotkeys"><code>Hotkeys</code></a>タブの<a href="#elytracamera"><code>elytraCamera</code></a>で設定したキーを押したとき。 <code>Always</code>はずっと。 <code>Never</code>は表示しない。</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakelytracamera"><code>tweakElytraCamera</code></a></li>
+<li><a href="#elytraCamera"><code>elytraCamera</code></a></li>
+</ul>
+</li>
+<li>選択肢: <code>With Key</code> <code>Always</code> <code>Never</code></li>
+</ul>
+<h3 id="entitytypeattackrestrictionwarn"><a class="header" href="#entitytypeattackrestrictionwarn">entityTypeAttackRestrictionWarn</a></h3>
+<p><a href="#tweakentitytypeattackrestriction"><code>tweakEntityTypeAttackRestriction</code></a>の警告文の表示位置を変更する</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakentitytypeattackrestriction"><code>tweakEntityTypeAttackRestriction</code></a></li>
+<li>選択肢:<code>Message</code> <code>None</code> <code>Actionbar</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="placementrestrictionmode"><a class="header" href="#placementrestrictionmode">placementRestrictionMode</a></h3>
+<p><a href="#tweakplacementrestriction"><code>tweakPlacementRestriction</code></a>のモードを切り替える</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakplacementrestriction"><code>tweakPlacementRestriction</code></a></li>
+<li><code>Line</code> <code>Layer</code> <code>Diagonal</code> <code>Plane</code> <code>Face</code> <code>Column</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="hotbarswapoverlayalignment"><a class="header" href="#hotbarswapoverlayalignment">hotbarSwapOverlayAlignment</a></h3>
+<p><a href="#tweakhotbarswap"><code>tweakHotbarSwap</code></a>が<code>True</code>のときに<a href="#hotbarswapbase"><code>hotbarSwapBase</code></a>で設定したキーを押下した際に表示されるオーバーレイの表示位置を変える</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakhotbarswap"><code>tweakHotbarSwap</code></a></li>
+<li><a href="#hotbarswapbase"><code>hotbarSwapBase</code></a></li>
+</ul>
+</li>
+<li>選択肢:<code>Bottom Right</code> <code>Center</code> <code>Top Left</code> <code>Top Right</code> <code>Bottom Left</code></li>
+</ul>
+<h3 id="snapaimmode"><a class="header" href="#snapaimmode">snapAimMode</a></h3>
+<p><a href="#tweaksnapaim"><code>tweakSnapAim</code></a>のモードを切り替える</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweaksnapaim"><code>tweakSnapAim</code></a></li>
+</ul>
+</li>
+<li>選択肢:<code>Yaw</code> <code>Pitch</code></li>
+</ul>
+<h3 id="chattimeformat"><a class="header" href="#chattimeformat">chatTimeFormat</a></h3>
+<p><a href="#tweakchattimestamp"><code>tweakChatTimestamp</code></a>を有効化した際に表示されるタイムスタンプのフォーマットを変更する</p>
+<ul>
+<li>関連機能
+<ul>
+<li><a href="#tweakchattimestamp"><code>tweakChatTimestamp</code></a></li>
+</ul>
+</li>
+<li>初期値:<code>[HH:mm:ss]</code></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="EssentialClient.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="carpet.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="EssentialClient.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="carpet.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
