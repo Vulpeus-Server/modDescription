@@ -8,6 +8,7 @@ version : carpet 1.4.1.12+v230608
 編集段階で未解決なものはストライクラインで示す。
 
 以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+
 |mod|download|document|docs-JP|
 |:---:|:---:|:---:|:---:|
 |carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|here|
@@ -145,6 +146,7 @@ version : carpet 1.4.1.12+v230608
     `carpet.conf`に記録されているルールを表示する。
   + `/carpet setDefault [rule] [value]`<br>
     `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。
+    
     >[!note]
     >`/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが準備される。
   + `/carpet removeDefault <rule>`<br>
@@ -171,12 +173,13 @@ version : carpet 1.4.1.12+v230608
 ### carpets
   carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
   以下は使用できるコマンドのリストである。
-  | color  | command                                      |
-  |:------:|:---------------------------------------------|
-  | gray   | `/info block ~ ~-1 ~`                        |
-  | black  | `/spawn entities`                            |
-  | brown  | `/distance from ~ ~ ~ ` `/distance to ~ ~ ~` |
-  | pink   | `/spawn list ~ ~-1 ~`                        |
+
+| color  | command                                      |
+|:------:|:---------------------------------------------|
+| gray   | `/info block ~ ~-1 ~`                        |
+| black  | `/spawn entities`                            |
+| brown  | `/distance from ~ ~ ~ ` `/distance to ~ ~ ~` |
+| pink   | `/spawn list ~ ~-1 ~`                        |
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
@@ -591,6 +594,7 @@ version : carpet 1.4.1.12+v230608
   + 使用できる値 : `true` `false`
 ### tntRandomRange
   tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない
+
   >[!important]
   >[optimizedTNT](#optimizedtnt)を有効にする必要がある。
   + 初期値 : `-1.0`
