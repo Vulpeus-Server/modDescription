@@ -71,3 +71,74 @@ Carpet modが入っていない鯖またはシングルプレイで[`tweakFlexib
 + 関連機能
   + [`tweakFlexibleBlockPlacement`](#tweakFlexibleBlockPlacement)
 ### shulkerDisplayBgColor
+[`tweakShulkerBoxDisplay`](#tweakshulkerboxdisplay)でシュルカーボックスの中身を見たときのインベントリの色をシュルカーボックスの色と同じにする。Falseにするとプレイヤーのインベントリと同じ色が適用される
++ 関連機能
+  + [`tweakShulkerBoxDisplay`](#tweakshulkerboxdisplay)
+### shulkerDisplayRequireShift
+[`tweakShulkerBoxDisplay`](#tweakshulkerboxdisplay)でシュルカーボックスの中身を覗くときにshiftキーを必要とするかどうか。Falseにするとカーソルを合わせるだけでシュルカーボックスの中身を覗くことができる
++ 関連機能
+  + [`tweakShulkerBoxDisplay`](#tweakshulkerboxdisplay)
+### slotSyncWorkaround
+サーバーが[`tweakFastRightClick`](#tweakfastrightclick)などで高速使用されるアイテムの耐久値やスタック数をオーバーライドするのを防ぐ
+### slotSyncWorkaround
+[`slotSyncWorkaround`]の適用範囲をTweakerooに存在する高速設置機能以外のmodの機能にも広げる。例えばLitematicaのEasy Place modeなど
+### snapAimIndicator
+[`tweakSnapAim`](#tweaksnapaim)を使用した際に表示されるインジケーターを表示するかどうか
++ 関連機能
+  + [`tweakSnapAim`](#tweaksnapaim)
+### snapAimOnlyCloseToAngle
+[`tweakSnapAim`](#tweaksnapaim)でスナップが効く範囲を[`snapAimThresholdYaw`](#snapaimthresholdyaw)で設定した範囲にする。スナップする角度を変更するわけではないので注意。Falseにすると全ての角度でスナップする
++ 関連機能
+  + [`tweakSnapAim`](#tweaksnapaim)
+  + [`snapAimThresholdYaw`](#snapaimthresholdyaw)
+### snapAimPitchOvershoot
+[`snapAimMode`](#snapaimmode)を`Pitch`か`Yaw & Pitch`にした際にPitchの角度を`-90~90`から`-180~180`に変更する。化け物になりたい用設定
++ 関連機能
+  + [`tweakSnapAim`](#tweaksnapaim)
+  + [`snapAimMode`](#snapaimmode)
+### zoomAdjustMouseSensitivity
+[`tweakZoom`](#tweakzoom)でズーム中にマウスの感度を減少させる
++ 関連機能
+  + [`tweakZoom`](#tweakzoom)
+### blockTypeBreakRestrictionWarn
+[`tweakBlockTypeBreakRestriction`](#tweakblocktypebreakrestriction)の警告文の表示位置を変更する
++ 関連機能
+  + [`tweakBlockTypeBreakRestriction`](#tweakblocktypebreakrestriction)
++ 選択肢: `Message` `None` `Actionbar`
+### breakingRestrictionMode
+[`tweakBreakingRestriction`](#tweakbreakingrestriction)のモードを切り替える
++ 関連機能
+  + [`tweakBreakingRestriction`](#tweakbreakingrestriction)
++ 選択肢: `Line` `Layer` `Diagonal` `Plane` `Face` `Column`
+### elytraCameraIndicator
+[`tweakElytraCamera`](#tweakelytracamera)を使用中に表示されるインジケーターの表示タイミングを切り替える。`With Key`では[`Hotkeys`](#hotkeys)タブの[`elytraCamera`](#elytracamera)で設定したキーを押したとき。 `Always`はずっと。 `Never`は表示しない。
++ 関連機能
+  + [`tweakElytraCamera`](#tweakelytracamera)
+  + [`elytraCamera`](#elytraCamera)
++ 選択肢: `With Key` `Always` `Never`
+### entityTypeAttackRestrictionWarn
+[`tweakEntityTypeAttackRestriction`](#tweakentitytypeattackrestriction)の警告文の表示位置を変更する
++ 関連機能
+  + [`tweakEntityTypeAttackRestriction`](#tweakentitytypeattackrestriction)
+  + 選択肢:`Message` `None` `Actionbar`
+### placementRestrictionMode
+[`tweakPlacementRestriction`](#tweakplacementrestriction)のモードを切り替える
++ 関連機能
+  + [`tweakPlacementRestriction`](#tweakplacementrestriction)
+  + `Line` `Layer` `Diagonal` `Plane` `Face` `Column`
+### hotbarSwapOverlayAlignment
+[`tweakHotbarSwap`](#tweakhotbarswap)が`True`のときに[`hotbarSwapBase`](#hotbarswapbase)で設定したキーを押下した際に表示されるオーバーレイの表示位置を変える
++ 関連機能
+  + [`tweakHotbarSwap`](#tweakhotbarswap)
+  + [`hotbarSwapBase`](#hotbarswapbase)
++ 選択肢:`Bottom Right` `Center` `Top Left` `Top Right` `Bottom Left`
+### snapAimMode
+[`tweakSnapAim`](#tweaksnapaim)のモードを切り替える
++ 関連機能
+  + [`tweakSnapAim`](#tweaksnapaim)
++ 選択肢:`Yaw` `Pitch`
+### chatTimeFormat
+[`tweakChatTimestamp`](#tweakchattimestamp)を有効化した際に表示されるタイムスタンプのフォーマットを変更する
++ 関連機能
+  + [`tweakChatTimestamp`](#tweakchattimestamp)
++ 初期値:`[HH:mm:ss]`
