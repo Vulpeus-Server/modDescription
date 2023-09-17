@@ -80,8 +80,8 @@ Carpet modが入っていない鯖またはシングルプレイで[`tweakFlexib
   + [`tweakShulkerBoxDisplay`](#tweakshulkerboxdisplay)
 ### slotSyncWorkaround
 サーバーが[`tweakFastRightClick`](#tweakfastrightclick)などで高速使用されるアイテムの耐久値やスタック数をオーバーライドするのを防ぐ
-### slotSyncWorkaround
-[`slotSyncWorkaround`]の適用範囲をTweakerooに存在する高速設置機能以外のmodの機能にも広げる。例えばLitematicaのEasy Place modeなど
+### slotSyncWorkaroundAlways
+[`slotSyncWorkaround`](#slotsyncworkaround)の適用範囲をTweakerooに存在する高速設置機能以外のmodの機能にも広げる。例えばLitematicaのEasy Place modeなど
 ### snapAimIndicator
 [`tweakSnapAim`](#tweaksnapaim)を使用した際に表示されるインジケーターを表示するかどうか
 + 関連機能
