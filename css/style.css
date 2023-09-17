@@ -1,0 +1,69 @@
+:root {
+    --color-accent-fg: #539BF5;
+    --color-done-fg: #986ee2;
+    --color-attention-fg: #C69026;
+}
+
+.markdown-alert.markdown-alert-note {
+    border-left-color: var(--color-accent-fg);
+}
+
+.markdown-alert.markdown-alert-important {
+    border-left-color: var(--color-done-fg);
+}
+
+.markdown-alert.markdown-alert-warning {
+    border-left-color: var(--color-attention-fg);
+}
+
+.markdown-alert {
+    padding: 0 1em;
+    margin-bottom: 16px;
+    color: inherit;
+    border-left: 0.25em solid #444C56;
+}
+
+.markdown-alert p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.octicon {
+    fill: currentColor;
+}
+
+.color-fg-accent {
+    color: var(--color-accent-fg);
+}
+
+.color-fg-done {
+    color: var(--color-done-fg);
+}
+
+.color-fg-attention {
+    color: var(--color-attention-fg);
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.items-center {
+    align-items: center;
+}
