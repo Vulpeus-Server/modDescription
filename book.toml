@@ -1,0 +1,10 @@
+[book]
+title = "ModDescription"
+authors = ["TaichiServer"]
+description = "Mod descriptions written in Markdown."
+language = "ja"
+multilingual = false
+src = "src"
+
+[output.html]
+git-repository-url = "https://github.com/TaichiServer/modDescription"
