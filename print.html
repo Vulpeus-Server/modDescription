@@ -882,19 +882,17 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <li>初期値:<code>[HH:mm:ss]</code></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="carpet"><a class="header" href="#carpet">carpet</a></h1>
-<p><img src="https://github.com/RS-256/image/blob/main/modDescription/carpet_icon.png" alt="carpet_icon" /><br>
-version : carpet 1.4.1.12+v230608</p>
+<p>version : carpet 1.4.1.12+v230608</p>
 <p>このドキュメント内では
 <code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
-<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
-<tr><td style="text-align: center">carpet</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center">here</td></tr>
-<tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">carpet extra</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a></td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">gugle-carpet-addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a></td><td style="text-align: center"><a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a></td><td style="text-align: center"><a href="https://github.com/TaichiServer/modDescription/blob/main/gugle-carpet-addition.md">GCA</a></td></tr>
-</tbody></table>
-</div>
+<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+|mod|download|document|docs-JP|
+|:---:|:---:|:---:|:---:|
+|carpet|<a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a>|<a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a>|here|
+|carpet TIS addition|<a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a>|<a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a>|<a href="/carpet-TIS-addition.html">TIS</a>|
+|carpet extra|<a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a>|<a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a>||
+|gugle-carpet-addition|<a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a>|<a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a>|<a href="/gugle-carpet-addition.html">GCA</a>|</p>
 <h2 id="目次-1"><a class="header" href="#目次-1">目次</a></h2>
 <details>
   <summary>general</summary>
@@ -1029,10 +1027,9 @@ version : carpet 1.4.1.12+v230608</p>
 <li>
 <p><code>/carpet setDefault [rule] [value]</code><br>
 <code>[rule]</code>で指定したcarpet ruleのデフォルトの値を<code>[value]</code>で指定した値にする。</p>
-<blockquote>
-<p>[!note]
-<code>/carpet [rule] [value]</code>を使用し値が正常に変更された場合、通知とともにそえられる<code>change permanently?</code>を右クリックすることでその値がすでに入力されたコマンドが準備される。</p>
-</blockquote>
+<div class="md-note">
+  `/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが準備される。
+</div>
 </li>
 <li>
 <p><code>/carpet removeDefault &lt;rule&gt;</code><br>
@@ -1056,24 +1053,22 @@ version : carpet 1.4.1.12+v230608</p>
 </ul>
 <h3 id="carpetcommandpermissionlevel"><a class="header" href="#carpetcommandpermissionlevel">carpetCommandPermissionLevel</a></h3>
 <p><code>/carpet</code>コマンドを使用できるパーミッションレベルを指定する。<code>ops</code>では<code>/op</code>で付与された人のみであるが、<code>2</code> <code>4</code>はそれぞれの数値以上のパーミッションを保持しているプレイヤーにが使うことができる。</p>
-<blockquote>
-<p>[!note]
-現在たいち鯖では最大のパーミッションレベルが3になっている。</p>
-</blockquote>
+<div class="md-note">
+    現在たいち鯖では最大のパーミッションレベルが3になっている。
+  </div>
 <ul>
 <li>初期値 : <code>ops</code></li>
 <li>使用できる値 : <code>ops</code> <code>2</code> <code>4</code></li>
 </ul>
 <h3 id="carpets"><a class="header" href="#carpets">carpets</a></h3>
 <p>carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
-以下は使用できるコマンドのリストである。</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">color</th><th style="text-align: left">command</th></tr></thead><tbody>
-<tr><td style="text-align: center">gray</td><td style="text-align: left"><code>/info block ~ ~-1 ~</code></td></tr>
-<tr><td style="text-align: center">black</td><td style="text-align: left"><code>/spawn entities</code></td></tr>
-<tr><td style="text-align: center">brown</td><td style="text-align: left"><code>/distance from ~ ~ ~ </code> <code>/distance to ~ ~ ~</code></td></tr>
-<tr><td style="text-align: center">pink</td><td style="text-align: left"><code>/spawn list ~ ~-1 ~</code></td></tr>
-</tbody></table>
-</div>
+以下は使用できるコマンドのリストである。
+| color  | command                                      |
+|:------:|:---------------------------------------------|
+| gray   | <code>/info block ~ ~-1 ~</code>                        |
+| black  | <code>/spawn entities</code>                            |
+| brown  | <code>/distance from ~ ~ ~ </code> <code>/distance to ~ ~ ~</code> |
+| pink   | <code>/spawn list ~ ~-1 ~</code>                        |</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1252,9 +1247,10 @@ version : carpet 1.4.1.12+v230608</p>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="creativeplayersloadchunks"><a class="header" href="#creativeplayersloadchunks">creativePlayersLoadChunks</a></h3>
-<p>クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。
-&gt;[!note]
-&gt;スペクテイターモードについては<code>/gamerule spectatorsGenerateChunks</code>によって設定可能。</p>
+<p>クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。</p>
+<div class="md-note">
+  スペクテイターモードについては`/gamerule spectatorsGenerateChunks`によって設定可能。
+  </div>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1296,9 +1292,10 @@ version : carpet 1.4.1.12+v230608</p>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="fastredstonedust"><a class="header" href="#fastredstonedust">fastRedstoneDust</a></h3>
-<p>redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。 
-&gt;[!note]
-&gt;壊れる回路があるので注意。</p>
+<p>redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。 </p>
+<div class="md-note">
+  壊れる回路があるので注意。
+  <dib>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1317,6 +1314,7 @@ version : carpet 1.4.1.12+v230608</p>
 <li>関連項目
 <ul>
 <li><a href="carpet.html#interactionupdates">interactionUpdates</a></li>
+<li>TIS / <a href="/carpet-TIS-addition.html#totallynoblockupdate">totallyNoBlockUpdate</a></li>
 </ul>
 </li>
 </ul>
@@ -1351,13 +1349,15 @@ version : carpet 1.4.1.12+v230608</p>
 <li>使用できる値 : <code>double</code></li>
 </ul>
 <h3 id="hoppercounters"><a class="header" href="#hoppercounters">hopperCounters</a></h3>
-<p><code>/counter</code>を有効にする。</p>
+<p><code>/counter</code>を有効にする。詳しくは<a href="carpet.html#counter">counter</a>を参照。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
 <li><a href="carpet.html#counters">counter</a></li>
+<li>TIS / <a href="/carpet-TIS-addition.html#hoppercountersunlimitedspeed">hopperCountersUnlimitedSpeed</a></li>
+<li>TIS / <a href="/carpet-TIS-addition.html#hoppernoitemcost">hopperNoItemCost</a></li>
 </ul>
 </li>
 </ul>
@@ -1444,6 +1444,11 @@ version : carpet 1.4.1.12+v230608</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>TIS / <a href="/carpet-TIS-addition.html#optimizedtnthighpriority">optimizedTNTHighPriority</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="perfpermissionlevel"><a class="header" href="#perfpermissionlevel"><del>perfPermissionLevel</del></a></h3>
 <p><code>/perf</code>が使用できる権限を変更する。<strong>しかし<code>/perf</code>が確認できなかった。</strong></p>
@@ -1660,13 +1665,13 @@ version : carpet 1.4.1.12+v230608</p>
 </li>
 </ul>
 <h3 id="structureblocklimit"><a class="header" href="#structureblocklimit">structureBlockLimit</a></h3>
-<p>各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。<br />
-&gt;[!note]
-&gt;値が大きい場合、負荷軽減の目的で<a href="carpet.html#structureblockignored">structureBlockIgnored</a>をminecraft:airにすることを推奨。</p>
-<blockquote>
-<p>[!note]
-ストラクチャーブロックが常に読み込まれていなければ正しく動かない。</p>
-</blockquote>
+<p>各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。</p>
+<div class="md-note">
+  値が大きい場合、負荷軽減の目的で[structureBlockIgnored](#structureblockignored)をminecraft:airにすることを推奨。
+  </div>
+  <div class="md-note">
+  >ストラクチャーブロックが常に読み込まれていなければ正しく動かない。
+  </div>
 <ul>
 <li>初期値 : <code>48</code></li>
 <li>使用できる値 : <code>integer</code></li>
@@ -1729,10 +1734,9 @@ version : carpet 1.4.1.12+v230608</p>
 </ul>
 <h3 id="tntrandomrange"><a class="header" href="#tntrandomrange">tntRandomRange</a></h3>
 <p>tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない</p>
-<blockquote>
-<p>[!important]
-<a href="carpet.html#optimizedtnt">optimizedTNT</a>を有効にする必要がある。</p>
-</blockquote>
+<div class="md-important">
+  [optimizedTNT](#optimizedtnt)を有効にする必要がある。
+  </div>
 <ul>
 <li>初期値 : <code>-1.0</code></li>
 <li>使用できる値 : <code>double</code></li>
@@ -1742,6 +1746,11 @@ version : carpet 1.4.1.12+v230608</p>
 <ul>
 <li>初期値 : <code>-1</code></li>
 <li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li>TIS / <a href="/carpet-TIS-addition.html#updatesuppressionsimulator">updateSuppressionSimulator</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="viewdistance"><a class="header" href="#viewdistance">viewDistance</a></h3>
 <p>サーバーの描画距離をこの値でオーバーライドする。0から32の間である必要があり、<code>0</code>にすると無効になる。</p>
@@ -1772,7 +1781,7 @@ version : carpet 1.4.1.12+v230608</p>
 で使用する。ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントし、それらから効率を計算する。複数のホッパーを同じチャンネルで作動させることも可能。羊毛16色を用いて16チャンネルを同時に使うことができる。</p>
 <ul>
 <li><code>&lt;color&gt;</code> <br>
-割愛。複数選択はできない。</li>
+割愛。複数選択はできない。選択しなかった場合すべての有効なチャンネルを表示する。</li>
 <li><code>&lt;realtime | reset&gt;</code>
 <ul>
 <li><code>realtime</code> <br>
@@ -1798,10 +1807,9 @@ version : carpet 1.4.1.12+v230608</p>
 <li>
 <p><code>&lt;to&gt;</code><br>
 距離の終点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合<code>~ ~ ~</code>が補われる。</p>
-<blockquote>
-<p>[!note]
-<code>&lt;from&gt;</code>のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。</p>
-</blockquote>
+<div class="md-note">
+`<from>`のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。
+</div>
 </li>
 <li>
 <p>実行結果<br>
@@ -1812,22 +1820,23 @@ version : carpet 1.4.1.12+v230608</p>
 <li>
 <p><code>Spherical</code><br>
 ユークリッド距離で算出。
-始点を $P_1(x_1,y_1,z_1)$、終点を $P_2(x_2,y_2,z_2)$とすると距離 $d_S(P_1,P_2)$は
+始点を \( P_1(x_1,y_1,z_1) \)、終点を \( P_2(x_2,y_2,z_2) \)とすると距離 \( d_S(P_1,P_2) \) は
 $$d_S(P_1 , P_2)\coloneqq\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$$</p>
 </li>
 <li>
 <p><code>Cyrindrical</code><br>
-$x$座標および $z$座標のみを用いてユークリッド距離で算出。
+\( x \) 座標および  \( z \) 座標のみを用いてユークリッド距離で算出。
 $$d_C(P_1 , P_2)\coloneqq\sqrt{(x_1-x_2)^2+(z_1-z_2)^2}$$</p>
 </li>
 <li>
 <p><code>Manhattan</code><br>
 マンハッタン距離で算出。
-$$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
-&gt;[!note]
-&gt;minecraftではほとんどがユークリッド距離を利用している。<code>CanSpawnArea</code>もユークリッド距離である。</p>
+$$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$</p>
 </li>
 </ul>
+<div class="md-note">
+minecraftではほとんどがユークリッド距離を利用している。`CanSpawnArea`もユークリッド距離である。
+</div>
 </details>
 </li>
 <li>
@@ -1864,17 +1873,27 @@ $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
 <code>/draw ball [center] [radius] [block] &lt;replace&gt;</code><br>
 で利用可能。</p>
 <ul>
-<li><code>[center]</code><br>
-生成物、ここでは球体の中心となる座標を指定する。絶対座標と相対座標のどちらも使うことができる。小数で入力した場合その座標を含むブロックの座標が選択される。</li>
-<li><code>[radius]</code><br>
-半径を指定する。値は0より大きい整数でなければならない。</li>
-<li><code>[block]</code><br>
-描くブロックを指定する。WorldEditのように複数をランダムに指定することはできない。
-&gt;[!note]
-&gt;あとからWorldEdit等を用いることで割合指定でランダムに変更することができる。</li>
-<li><code>&lt;replace&gt;</code><br>
-特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。指定しなかった場合全てのブロックを置き換える。</li>
-<li>関連項目
+<li>
+<p><code>[center]</code><br>
+生成物、ここでは球体の中心となる座標を指定する。絶対座標と相対座標のどちらも使うことができる。小数で入力した場合その座標を含むブロックの座標が選択される。</p>
+</li>
+<li>
+<p><code>[radius]</code><br>
+半径を指定する。値は0より大きい整数でなければならない。</p>
+</li>
+<li>
+<p><code>[block]</code><br>
+描くブロックを指定する。WorldEditのように複数をランダムに指定することはできない。</p>
+<div class="md-important">
+あとからWorldEdit等を用いることで割合指定でランダムに変更することができる。
+</div>
+</li>
+<li>
+<p><code>&lt;replace&gt;</code><br>
+特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。指定しなかった場合全てのブロックを置き換える。</p>
+</li>
+<li>
+<p>関連項目</p>
 <ul>
 <li><a href="carpet.html#sphere">draw sphere</a></li>
 </ul>
@@ -1917,15 +1936,23 @@ $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
 <code>/draw cuboid [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code><br>
 で利用可能。</p>
 <ul>
-<li><code>[center]</code><br>
-生成物の底面の中心となる座標を指定する。</li>
-<li><code>[radius]</code><br>
-底面の一辺の長さを指定する。
-&gt;[!important]
-&gt;この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。</li>
-<li><code>[height]</code><br>
-生成物の高さを指定する。</li>
-<li><code>[pointing]</code>
+<li>
+<p><code>[center]</code><br>
+生成物の底面の中心となる座標を指定する。</p>
+</li>
+<li>
+<p><code>[radius]</code><br>
+底面の一辺の長さを指定する。</p>
+<div class="md-note">
+この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。
+</div>
+</li>
+<li>
+<p><code>[height]</code><br>
+生成物の高さを指定する。</p>
+</li>
+<li>
+<p><code>[pointing]</code></p>
 <ul>
 <li><code>down</code><br>
 先端が<code>[axis]</code>の座標マイナス方向を向く。</li>
@@ -1933,18 +1960,23 @@ $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
 先端が<code>[axis]</code>の座標プラス方向を向く。</li>
 </ul>
 </li>
-<li><code>[axis]</code><br>
-生成物がその軸を中心にする。
+<li>
+<p><code>[axis]</code><br>
+生成物がその軸を中心にする。</p>
 <ul>
 <li><code>x</code></li>
 <li><code>y</code></li>
 <li><code>z</code></li>
 </ul>
 </li>
-<li><code>[block]</code><br>
-描くブロックを指定する。</li>
-<li><code>&lt;replace&gt;</code><br>
-特定のブロック<strong>を</strong>置き換えるかを指定する。</li>
+<li>
+<p><code>[block]</code><br>
+描くブロックを指定する。</p>
+</li>
+<li>
+<p><code>&lt;replace&gt;</code><br>
+特定のブロック<strong>を</strong>置き換えるかを指定する。</p>
+</li>
 </ul>
 <h4 id="cylinder"><a class="header" href="#cylinder">cylinder</a></h4>
 <p>中が満たされた円柱を生成する。
@@ -1999,9 +2031,10 @@ $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
 <li><code>[center]</code><br>
 生成物の中心となる座標を指定する。</li>
 <li><code>[radius]</code><br>
-底面の一辺の長さを指定する。
-&gt;[!important]
-&gt;この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。</li>
+底面の一辺の長さを指定する。<div class="md-important">
+この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。
+</div>
+</li>
 <li><code>[height]</code><br>
 生成物の高さを指定する。</li>
 <li><code>[pointing]</code><br>
@@ -2049,17 +2082,20 @@ $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
 <code>/info [block | entity] [target] &lt;grep&gt;</code>
 で実行可能。<code>&lt;grep&gt;</code>によって表示する情報を制限することが可能。</p>
 <ul>
-<li><code>[block | entity]</code>
+<li>
+<p><code>[block | entity]</code></p>
 <ul>
 <li><code>block</code><br>
 <code>[target]</code>は表示したいブロックの座標となる。絶対座標もしくは相対座標を使うことができる。</li>
 <li><code>entity</code><br>
-<code>[target]</code>は表示したいエンティティとなる。一つのエンティティのみを選択する必要がある。
-&gt;[!note]
-&gt;ターゲットセレクタで指定する場合<code>[limit=1]</code>と追記することで一つのエンティティに絞ることができる。</li>
+<code>[target]</code>は表示したいエンティティとなる。一つのエンティティのみを選択する必要がある。<div class="md-note">
+ターゲットセレクタで指定する場合`[limit=1]`と追記することで一つのエンティティに絞ることができる。
+</div>
+</li>
 </ul>
 </li>
-<li>関連項目
+<li>
+<p>関連項目</p>
 <ul>
 <li><a href="carpet.html#commandinfo">commandInfo</a></li>
 </ul>
@@ -2068,13 +2104,32 @@ $$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
 <h3 id="log"><a class="header" href="#log">log</a></h3>
 <p><code>/log [subject] &lt;mcid&gt;</code>で<code>[subject]</code>に関する情報をさまざまなところに表示する。</p>
 <ul>
-<li><code>/log clear</code><br>
-全てのlogの表示を停止させることができる。
-&gt;[!note]
-&gt;<code>/log [subject] clear</code>とすることでそのlog表示を消すことができる。</li>
-<li><code>&lt;mcid&gt;</code><br>
-指定することでその人に表示させることができる。</li>
-<li>関連項目
+<li>
+<p><code>[subject]</code></p>
+<ul>
+<li><code>counter</code></li>
+<li><code>fallingBlocks</code></li>
+<li><code>mobcaps</code></li>
+<li><code>packets</code></li>
+<li><code>pathfinding</code></li>
+<li><code>projectiles</code></li>
+<li><code>tnt</code></li>
+<li><code>tps</code></li>
+</ul>
+</li>
+<li>
+<p><code>/log clear</code><br>
+全てのlogの表示を停止させることができる。</p>
+<div class="md-note">
+`/log [subject] clear`とすることでそのlog表示を消すことができる。
+</div>
+</li>
+<li>
+<p><code>&lt;mcid&gt;</code><br>
+指定することでその人に表示させることができる。</p>
+</li>
+<li>
+<p>関連項目</p>
 <ul>
 <li><a href="carpet.html#commandlog">commandLog</a></li>
 <li><a href="carpet.html#defaultloggers">defaultLoggers</a></li>
@@ -2415,14 +2470,13 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <p>このドキュメント内では
 <code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
-<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
-<tr><td style="text-align: center">carpet</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center"><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md">carpet</a></td></tr>
-<tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">carpet extra</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a></td><td style="text-align: center"></td></tr>
-<tr><td style="text-align: center">gugle-carpet-addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a></td><td style="text-align: center"><a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a></td><td style="text-align: center">here</td></tr>
-</tbody></table>
-</div>
+<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+|mod|download|document|docs-JP|
+|:---:|:---:|:---:|:---:|
+|carpet|<a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a>|<a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a>|<a href="/carpet.html">carpet</a>|
+|carpet TIS addition|<a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a>|<a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a>|<a href="/carpet-TIS-addition.html">TIS</a>|
+|carpet extra|<a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a>|<a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a>||
+|gugle-carpet-addition|<a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a>|<a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a>|here|</p>
 <h2 id="目次-2"><a class="header" href="#目次-2">目次</a></h2>
 <details>
 <summary>rules</summary>
@@ -2444,7 +2498,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
-<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+<li>carpet / <a href="/carpet.html#player">player</a></li>
 <li><a href="gugle-carpet-addition.html#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
 </ul>
 </li>
@@ -2456,7 +2510,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
-<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+<li>carpet / <a href="/carpet.html#player">player</a></li>
 <li><a href="gugle-carpet-addition.html#openfakeplayerinventory">openFakePlayerInventory</a></li>
 </ul>
 </li>
@@ -2468,7 +2522,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
-<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+<li>carpet / <a href="/carpet.html#player">player</a></li>
 </ul>
 </li>
 </ul>
@@ -2479,7 +2533,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
-<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+<li>carpet / <a href="/carpet.html#player">player</a></li>
 </ul>
 </li>
 </ul>
@@ -2490,7 +2544,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
-<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+<li>carpet / <a href="/carpet.html#player">player</a></li>
 </ul>
 </li>
 </ul>
@@ -2501,7 +2555,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
-<li><sub>carpet</sub><a href="https://github.com/TaichiServer/modDescription/blob/main/carpet.md#player">player</a></li>
+<li>carpet / <a href="/carpet.html#player">player</a></li>
 </ul>
 </li>
 </ul>
