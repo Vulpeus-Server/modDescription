@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">modDescription</a></li><li class="chapter-item expanded "><a href="EssentialClient.html"><strong aria-hidden="true">1.</strong> EssentialClient</a></li><li class="chapter-item expanded "><a href="Tweakeroo.html"><strong aria-hidden="true">2.</strong> Tweakeroo</a></li><li class="chapter-item expanded "><a href="carpet.html"><strong aria-hidden="true">3.</strong> Carpet</a></li><li class="chapter-item expanded "><a href="gugle-carpet-addition.html"><strong aria-hidden="true">4.</strong> GugleCarpetAddition</a></li><li class="chapter-item expanded "><a href="Minecraft Optimization/Minecraft_Optimization.html"><strong aria-hidden="true">5.</strong> Minecraft Optimization</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">modDescription</a></li><li class="chapter-item expanded "><a href="EssentialClient.html"><strong aria-hidden="true">1.</strong> EssentialClient</a></li><li class="chapter-item expanded "><a href="Tweakeroo.html"><strong aria-hidden="true">2.</strong> Tweakeroo</a></li><li class="chapter-item expanded "><a href="carpet.html"><strong aria-hidden="true">3.</strong> Carpet</a></li><li class="chapter-item expanded "><a href="gugle-carpet-addition.html"><strong aria-hidden="true">4.</strong> GugleCarpetAddition</a></li><li class="chapter-item expanded "><a href="carpet-TIS-addition.html"><strong aria-hidden="true">5.</strong> carpet-TIS-addition</a></li><li class="chapter-item expanded "><a href="Minecraft Optimization/Minecraft_Optimization.html"><strong aria-hidden="true">6.</strong> Minecraft Optimization</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -2560,6 +2560,976 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 </ul>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="carpet-tis-addition"><a class="header" href="#carpet-tis-addition">carpet TIS addition</a></h1>
+<p>version : TIS 1.50.1</p>
+<p>このドキュメント内では
+<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
+編集段階で未解決なものはストライクラインで示す。</p>
+<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+|mod|download|document|docs-JP|
+|:---:|:---:|:---:|:---:|
+|carpet|<a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a>|<a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a>|<a href="/carpet.html">carpet</a>|
+|carpet TIS addition|<a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a>|<a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a>|here|
+|carpet extra|<a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a>|<a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a>||
+|gugle-carpet-addition|<a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a>|<a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a>|<a href="gugle-carpet-addition.html">GCA</a>|</p>
+<h2 id="目次-3"><a class="header" href="#目次-3">目次</a></h2>
+<details>
+  <summary>general</summary>
+</details>
+<details>
+  <summary>rules</summary>
+<ul>
+<li><a href="carpet-TIS-addition.html#antispamdisabled">antiSpamDisabled</a></li>
+<li><a href="carpet-TIS-addition.html#blockeventpacketrange">blockEventPacketRange</a></li>
+<li><a href="carpet-TIS-addition.html#blockplacementignoreentity">blockPlacementIgnoreEntity</a></li>
+<li><a href="carpet-TIS-addition.html#chunktickspeed">chunkTickSpeed</a></li>
+<li><a href="carpet-TIS-addition.html#clientsettingslostonrespawnfix">clientSettingsLostOnRespawnFix</a></li>
+<li><a href="carpet-TIS-addition.html#commandlifetime">commandLifeTime</a></li>
+<li><a href="carpet-TIS-addition.html#commandmanipulate">commandManipulate</a></li>
+<li><a href="carpet-TIS-addition.html#commandraid">commandRaid</a></li>
+<li><a href="carpet-TIS-addition.html#commandraycast">commandRaycast</a></li>
+<li><a href="carpet-TIS-addition.html#commandrefresh">commandRefresh</a></li>
+<li><a href="carpet-TIS-addition.html#commandremoveentity">commandRemoveEntity</a></li>
+<li><a href="carpet-TIS-addition.html#commandsleep">commandSleep</a></li>
+<li><a href="carpet-TIS-addition.html#creativenetherwaterplacement">creativeNetherWaterPlacement</a></li>
+<li><a href="carpet-TIS-addition.html#creativenoitemcooldown">creativeNoItemCooldown</a></li>
+<li><a href="carpet-TIS-addition.html#creativeopencontainerforcibly">creativeOpenContainerForcibly</a></li>
+<li><a href="carpet-TIS-addition.html#deobfuscatecrashreportstacktrace">deobfuscateCrashReportStackTrace</a></li>
+<li><a href="carpet-TIS-addition.html#dispensernoitemcost">dispenserNoItemCost</a></li>
+<li><a href="carpet-TIS-addition.html#dispensersfiredragonbreath">dispensersFireDragonBreath</a></li>
+<li><a href="carpet-TIS-addition.html#enchantcommandnorestriction">enchantCommandNoRestriction</a></li>
+<li><a href="carpet-TIS-addition.html#entitymomentumloss">entityMomentumLoss</a></li>
+<li><a href="carpet-TIS-addition.html#entityplacementignorecollision">entityPlacementIgnoreCollision</a></li>
+<li><a href="carpet-TIS-addition.html#entitytrackerdistance">entityTrackerDistance</a></li>
+<li><a href="carpet-TIS-addition.html#entitytrackerinterval">entityTrackerInterval</a></li>
+<li><a href="carpet-TIS-addition.html#explosionnoentityinfluence">explosionNoEntityInfluence</a></li>
+<li><a href="carpet-TIS-addition.html#explosionpacketrange">explosionPacketRange</a></li>
+<li><a href="carpet-TIS-addition.html#failsoftblockstateparsing">failSoftBlockStateParsing</a></li>
+<li><a href="carpet-TIS-addition.html#fakeplayernameprefix">fakePlayerNamePrefix</a></li>
+<li><a href="carpet-TIS-addition.html#fakeplayernamesuffix">fakePlayerNameSuffix</a></li>
+<li><a href="carpet-TIS-addition.html#fakeplayerremotespawning">fakePlayerRemoteSpawning</a></li>
+<li><a href="carpet-TIS-addition.html#farmlandtrampleddisabled">farmlandTrampledDisabled</a></li>
+<li><a href="carpet-TIS-addition.html#fillcommandmodeenhance">fillCommandModeEnhance</a></li>
+<li><a href="carpet-TIS-addition.html#flattentriangulardistribution">flattenTriangularDistribution</a></li>
+<li><a href="carpet-TIS-addition.html#fluiddestructiondisabled">fluidDestructionDisabled</a></li>
+<li><a href="carpet-TIS-addition.html#hoppercountersunlimitedspeed">hopperCountersUnlimitedSpeed</a></li>
+<li><a href="carpet-TIS-addition.html#hoppernoitemcost">hopperNoItemCost</a></li>
+<li><a href="carpet-TIS-addition.html#hudloggerupdateinterval">HUDLoggerUpdateInterval</a></li>
+<li><a href="carpet-TIS-addition.html#instantblockupdaterreintroduced">instantBlockUpdaterReintroduced</a></li>
+<li><a href="carpet-TIS-addition.html#instantcommandblock">instantCommandBlock</a></li>
+<li><a href="carpet-TIS-addition.html#itementityskipmovementdisabled">itemEntitySkipMovementDisabled</a></li>
+<li><a href="carpet-TIS-addition.html#keepmobinlazychunks">keepMobInLazyChunks</a></li>
+<li><a href="carpet-TIS-addition.html#largebarrel">largeBarrel</a></li>
+<li><a href="carpet-TIS-addition.html#lifetimetrackerconsidersmobcap">lifeTimeTrackerConsidersMobcap</a></li>
+<li><a href="carpet-TIS-addition.html#lightqueueloggersamplingduration">lightQueueLoggerSamplingDuration</a></li>
+<li><a href="carpet-TIS-addition.html#lightupdates">lightUpdates</a></li>
+<li><a href="carpet-TIS-addition.html#loggermovement">loggerMovement</a></li>
+<li><a href="carpet-TIS-addition.html#microtiming">microTiming</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingdyemarker">microTimingDyeMarker</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingtarget">microTimingTarget</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingtickdivision">microTimingTickDivision</a></li>
+<li><a href="carpet-TIS-addition.html#minecartfulldropbackport">minecartFullDropBackport</a></li>
+<li><a href="carpet-TIS-addition.html#minecarttakepassengerminvelocity">minecartTakePassengerMinVelocity</a></li>
+<li><a href="carpet-TIS-addition.html#mobcapsdisplayignoremisc">mobcapsDisplayIgnoreMisc</a></li>
+<li><a href="carpet-TIS-addition.html#oakballoonpercent">oakBalloonPercent</a></li>
+<li><a href="carpet-TIS-addition.html#observernodetection">observerNoDetection</a></li>
+<li><a href="carpet-TIS-addition.html#opplayernocheat">opPlayerNoCheat</a></li>
+<li><a href="carpet-TIS-addition.html#optimizedfastentitymovement">optimizedFastEntityMovement</a></li>
+<li><a href="carpet-TIS-addition.html#optimizedhardhitboxentitycollision">optimizedHardHitBoxEntityCollision</a></li>
+<li><a href="carpet-TIS-addition.html#optimizedtnthighpriority">optimizedTNTHighPriority</a></li>
+<li><a href="carpet-TIS-addition.html#poiupdates">poiUpdates</a></li>
+<li><a href="carpet-TIS-addition.html#persistentloggersubscription">persistentLoggerSubscription</a></li>
+<li><a href="carpet-TIS-addition.html#preciseentityplacement">preciseEntityPlacement</a></li>
+<li><a href="carpet-TIS-addition.html#raildupingfix">railDupingFix</a></li>
+<li><a href="carpet-TIS-addition.html#redstonedustrandomupdateorder">redstoneDustRandomUpdateOrder</a></li>
+<li><a href="carpet-TIS-addition.html#renewabledragonegg">renewableDragonEgg</a></li>
+<li><a href="carpet-TIS-addition.html#renewabledragonhead">renewableDragonHead</a></li>
+<li><a href="carpet-TIS-addition.html#renewableelytra">renewableElytra</a></li>
+<li><a href="carpet-TIS-addition.html#repeaterhalfdelay">repeaterHalfDelay</a></li>
+<li><a href="carpet-TIS-addition.html#sanddupingfix">sandDupingFix</a></li>
+<li><a href="carpet-TIS-addition.html#snowmeltminlightlevel">snowMeltMinLightLevel</a></li>
+<li><a href="carpet-TIS-addition.html#stopcommanddoubleconfirmation">stopCommandDoubleConfirmation</a></li>
+<li><a href="carpet-TIS-addition.html#structureblockdonotpreservefluid">structureBlockDoNotPreserveFluid</a></li>
+<li><a href="carpet-TIS-addition.html#synchronizedlightthread">synchronizedLightThread</a></li>
+<li><a href="carpet-TIS-addition.html#syncservermsptmetricsdata">syncServerMsptMetricsData</a></li>
+<li><a href="carpet-TIS-addition.html#tileticklimit">tileTickLimit</a></li>
+<li><a href="carpet-TIS-addition.html#tiscmnetworkprotocol">tiscmNetworkProtocol</a></li>
+<li><a href="carpet-TIS-addition.html#tntdupingfix">tntDupingFix</a></li>
+<li><a href="carpet-TIS-addition.html#tntignoreredstonesignal">tntIgnoreRedstoneSignal</a></li>
+<li><a href="carpet-TIS-addition.html#tntfuseduration">tntFuseDuration</a></li>
+<li><a href="carpet-TIS-addition.html#tooledtnt">tooledTNT</a></li>
+<li><a href="carpet-TIS-addition.html#totallynoblockupdate">totallyNoBlockUpdate</a></li>
+<li><a href="carpet-TIS-addition.html#toughwitherrose">toughWitherRose</a></li>
+<li><a href="carpet-TIS-addition.html#turtleeggtrampleddisabled">turtleEggTrampledDisabled</a></li>
+<li><a href="carpet-TIS-addition.html#undeaddontburninsunlight">undeadDontBurnInSunlight</a></li>
+<li><a href="carpet-TIS-addition.html#updatesuppressionsimulator">updateSuppressionSimulator</a></li>
+<li><a href="carpet-TIS-addition.html#visualizeprojectileloggerenabled">visualizeProjectileLoggerEnabled</a></li>
+<li><a href="carpet-TIS-addition.html#voiddamageamount">voidDamageAmount</a></li>
+<li><a href="carpet-TIS-addition.html#voiddamageignoreplayer">voidDamageIgnorePlayer</a></li>
+<li><a href="carpet-TIS-addition.html#voidrelatedaltitude">voidRelatedAltitude</a></li>
+<li><a href="carpet-TIS-addition.html#witherspawnedsounddisabled">witherSpawnedSoundDisabled</a></li>
+<li><a href="carpet-TIS-addition.html#ported-rules">ported-rules</a>
+<ul>
+<li><a href="carpet-TIS-addition.html#lightenginemaxbatchsize">lightEngineMaxBatchSize</a></li>
+<li><a href="carpet-TIS-addition.html#yeetupdatesuppressioncrash">yeetUpdateSuppressionCrash</a></li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>command</summary>
+</details>
+<h2 id="general-1"><a class="header" href="#general-1">general</a></h2>
+<h2 id="rules-2"><a class="header" href="#rules-2">rules</a></h2>
+<p>全てのルールは<code>/carpet [rule] &lt;value&gt;</code>によって変更することができる。</p>
+<h3 id="antispamdisabled"><a class="header" href="#antispamdisabled">antiSpamDisabled</a></h3>
+<p>サーバーによるプレイヤーのスパムチェックを無効にする。これにはメッセージのクールダウンやアイテムのドロップ量に関する閾値が含まれる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#anticheatdisabled">antiCheatDisabled</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="blockeventpacketrange"><a class="header" href="#blockeventpacketrange">blockEventPacketRange</a></h3>
+<p>block updateが正しく起動したときに送信するpacketの範囲を指定する。パケット量超過によるタイムアウトを防止するのに役立つが、このパケットはクライアントの描画の同期に使われるので値を低くしすぎると正しく動作していないように<strong>みえる</strong>可能性がある。</p>
+<ul>
+<li>初期値 : <code>64</code></li>
+<li>使用できる値 : <code>double</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#explosionpacketrange">explosionPacketRange</a></li>
+</ul>
+</li>
+</ul>
+<div class="md-note">
+  >これは実際に見えるだけであり、実際には処理される。シングルではシミュレーション距離で上書きされる。
+  </div>
+<h3 id="blockplacementignoreentity"><a class="header" href="#blockplacementignoreentity">blockPlacementIgnoreEntity</a></h3>
+<p>クリエイティブにおいて、プレイヤーの当たり判定を無視してブロックをおけるようにする。entity全般にたいしてではないことに注意。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#entityplacementignorecollision">entityPlacementIgnoreCollision</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="chunktickspeed"><a class="header" href="#chunktickspeed">chunkTickSpeed</a></h3>
+<p>chunk tickの1チャンク*gtにおける発生量を制御する。<code>0</code>にすることで無効にできる。落雷が発生する場所や積雪、水源の氷結、そしてrandom tickが効果を受ける。random tickでは1chunk tickに対して<code>randomTickSpeed</code>の数だけ発生する。</p>
+<ul>
+<li>初期値 : <code>1</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="clientsettingslostonrespawnfix"><a class="header" href="#clientsettingslostonrespawnfix">clientSettingsLostOnRespawnFix</a></h3>
+<p>クライアントに保存される設定がプレイヤーのリスポーンもしくはエンドへ入ったときにサーバー側が認識できなくなるバグを修正する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="commandlifetime"><a class="header" href="#commandlifetime">commandLifeTime</a></h3>
+<p><code>/lifetime</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#lifetime">lifetime</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandmanipulate"><a class="header" href="#commandmanipulate">commandManipulate</a></h3>
+<p><code>/manipulate</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#manipulate">manipulate</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandraid"><a class="header" href="#commandraid">commandRaid</a></h3>
+<p><code>/raid</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#raid">raid</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandraycast"><a class="header" href="#commandraycast">commandRaycast</a></h3>
+<p><code>/raycast</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#raycast">raycast</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandrefresh"><a class="header" href="#commandrefresh">commandRefresh</a></h3>
+<p><code>/refresh</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#refresh">refresh</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandremoveentity"><a class="header" href="#commandremoveentity">commandRemoveEntity</a></h3>
+<p><code>/removeentity</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#removeentity">removeentity</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="commandsleep"><a class="header" href="#commandsleep">commandSleep</a></h3>
+<p><code>/sleep</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#sleep">sleep</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="creativenetherwaterplacement"><a class="header" href="#creativenetherwaterplacement">creativeNetherWaterPlacement</a></h3>
+<p>クリエイティブのプレイヤーがネザーで水を置けるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="creativenoitemcooldown"><a class="header" href="#creativenoitemcooldown">creativeNoItemCooldown</a></h3>
+<p>クリエイティブのプレイヤーのクールダウンをなくすようにする。例えばエンダーパールをなげたあとの20gtのクールダウンなど。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="creativeopencontainerforcibly"><a class="header" href="#creativeopencontainerforcibly">creativeOpenContainerForcibly</a></h3>
+<p>クリエイティブのプレイヤーがブロックされたコンテナを強制的にあけられるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="deobfuscatecrashreportstacktrace"><a class="header" href="#deobfuscatecrashreportstacktrace">deobfuscateCrashReportStackTrace</a></h3>
+<p>クラッシュレポートのstack traceの難読化を解除する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="dispensernoitemcost"><a class="header" href="#dispensernoitemcost">dispenserNoItemCost</a></h3>
+<p>ディスペンサーとドロッパーがトリガーするとき、内部のアイテムを減らさないでトリガーさせるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#hoppercounters">hopperCounter</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="dispensersfiredragonbreath"><a class="header" href="#dispensersfiredragonbreath">dispensersFireDragonBreath</a></h3>
+<p>ディスペンサーがドラゴンブレスをトリガーしたとき、正面のブロックに対してドラゴンブレスを生成させることができるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="enchantcommandnorestriction"><a class="header" href="#enchantcommandnorestriction">enchantCommandNoRestriction</a></h3>
+<p><code>/enchant</code>コマンドはいかなるエンチャントの競合を無視するようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="entitymomentumloss"><a class="header" href="#entitymomentumloss">entityMomentumLoss</a></h3>
+<p>ロードした瞬間のエンティティの速度が10m/gtを超えたときに発生する各軸のモーメンタムを10m/gtに抑え込むようにする。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="entityplacementignorecollision"><a class="header" href="#entityplacementignorecollision">entityPlacementIgnoreCollision</a></h3>
+<p>防具立、ボート、エンドクリスタルを配置するときにブロックと他のentityの当たり判定のチェックを行わないようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#blockplacementignoreentity">blockPlacementIgnoreEntity</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="entitytrackerdistance"><a class="header" href="#entitytrackerdistance">entityTrackerDistance</a></h3>
+<p>エンティティが同期される最大距離。ただしチャンクに対するチェビシェフ距離である。基本的にこの値はサーバーでのエンティティ描画距離として機能するため、サーバーの描画距離までに制限される。負の数とするとバニラの挙動にすることができる。</p>
+<ul>
+<li>初期値 : <code>-1</code></li>
+<li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#entitytrackerinterval">entityTrackerInterval</a></li>
+</ul>
+</li>
+</ul>
+<details>
+  <summary>チェビシェフ距離の定義</summary>
+<p>\(xz\)座標平面上にある点\(P_1(x_1,z_1),P_2(x_2,z_2)\)において、チェビシェフ距離 \(d(P_1,P_2)\)は</p>
+<p>$$d(P_1,P_2):=max(|x_1-x_2|,|z_1-z_2|)$$</p>
+</details>
+<h3 id="entitytrackerinterval"><a class="header" href="#entitytrackerinterval">entityTrackerInterval</a></h3>
+<p>エンティティの同期の周期を設定する。負の数を指定した場合バニラの挙動にすることができる。</p>
+<ul>
+<li>初期値 : <code>-1</code></li>
+<li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#entitytrackerdistance">entityTrackerDistance</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="explosionnoentityinfluence"><a class="header" href="#explosionnoentityinfluence">explosionNoEntityInfluence</a></h3>
+<p>爆発物は<strong>いかなる</strong>エンティティに対して影響を及ぼさないようにする。これにはダメージのほか、モーメンタム等も含まれる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="explosionpacketrange"><a class="header" href="#explosionpacketrange">explosionPacketRange</a></h3>
+<p>爆発が発生したときに送信されるパケットの範囲を指定する。負の数を指定することでバニラの挙動になる。</p>
+<ul>
+<li>初期値 : <code>-1</code></li>
+<li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#blockeventpacketrange">blockEventPacketRange</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="failsoftblockstateparsing"><a class="header" href="#failsoftblockstateparsing">failSoftBlockStateParsing</a></h3>
+<p><code>/setblock</code>などで正しくない値やタグを持たせた場合、その値やタグを含む部分<strong>のみ</strong>を無視して実行させるようにする。
+たとえばこのルールを<code>true</code>にした状態で<code>/setblock ~ ~ ~ piston[extended=t,facing=up]</code>を実行すると、<code>extend</code>が初期値である<code>false</code>の状態で上向きピストンが配置される。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="fakeplayernameprefix"><a class="header" href="#fakeplayernameprefix">fakePlayerNamePrefix</a></h3>
+<p><code>/player</code>によって召喚されたbotに前置詞をつける。botの名前に付与されるので、16文字以内かつ英数字と<code>_</code>のみしか使用できない。<code>#none</code>とするとprefixを無効にできる。</p>
+<ul>
+<li>初期値 : <code>#none</code></li>
+<li>使用できる値 : <code>string</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#fakeplayernamesuffix">fakePlayerNameSuffix</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayernamesuffix"><a class="header" href="#fakeplayernamesuffix">fakePlayerNameSuffix</a></h3>
+<p><code>/player</code>によって召喚されたbotに後置詞をつける。botの名前に付与されるので、16文字以内かつ英数字と<code>_</code>のみしか使用できない。<code>#none</code>とするとsuffixを無効にできる。</p>
+<ul>
+<li>初期値 : <code>#none</code></li>
+<li>使用できる値 : <code>string</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#fakeplayernameprefix">fakePlayerNamePrefix</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerremotespawning"><a class="header" href="#fakeplayerremotespawning">fakePlayerRemoteSpawning</a></h3>
+<p><code>/player</code>によってbotを遠隔で召喚できるプレイヤーを指定する。ここでいう遠隔とは、16m以上離れた場所もしくは別のディメンションにスポーンさせることを指す。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="farmlandtrampleddisabled"><a class="header" href="#farmlandtrampleddisabled">farmlandTrampledDisabled</a></h3>
+<p>耕地がmobやplayerの踏み荒らしによって土へと戻る仕様を無効にする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#turtleeggtrampleddisabled">turtleEggTrampledDisabled</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fillcommandmodeenhance"><a class="header" href="#fillcommandmodeenhance">fillCommandModeEnhance</a></h3>
+<p><code>/fill</code>コマンドに<code>softreplace</code>モード
+を追加する。<code>&lt;softreplae&gt;</code>は置換前のブロックの状態をできるだけ維持するようにする。たとえば階段やハーフのブロックタイプのみを入れ替えたい場合に有効手となる。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="flattentriangulardistribution"><a class="header" href="#flattentriangulardistribution">flattenTriangularDistribution</a></h3>
+<p>minecraftのランダマイザーを三角分布から一様分布に変更する。よりエッジケースが多く起こる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="fluiddestructiondisabled"><a class="header" href="#fluiddestructiondisabled">fluidDestructionDisabled</a></h3>
+<p>流体によるブロックの破壊を無効にする。流体は本来破壊されるべきブロックも破壊されないブロックとして扱うになる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="hoppercountersunlimitedspeed"><a class="header" href="#hoppercountersunlimitedspeed">hopperCountersUnlimitedSpeed</a></h3>
+<p><code>/counter</code>によって有効になったカウンタのホッパーとしてのクールダウンを無効にする。hopperCountersが有効になっている場合にのみ動作する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#hoppercounters">hopperCounter</a></li>
+<li>carpet / <a href="/carpet.html#counter">counter</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="hoppernoitemcost"><a class="header" href="#hoppernoitemcost">hopperNoItemCost</a></h3>
+<p><code>/scounter</code>を有効にする。詳しくは<a href="carpet-TIS-addition.html#scounter">scounter</a>を参照。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="hudloggerupdateinterval"><a class="header" href="#hudloggerupdateinterval">HUDLoggerUpdateInterval</a></h3>
+<p>HUDとして表示されるloggerの更新頻度を変更する。単位はgtで、全てのloggerに対して適用される。</p>
+<ul>
+<li>初期値 : <code>20</code></li>
+<li>使用できる値 : <code>integer</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#log">log</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="instantblockupdaterreintroduced"><a class="header" href="#instantblockupdaterreintroduced">instantBlockUpdaterReintroduced</a></h3>
+<p>update suppressorを1.19+で使用可能にする。さらにmicrotiming loggerをより見やすい形で提供するようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#updatesuppressionsimulator">updateSuppressionSimulator</a></li>
+<li><a href="carpet-TIS-addition.html#yeetupdatesuppressioncrash">yeetUpdateSuppressionCrash</a></li>
+<li>carpet / <a href="/carpet.html#updatesuppressionblock">updateSuppressionBlock</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="instantcommandblock"><a class="header" href="#instantcommandblock">instantCommandBlock</a></h3>
+<p>レッドストーン鉱石の上におかれたコマンドブロックはtileTickでscheduleすることによる1gtの遅延がなく、インスタントに起動する。ノーマルコマンドブロックのみが影響を受ける。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="itementityskipmovementdisabled"><a class="header" href="#itementityskipmovementdisabled">itemEntitySkipMovementDisabled</a></h3>
+<p>itemは接地判定を4gt毎に行っているが、これを1gt毎にする。いくつかの回路が壊れる可能性がある。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="keepmobinlazychunks"><a class="header" href="#keepmobinlazychunks">keepMobInLazyChunks</a></h3>
+<p>lazy chunk内に存在するmobはデスポーンしなくする。1.15と1.16でのみ有効。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="largebarrel"><a class="header" href="#largebarrel">largeBarrel</a></h3>
+<p>最適なstorage block。樽の横に並べて底面を合わせるとラージチェストのように一つの大きな樽として機能する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="lifetimetrackerconsidersmobcap"><a class="header" href="#lifetimetrackerconsidersmobcap">lifeTimeTrackerConsidersMobcap</a></h3>
+<p>lifetimeの計測がmobcapにカウントされないmobを考慮するようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#lifetime">lifetime</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="lightqueueloggersamplingduration"><a class="header" href="#lightqueueloggersamplingduration">lightQueueLoggerSamplingDuration</a></h3>
+<p>light queueのloggerのサンプルレートを指定する。</p>
+<ul>
+<li>初期値 : <code>60</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="lightupdates"><a class="header" href="#lightupdates">lightUpdates</a></h3>
+<p>light updateに関するシミュレートをするようにする。
+<code>on</code>にするとバニラ同様に処理される。
+|              | light update | schedule |
+|:-------------|:---:|:---:|
+| <code>on</code>         |  O  |  O  |
+| <code>off</code>        |  X  |  X  |
+| <code>suppressed</code> |  X  |  O  |
+| <code>ignored</code>    |  O  |  X  |</p>
+<div class="md-warning">
+    `off`もしくは`suppressed`を指定すると、新しいチャンクが読み込まれなくなる。この状態で新しいチャンクを読み込もうとするとサーバーが恒常的なスタックを引き起こす。
+  </div>
+<ul>
+<li>初期値 : <code>on</code></li>
+<li>使用できる値 : <code>on</code> <code>off</code> <code>suppressed</code> <code>ignored</code></li>
+</ul>
+<h3 id="loggermovement"><a class="header" href="#loggermovement">loggerMovement</a></h3>
+<p><code>/log movement</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#log">log</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="microtiming"><a class="header" href="#microtiming">microTiming</a></h3>
+<p><code>/log microtiming</code>を有効にする。レッドストーン・コンポーネントのアクション、blockUpdate、stack traceを染料アイテムでログに記録し、表示する。dye markerの使い方については<a href="carpet-TIS-addition.html#microtimingdyemarker">microTimingDyeMarker</a>を参照。またlogのメソッドの変更については<a href="carpet-TIS-addition.html#microtimingtarget">microTimingTarget</a>を参照。</p>
+<div class="md-note">
+    有効にすると、パフォーマンス面で甚大な影響を及ぼす可能性がある。
+  <div>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#microtimingdyemarker">microTimingDyeMarker</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingtarget">microTimingTarget</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingtickdivision">microTimingTickDivision</a></li>
+<li>carpet / <a href="/carpet.html#log">log</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="microtimingdyemarker"><a class="header" href="#microtimingdyemarker">microTimingDyeMarker</a></h3>
+<p>染料を持った状態でブロックを右クリックすることでlogに表示するmicro timingの表示をするブロックを選択できるようにする。また、染料に名前をつけることで表示させる名前を変更することができる。</p>
+<p>ブロックをマークするには<code>/log microtiming</code>を表示させる必要がある。もう一度選択することでblockUpdateをマークできる。さらにもう一度選択することでマーカーを削除できる。</p>
+<p>スライムボールで右クリックすることで対応するブロックが移動したときにlogに出す座標も移動させるようにすることができる。</p>
+<p><code>clear</code>とすることですべてのマーカーを削除できる。</p>
+<p>クライアントにcarpetが導入されている場合、マーキングされたブロックがボックスで表示される。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>clear</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#microtiming">microTiming</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingtarget">microTimingTarget</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingtickdivision">microTimingTickDivision</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="microtimingtarget"><a class="header" href="#microtimingtarget">microTimingTarget</a></h3>
+<p>micro timingに記録するイベントの指定方法を変更する。ただし染料マーカーが付いたイベントは常にログに記録される。<br>
+<code>labelled</code> : 羊毛でラベル付けされたものを記録する。<strong>非推奨</strong>。<br>
+<code>in_range</code> : 全てのプレイヤーの半径32m以内のものについて記録する。<strong>非推奨</strong>。<br>
+<code>all</code> : 全て記録する。<strong>非推奨</strong>。<br>
+<code>marker_only</code> : 染料マーカーのみ。</p>
+<ul>
+<li>初期値 : <code>marker_only</code></li>
+<li>使用できる値 : <code>labelled</code> <code>in_range</code> <code>all</code> <code>marker_only</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#microtiming">microTiming</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingdyemarker">microTimingDyeMarker</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingtickdivision">microTimingTickDivision</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="microtimingtickdivision"><a class="header" href="#microtimingtickdivision">microTimingTickDivision</a></h3>
+<p>micro timingの記録の分割地点を指定する。
+<code>world_timer</code>で実質的にgametickで分割され、<code>player_action</code>でプレイヤーによる変更によって分割される。</p>
+<ul>
+<li>初期値 : <code>world_timer</code></li>
+<li>使用できる値 : <code>world_timer</code> <code>player_action</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#microtiming">microTiming</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingdyemarker">microTimingDyeMarker</a></li>
+<li><a href="carpet-TIS-addition.html#microtimingtarget">microTimingTarget</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="minecartfulldropbackport"><a class="header" href="#minecartfulldropbackport">minecartFullDropBackport</a></h3>
+<p>トロッコがアイテムになるとき、コンポーネントとトロッコで分離せずコンポーネントつきトロッコとしてドロップする仕様をバックポートする。minecraft &lt;1.19で有効。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="minecarttakepassengerminvelocity"><a class="header" href="#minecarttakepassengerminvelocity">minecartTakePassengerMinVelocity</a></h3>
+<p>トロッコがmobを乗せるために必要な最小水平速度(m/gt)を指定する。
+<code>0</code>に指定するとボートのように静止していても常にmobを乗せることができる。
+<code>NaN</code>に指定すると一切乗せなくなる。</p>
+<ul>
+<li>初期値 : <code>0.1</code></li>
+<li>使用できる値 : <code>NaN</code> <code>double</code></li>
+</ul>
+<h3 id="mobcapsdisplayignoremisc"><a class="header" href="#mobcapsdisplayignoremisc">mobcapsDisplayIgnoreMisc</a></h3>
+<p>mobcapsから~~存在するだけでなにもしない哀れな~~<code>misc</code>を除外する。<code>log</code>と<code>/spawn mobcaps</code>に影響を与える。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#log">log</a></li>
+<li>carpet / <a href="/carpet.html#spawn">spawn</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="oakballoonpercent"><a class="header" href="#oakballoonpercent">oakBalloonPercent</a></h3>
+<p>オークの木が条件を満たした時巨木になる確率をパーセンテージで指定する。負の数を指定することでバニラ準拠にできる。値は0~100もしくは負の数でなければならない。</p>
+<ul>
+<li>初期値 : <code>-1</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="observernodetection"><a class="header" href="#observernodetection">observerNoDetection</a></h3>
+<p>オブザーバーがstate updateを検知しなくする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="opplayernocheat"><a class="header" href="#opplayernocheat">opPlayerNoCheat</a></h3>
+<p>opをもったプレイヤーでもチートができないようにする。</p>
+<ul>
+<li>影響を受けるコマンド
+<ul>
+<li><code>/gamemode</code></li>
+<li><code>/tp</code></li>
+<li><code>/teleport</code></li>
+<li><code>/give</code></li>
+<li><code>/setblock</code></li>
+<li><code>/summon</code></li>
+</ul>
+</li>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="optimizedfastentitymovement"><a class="header" href="#optimizedfastentitymovement">optimizedFastEntityMovement</a></h3>
+<p>エンティティのモーメンタムを現在移動している軸のブロックの当たり判定のみに限定して確認することで最適化を図るようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="optimizedhardhitboxentitycollision"><a class="header" href="#optimizedhardhitboxentitycollision">optimizedHardHitBoxEntityCollision</a></h3>
+<p>硬い当たり判定をもつボートとシュルカーについて、多くの不必要な反復処理を省くことで最適化を図るようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="optimizedtnthighpriority"><a class="header" href="#optimizedtnthighpriority">optimizedTNTHighPriority</a></h3>
+<p>carpetのoptimizedTNTがlithiumの爆発物の最適化を上書きできるようにする。とうぜん<code>optimizedTNT</code>が有効でないと動作しない。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#optimizedtnt">optimizedTNT</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="poiupdates"><a class="header" href="#poiupdates">poiUpdates</a></h3>
+<p>ブロックの変更によってPOI updateを起こさないようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="persistentloggersubscription"><a class="header" href="#persistentloggersubscription">persistentLoggerSubscription</a></h3>
+<p>logを再ログイン後も切断時と同じ状態になるようにする。最初のログイン時のみdefaultLoggerを適用するようにする。
+誰がなにを記録しているのかは<code>config/carpettisaddition/logger_subscriptions.json</code>に保存される。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#log">log</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="preciseentityplacement"><a class="header" href="#preciseentityplacement">preciseEntityPlacement</a></h3>
+<p>itemによってエンティティを配置、召喚するとき、正確にカーソルの位置に配置されるようにする。</p>
+<ul>
+<li>影響を受けるアイテム
+<ul>
+<li>防具立</li>
+<li>エンドクリスタル</li>
+<li>スポーンエッグ</li>
+</ul>
+</li>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="raildupingfix"><a class="header" href="#raildupingfix">railDupingFix</a></h3>
+<p>レールの複製を修正する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#sanddupingfix">sandDupingFix</a></li>
+<li><a href="carpet-TIS-addition.html#tntdupingfix">tntDupingFix</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="redstonedustrandomupdateorder"><a class="header" href="#redstonedustrandomupdateorder">redstoneDustRandomUpdateOrder</a></h3>
+<p>レッドストーンダストの更新順を座標依存ではなくランダムにする。座標依存を調べる場合に有用。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="renewabledragonegg"><a class="header" href="#renewabledragonegg">renewableDragonEgg</a></h3>
+<p>ドラゴンの卵がドラゴンブレスにあたったとき、ドラゴンの卵が新しく生成されるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#dispensersfiredragonbreath">dispensersFireDragonBreath</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="renewabledragonhead"><a class="header" href="#renewabledragonhead">renewableDragonHead</a></h3>
+<p>エンダードラゴンが帯電クリーパーによって殺されたとき、ドラゴンの頭を落とすようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="renewableelytra"><a class="header" href="#renewableelytra">renewableElytra</a></h3>
+<p>ファントムがシュルカーによって殺されたとき、低い確率でエリトラを落とすようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="repeaterhalfdelay"><a class="header" href="#repeaterhalfdelay">repeaterHalfDelay</a></h3>
+<p>レッドストーン鉱石の上におかれたリピーターは通常の1/2の遅延になるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="sanddupingfix"><a class="header" href="#sanddupingfix">sandDupingFix</a></h3>
+<p>砂を含めた重力の働くブロックの複製がされないようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+＋<a href="carpet-TIS-addition.html#raildupingfix">railDupingFix</a>
+<ul>
+<li><a href="carpet-TIS-addition.html#tntdupingfix">tntDupingFix</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="snowmeltminlightlevel"><a class="header" href="#snowmeltminlightlevel">snowMeltMinLightLevel</a></h3>
+<p>雪のレイヤーがrandom tickによって融解する最小のlight levelを指定する。雪が積もる最大のlight levelである<code>10</code>を指定するとsnow proofを検証することができる。</p>
+<ul>
+<li>初期値 : <code>12</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="stopcommanddoubleconfirmation"><a class="header" href="#stopcommanddoubleconfirmation">stopCommandDoubleConfirmation</a></h3>
+<p>サーバーを閉じるためには<code>/stop</code>を1分間に2回入力しないととじれないようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="structureblockdonotpreservefluid"><a class="header" href="#structureblockdonotpreservefluid">structureBlockDoNotPreserveFluid</a></h3>
+<p>すでに水がおかれていてストラクチャーブロックによってwaterlogged可能なブロックが設置されるときに、waterloggedが<code>true</code>にならないようにする。</p>
+<p><a href="https://bugs.mojang.com/browse/MC-130584">MC-130584</a>を修正する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#structureblockignored">structureBlockIgnored</a></li>
+<li>carpet / <a href="/carpet.html#structureblocklimit">structureBlockLimit</a></li>
+<li>carpet / <a href="/carpet.html#structureblockoutlinedistance">structureBlockOutlineDistance</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="synchronizedlightthread"><a class="header" href="#synchronizedlightthread">synchronizedLightThread</a></h3>
+<p>light levelを計算するlight engineが利用するlight threadをtickに同期させる。1.20以降light engineが大幅に変更され軽量化が施された結果非同期となることはほぼなくなったが、tickの最初にlight threadをまつようになる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="syncservermsptmetricsdata"><a class="header" href="#syncservermsptmetricsdata">syncServerMsptMetricsData</a></h3>
+<p><code>alt+F3</code>によってみれるmsptの表示を実際のmsptと同期させる。クライアントにcarpet TIS additionが必要。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="tileticklimit"><a class="header" href="#tileticklimit">tileTickLimit</a></h3>
+<p>1gt内でおこすことができるtileTickのschedule limitを指定する。値は1以上である必要がある。</p>
+<ul>
+<li>初期値 : <code>65536</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="tiscmnetworkprotocol"><a class="header" href="#tiscmnetworkprotocol"><del>tiscmNetworkProtocol</del></a></h3>
+<p>tiscmのプロトコルに関するスイッチ。ところでtism network protocolってなに。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="tntdupingfix"><a class="header" href="#tntdupingfix">tntDupingFix</a></h3>
+<p>掘れ。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#raildupingfix">railDupingFix</a></li>
+<li><a href="carpet-TIS-addition.html#sanddupingfix">sandDupingFix</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="tntignoreredstonesignal"><a class="header" href="#tntignoreredstonesignal">tntIgnoreRedstoneSignal</a></h3>
+<p>tntがレッドストーンの信号によって発火しないようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="tntfuseduration"><a class="header" href="#tntfuseduration">tntFuseDuration</a></h3>
+<p>tntの発火の遅延を指定する。単位はgt。</p>
+<ul>
+<li>初期値 : <code>80</code></li>
+<li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="tooledtnt"><a class="header" href="#tooledtnt">tooledTNT</a></h3>
+<p>tntを着火した人のメインハンドの効果がtntに付与されるようにする。たとえばシルクタッチのつるはしを持っていてtntが氷を壊した場合、氷はドロップする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="totallynoblockupdate"><a class="header" href="#totallynoblockupdate">totallyNoBlockUpdate</a></h3>
+<p>完全にblockUpdateとstateUpdateを発生しなくする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#fillupdates">fillUpdates</a></li>
+<li>carpet / <a href="/carpet.html#tntdonotupdate">tntDoNotUpdate</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="toughwitherrose"><a class="header" href="#toughwitherrose">toughWitherRose</a></h3>
+<p>wither roseをどこにでも植えられるようになる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="turtleeggtrampleddisabled"><a class="header" href="#turtleeggtrampleddisabled">turtleEggTrampledDisabled</a></h3>
+<p>亀の卵を踏み荒らし破壊することを無効にする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#farmlandtrampleddisabled">farmlandTranmledDisabled</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="undeaddontburninsunlight"><a class="header" href="#undeaddontburninsunlight">undeadDontBurnInSunlight</a></h3>
+<p>アンデッドmobは日光によって燃えないようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="updatesuppressionsimulator"><a class="header" href="#updatesuppressionsimulator">updateSuppressionSimulator</a></h3>
+<p>レッドストーン鉱石の上におかれたパワードレールもしくはアクティベータレールは<code>powered</code>が<code>true</code>から<code>false</code>になる直前に指定したJVM例外処理を投げるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>StackOverflowError</code> <code>OutOfMemoryError</code> <code>ClassCastException</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#yeetupdatesuppressioncrash">yeetUpdateSuppressionCrash</a></li>
+<li>carpet / <a href="/carpet.html#updatesuppressionblock">UpdateSuppressionBlock</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="visualizeprojectileloggerenabled"><a class="header" href="#visualizeprojectileloggerenabled">visualizeProjectileLoggerEnabled</a></h3>
+<p>projectile loggerを可視化する。従来の表示形式ではなく、その場所に小さいエンティティをマーカーとして表示させることでより見やすくさせる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="/carpet.html#projectiles">log</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="voiddamageamount"><a class="header" href="#voiddamageamount">voidDamageAmount</a></h3>
+<p>奈落のダメージ量を変更する。</p>
+<ul>
+<li>初期値 : <code>4</code></li>
+<li>使用できる値 : <code>double</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#voiddamageignoreplayer">voidDamageIgnorePlayer</a></li>
+<li><a href="carpet-TIS-addition.html#voidrelatedaltitude">voidRelatedAltitude</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="voiddamageignoreplayer"><a class="header" href="#voiddamageignoreplayer">voidDamageIgnorePlayer</a></h3>
+<p>プレイヤーは奈落ダメージを受けないようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#voiddamageamount">voidDamageAmount</a></li>
+<li><a href="carpet-TIS-addition.html#voidrelatedaltitude">voidRelatedAltitude</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="voidrelatedaltitude"><a class="header" href="#voidrelatedaltitude">voidRelatedAltitude</a></h3>
+<p>ワールドの底から奈落ダメージを受け始める高さまでの差分を設定する。単位はblock。</p>
+<ul>
+<li>初期値 : <code>-64</code></li>
+<li>使用できる値 : <code>double</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#voiddamageamount">voidDamageAmount</a></li>
+<li><a href="carpet-TIS-addition.html#voiddamageignoreplayer">voidDamageIgnorePlayer</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="witherspawnedsounddisabled"><a class="header" href="#witherspawnedsounddisabled">witherSpawnedSoundDisabled</a></h3>
+<p>witherのスポーンする音を無効にする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="ported-rules"><a class="header" href="#ported-rules">ported-rules</a></h3>
+<p>ほかのmodから移植されたrule。TISなりの変更が加えられている場合がある。</p>
+<details>
+  <summary>ported rules</summary>
+<h4 id="lightenginemaxbatchsize"><a class="header" href="#lightenginemaxbatchsize">lightEngineMaxBatchSize</a></h4>
+<p>light engineの最大バッチサイズをオーバーライドする。値は正の数でなければならない。</p>
+<ul>
+<li>初期値 : <code>5</code></li>
+<li>使用できる値 : <code>double</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#lightupdates">lightUpdates</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="yeetupdatesuppressioncrash"><a class="header" href="#yeetupdatesuppressioncrash">yeetUpdateSuppressionCrash</a></h4>
+<p>update supressionによるクラッシュを防ぐ。またクラッシュしようとした場合その原因をlogに出力する。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+</details>
+<h2 id="command-1"><a class="header" href="#command-1">command</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><!DOCTYPE html>
 <html>
 <head>
