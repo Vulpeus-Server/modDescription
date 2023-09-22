@@ -6,6 +6,7 @@ version : carpet 1.4.1.12+v230608
 編集段階で未解決なものはストライクラインで示す。
 
 以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+
 |mod|download|document|docs-JP|
 |:---:|:---:|:---:|:---:|
 |carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|here|

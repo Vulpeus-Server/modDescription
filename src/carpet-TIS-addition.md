@@ -6,9 +6,10 @@ version : TIS 1.50.1
 編集段階で未解決なものはストライクラインで示す。
 
 以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+
 |mod|download|document|docs-JP|
 |:---:|:---:|:---:|:---:|
-|carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|[carpet](/carpet.html)|
+|carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|[carpet](./carpet.html)|
 |carpet TIS addition|[modrinth](https://modrinth.com/mod/carpet-tis-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition)<br>[github](https://github.com/TISUnion/Carpet-TIS-Addition)|[docs](https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs)|here|
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)||
 |gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|[GCA](gugle-carpet-addition.html)|
@@ -133,7 +134,7 @@ version : TIS 1.50.1
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + carpet / [antiCheatDisabled](/carpet.md#anticheatdisabled)
+    + carpet / [antiCheatDisabled](./carpet.md#anticheatdisabled)
 ### blockEventPacketRange
   block updateが正しく起動したときに送信するpacketの範囲を指定する。パケット量超過によるタイムアウトを防止するのに役立つが、このパケットはクライアントの描画の同期に使われるので値を低くしすぎると正しく動作していないように**みえる**可能性がある。
   + 初期値 : `64`
@@ -141,7 +142,7 @@ version : TIS 1.50.1
   + 関連項目
     + [explosionPacketRange](#explosionpacketrange)
   <div class="md-note">
-  >これは実際に見えるだけであり、実際には処理される。シングルではシミュレーション距離で上書きされる。
+    これは実際に見えるだけであり、実際には処理される。シングルではシミュレーション距離で上書きされる。
   </div>
 
 ### blockPlacementIgnoreEntity
@@ -221,7 +222,7 @@ version : TIS 1.50.1
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + carpet / [hopperCounter](/carpet.html#hoppercounters)
+    + carpet / [hopperCounter](./carpet.html#hoppercounters)
 ### dispensersFireDragonBreath
   ディスペンサーがドラゴンブレスをトリガーしたとき、正面のブロックに対してドラゴンブレスを生成させることができるようにする。
   + 初期値 : `false`
@@ -293,7 +294,7 @@ version : TIS 1.50.1
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + carpet / [player](/carpet.html#player)
+    + carpet / [player](./carpet.html#player)
 ### farmlandTrampledDisabled
   耕地がmobやplayerの踏み荒らしによって土へと戻る仕様を無効にする。
   + 初期値 : `false`
@@ -318,8 +319,8 @@ version : TIS 1.50.1
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + carpet / [hopperCounter](/carpet.html#hoppercounters)
-    + carpet / [counter](/carpet.html#counter)
+    + carpet / [hopperCounter](./carpet.html#hoppercounters)
+    + carpet / [counter](./carpet.html#counter)
 ### hopperNoItemCost
   `/scounter`を有効にする。詳しくは[scounter](#scounter)を参照。
   + 初期値 : `false`
@@ -329,7 +330,7 @@ version : TIS 1.50.1
   + 初期値 : `20`
   + 使用できる値 : `integer`
   + 関連項目
-    + carpet / [log](/carpet.html#log)
+    + carpet / [log](./carpet.html#log)
 ### instantBlockUpdaterReintroduced
   update suppressorを1.19+で使用可能にする。さらにmicrotiming loggerをより見やすい形で提供するようにする。
   + 初期値 : `false`
@@ -337,7 +338,7 @@ version : TIS 1.50.1
   + 関連項目
     + [updateSuppressionSimulator](#updatesuppressionsimulator)
     + [yeetUpdateSuppressionCrash](#yeetupdatesuppressioncrash)
-    + carpet / [updateSuppressionBlock](/carpet.html#updatesuppressionblock)
+    + carpet / [updateSuppressionBlock](./carpet.html#updatesuppressionblock)
 ### instantCommandBlock
   レッドストーン鉱石の上におかれたコマンドブロックはtileTickでscheduleすることによる1gtの遅延がなく、インスタントに起動する。ノーマルコマンドブロックのみが影響を受ける。
   + 初期値 : `false`
@@ -367,6 +368,7 @@ version : TIS 1.50.1
 ### lightUpdates
   light updateに関するシミュレートをするようにする。
   `on`にするとバニラ同様に処理される。
+
   |              | light update | schedule |
   |:-------------|:---:|:---:|
   | `on`         |  O  |  O  |
@@ -375,7 +377,7 @@ version : TIS 1.50.1
   | `ignored`    |  O  |  X  |
 
  <div class="md-warning">
-    `off`もしくは`suppressed`を指定すると、新しいチャンクが読み込まれなくなる。この状態で新しいチャンクを読み込もうとするとサーバーが恒常的なスタックを引き起こす。
+    <code>off</code>もしくは<code>suppressed</code>を指定すると、新しいチャンクが読み込まれなくなる。この状態で新しいチャンクを読み込もうとするとサーバーが恒常的なスタックを引き起こす。
   </div>
 
   + 初期値 : `on`
@@ -385,12 +387,12 @@ version : TIS 1.50.1
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + carpet / [log](/carpet.html#log)
+    + carpet / [log](./carpet.html#log)
 ### microTiming
   `/log microtiming`を有効にする。レッドストーン・コンポーネントのアクション、blockUpdate、stack traceを染料アイテムでログに記録し、表示する。dye markerの使い方については[microTimingDyeMarker](#microtimingdyemarker)を参照。またlogのメソッドの変更については[microTimingTarget](#microtimingtarget)を参照。
   <div class="md-note">
     有効にすると、パフォーマンス面で甚大な影響を及ぼす可能性がある。
-  <div>
+  </div>
 
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
@@ -398,7 +400,7 @@ version : TIS 1.50.1
     + [microTimingDyeMarker](#microtimingdyemarker)
     + [microTimingTarget](#microtimingtarget)
     + [microTimingTickDivision](#microtimingtickdivision)
-    + carpet / [log](/carpet.html#log)
+    + carpet / [log](./carpet.html#log)
 ### microTimingDyeMarker
   染料を持った状態でブロックを右クリックすることでlogに表示するmicro timingの表示をするブロックを選択できるようにする。また、染料に名前をつけることで表示させる名前を変更することができる。
 
@@ -451,8 +453,8 @@ version : TIS 1.50.1
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + carpet / [log](/carpet.html#log)
-    + carpet / [spawn](/carpet.html#spawn)
+    + carpet / [log](./carpet.html#log)
+    + carpet / [spawn](./carpet.html#spawn)
 ### oakBalloonPercent
   オークの木が条件を満たした時巨木になる確率をパーセンテージで指定する。負の数を指定することでバニラ準拠にできる。値は0~100もしくは負の数でなければならない。
   + 初期値 : `-1`
@@ -485,7 +487,7 @@ version : TIS 1.50.1
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + carpet / [optimizedTNT](/carpet.html#optimizedtnt)
+    + carpet / [optimizedTNT](./carpet.html#optimizedtnt)
 ### poiUpdates
   ブロックの変更によってPOI updateを起こさないようにする。
   + 初期値 : `false`
@@ -496,7 +498,7 @@ version : TIS 1.50.1
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + carpet / [log](/carpet.html#log)
+    + carpet / [log](./carpet.html#log)
 ### preciseEntityPlacement
   itemによってエンティティを配置、召喚するとき、正確にカーソルの位置に配置されるようにする。
   + 影響を受けるアイテム
@@ -539,7 +541,7 @@ version : TIS 1.50.1
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    ＋[railDupingFix](#raildupingfix)
+    + [railDupingFix](#raildupingfix)
     + [tntDupingFix](#tntdupingfix)
 ### snowMeltMinLightLevel
   雪のレイヤーがrandom tickによって融解する最小のlight levelを指定する。雪が積もる最大のlight levelである`10`を指定するとsnow proofを検証することができる。
@@ -556,9 +558,9 @@ version : TIS 1.50.1
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + carpet / [structureBlockIgnored](/carpet.html#structureblockignored)
-    + carpet / [structureBlockLimit](/carpet.html#structureblocklimit)
-    + carpet / [structureBlockOutlineDistance](/carpet.html#structureblockoutlinedistance)
+    + carpet / [structureBlockIgnored](./carpet.html#structureblockignored)
+    + carpet / [structureBlockLimit](./carpet.html#structureblocklimit)
+    + carpet / [structureBlockOutlineDistance](./carpet.html#structureblockoutlinedistance)
 ### synchronizedLightThread
   light levelを計算するlight engineが利用するlight threadをtickに同期させる。1.20以降light engineが大幅に変更され軽量化が施された結果非同期となることはほぼなくなったが、tickの最初にlight threadをまつようになる。
   + 初期値 : `false`
@@ -599,8 +601,8 @@ version : TIS 1.50.1
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + carpet / [fillUpdates](/carpet.html#fillupdates)
-    + carpet / [tntDoNotUpdate](/carpet.html#tntdonotupdate)
+    + carpet / [fillUpdates](./carpet.html#fillupdates)
+    + carpet / [tntDoNotUpdate](./carpet.html#tntdonotupdate)
 ### toughWitherRose
   wither roseをどこにでも植えられるようになる。
   + 初期値 : `false`
@@ -621,13 +623,13 @@ version : TIS 1.50.1
   + 使用できる値 : `true` `false` `StackOverflowError` `OutOfMemoryError` `ClassCastException`
   + 関連項目
     + [yeetUpdateSuppressionCrash](#yeetupdatesuppressioncrash)
-    + carpet / [UpdateSuppressionBlock](/carpet.html#updatesuppressionblock)
+    + carpet / [UpdateSuppressionBlock](./carpet.html#updatesuppressionblock)
 ### visualizeProjectileLoggerEnabled
   projectile loggerを可視化する。従来の表示形式ではなく、その場所に小さいエンティティをマーカーとして表示させることでより見やすくさせる。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + carpet / [log](/carpet.html#projectiles)
+    + carpet / [log](./carpet.html#projectiles)
 ### voidDamageAmount
   奈落のダメージ量を変更する。
   + 初期値 : `4`
