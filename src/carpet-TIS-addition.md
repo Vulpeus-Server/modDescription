@@ -369,12 +369,12 @@ version : TIS 1.50.1
   light updateに関するシミュレートをするようにする。
   `on`にするとバニラ同様に処理される。
 
-  |              | light update | schedule |
-  |:-------------|:---:|:---:|
-  | `on`         |  O  |  O  |
-  | `off`        |  X  |  X  |
-  | `suppressed` |  X  |  O  |
-  | `ignored`    |  O  |  X  |
+|              | light update | schedule |
+|:-------------|:---:|:---:|
+| `on`         |  O  |  O  |
+| `off`        |  X  |  X  |
+| `suppressed` |  X  |  O  |
+| `ignored`    |  O  |  X  |
 
  <div class="md-warning">
     <code>off</code>もしくは<code>suppressed</code>を指定すると、新しいチャンクが読み込まれなくなる。この状態で新しいチャンクを読み込もうとするとサーバーが恒常的なスタックを引き起こす。
