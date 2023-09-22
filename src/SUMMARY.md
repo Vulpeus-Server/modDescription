@@ -8,4 +8,4 @@
 - [Tweakeroo](./Tweakeroo.md)
 - [Carpet](./carpet.md)
 - [GugleCarpetAddition](./gugle-carpet-addition.md)
-- [Minecraft Optimization](./Minecraft-Optimization/Minecraft.Optimization.html)
+- [Minecraft Optimization](./Minecraft%20Optimization/Minecraft.Optimization.html)
