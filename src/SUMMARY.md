@@ -9,4 +9,4 @@
 - [Carpet](./carpet.md)
 - [GugleCarpetAddition](./gugle-carpet-addition.md)
 
-- [Other Optimization Mods](./Minecraft_Optimization.html)
+- [Other Optimization Mods](./Minecraft Optimization/Minecraft_Optimization.html)
