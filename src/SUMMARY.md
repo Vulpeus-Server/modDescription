@@ -1,4 +1,4 @@
-# ModDescription
+# Mod Description
 
 [modDescription](./title.md)
 
