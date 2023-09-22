@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>ModDescription</title>
+        <title>Mod Description</title>
         <meta name="robots" content="noindex" />
 
 
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">modDescription</a></li><li class="chapter-item expanded "><a href="EssentialClient.html"><strong aria-hidden="true">1.</strong> EssentialClient</a></li><li class="chapter-item expanded "><a href="Tweakeroo.html"><strong aria-hidden="true">2.</strong> Tweakeroo</a></li><li class="chapter-item expanded "><a href="carpet.html"><strong aria-hidden="true">3.</strong> Carpet</a></li><li class="chapter-item expanded "><a href="gugle-carpet-addition.html"><strong aria-hidden="true">4.</strong> GugleCarpetAddition</a></li><li class="chapter-item expanded "><a href="carpet-TIS-addition.html"><strong aria-hidden="true">5.</strong> Carpet TIS Addition</a></li><li class="chapter-item expanded "><a href="Minecraft Optimization/Minecraft_Optimization.html"><strong aria-hidden="true">6.</strong> Minecraft Optimization</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Mod Description</a></li><li class="chapter-item expanded "><a href="EssentialClient.html"><strong aria-hidden="true">1.</strong> EssentialClient</a></li><li class="chapter-item expanded "><a href="Tweakeroo.html"><strong aria-hidden="true">2.</strong> Tweakeroo</a></li><li class="chapter-item expanded "><a href="carpet.html"><strong aria-hidden="true">3.</strong> Carpet</a></li><li class="chapter-item expanded "><a href="gugle-carpet-addition.html"><strong aria-hidden="true">4.</strong> GugleCarpetAddition</a></li><li class="chapter-item expanded "><a href="carpet-TIS-addition.html"><strong aria-hidden="true">5.</strong> Carpet TIS Addition</a></li><li class="chapter-item expanded "><a href="Minecraft Optimization/Minecraft_Optimization.html"><strong aria-hidden="true">6.</strong> Minecraft Optimization</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -138,7 +138,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">ModDescription</h1>
+                    <h1 class="menu-title">Mod Description</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -1030,7 +1030,7 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <p><code>/carpet setDefault [rule] [value]</code><br>
 <code>[rule]</code>で指定したcarpet ruleのデフォルトの値を<code>[value]</code>で指定した値にする。</p>
 <div class="md-note">
-  `/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが準備される。
+<p><code>/carpet [rule] [value]</code>を使用し値が正常に変更された場合、通知とともにそえられる<code>change permanently?</code>を右クリックすることでその値がすでに入力されたコマンドが準備される。</p>
 </div>
 </li>
 <li>
@@ -1064,13 +1064,14 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 </ul>
 <h3 id="carpets"><a class="header" href="#carpets">carpets</a></h3>
 <p>carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
-以下は使用できるコマンドのリストである。
-| color  | command                                      |
-|:------:|:---------------------------------------------|
-| gray   | <code>/info block ~ ~-1 ~</code>                        |
-| black  | <code>/spawn entities</code>                            |
-| brown  | <code>/distance from ~ ~ ~ </code> <code>/distance to ~ ~ ~</code> |
-| pink   | <code>/spawn list ~ ~-1 ~</code>                        |</p>
+以下は使用できるコマンドのリストである。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">color</th><th style="text-align: left">command</th></tr></thead><tbody>
+<tr><td style="text-align: center">gray</td><td style="text-align: left"><code>/info block ~ ~-1 ~</code></td></tr>
+<tr><td style="text-align: center">black</td><td style="text-align: left"><code>/spawn entities</code></td></tr>
+<tr><td style="text-align: center">brown</td><td style="text-align: left"><code>/distance from ~ ~ ~ </code> <code>/distance to ~ ~ ~</code></td></tr>
+<tr><td style="text-align: center">pink</td><td style="text-align: left"><code>/spawn list ~ ~-1 ~</code></td></tr>
+</tbody></table>
+</div>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1251,8 +1252,8 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <h3 id="creativeplayersloadchunks"><a class="header" href="#creativeplayersloadchunks">creativePlayersLoadChunks</a></h3>
 <p>クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。</p>
 <div class="md-note">
-  スペクテイターモードについては`/gamerule spectatorsGenerateChunks`によって設定可能。
-  </div>
+<p>スペクテイターモードについては<code>/gamerule spectatorsGenerateChunks</code>によって設定可能。</p>
+</div>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1297,7 +1298,7 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <p>redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。 </p>
 <div class="md-note">
   壊れる回路があるので注意。
-  <dib>
+  </div>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1669,11 +1670,13 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <h3 id="structureblocklimit"><a class="header" href="#structureblocklimit">structureBlockLimit</a></h3>
 <p>各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。</p>
 <div class="md-note">
-  値が大きい場合、負荷軽減の目的で[structureBlockIgnored](#structureblockignored)をminecraft:airにすることを推奨。
-  </div>
+<p>値が大きい場合、負荷軽減の目的で<a href="carpet.html#structureblockignored">structureBlockIgnored</a>をminecraft:airにすることを推奨。</p>
+</div>
   <div class="md-note">
-  >ストラクチャーブロックが常に読み込まれていなければ正しく動かない。
-  </div>
+<blockquote>
+<p>ストラクチャーブロックが常に読み込まれていなければ正しく動かない。</p>
+</blockquote>
+</div>
 <ul>
 <li>初期値 : <code>48</code></li>
 <li>使用できる値 : <code>integer</code></li>
@@ -1737,8 +1740,8 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <h3 id="tntrandomrange"><a class="header" href="#tntrandomrange">tntRandomRange</a></h3>
 <p>tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない</p>
 <div class="md-important">
-  [optimizedTNT](#optimizedtnt)を有効にする必要がある。
-  </div>
+<p><a href="carpet.html#optimizedtnt">optimizedTNT</a>を有効にする必要がある。</p>
+</div>
 <ul>
 <li>初期値 : <code>-1.0</code></li>
 <li>使用できる値 : <code>double</code></li>
@@ -1810,7 +1813,7 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <p><code>&lt;to&gt;</code><br>
 距離の終点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合<code>~ ~ ~</code>が補われる。</p>
 <div class="md-note">
-`<from>`のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。
+<p><code>&lt;from&gt;</code>のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。</p>
 </div>
 </li>
 <li>
@@ -1823,21 +1826,21 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <p><code>Spherical</code><br>
 ユークリッド距離で算出。
 始点を \( P_1(x_1,y_1,z_1) \)、終点を \( P_2(x_2,y_2,z_2) \)とすると距離 \( d_S(P_1,P_2) \) は
-$$d_S(P_1 , P_2)\coloneqq\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$$</p>
+$$d_S(P_1 , P_2) := \sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$$</p>
 </li>
 <li>
 <p><code>Cyrindrical</code><br>
 \( x \) 座標および  \( z \) 座標のみを用いてユークリッド距離で算出。
-$$d_C(P_1 , P_2)\coloneqq\sqrt{(x_1-x_2)^2+(z_1-z_2)^2}$$</p>
+$$d_C(P_1 , P_2) := \sqrt{(x_1-x_2)^2+(z_1-z_2)^2}$$</p>
 </li>
 <li>
 <p><code>Manhattan</code><br>
 マンハッタン距離で算出。
-$$d_M(P_1 , P_2)\coloneqq|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$</p>
+$$d_M(P_1 , P_2) := |x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$</p>
 </li>
 </ul>
 <div class="md-note">
-minecraftではほとんどがユークリッド距離を利用している。`CanSpawnArea`もユークリッド距離である。
+<p>minecraftではほとんどがユークリッド距離を利用している。<code>CanSpawnArea</code>もユークリッド距離である。</p>
 </div>
 </details>
 </li>
@@ -2087,11 +2090,15 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <li>
 <p><code>[block | entity]</code></p>
 <ul>
-<li><code>block</code><br>
-<code>[target]</code>は表示したいブロックの座標となる。絶対座標もしくは相対座標を使うことができる。</li>
-<li><code>entity</code><br>
-<code>[target]</code>は表示したいエンティティとなる。一つのエンティティのみを選択する必要がある。<div class="md-note">
-ターゲットセレクタで指定する場合`[limit=1]`と追記することで一つのエンティティに絞ることができる。
+<li>
+<p><code>block</code><br>
+<code>[target]</code>は表示したいブロックの座標となる。絶対座標もしくは相対座標を使うことができる。</p>
+</li>
+<li>
+<p><code>entity</code><br>
+<code>[target]</code>は表示したいエンティティとなる。一つのエンティティのみを選択する必要がある。</p>
+<div class="md-note">
+<p>ターゲットセレクタで指定する場合<code>[limit=1]</code>と追記することで一つのエンティティに絞ることができる。</p>
 </div>
 </li>
 </ul>
@@ -2123,7 +2130,7 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <p><code>/log clear</code><br>
 全てのlogの表示を停止させることができる。</p>
 <div class="md-note">
-`/log [subject] clear`とすることでそのlog表示を消すことができる。
+<p><code>/log [subject] clear</code>とすることでそのlog表示を消すことができる。</p>
 </div>
 </li>
 <li>
@@ -3074,13 +3081,13 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <h3 id="lightupdates"><a class="header" href="#lightupdates">lightUpdates</a></h3>
 <p>light updateに関するシミュレートをするようにする。
 <code>on</code>にするとバニラ同様に処理される。</p>
-<p>|              | light update | schedule |
-|:-------------|:---:|:---:|
-| <code>on</code>         |  O  |  O  |
-| <code>off</code>        |  X  |  X  |
-| <code>suppressed</code> |  X  |  O  |
-| <code>ignored</code>    |  O  |  X  |</p>
-<div class="md-warning">
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left"></th><th style="text-align: center">light update</th><th style="text-align: center">schedule</th></tr></thead><tbody>
+<tr><td style="text-align: left"><code>on</code></td><td style="text-align: center">O</td><td style="text-align: center">O</td></tr>
+<tr><td style="text-align: left"><code>off</code></td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: left"><code>suppressed</code></td><td style="text-align: center">X</td><td style="text-align: center">O</td></tr>
+<tr><td style="text-align: left"><code>ignored</code></td><td style="text-align: center">O</td><td style="text-align: center">X</td></tr>
+</tbody></table>
+</div><div class="md-warning">
     <code>off</code>もしくは<code>suppressed</code>を指定すると、新しいチャンクが読み込まれなくなる。この状態で新しいチャンクを読み込もうとするとサーバーが恒常的なスタックを引き起こす。
   </div>
 <ul>
