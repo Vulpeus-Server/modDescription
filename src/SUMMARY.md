@@ -1,6 +1,6 @@
 # Mod Description
 
-[modDescription](./title.md)
+[Mod Description](./title.md)
 
 ## Mods
 
