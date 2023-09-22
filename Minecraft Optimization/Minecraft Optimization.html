@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<title>Minecraft Optimization</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+
+</head>
+<body>
+
+<h1 id="minecraft-optimization-mods">Minecraft Optimization Mods</h1>
+<h2 id="version-120x">Version 1.20.x</h2>
+
+<span style="color: #1e90ff;">■</span> … Low /-/ For some situations (e.g., a large number of laggy / heavy blocks in place)<br>
+<span style="color: #ffa500;">■■</span> … Midium /-/ Generally, better to include<br>
+<span style="color: #ff4500;">■■■</span> … High /-/ Better <br>
+<span style="color: #ff3ea3;">■■■■</span> … Ultra /-/ Essential</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Mod Name</th>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">Performance Impact /-/ <br> Necessity </th>
+<th style="text-align:left">Stable?</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Incompatible <br> Mods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Better Beds</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/better-beds/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="low">■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Removes the Block Entity Renderer from the bed and replaces it with the default minecraft model renderer.</td>
+<td style="text-align:left">Bedspreads</td>
+</tr>
+<tr>
+<td style="text-align:left">Concurrent Chunk<br>Management Engine</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/c2me-fabric/versions?g=1.20.1">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="high">■■■</h></td>
+<td style="text-align:left">Unstable</td>
+<td style="text-align:left">C^2M-Engine, or C2ME for short, is a Fabric mod designed to improve the performance of chunk generation, I/O, and loading.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Cull Less Leaves</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/cull-less-leaves/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="high">■■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Cull Less Leaves skips rendering of inner leaf layers, improving performance.</td>
+<td style="text-align:left">More Culling , <span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">DashLoader</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/dashloader/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="midi">■■</h> </td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">This mod accelerates the Minecraft Asset Loading system by caching all of its content, This leads to a much faster game load.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Enhanced Block Entities</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/ebe/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="ultra">■■■■</h> <br> <h class="pare">(<h class="bet">■■■</h>)</h> </td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">EBE Makes some block entities use baked block models rather than laggy entity models.</td>
+<td style="text-align:left"><span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">Entity Culling</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/entityculling/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="midi">■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Using async path-tracing to hide Block-/Entities that are not visible.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Exordium</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/exordium/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="ultra">■■■■</h> <br> <h class="pare">(<h class="bet">■■■</h>)</h> </td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Renders the GUI at a lower fixed framerate (configurable in the settings), freeing up CPU and GPU time for the world rendering.</td>
+<td style="text-align:left">Canvas , Caxton , <span style="color: #585858;">Vulkan</span> , and Other</td>
+</tr>
+<tr>
+<td style="text-align:left">FastAnim</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/fastanim/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="midi">■■</h></td>
+<td style="text-align:left">Unstable</td>
+<td style="text-align:left">Speeds up entity animation calculations.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Fast Paintings</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/fast-paintings/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="low">■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Fixes painting rendering, increasing their performance and allowing them to have custom models.</td>
+<td style="text-align:left"><span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">FastQuit</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/fastquit/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="ultra">■■■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">This mod lets you return to the title screen early while your world is still saving in the background.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ferrite Core</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/ferrite-core/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="high">■■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">This mod reduces the memory usage of Minecraft in a few different ways.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">FeyTweaks</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/feytweaks/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="low">■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">The mod allows you to optimize the signs and beacons, thereby increasing your FPS.</td>
+<td style="text-align:left"><span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">Fps Reducer</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/fps-reducer/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><span style="color: #585858;">-</span> <br> <h class="pare">(<h class="gene">■■</h>)</h> </td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Reduce GPU and CPU usage automatically when no user operation exists.</td>
+<td style="text-align:left"><span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">ImmediatelyFast</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/immediatelyfast/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="ultra">■■■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">ImmediatelyFast is an open source Minecraft mod which improves the immediate mode rendering performance of the client.</td>
+<td style="text-align:left"><span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">Krypton</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/krypton/versions?g=1.20.1">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="midi">■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">A mod to optimize the Minecraft networking stack.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ksyxis</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/ksyxis/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="ultra">■■■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Speed up your world loading by not loading nearby chunks every time.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Language Reload</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/language-reload/versions?g=1.20.1">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="ultra">■■■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Reduces load times and adds fallbacks for languages.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Lithium</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/lithium/versions?g=1.20.1">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="midi">■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Lithium will improve many systems (game physics, mob AI, block ticking, etc) with the goal of not changing any vanilla mechanics.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">MC-249136 Fix</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/mc-249136-fix/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="low">■</h></td>
+<td style="text-align:left">Unstable</td>
+<td style="text-align:left">This mod implements a minimal hacky fix for <a href="https://bugs.mojang.com/browse/MC-249136">MC-249136</a>.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Memory Leak Fix</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/memoryleakfix/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="low">■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">A mod that fixes multiple memory leaks in Minecraft.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ModernFix</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/modernfix/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="midi">■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">All-in-one mod that improves performance, reduces memory usage, and fixes many bugs.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Nvidium</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/nvidium/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="high">■■■</h></td>
+<td style="text-align:left">Unstable</td>
+<td style="text-align:left">Nvidium is a replacement rendering backend for sodium that uses nvidia only opengl extensions to increase fps by a significant amount.</td>
+<td style="text-align:left">AMD GPU <br> <span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">Reese's Sodium Options</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/reeses-sodium-options/versions?g=1.20.1">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><span style="color: #585858;">-</span> <br> <h class="pare">(<h class="esse">■■■■</h>)</h> </td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Replaces Sodium's Options Screen with intention of improving UX.</td>
+<td style="text-align:left"><span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">Server Pinger Fixer</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/serverpingerfixer/versions?g=1.20.1">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="low">■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Improves pinging speed of the multiplayer server list.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Sodium</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/sodium/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="ultra">■■■■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">A modern rendering engine for Minecraft which greatly improves performance.</td>
+<td style="text-align:left"><span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">Sodium Extra</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/sodium-extra/versions?g=1.20.1">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="midi">■■</h> <br> <h class="pare">(<h class="esse">■■■■</h>)</h> </td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Sodium Extra aims to bring most of OptiFine's eye-candy options to Sodium.</td>
+<td style="text-align:left"><span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">Starlight</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/starlight/versions?g=1.20.1">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="low">■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Fabric mod for rewriting the light engine to fix lighting performance and lighting errors.</td>
+<td style="text-align:left"><span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">ThreadTweak</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/threadtweak/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="low">■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Improve and tweak Minecraft thread scheduling.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Very Many Players</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/vmp-fabric/versions?g=1.20.1">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="high">■■■</h></td>
+<td style="text-align:left">Unstable</td>
+<td style="text-align:left">A Fabric mod designed to improve server performance at high playercounts.</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Video Tape</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/videotape/versions?g=1.20.1">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="low">■</h></td>
+<td style="text-align:left">Stable</td>
+<td style="text-align:left">Fixes GPU-related memory leaks.</td>
+<td style="text-align:left"><span style="color: #585858;">Vulkan</span></td>
+</tr>
+<tr>
+<td style="text-align:left">VulkanMod</td>
+<td style="text-align:left"><a href="https://modrinth.com/mod/vulkanmod/versions?g=1.20.1&amp;l=fabric">Modrinth</a> <img src=https://modrinth.com/favicon.ico height=16></td>
+<td style="text-align:left"><h class="high">■■■</h></td>
+<td style="text-align:left">Unstable</td>
+<td style="text-align:left">This is a Minecraft mod that replaces Minecraft's OpenGL renderer with an optimized renderer that uses Vulkan API.</td>
+<td style="text-align:left">OpenGL , and other many mods</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
