@@ -10,7 +10,7 @@ version : carpet 1.4.1.12+v230608
 |mod|download|document|docs-JP|
 |:---:|:---:|:---:|:---:|
 |carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|here|
-|carpet TIS addition|[modrinth](https://modrinth.com/mod/carpet-tis-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition)<br>[github](https://github.com/TISUnion/Carpet-TIS-Addition)|[docs](https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs)|[TIS](/carpet-TIS-addition.html)|
+|carpet TIS addition|[modrinth](https://modrinth.com/mod./carpet-TIS-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods./carpet-TIS-addition)<br>[github](https://github.com/TISUnion./carpet-TIS-Addition)|[docs](https://github.com/TISUnion./carpet-TIS-Addition/tree/master/docs)|[TIS](./carpet-TIS-addition.html)|
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)||
 |gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|[GCA](/gugle-carpet-addition.html)|
 
@@ -145,7 +145,6 @@ version : carpet 1.4.1.12+v230608
   + `/carpet setDefault [rule] [value]`<br>
     `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。
     <div class="md-note">
-    
       `/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが準備される。
     </div>
 
@@ -175,12 +174,12 @@ version : carpet 1.4.1.12+v230608
   carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
   以下は使用できるコマンドのリストである。
 
-| color  | command                                      |
-|:------:|:---------------------------------------------|
-| gray   | `/info block ~ ~-1 ~`                        |
-| black  | `/spawn entities`                            |
-| brown  | `/distance from ~ ~ ~ ` `/distance to ~ ~ ~` |
-| pink   | `/spawn list ~ ~-1 ~`                        |
+  | color  | command                                      |
+  |:------:|:---------------------------------------------|
+  | gray   | `/info block ~ ~-1 ~`                        |
+  | black  | `/spawn entities`                            |
+  | brown  | `/distance from ~ ~ ~ ` `/distance to ~ ~ ~` |
+  | pink   | `/spawn list ~ ~-1 ~`                        |
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
@@ -289,7 +288,6 @@ version : carpet 1.4.1.12+v230608
 ### creativePlayersLoadChunks
   クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。
   <div class="md-note">
-  
   スペクテイターモードについては`/gamerule spectatorsGenerateChunks`によって設定可能。
   </div>
 
@@ -336,7 +334,7 @@ version : carpet 1.4.1.12+v230608
   + 使用できる値 : `true` `false`
   + 関連項目
     + [interactionUpdates](#interactionupdates)
-    + TIS / [totallyNoBlockUpdate](/carpet-TIS-addition.html#totallynoblockupdate)
+    + TIS / [totallyNoBlockUpdate](./carpet-TIS-addition.html#totallynoblockupdate)
 ### flippinCactus
   サボテンをメインハンドに持っている時、ホッパーやオブザーバーなど、方向をもつブロックの一部を右クリックするとその方向をupdateなしで回転もしくは反転できるようにする。
   + 初期値 : `false`
@@ -363,8 +361,8 @@ version : carpet 1.4.1.12+v230608
   + 使用できる値 : `true` `false`
   + 関連項目
     + [counter](#counters)
-    + TIS / [hopperCountersUnlimitedSpeed](/carpet-TIS-addition.html#hoppercountersunlimitedspeed)
-    + TIS / [hopperNoItemCost](/carpet-TIS-addition.html#hoppernoitemcost)
+    + TIS / [hopperCountersUnlimitedSpeed](./carpet-TIS-addition.html#hoppercountersunlimitedspeed)
+    + TIS / [hopperNoItemCost](./carpet-TIS-addition.html#hoppernoitemcost)
 ### huskSpawningInTemples
   ピラミッドではハスクのみがスポーンできるようにする。
   + 初期値 : `false`
@@ -421,7 +419,7 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
-    + TIS / [optimizedTNTHighPriority](/carpet-TIS-addition.html#optimizedtnthighpriority)
+    + TIS / [optimizedTNTHighPriority](./carpet-TIS-addition.html#optimizedtnthighpriority)
 ### ~~perfPermissionLevel~~
   `/perf`が使用できる権限を変更する。**しかし`/perf`が確認できなかった。**
   + 初期値 : `4`
@@ -560,11 +558,9 @@ version : carpet 1.4.1.12+v230608
 ### structureBlockLimit
   各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。  
   <div class="md-note">
-
   値が大きい場合、負荷軽減の目的で[structureBlockIgnored](#structureblockignored)をminecraft:airにすることを推奨。
   </div>
   <div class="md-note">
-
   >ストラクチャーブロックが常に読み込まれていなければ正しく動かない。
   </div>
   
@@ -610,7 +606,6 @@ version : carpet 1.4.1.12+v230608
 ### tntRandomRange
   tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない
   <div class="md-important">
-
   [optimizedTNT](#optimizedtnt)を有効にする必要がある。
   </div>
 
@@ -621,7 +616,7 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `-1`
   + 使用できる値 : `integer`
   + 関連項目
-    + TIS / [updateSuppressionSimulator](/carpet-TIS-addition.html#updatesuppressionsimulator)
+    + TIS / [updateSuppressionSimulator](./carpet-TIS-addition.html#updatesuppressionsimulator)
 ### viewDistance
   サーバーの描画距離をこの値でオーバーライドする。0から32の間である必要があり、`0`にすると無効になる。  
   + 初期値 : `0`
@@ -660,7 +655,6 @@ version : carpet 1.4.1.12+v230608
   距離の終点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合`~ ~ ~`が補われる。
 
   <div class="md-note">
-
   `<from>`のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。
   </div>
 
@@ -673,17 +667,16 @@ version : carpet 1.4.1.12+v230608
   + `Spherical`<br>
     ユークリッド距離で算出。
     始点を \\( P_1(x_1,y_1,z_1) \\)、終点を \\( P_2(x_2,y_2,z_2) \\)とすると距離 \\( d_S(P_1,P_2) \\) は
-    $$d_S(P_1 , P_2) := \sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$$
+    $$d_S(P_1 , P_2):=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$$
 
   + `Cyrindrical`<br>
      \\( x \\) 座標および  \\( z \\) 座標のみを用いてユークリッド距離で算出。
-    $$d_C(P_1 , P_2) := \sqrt{(x_1-x_2)^2+(z_1-z_2)^2}$$
+    $$d_C(P_1 , P_2):=\sqrt{(x_1-x_2)^2+(z_1-z_2)^2}$$
   + `Manhattan`<br>
     マンハッタン距離で算出。
-    $$d_M(P_1 , P_2) := |x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
+    $$d_M(P_1 , P_2):=|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
   
   <div class="md-note">
-
   minecraftではほとんどがユークリッド距離を利用している。`CanSpawnArea`もユークリッド距離である。
   </div>
 
@@ -864,12 +857,12 @@ version : carpet 1.4.1.12+v230608
   + `entity`<br>
     `[target]`は表示したいエンティティとなる。一つのエンティティのみを選択する必要がある。
     <div class="md-note">
-
     ターゲットセレクタで指定する場合`[limit=1]`と追記することで一つのエンティティに絞ることができる。
     </div>
 
 + 関連項目
   + [commandInfo](#commandinfo)
+  + TIS / [info](./carpet.html#info)
 
 ### log
 `/log [subject] <mcid>`で`[subject]`に関する情報をさまざまなところに表示する。
@@ -885,7 +878,6 @@ version : carpet 1.4.1.12+v230608
 + `/log clear`<br>
   全てのlogの表示を停止させることができる。
   <div class="md-note">
-  
   `/log [subject] clear`とすることでそのlog表示を消すことができる。
   </div>
 

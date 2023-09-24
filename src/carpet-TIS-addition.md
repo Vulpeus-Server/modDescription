@@ -369,12 +369,12 @@ version : TIS 1.50.1
   light updateに関するシミュレートをするようにする。
   `on`にするとバニラ同様に処理される。
 
-|              | light update | schedule |
-|:-------------|:---:|:---:|
-| `on`         |  O  |  O  |
-| `off`        |  X  |  X  |
-| `suppressed` |  X  |  O  |
-| `ignored`    |  O  |  X  |
+  |              | light update | schedule |
+  |:-------------|:---:|:---:|
+  | `on`         |  O  |  O  |
+  | `off`        |  X  |  X  |
+  | `suppressed` |  X  |  O  |
+  | `ignored`    |  O  |  X  |
 
  <div class="md-warning">
     <code>off</code>もしくは<code>suppressed</code>を指定すると、新しいチャンクが読み込まれなくなる。この状態で新しいチャンクを読み込もうとするとサーバーが恒常的なスタックを引き起こす。
@@ -673,3 +673,173 @@ version : TIS 1.50.1
 </details>
 
 ## command
+独自のコマンドもあるが、carpetのコマンドに変数を追加することも多い。その場合追加分のみを記載するが、関連項目よりほかの選択肢も見ることができる。
+### info
+  `/info world [ticking_order | weather]`を追加する。ワールドに関する情報を表示する。
+  + `[ticking_order | weather]`
+    + `ticking_order`<br>
+      ディメンションの処理順を表示する。技術的には同じ鯖でマルチワールドを導入している場合、ワールドの処理順も表示することができるとされている。
+    + `weather`<br>
+      天候と天気予報を表示する。
+  + 関連項目
+    + carpet / [info](./carpet.html#info)
+    + carpet / [commandInfo](./carpet.html#commandInfo)
+### lifetime
+  `/lifetime [help | filter | tracking | <entity_type>]`で使用できる。特定のエンティティのスポーン/削除に関する情報を表示する。すべてにおいて、`realtime`を最後に挿入した場合、計算がtickベースからhourベースになる。
+  + `[help | filter | tracking | [entity_type]]`
+    + `help`<br>
+      このコマンドに対するヘルプを表示する。[complete doc](https://github.com/TISUnion/Carpet-TIS-Addition/blob/master/docs/commands.md#lifetime)がでてくる。
+    + `tracking`<br>
+      `/lifetime tracking <start | stop | restart>`で利用可能。アクションを選択しなかった場合、データがある場合現在の情報を表示する。
+    + `filter`<br>
+      `/lifetime filter [entity_type] [set | clear] [target]`でtrackingするエンティティを指定する。`[entity_type]`は全てのmobEntityとitemEntity、experienceOrbが指定可能。`[target]`のfilterに`[set | clear]`でセットもしくはクリアができる。`[entity_type]`と`[target]`には`@e[type=zombie,distance=..100]`などのターゲットセレクタを用いて指定できる。
+    + `<entity_type>`<br>
+      `/lifetime [entity_type] <lifetime | removal | spawning>`で利用できる。`<entity_type>`に関するより詳細な情報を表示する。指定しなかった場合そのすべてを表示する。
+      + `lifetime`<br>
+        の生存時間の最小、最大、平均を表示する。さらに最後のエンティティのスポーンした座標と削除された座標を、それぞれ<font color=green>[S]</font>と<font color=crimson>[R]</font>をホバーすることで表示できる。クリックすることでtpするコマンドが生成される。
+      + `spawning`<br>
+        そのエンティティがスポーンした理由とその数、効率を表示する。
+      + `removal`<br>
+        そのエンティティが削除された理由とその数、効率を表示する。
+  + トラッキングできること
+    <details>
+      <summary>スポーンした理由</summary>
+          
+      + Natural spawning
+      + Nether portal pigman spawning
+      + /summon command
+      + Spawned by item
+      + Block drop (item only)
+      + Dropped from container (item only)
+      + Slime division
+      + Zombie Reinforce
+      + Spawned by spawner
+      + Spawned in raid as raider
+      + Be summoned by entity or block
+      + Breeding
+      + Dispensed by block
+      + Mob drop (item and xp orb only)
+      + Mob throw (item only)
+      + Dismounts from a vehicle (1.16+)<br>
+        [lifeTimeTrackerConsidersMobcap](#lifetimetrackerconsidersmobcap)が`true`であることを要求
+      + Enderman placed down a block (1.16+)<br>
+        [lifeTimeTrackerConsidersMobcap](#lifetimetrackerconsidersmobcap)が`true`であることを要求
+      + Mob conversion
+      + Trans-dimension from portal
+    </details>
+    <details>
+      <summary>削除された理由</summary>
+
+      + Despawn<br>
+        immediately despawn、random despawn、difficulty despawn、timeout despawnを含む。
+      + Damaged to death
+      + Becomes persistent<br>
+        [lifeTimeTrackerConsidersMobcap](#lifetimetrackerconsidersmobcap)が`true`であることを要求
+      + Rides on a vehicle (1.16+)<br>
+        [lifeTimeTrackerConsidersMobcap](#lifetimetrackerconsidersmobcap)が`true`であることを要求
+      + Enderman picked up a block (1.16+)<br>
+        [lifeTimeTrackerConsidersMobcap](#lifetimetrackerconsidersmobcap)が`true`であることを要求
+      + Entity merged (item and xp orb only)
+      + Collected up by hopper or hopper minecart (item only)
+      + Entering void
+      + Self-exploded
+      + Picked up by player or mob (item and xp orb only)
+      + Mob conversion
+      + Trans-dimension through portal
+      + Other<br>
+        もしほかの理由をトラッキングしたい場合、issueをあげれば対応するとのこと。
+    </details>
+  + 関連項目
+    + [commandLifetime](#commandlifetime)
+### manipulate
+  `/manipulate [container | entity]`で世界を操作する。
+  + `[container | entity]`
+    + `container`<br>
+      `/manipulate container [data] [operation]`でコンテナの`[data]`を`[operation]`に従って操作する。
+      <details>
+        <summary>操作とコマンドリスト</summary>
+        
+        |container name|[data]|[operation]|
+        |---|---|---|
+        |Entity list|`entity`|`revert` `shuffle`|
+        |Tickable tile entity list|`tileentity`|`revert` `shuffle` `querry` `statistic`|
+        |Tile tick queue|`tiletick`|`add` `remove`|
+        |Block event queue|`blockevent`|`add` `remove`|
+        ```
+        /manipulate container entity [revert | shuffle]
+        /manipulate container tileentity [query | revert | shuffle | statistic]
+        /manipulate container tiletick add [pos] [block] [delay] [<priority>]
+        /manipulate container tiletick remove [pos]
+        /manipulate container blockevent add [pos] [block] [type] [data]
+        /manipulate container blockevent remove [pos]
+        ```
+        たとえば`/manipulate container tileentity shuffle`を使用すると、タイルエンティティは通常設置した順に処理されるが、この順番をランダムにさせることができる。これにより依存を調べることが可能になる。
+      </details>
+
+    + `entity`<br>
+      `/manipulate entity [target] [operation]`で`[target]`を`[operation]`に従って操作する。詳細は後述。
+      <details>
+      <summary>コマンドリスト</summary>
+
+        customNameを変更もしくは削除する。 
+        ```
+        /manipulate entity <target> rename <text>
+        /manipulate entity <target> rename clear
+        ```
+        persistentタグを変更する。つまり、自然にデスポーンするかを変更することができる。
+        ```
+        /manipulate entity <target> persistent [true | false]
+        ```
+        エンティティに乗せる、もしくはエンティティからおろす。
+        ```
+        /manipulate entity <target> mount <vehicle>
+        /manipulate entity <target> dismount
+        ```
+        エンティティに対して速度を与える。
+        ```
+        /manipulate entity <target> velocity [add | set] [x] [y] [z]
+        ```
+      </details>
+
+  + 関連項目
+    + [commandManipulate](#commandmanipulate)
+### raid
+`/raid [list | tracking]`で襲撃に関する情報を表示する。
++ `[list | tracking]`
+  + `list`<br>
+    `/raid list <full>`で現在発生している襲撃に関する情報を表示する。`<full>`を挿入した場合、省略されている情報をすべて表示する。
+  + `tracking`<br>
+    `/raid tracking <start | stop | restart | realtime>`でraidの統計をとる。`realtime`を指定すると計算がtickベースからhourベースになる。なにも挿入しなかった場合記録されているデータを表示する。
++ 関連項目
+  + [commandRaid](#commandraid)
+### raycast
+`/raycast [coordinate-1] [coordinate-2] <shapeMode> <fluidMode>`で`[coordinate-1]`から`[coordinate-2]`まで直線を描き、ぶつかったブロックとその座標を表示する。もし何一つぶつからなかった場合<font color=crimson>Raycast missed</font>と表示される。
+<div class="md_note">
+
+  `[coordinate-1]`と`[coordinate-2]`が離れすぎている場合、tickがしばらく止まる場合がある。
+</div>
+
++ `<shapeMode>`
+  + `collider` (default value)
+  + `outline`
+  + `visual` (mc1.16+)
+  + `falldamage_resetting` (mc1.18.2+)
++ `<fluidMode>`
+  + `none` (default value)
+  + `source_only`
+  + `any`
+  + `water` (mc1.18.2+)
++ 関連項目
+  + [commandRaycast](#commandraycast)
+### reflesh
+`/reflesh [inventory | chunk]`でインベントリもしくはチャンクをリフレッシュする。
++ `[inventory | chunk]`
+  + `inventory`<br>
+    `/reflesh inventory <target>`で`<target>`のインベントリを更新する。自分以外のエンティティを指定する場合opレベル2が必要。
+  + `chunk`<br>
+### removeentity
+
+### scounter
+### sleep
+### spawn
+### tick
