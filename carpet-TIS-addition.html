@@ -684,13 +684,13 @@
 <h3 id="lightupdates"><a class="header" href="#lightupdates">lightUpdates</a></h3>
 <p>light updateに関するシミュレートをするようにする。
 <code>on</code>にするとバニラ同様に処理される。</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: left"></th><th style="text-align: center">light update</th><th style="text-align: center">schedule</th></tr></thead><tbody>
-<tr><td style="text-align: left"><code>on</code></td><td style="text-align: center">O</td><td style="text-align: center">O</td></tr>
-<tr><td style="text-align: left"><code>off</code></td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
-<tr><td style="text-align: left"><code>suppressed</code></td><td style="text-align: center">X</td><td style="text-align: center">O</td></tr>
-<tr><td style="text-align: left"><code>ignored</code></td><td style="text-align: center">O</td><td style="text-align: center">X</td></tr>
-</tbody></table>
-</div><div class="md-warning">
+<p>|              | light update | schedule |
+|:-------------|:---:|:---:|
+| <code>on</code>         |  O  |  O  |
+| <code>off</code>        |  X  |  X  |
+| <code>suppressed</code> |  X  |  O  |
+| <code>ignored</code>    |  O  |  X  |</p>
+<div class="md-warning">
     <code>off</code>もしくは<code>suppressed</code>を指定すると、新しいチャンクが読み込まれなくなる。この状態で新しいチャンクを読み込もうとするとサーバーが恒常的なスタックを引き起こす。
   </div>
 <ul>
@@ -1143,6 +1143,227 @@
 </ul>
 </details>
 <h2 id="command"><a class="header" href="#command">command</a></h2>
+<p>独自のコマンドもあるが、carpetのコマンドに変数を追加することも多い。その場合追加分のみを記載するが、関連項目よりほかの選択肢も見ることができる。</p>
+<h3 id="info"><a class="header" href="#info">info</a></h3>
+<p><code>/info world [ticking_order | weather]</code>を追加する。ワールドに関する情報を表示する。</p>
+<ul>
+<li><code>[ticking_order | weather]</code>
+<ul>
+<li><code>ticking_order</code><br>
+ディメンションの処理順を表示する。技術的には同じ鯖でマルチワールドを導入している場合、ワールドの処理順も表示することができるとされている。</li>
+<li><code>weather</code><br>
+天候と天気予報を表示する。</li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#info">info</a></li>
+<li>carpet / <a href="./carpet.html#commandInfo">commandInfo</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="lifetime"><a class="header" href="#lifetime">lifetime</a></h3>
+<p><code>/lifetime [help | filter | tracking | &lt;entity_type&gt;]</code>で使用できる。特定のエンティティのスポーン/削除に関する情報を表示する。すべてにおいて、<code>realtime</code>を最後に挿入した場合、計算がtickベースからhourベースになる。</p>
+<ul>
+<li>
+<p><code>[help | filter | tracking | [entity_type]]</code></p>
+<ul>
+<li><code>help</code><br>
+このコマンドに対するヘルプを表示する。<a href="https://github.com/TISUnion/Carpet-TIS-Addition/blob/master/docs/commands.md#lifetime">complete doc</a>がでてくる。</li>
+<li><code>tracking</code><br>
+<code>/lifetime tracking &lt;start | stop | restart&gt;</code>で利用可能。アクションを選択しなかった場合、データがある場合現在の情報を表示する。</li>
+<li><code>filter</code><br>
+<code>/lifetime filter [entity_type] [set | clear] [target]</code>でtrackingするエンティティを指定する。<code>[entity_type]</code>は全てのmobEntityとitemEntity、experienceOrbが指定可能。<code>[target]</code>のfilterに<code>[set | clear]</code>でセットもしくはクリアができる。<code>[entity_type]</code>と<code>[target]</code>には<code>@e[type=zombie,distance=..100]</code>などのターゲットセレクタを用いて指定できる。</li>
+<li><code>&lt;entity_type&gt;</code><br>
+<code>/lifetime [entity_type] &lt;lifetime | removal | spawning&gt;</code>で利用できる。<code>&lt;entity_type&gt;</code>に関するより詳細な情報を表示する。指定しなかった場合そのすべてを表示する。
+<ul>
+<li><code>lifetime</code><br>
+の生存時間の最小、最大、平均を表示する。さらに最後のエンティティのスポーンした座標と削除された座標を、それぞれ<font color=green>[S]</font>と<font color=crimson>[R]</font>をホバーすることで表示できる。クリックすることでtpするコマンドが生成される。</li>
+<li><code>spawning</code><br>
+そのエンティティがスポーンした理由とその数、効率を表示する。</li>
+<li><code>removal</code><br>
+そのエンティティが削除された理由とその数、効率を表示する。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>トラッキングできること</p>
+<details>
+  <summary>スポーンした理由</summary>
+<ul>
+<li>Natural spawning</li>
+<li>Nether portal pigman spawning</li>
+<li>/summon command</li>
+<li>Spawned by item</li>
+<li>Block drop (item only)</li>
+<li>Dropped from container (item only)</li>
+<li>Slime division</li>
+<li>Zombie Reinforce</li>
+<li>Spawned by spawner</li>
+<li>Spawned in raid as raider</li>
+<li>Be summoned by entity or block</li>
+<li>Breeding</li>
+<li>Dispensed by block</li>
+<li>Mob drop (item and xp orb only)</li>
+<li>Mob throw (item only)</li>
+<li>Dismounts from a vehicle (1.16+)<br>
+<a href="#lifetimetrackerconsidersmobcap">lifeTimeTrackerConsidersMobcap</a>が<code>true</code>であることを要求</li>
+<li>Enderman placed down a block (1.16+)<br>
+<a href="#lifetimetrackerconsidersmobcap">lifeTimeTrackerConsidersMobcap</a>が<code>true</code>であることを要求</li>
+<li>Mob conversion</li>
+<li>Trans-dimension from portal</li>
+</ul>
+</details>
+<details>
+  <summary>削除された理由</summary>
+<ul>
+<li>Despawn<br>
+immediately despawn、random despawn、difficulty despawn、timeout despawnを含む。</li>
+<li>Damaged to death</li>
+<li>Becomes persistent<br>
+<a href="#lifetimetrackerconsidersmobcap">lifeTimeTrackerConsidersMobcap</a>が<code>true</code>であることを要求</li>
+<li>Rides on a vehicle (1.16+)<br>
+<a href="#lifetimetrackerconsidersmobcap">lifeTimeTrackerConsidersMobcap</a>が<code>true</code>であることを要求</li>
+<li>Enderman picked up a block (1.16+)<br>
+<a href="#lifetimetrackerconsidersmobcap">lifeTimeTrackerConsidersMobcap</a>が<code>true</code>であることを要求</li>
+<li>Entity merged (item and xp orb only)</li>
+<li>Collected up by hopper or hopper minecart (item only)</li>
+<li>Entering void</li>
+<li>Self-exploded</li>
+<li>Picked up by player or mob (item and xp orb only)</li>
+<li>Mob conversion</li>
+<li>Trans-dimension through portal</li>
+<li>Other<br>
+もしほかの理由をトラッキングしたい場合、issueをあげれば対応するとのこと。</li>
+</ul>
+</details>
+</li>
+<li>
+<p>関連項目</p>
+<ul>
+<li><a href="#commandlifetime">commandLifetime</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="manipulate"><a class="header" href="#manipulate">manipulate</a></h3>
+<p><code>/manipulate [container | entity]</code>で世界を操作する。</p>
+<ul>
+<li>
+<p><code>[container | entity]</code></p>
+<ul>
+<li>
+<p><code>container</code><br>
+<code>/manipulate container [data] [operation]</code>でコンテナの<code>[data]</code>を<code>[operation]</code>に従って操作する。</p>
+<details>
+  <summary>操作とコマンドリスト</summary>
+<p>|container name|[data]|[operation]|
+|---|---|---|
+|Entity list|<code>entity</code>|<code>revert</code> <code>shuffle</code>|
+|Tickable tile entity list|<code>tileentity</code>|<code>revert</code> <code>shuffle</code> <code>querry</code> <code>statistic</code>|
+|Tile tick queue|<code>tiletick</code>|<code>add</code> <code>remove</code>|
+|Block event queue|<code>blockevent</code>|<code>add</code> <code>remove</code>|</p>
+<pre><code>/manipulate container entity [revert | shuffle]
+/manipulate container tileentity [query | revert | shuffle | statistic]
+/manipulate container tiletick add [pos] [block] [delay] [&lt;priority&gt;]
+/manipulate container tiletick remove [pos]
+/manipulate container blockevent add [pos] [block] [type] [data]
+/manipulate container blockevent remove [pos]
+</code></pre>
+<p>たとえば<code>/manipulate container tileentity shuffle</code>を使用すると、タイルエンティティは通常設置した順に処理されるが、この順番をランダムにさせることができる。これにより依存を調べることが可能になる。</p>
+</details>
+</li>
+<li>
+<p><code>entity</code><br>
+<code>/manipulate entity [target] [operation]</code>で<code>[target]</code>を<code>[operation]</code>に従って操作する。詳細は後述。</p>
+<details>
+<summary>コマンドリスト</summary>
+<p>customNameを変更もしくは削除する。 </p>
+<pre><code>/manipulate entity &lt;target&gt; rename &lt;text&gt;
+/manipulate entity &lt;target&gt; rename clear
+</code></pre>
+<p>persistentタグを変更する。つまり、自然にデスポーンするかを変更することができる。</p>
+<pre><code>/manipulate entity &lt;target&gt; persistent [true | false]
+</code></pre>
+<p>エンティティに乗せる、もしくはエンティティからおろす。</p>
+<pre><code>/manipulate entity &lt;target&gt; mount &lt;vehicle&gt;
+/manipulate entity &lt;target&gt; dismount
+</code></pre>
+<p>エンティティに対して速度を与える。</p>
+<pre><code>/manipulate entity &lt;target&gt; velocity [add | set] [x] [y] [z]
+</code></pre>
+</details>
+</li>
+</ul>
+</li>
+<li>
+<p>関連項目</p>
+<ul>
+<li><a href="#commandmanipulate">commandManipulate</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="raid"><a class="header" href="#raid">raid</a></h3>
+<p><code>/raid [list | tracking]</code>で襲撃に関する情報を表示する。</p>
+<ul>
+<li><code>[list | tracking]</code>
+<ul>
+<li><code>list</code><br>
+<code>/raid list &lt;full&gt;</code>で現在発生している襲撃に関する情報を表示する。<code>&lt;full&gt;</code>を挿入した場合、省略されている情報をすべて表示する。</li>
+<li><code>tracking</code><br>
+<code>/raid tracking &lt;start | stop | restart | realtime&gt;</code>でraidの統計をとる。<code>realtime</code>を指定すると計算がtickベースからhourベースになる。なにも挿入しなかった場合記録されているデータを表示する。</li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="#commandraid">commandRaid</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="raycast"><a class="header" href="#raycast">raycast</a></h3>
+<p><code>/raycast [coordinate-1] [coordinate-2] &lt;shapeMode&gt; &lt;fluidMode&gt;</code>で<code>[coordinate-1]</code>から<code>[coordinate-2]</code>まで直線を描き、ぶつかったブロックとその座標を表示する。もし何一つぶつからなかった場合<font color=crimson>Raycast missed</font>と表示される。</p>
+<div class="md_note">
+<p><code>[coordinate-1]</code>と<code>[coordinate-2]</code>が離れすぎている場合、tickがしばらく止まる場合がある。</p>
+</div>
+<ul>
+<li><code>&lt;shapeMode&gt;</code>
+<ul>
+<li><code>collider</code> (default value)</li>
+<li><code>outline</code></li>
+<li><code>visual</code> (mc1.16+)</li>
+<li><code>falldamage_resetting</code> (mc1.18.2+)</li>
+</ul>
+</li>
+<li><code>&lt;fluidMode&gt;</code>
+<ul>
+<li><code>none</code> (default value)</li>
+<li><code>source_only</code></li>
+<li><code>any</code></li>
+<li><code>water</code> (mc1.18.2+)</li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="#commandraycast">commandRaycast</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="reflesh"><a class="header" href="#reflesh">reflesh</a></h3>
+<p><code>/reflesh [inventory | chunk]</code>でインベントリもしくはチャンクをリフレッシュする。</p>
+<ul>
+<li><code>[inventory | chunk]</code>
+<ul>
+<li><code>inventory</code><br>
+<code>/reflesh inventory &lt;target&gt;</code>で<code>&lt;target&gt;</code>のインベントリを更新する。自分以外のエンティティを指定する場合opレベル2が必要。</li>
+<li><code>chunk</code><br></li>
+</ul>
+</li>
+</ul>
+<h3 id="removeentity"><a class="header" href="#removeentity">removeentity</a></h3>
+<h3 id="scounter"><a class="header" href="#scounter">scounter</a></h3>
+<h3 id="sleep"><a class="header" href="#sleep">sleep</a></h3>
+<h3 id="spawn"><a class="header" href="#spawn">spawn</a></h3>
+<h3 id="tick"><a class="header" href="#tick">tick</a></h3>
 
                     </main>
 
