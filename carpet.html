@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
         
         <meta name="description" content="Mod descriptions written in Markdown.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -34,7 +34,7 @@
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -64,24 +64,29 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -119,9 +124,9 @@
                                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -174,8 +179,7 @@
                     <main>
                         <h1 id="carpet"><a class="header" href="#carpet">carpet</a></h1>
 <p>version : carpet 1.4.1.12+v230608</p>
-<p>このドキュメント内では
-<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
+<p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
 <p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
@@ -296,7 +300,7 @@
 <li><a href="#profile">profile</a></li>
 <li><a href="#player">player</a></li>
 <li><a href="#script">script</a></li>
-<li><a href="#spawn-1">spawn</a></li>
+<li><a href="#spawn">spawn</a></li>
 <li><a href="#tick">tick</a></li>
 <li><a href="#track">track</a></li>
 </ul>
@@ -320,7 +324,7 @@
 <p><code>/carpet setDefault [rule] [value]</code><br>
 <code>[rule]</code>で指定したcarpet ruleのデフォルトの値を<code>[value]</code>で指定した値にする。</p>
 <div class="md-note">
-  `/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが準備される。
+<p><code>/carpet [rule] [value]</code>を使用し値が正常に変更された場合、通知とともにそえられる<code><font color=aqua>change permanently?</font></code>を右クリックすることでその値がすでに入力されたコマンドが準備される。</p>
 </div>
 </li>
 <li>
@@ -345,29 +349,26 @@
 </ul>
 <h3 id="carpetcommandpermissionlevel"><a class="header" href="#carpetcommandpermissionlevel">carpetCommandPermissionLevel</a></h3>
 <p><code>/carpet</code>コマンドを使用できるパーミッションレベルを指定する。<code>ops</code>では<code>/op</code>で付与された人のみであるが、<code>2</code> <code>4</code>はそれぞれの数値以上のパーミッションを保持しているプレイヤーにが使うことができる。</p>
-<div class="md-note">
-    現在たいち鯖では最大のパーミッションレベルが3になっている。
-  </div>
 <ul>
 <li>初期値 : <code>ops</code></li>
 <li>使用できる値 : <code>ops</code> <code>2</code> <code>4</code></li>
 </ul>
 <h3 id="carpets"><a class="header" href="#carpets">carpets</a></h3>
-<p>carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
-以下は使用できるコマンドのリストである。</p>
-<p>| color  | command                                      |
-|:------:|:---------------------------------------------|
-| gray   | <code>/info block ~ ~-1 ~</code>                        |
-| black  | <code>/spawn entities</code>                            |
-| brown  | <code>/distance from ~ ~ ~ </code> <code>/distance to ~ ~ ~</code> |
-| pink   | <code>/spawn list ~ ~-1 ~</code>                        |</p>
+<p>carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。以下は使用できるコマンドのリストである。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">color</th><th style="text-align: left">command</th></tr></thead><tbody>
+<tr><td style="text-align: center">gray</td><td style="text-align: left"><code>/info block ~ ~-1 ~</code></td></tr>
+<tr><td style="text-align: center">black</td><td style="text-align: left"><code>/spawn entities</code></td></tr>
+<tr><td style="text-align: center">brown</td><td style="text-align: left"><code>/distance from ~ ~ ~ </code> <code>/distance to ~ ~ ~</code></td></tr>
+<tr><td style="text-align: center">pink</td><td style="text-align: left"><code>/spawn list ~ ~-1 ~</code></td></tr>
+</tbody></table>
+</div>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
 <li><a href="#info">info</a></li>
-<li><a href="#spawn-1">spawn</a></li>
+<li><a href="#spawn">spawn</a></li>
 <li><a href="#distance">distance</a></li>
 </ul>
 </li>
@@ -491,7 +492,7 @@
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
 <li>関連項目
 <ul>
-<li><a href="#spawn-1">spawn</a></li>
+<li><a href="#spawn">spawn</a></li>
 </ul>
 </li>
 </ul>
@@ -518,11 +519,11 @@
 </li>
 </ul>
 <h3 id="creativeflydrag"><a class="header" href="#creativeflydrag">creativeFlyDrag</a></h3>
-<p>クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、1でBEのようにストッピングができるようになる。</p>
+<p>クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、<code>1</code>でBEのようにストッピングができるようになる。</p>
 <p><strong>クライアントのみ</strong></p>
 <ul>
 <li>初期値 : <code>0.09</code></li>
-<li>使用できる値 : <code>double</code></li>
+<li>使用できる値 : <code>0.00 ~ 1.00</code></li>
 </ul>
 <h3 id="creativeflyspeed"><a class="header" href="#creativeflyspeed">creativeFlySpeed</a></h3>
 <p>クリエイティブにおける浮遊時の飛行速度を設定する。</p>
@@ -541,8 +542,8 @@
 <h3 id="creativeplayersloadchunks"><a class="header" href="#creativeplayersloadchunks">creativePlayersLoadChunks</a></h3>
 <p>クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。</p>
 <div class="md-note">
-  スペクテイターモードについては`/gamerule spectatorsGenerateChunks`によって設定可能。
-  </div>
+<p>スペクテイターモードについては<code>/gamerule spectatorsGenerateChunks [true | false]</code>によって設定可能。</p>
+</div>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -553,21 +554,21 @@
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
-<h3 id="custommotd"><a class="header" href="#custommotd"><del>customMOTD</del></a></h3>
-<p>MOTD is なに</p>
+<h3 id="custommotd"><a class="header" href="#custommotd">customMOTD</a></h3>
+<p>サーバー一覧に表示される情報をカスタマイズする。<code>_</code>のみでバニラのものを使用する。</p>
 <ul>
 <li>初期値 : <code>_</code></li>
 <li>使用できる値 : <code>string</code></li>
 </ul>
 <h3 id="defaultloggers"><a class="header" href="#defaultloggers">defaultLoggers</a></h3>
-<p>サーバーに入ったときに表示するログの初期値。ただしsetDefaultを設定しないと再起動によって初期値に戻る。
-<code>tps,mobcaps,counter</code>のように、カンマで常げることでサジェストされたもの以外も指定できる。</p>
+<p>サーバーに入ったときに表示するログの初期値。ただしsetDefaultを設定しないと再起動によって初期値に戻る。<code>tps,mobcaps,counter</code>のように、カンマで常げることでサジェストされたもの以外も指定できる。</p>
 <ul>
 <li>初期値 : <code>none</code></li>
 <li>使用できる値 : <code>string</code></li>
 <li>関連項目
 <ul>
 <li><a href="#log">log</a></li>
+<li>TIS / <a href="./carpet-TIS-addition.html#log">log</a></li>
 </ul>
 </li>
 </ul>
@@ -584,7 +585,7 @@
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="fastredstonedust"><a class="header" href="#fastredstonedust">fastRedstoneDust</a></h3>
-<p>redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。 </p>
+<p>レッドストーンのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。 </p>
 <div class="md-note">
   壊れる回路があるので注意。
   </div>
@@ -593,7 +594,7 @@
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="filllimit"><a class="header" href="#filllimit">fillLimit</a></h3>
-<p>fillやcloneのブロック数制限を変更する。ただしゲームルールに同様の機能があり、そちらの数値に上書きされる。</p>
+<p>fillやcloneのブロック数制限を変更する。ただしバニラに同様の機能である<code>/gamerule commandModificationBlockLimit [integer]</code>があり、そちらの数値に上書きされる。</p>
 <ul>
 <li>初期値 : <code>32768</code></li>
 <li>使用できる値 : <code>integer</code></li>
@@ -622,7 +623,7 @@
 </li>
 </ul>
 <h3 id="fogoff"><a class="header" href="#fogoff">fogOff</a></h3>
-<p>ネザーにおよびエンドにおけるfog(霧)を消すようにする。</p>
+<p>ネザーにおよびエンドにおける霧を消すようにする。</p>
 <p><strong>クライアントのみ</strong></p>
 <ul>
 <li>初期値 : <code>false</code></li>
@@ -635,10 +636,10 @@
 <li>使用できる値 : <code>integer</code></li>
 </ul>
 <h3 id="hardcodetntangle"><a class="header" href="#hardcodetntangle">hardcodeTNTangle</a></h3>
-<p>tntの着火時に起きる水平方向の移動の計算方式を変更する。デフォルトは-1.0であり、これは変更しない(=ランダムである)ことを意味する。0から2πの範囲でその回転を指定できる。</p>
+<p>tntの着火時に起きる水平方向の移動の計算方式を変更する。デフォルトは<code>-1.0</code>であり、バニラのような座標依存のある疑似ランダムになる。0から2πの範囲でその回転を指定できる。</p>
 <ul>
 <li>初期値 : <code>-1.0</code></li>
-<li>使用できる値 : <code>double</code></li>
+<li>使用できる値 : <code>0.00 ~ 2π</code> <code>-1</code></li>
 </ul>
 <h3 id="hoppercounters"><a class="header" href="#hoppercounters">hopperCounters</a></h3>
 <p><code>/counter</code>を有効にする。詳しくは<a href="#counter">counter</a>を参照。</p>
@@ -696,13 +697,13 @@
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="maxentitycollisions"><a class="header" href="#maxentitycollisions">maxEntityCollisions</a></h3>
-<p>一つのentityが持つ最大の当たり判定の数。0で無制限。非不整数でなければいけない。</p>
+<p>一つのエンティティが持つ最大の当たり判定の数。0で無制限。非不整数でなければいけない。</p>
 <ul>
 <li>初期値 : <code>0</code></li>
 <li>使用できる値 : <code>interger</code></li>
 </ul>
 <h3 id="mergetnt"><a class="header" href="#mergetnt">mergeTNT</a></h3>
-<p>着火されたtntが同一のfuseを持つ場合それらを起爆したときに同様の爆発ダメージ及びモーメントを与える一つのentityとする。</p>
+<p>着火されたtntが同一のfuseを持つ場合それらを起爆したときに同様の爆発ダメージ及びモーメントを与える一つのエンティティとする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -755,7 +756,7 @@
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="piglinsspawninginbastions"><a class="header" href="#piglinsspawninginbastions">piglinsSpawningInBastions</a></h3>
-<p>ピグリン、ピグリンブルート、ホグリンがbastionで自然スポーンすることができるようにする。</p>
+<p>ピグリン、ピグリンブルート、ホグリンがピグリン要塞で自然スポーンすることができるようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -773,10 +774,10 @@
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="portalcreativedelay"><a class="header" href="#portalcreativedelay">portalCreativeDelay</a></h3>
-<p>プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までをとる。</p>
+<p>プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgt。</p>
 <ul>
 <li>初期値 : <code>0</code></li>
-<li>使用できる値 : <code>integer</code></li>
+<li>使用できる値 : <code>0 ~ 72000</code></li>
 <li>関連項目
 <ul>
 <li><a href="#portalsurvivaldelay">portalSurvivalDelay</a></li>
@@ -784,10 +785,10 @@
 </li>
 </ul>
 <h3 id="portalsurvivaldelay"><a class="header" href="#portalsurvivaldelay">portalSurvivalDelay</a></h3>
-<p>プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までの整数値をとる。</p>
+<p>プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgt。</p>
 <ul>
 <li>初期値 : <code>80</code></li>
-<li>使用できる値 : <code>integer</code></li>
+<li>使用できる値 : <code>0 ~ 72000</code></li>
 <li>関連項目
 <ul>
 <li><a href="#portalcreativedelay">creativePortalDelay</a></li>
@@ -795,10 +796,10 @@
 </li>
 </ul>
 <h3 id="pushlimit"><a class="header" href="#pushlimit">pushLimit</a></h3>
-<p>ピストンが押せるブロックの最大量を決める必要がある。1から1024までの整数値をとる。</p>
+<p>ピストンが押せるブロックの最大量を決める必要がある。</p>
 <ul>
 <li>初期値 : <code>12</code></li>
-<li>使用できる値 : <code>integer</code></li>
+<li>使用できる値 : <code>1 ~ 1024</code></li>
 </ul>
 <h3 id="quasiconnectivity"><a class="header" href="#quasiconnectivity">quasiConnectivity</a></h3>
 <p>ピストンとドロッパー、ディスペンサーの準接続をおこさないようにする。</p>
@@ -807,10 +808,10 @@
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="railpowerlimit"><a class="header" href="#railpowerlimit">railPowerLimit</a></h3>
-<p>レールの動力がどこまで動力を伝達できるかを設定する。1から1024までの整数値をとる。</p>
+<p>レールの動力がどこまで動力を伝達できるかを設定する。</p>
 <ul>
 <li>初期値 : <code>9</code></li>
-<li>使用できる値 : <code>integer</code></li>
+<li>使用できる値 : <code>1 ~ 1024</code></li>
 </ul>
 <h3 id="renewableblackstone"><a class="header" href="#renewableblackstone">renewableBlackstone</a></h3>
 <p>　溶岩流が青氷に流れるときブラックストーンを生成する。</p>
@@ -900,7 +901,7 @@
 <p>スカルくセンサーの振動を伝える半径を変更する。1から1024の整数値である必要がある。</p>
 <ul>
 <li>初期値 : <code>8</code></li>
-<li>使用できる値 : <code>integer</code></li>
+<li>使用できる値 : <code>0 ~ 72000</code></li>
 </ul>
 <h3 id="shulkerspawninginendcities"><a class="header" href="#shulkerspawninginendcities">shulkerSpawningInEndCities</a></h3>
 <p>シュルカーがエンドシティーでリスポーンするようにする。</p>
@@ -918,7 +919,7 @@
 <p>サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の間である必要があり、<code>0</code>にすると無効になる。</p>
 <ul>
 <li>初期値 : <code>0</code></li>
-<li>使用できる値 : <code>integer</code></li>
+<li>使用できる値 : <code>0 ~ 32</code></li>
 <li>関連項目
 <ul>
 <li><a href="#viewdistance">viewDistance</a></li>
@@ -936,7 +937,7 @@
 <p>スポーンチャンクの半径を指定する。<code>0</code>にするとスポーンチャンクを無効にできる。</p>
 <ul>
 <li>初期値 : <code>11</code></li>
-<li>使用できる値 : <code>integer</code></li>
+<li>使用できる値 : <code>0 ~ 255</code></li>
 </ul>
 <h3 id="stackableshulkerboxes"><a class="header" href="#stackableshulkerboxes">stackableShulkerBoxes</a></h3>
 <p>中身のはいっていないシュルカーを地面になげたとき重ねることができる。2から64までの数値または<code>true</code> <code>false</code>のみを受け付ける。<code>true</code>にすると64になる。</p>
@@ -959,10 +960,10 @@
 <h3 id="structureblocklimit"><a class="header" href="#structureblocklimit">structureBlockLimit</a></h3>
 <p>各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。</p>
 <div class="md-note">
-  値が大きい場合、負荷軽減の目的で[structureBlockIgnored](#structureblockignored)をminecraft:airにすることを推奨。
-  </div>
+<p>値が大きい場合、負荷軽減の目的で<a href="#structureblockignored">structureBlockIgnored</a>を<code>minecraft:air</code>にすることを推奨。</p>
+</div>
   <div class="md-note">
-  >ストラクチャーブロックが常に読み込まれていなければ正しく動かない。
+  ストラクチャーブロックが常に読み込まれていなければ正しく動かない。
   </div>
 <ul>
 <li>初期値 : <code>48</code></li>
@@ -994,7 +995,7 @@
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="supersecretsetting"><a class="header" href="#supersecretsetting">superSecretSetting</a></h3>
-<p>u306Au3093u3082u308Fu304Bu3089u306Au3044u308821</p>
+<p>2-7-883+3-4139+12391+2-2-2-1549+2-37-167+97-673+2-2-2-1549+89-139+3-3-1381+12391+89-139+2-2-13-239+3-4133+3-3-3-3-3-3-17+3-5-829+2-6197+3-29-313+3-3-3-1223+241-271</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1025,10 +1026,10 @@
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="tntrandomrange"><a class="header" href="#tntrandomrange">tntRandomRange</a></h3>
-<p>tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない</p>
+<p>tntの爆発範囲をこの値に設定する。<code>-1.0</code>を除いて正の数でなければならない</p>
 <div class="md-important">
-  [optimizedTNT](#optimizedtnt)を有効にする必要がある。
-  </div>
+<p><a href="https://github.com/TISUnion./carpet-TIS-Addition">carpet-TIS-addition</a>を導入していない場合、<a href="#optimizedtnt">optimizedTNT</a>を有効にする必要がある。</p>
+</div>
 <ul>
 <li>初期値 : <code>-1.0</code></li>
 <li>使用できる値 : <code>double</code></li>
@@ -1045,10 +1046,10 @@
 </li>
 </ul>
 <h3 id="viewdistance"><a class="header" href="#viewdistance">viewDistance</a></h3>
-<p>サーバーの描画距離をこの値でオーバーライドする。0から32の間である必要があり、<code>0</code>にすると無効になる。</p>
+<p>サーバーの描画距離をこの値でオーバーライドする。<code>0</code>にすると無効になる。</p>
 <ul>
 <li>初期値 : <code>0</code></li>
-<li>使用できる値 : <code>integer</code></li>
+<li>使用できる値 : <code>0 ~ 32</code></li>
 <li>関連項目
 <ul>
 <li><a href="#simulationdistance">simulationDistance</a></li>
@@ -1069,15 +1070,14 @@
 </ul>
 <h2 id="command"><a class="header" href="#command">command</a></h2>
 <h3 id="counter"><a class="header" href="#counter">counter</a></h3>
-<p><code>/counter &lt;color&gt; &lt;realtime | reset&gt;</code> <br>
-で使用する。ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントし、それらから効率を計算する。複数のホッパーを同じチャンネルで作動させることも可能。羊毛16色を用いて16チャンネルを同時に使うことができる。</p>
+<p><code>/counter &lt;color&gt; &lt;realtime | reset&gt;</code>ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントしそれらから効率を計算し表示する。羊毛16色を用いて16チャンネルを同時に使うことができる。</p>
 <ul>
 <li><code>&lt;color&gt;</code> <br>
 割愛。複数選択はできない。選択しなかった場合すべての有効なチャンネルを表示する。</li>
 <li><code>&lt;realtime | reset&gt;</code>
 <ul>
 <li><code>realtime</code> <br>
-リアルタイムでの効率を計測する。このフラグをつけない場合、tpsが20以外になるとデフォルトの単位時間が72000gtなので実際の1hの効率ではなくなる。このフラグによってそれを是正し、実際の1hの効率を求めることができる。</li>
+計測をtickベースからhourベースに切り替えて計算する。</li>
 <li><code>reset</code> <br>
 指定したチャンネルもしくは指定しなかった場合すべてのチャンネルの計測をリセットする。</li>
 </ul>
@@ -1085,27 +1085,25 @@
 <li>関連項目
 <ul>
 <li><a href="#hoppercounters">hopperCounters</a></li>
+<li>TIS / <a href="./carpet-TIS-addition.html#hoppercountersunlimitedspeed">hopperCountersUnlimitedSpeed</a></li>
+<li>TIS / <a href="./carpet-TIS-addition.html#hoppernoitemcost">hopperNoItemCost</a></li>
+<li>TIS / <a href="./carpet-TIS-addition.html#scounter">scounter</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="distance"><a class="header" href="#distance">distance</a></h3>
-<p><code>/distance &lt;from&gt; &lt;to&gt;</code><br>
-で<code>&lt;from&gt;</code>から<code>&lt;to&gt;</code>までの距離を複数の方法で測ることができる。</p>
+<p><code>/distance &lt;from [coordinate]&gt; &lt;to [coordinate]&gt;</code>で<code>&lt;from&gt;</code>から<code>&lt;to&gt;</code>までの距離を複数の方法で測ることができる。正しく計算されると三つの距離空間に基づく値が表示される。ただし計算には入力された座標を小数第二位までに丸めて使用され、出力は小数第一位までとなる。距離の定義は後述。</p>
 <ul>
 <li>
-<p><code>&lt;from&gt;</code><br>
-距離の始点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合<code>~ ~ ~</code>が補われる。</p>
+<p><code>&lt;from [coordinate]&gt;</code><br>
+距離の始点を指定する。座標を入力する場合<code>from</code>を入力する必要がある。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができ、座標を指定しなかった場合<code>~ ~ ~</code>が補われる。</p>
 </li>
 <li>
-<p><code>&lt;to&gt;</code><br>
-距離の終点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合<code>~ ~ ~</code>が補われる。</p>
+<p><code>&lt;to [coordinate]&gt;</code><br>
+距離の終点を指定する。座標を入力する場合<code>to</code>を入力する必要がある。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができ、座標を指定しなかった場合<code>~ ~ ~</code>が補われる。</p>
 <div class="md-note">
-`<from>`のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。
+<p><code>&lt;from　[coordinate]&gt;</code>のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。</p>
 </div>
-</li>
-<li>
-<p>実行結果<br>
-正しく計算されると三つの距離空間に基づく値が表示される。ただし計算には入力された座標を小数第二位までに丸めて使用され、出力は小数第一位までとなる。</p>
 <details>
 <summary>距離空間と定義</summary>
 <ul>
@@ -1127,7 +1125,7 @@ $$d_M(P_1 , P_2):=|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$</p>
 </li>
 </ul>
 <div class="md-note">
-minecraftではほとんどがユークリッド距離を利用している。`CanSpawnArea`もユークリッド距離である。
+<p>minecraftではほとんどがユークリッド距離を利用している。<code>CanSpawnArea</code>もユークリッド距離である。</p>
 </div>
 </details>
 </li>
@@ -1139,17 +1137,20 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 </li>
 </ul>
 <h3 id="draw"><a class="header" href="#draw">draw</a></h3>
-<p><code>/draw [shape] [coordinate]</code>で利用可能。<code>[shape]</code>の図形を生成できる。ときにはWorldEditに負ける。ほとんどにおいてWorldEditで代替可能であるが、diamondやconeなどはこれでつくったほうが　はやいだろう。</p>
+<p><code>/draw [shape] [coordinate]</code>で利用可能。<code>[shape]</code>の図形を生成できる。ときにはWorldEditに負ける。ほとんどにおいてWorldEditで代替可能であるが、diamondやconeなどはこれでつくったほうがはやいだろう。</p>
+<div class="md-important">
+WorldEditのように複数をランダムに指定することはできないが、あとからWorldEdit等を用いることでランダムに変更することができる。
+</div>
 <ul>
 <li><code>[shape]</code>
 <ul>
-<li><a href="#ball">ball</a></li>
-<li><a href="#cone">cone</a></li>
-<li><a href="#cuboid">cuboid</a></li>
-<li><a href="#cylinder">cylinder</a></li>
-<li><a href="#diamond">diamond</a></li>
-<li><a href="#pyramid">pyramid</a></li>
-<li><a href="#sphere">sphere</a></li>
+<li><code>ball</code></li>
+<li><code>cone</code></li>
+<li><code>cuboid</code></li>
+<li><code>cylinder</code></li>
+<li><code>diamond</code></li>
+<li><code>pyramid</code></li>
+<li><code>sphere</code></li>
 </ul>
 </li>
 <li>関連項目
@@ -1159,42 +1160,23 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 </li>
 </ul>
 <details>
-  <summary>詳細</summary>
-<h4 id="ball"><a class="header" href="#ball">ball</a></h4>
-<p>中が満たされた球体を生成する。
-<code>/draw ball [center] [radius] [block] &lt;replace&gt;</code><br>
-で利用可能。</p>
+  <summary>shape</summary>
 <ul>
-<li>
-<p><code>[center]</code><br>
-生成物、ここでは球体の中心となる座標を指定する。絶対座標と相対座標のどちらも使うことができる。小数で入力した場合その座標を含むブロックの座標が選択される。</p>
-</li>
-<li>
-<p><code>[radius]</code><br>
-半径を指定する。値は0より大きい整数でなければならない。</p>
-</li>
-<li>
-<p><code>[block]</code><br>
-描くブロックを指定する。WorldEditのように複数をランダムに指定することはできない。</p>
-<div class="md-important">
-あとからWorldEdit等を用いることで割合指定でランダムに変更することができる。
-</div>
-</li>
-<li>
-<p><code>&lt;replace&gt;</code><br>
-特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。指定しなかった場合全てのブロックを置き換える。</p>
-</li>
-<li>
-<p>関連項目</p>
+<li>ball<br>
+<code>/draw ball [center] [radius] [block] &lt;replace&gt;</code>で中が満たされた球体を生成する。
 <ul>
-<li><a href="#sphere">draw sphere</a></li>
+<li><code>[center]</code><br>
+生成物、ここでは球体の中心となる座標を指定する。絶対座標と相対座標のどちらも使うことができる。小数で入力した場合その座標を含むブロックの座標が選択される。</li>
+<li><code>[radius]</code><br>
+半径を指定する。値は0より大きい整数でなければならない。</li>
+<li><code>[block]</code><br>
+使用するブロックを指定する。</li>
+<li><code>&lt;replace&gt;</code><br>
+特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。指定しなかった場合全てのブロックを置き換える。</li>
 </ul>
 </li>
-</ul>
-<h4 id="cone"><a class="header" href="#cone">cone</a></h4>
-<p>中が満たされた円柱を生成する。
-<code>/draw cone [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code><br>
-で利用可能。</p>
+<li>cone<br>
+<code>/draw cone [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code>で中が満たされた円柱を生成する。
 <ul>
 <li><code>[center]</code><br>
 生成物の底面の中心となる座標を指定する。</li>
@@ -1223,10 +1205,9 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <li><code>&lt;replace&gt;</code><br>
 特定のブロック<strong>を</strong>置き換えるかを指定する。</li>
 </ul>
-<h4 id="cuboid"><a class="header" href="#cuboid">cuboid</a></h4>
-<p>中が満たされた四角柱を生成する。
-<code>/draw cuboid [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code><br>
-で利用可能。</p>
+</li>
+<li>cuboid<br>
+<code>/draw cuboid [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code>で中が満たされた四角柱を生成する。
 <ul>
 <li>
 <p><code>[center]</code><br>
@@ -1270,10 +1251,9 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 特定のブロック<strong>を</strong>置き換えるかを指定する。</p>
 </li>
 </ul>
-<h4 id="cylinder"><a class="header" href="#cylinder">cylinder</a></h4>
-<p>中が満たされた円柱を生成する。
-<code>/draw cylinder [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code><br>
-で利用可能。</p>
+</li>
+<li>cylinder<br>
+<code>/draw cylinder [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code>で中が満たされた円柱を生成する。
 <ul>
 <li><code>[center]</code><br>
 生成物の中心となる座標を指定する。</li>
@@ -1301,10 +1281,9 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <li><code>&lt;replace&gt;</code><br>
 特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。</li>
 </ul>
-<h4 id="diamond"><a class="header" href="#diamond">diamond</a></h4>
-<p>中空の正八面体を生成する。
-<code>/draw diamond [center] [radius] [block] &lt;replace&gt;</code><br>
-で利用可能。</p>
+</li>
+<li>diamond<br>
+<code>/draw diamond [center] [radius] [block] &lt;replace&gt;</code>で中空の正八面体を生成する。
 <ul>
 <li><code>[center]</code><br>
 生成物の中心となる座標を指定する。</li>
@@ -1315,21 +1294,27 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <li><code>&lt;replace&gt;</code><br>
 特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。</li>
 </ul>
-<h4 id="pyramid"><a class="header" href="#pyramid">pyramid</a></h4>
-<p>中が満たされた円柱を生成する。
-<code>/draw pyramid [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code><br>
-で利用可能。</p>
+</li>
+<li>pyramid<br>
+<code>/draw pyramid [center] [radius] [height] [pointing] [axis] [block] &lt;replace&gt;</code>で中が満たされた円柱を生成する。
 <ul>
-<li><code>[center]</code><br>
-生成物の中心となる座標を指定する。</li>
-<li><code>[radius]</code><br>
-底面の一辺の長さを指定する。<div class="md-important">
+<li>
+<p><code>[center]</code><br>
+生成物の中心となる座標を指定する。</p>
+</li>
+<li>
+<p><code>[radius]</code><br>
+底面の一辺の長さを指定する。</p>
+<div class="md-important">
 この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。
 </div>
 </li>
-<li><code>[height]</code><br>
-生成物の高さを指定する。</li>
-<li><code>[pointing]</code><br>
+<li>
+<p><code>[height]</code><br>
+生成物の高さを指定する。</p>
+</li>
+<li>
+<p><code>[pointing]</code><br></p>
 <ul>
 <li><code>down</code><br>
 <code>[axis]</code>の座標の負の方向に生成する。</li>
@@ -1337,22 +1322,26 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <code>[axis]</code>の座標の正の方向に生成する。</li>
 </ul>
 </li>
-<li><code>[axis]</code><br>
+<li>
+<p><code>[axis]</code><br></p>
 <ul>
 <li><code>x</code></li>
 <li><code>y</code></li>
 <li><code>z</code></li>
 </ul>
 </li>
-<li><code>[block]</code><br>
-描くブロックを指定する。</li>
-<li><code>&lt;replace&gt;</code><br>
-特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。</li>
+<li>
+<p><code>[block]</code><br>
+描くブロックを指定する。</p>
+</li>
+<li>
+<p><code>&lt;replace&gt;</code><br>
+特定のブロック<em><strong>を</strong></em>置き換えるかを指定する。</p>
+</li>
 </ul>
-<h4 id="sphere"><a class="header" href="#sphere">sphere</a></h4>
-<p>中空の球体を生成する。
-<code>/draw sphere [center] [radius] [block] &lt;replace&gt;</code><br>
-で利用可能。</p>
+</li>
+<li>sphere<br>
+<code>/draw sphere [center] [radius] [block] &lt;replace&gt;</code>で中空の球体を生成する。
 <ul>
 <li><code>[center]</code><br>
 球体の中心となる座標を指定する。</li>
@@ -1362,26 +1351,28 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 描くブロックを指定する。</li>
 <li><code>&lt;replace&gt;</code><br>
 特定のブロック<strong>を</strong>置き換えるかを指定する。</li>
-<li>関連項目
-<ul>
-<li><a href="#ball">draw ball</a></li>
 </ul>
 </li>
 </ul>
 </details>
 <h3 id="info"><a class="header" href="#info">info</a></h3>
-<p>指定した情報を表示する。opレベル0を要求する。WorldEditによって完全に代替される予定であるとのこと。
-<code>/info [block | entity] [target] &lt;grep&gt;</code>
-で実行可能。<code>&lt;grep&gt;</code>によって表示する情報を制限することが可能。</p>
+<p>指定した情報を表示する。WorldEditによって完全に代替される予定であるとのこと。<code>/info [block | entity] [target] &lt;grep&gt;</code>で実行可能。<code>&lt;grep&gt;</code>によって表示する情報を制限することが可能。</p>
 <ul>
 <li>
 <p><code>[block | entity]</code></p>
 <ul>
-<li><code>block</code><br>
-<code>[target]</code>は表示したいブロックの座標となる。絶対座標もしくは相対座標を使うことができる。</li>
-<li><code>entity</code><br>
-<code>[target]</code>は表示したいエンティティとなる。一つのエンティティのみを選択する必要がある。<div class="md-note">
-ターゲットセレクタで指定する場合`[limit=1]`と追記することで一つのエンティティに絞ることができる。
+<li>
+<p><code>block</code><br>
+<code>[target]</code>は表示したいブロックの座標となる。絶対座標もしくは相対座標を使うことができる。</p>
+</li>
+<li>
+<p><code>entity</code><br>
+<code>[target]</code>は表示したいエンティティとなる。一つのエンティティのみを選択する必要がある。</p>
+<div class="md-important">
+<p><a href="https://github.com/TISUnion./carpet-TIS-Addition">carpet-tIS-addition</a>を導入していない場合、<code>/info entity</code>は使用できない。</p>
+</div>
+<div class="md-note">
+<p>ターゲットセレクタで指定する場合<code>[limit=1]</code>と追記することで一つのエンティティに絞ることができる。</p>
 </div>
 </li>
 </ul>
@@ -1414,7 +1405,7 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <p><code>/log clear</code><br>
 全てのlogの表示を停止させることができる。</p>
 <div class="md-note">
-`/log [subject] clear`とすることでそのlog表示を消すことができる。
+<p><code>/log [subject] clear</code>とすることでそのlog表示を消すことができる。</p>
 </div>
 </li>
 <li>
@@ -1426,13 +1417,15 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <ul>
 <li><a href="#commandlog">commandLog</a></li>
 <li><a href="#defaultloggers">defaultLoggers</a></li>
+<li>TIS / <a href="./carpet-TIS-addition.html#log">log</a></li>
 </ul>
 </li>
 </ul>
 <details>
   <summary>subject</summary>
-<h4 id="counter-1"><a class="header" href="#counter-1"><code>counter</code></a></h4>
-<p><code>/log counter &lt;color&gt; &lt;mcid&gt;</code>で利用可能。特定のチャンネルに対して収集されたアイテム数とその効率、計測時間を表示する。</p>
+<ul>
+<li>counter<br>
+<code>/log counter &lt;color&gt; &lt;mcid&gt;</code>で特定のチャンネルに対して収集されたアイテム数とその効率、計測時間を表示する。
 <ul>
 <li><code>&lt;color | clear&gt;</code><br>
 チャンネルを指定する。指定しなかった場合<code>white</code>もしくはそれが無効であるならばほかの有効なチャンネルが選択される。さらに有効なチャンネルが一切ない場合は<code>white</code>が表示される。</li>
@@ -1444,8 +1437,9 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 </ul>
 </li>
 </ul>
-<h4 id="fallingblocks"><a class="header" href="#fallingblocks"><code>fallingBlocks</code></a></h4>
-<p><code>/log fallingBlocks &lt;brief | full&gt; &lt;mcid&gt;</code>で利用可能。falling blockの生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。</p>
+</li>
+<li>fallingBlocks<br>
+<code>/log fallingBlocks &lt;brief | full&gt; &lt;mcid&gt;</code>でfalling blockの生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。
 <ul>
 <li><code>&lt;brief | full&gt;</code><br>
 表現の方法を指定する。指定しなかった場合<code>brief</code>が指定される。
@@ -1459,11 +1453,12 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <li>表示場所<br>
 チャット</li>
 </ul>
-<h4 id="mobcaps"><a class="header" href="#mobcaps"><code>mobcaps</code></a></h4>
-<p><code>/log mobcaps &lt;dimension | dynamic&gt; &lt;mcid&gt;</code>で利用可能。指定したディメンションのmobcapを表示する。</p>
+</li>
+<li>mobcaps<br>
+<code>/log mobcaps &lt;dimension | dynamic&gt; &lt;mcid&gt;</code>で利用可能。指定したディメンションのmobcapを表示する。
 <ul>
 <li><code>&lt;dimension | dynamic&gt;</code><br>
-そのディメンションにおけるmobcapを表示する。指定しないと<code>dynamic</code>が指定される。
+そのディメンションにおけるmobcapを表示する。指定しない場合<code>dynamic</code>が指定される。
 <ul>
 <li><code>dimension</code><br>
 そのディメンションにおけるmobcapを表示する。カスタムディメンションをdatapack等であらたに作成した場合そのディメンションidが入力できるようになる。</li>
@@ -1475,26 +1470,29 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 プレイヤーリスト</li>
 <li>関連項目
 <ul>
-<li>spawn</li>
+<li><a href="#spawn">spawn</a></li>
 </ul>
 </li>
 </ul>
-<h4 id="packets"><a class="header" href="#packets"><code>packets</code></a></h4>
-<p><code>/log packets &lt;mcid&gt;</code>で利用可能。通信時のパケット量を単位を/sとして表示する.。Iがサーバーへ、Oがクライアントへのパケット量。</p>
+</li>
+<li>packets<br>
+<code>/log packets &lt;mcid&gt;</code>で通信時のパケット量を単位を/sとして表示する.。Iがサーバーへ、Oがクライアントへのパケット量。
 <ul>
 <li>表示場所<br>
 プレイヤーリスト</li>
 </ul>
-<h4 id="pathfinding"><a class="header" href="#pathfinding"><code>pathfinding</code></a></h4>
-<p><code>/log pathfinding [count] &lt;mcid&gt;</code>で利用可能。pathfindingは行動探索であるが、どういった挙動を示すかは不明。</p>
+</li>
+<li>pathfinding<br>
+<code>/log pathfinding [count] &lt;mcid&gt;</code>で利用可能。pathfindingは行動探索であるが、どういった挙動を示すかは不明。
 <ul>
 <li><code>[count]</code><br>
 おそらくlogに流すentityの量。</li>
 <li>表示場所<br>
 わがらん</li>
 </ul>
-<h4 id="projectiles"><a class="header" href="#projectiles"><code>projectiles</code></a></h4>
-<p><code>/log projectiles &lt;brief | full&gt; &lt;mcid&gt;</code>で利用可能。飛び道具、主にポーションや矢のentity生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。当たったとき、その座標も表示する。</p>
+</li>
+<li>projectiles<br>
+<code>/log projectiles &lt;brief | full&gt; &lt;mcid&gt;</code>で飛び道具、主にポーションや矢のentity生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。なにかに当たったとき、その座標も表示する。
 <ul>
 <li><code>&lt;brief | full&gt;</code><br>
 表現の方法を指定する。指定しなかった場合<code>brief</code>が指定される。
@@ -1508,8 +1506,9 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <li>表示場所<br>
 チャット</li>
 </ul>
-<h4 id="tnt"><a class="header" href="#tnt"><code>tnt</code></a></h4>
-<p><code>/log tnt &lt;brief | full&gt; &lt;mcid&gt;</code>で利用可能。tntがいつ、どこで、誰によって、どのようにして、ベクトルの始点がどこであるかを表示する。</p>
+</li>
+<li>tnt<br>
+<code>/log tnt &lt;brief | full&gt; &lt;mcid&gt;</code>でtntが爆発したとき、いつ、どこで、誰によって、ベクトルの始点がどこであるかを表示する。
 <ul>
 <li><code>&lt;brief | full&gt;</code><br>
 表現の方法を指定する。指定しなかった場合<code>brief</code>が指定される。
@@ -1523,14 +1522,17 @@ minecraftではほとんどがユークリッド距離を利用している。`C
 <li>表示場所<br>
 チャット</li>
 </ul>
-<h4 id="tps"><a class="header" href="#tps"><code>tps</code></a></h4>
-<p><code>/log tps &lt;mcid&gt;</code>で利用可能。tpsとmsptを表示する。</p>
+</li>
+<li>tps<br>
+<code>/log tps &lt;mcid&gt;</code>で現在のtpsとmsptを表示する。
 <ul>
 <li>表示場所<br>
 プレイヤーリスト</li>
 <li>関連項目
 <ul>
-<li>tick</li>
+<li><a href="#tick">tick</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1549,7 +1551,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 </li>
 </ul>
 <h3 id="profile"><a class="header" href="#profile">profile</a></h3>
-<p><code>/profile [entities | health]</code>で<code>/tick &lt;entities | health&gt;</code>と同様の働きをする。詳しくは<a href="#tick">tick</a>を参照。</p>
+<p><code>/profile [entities | health]</code>で<code>/tick [entities | health]</code>と同様の働きをする。詳しくは<a href="#tick">tick</a>を参照。</p>
 <ul>
 <li>関連項目
 <ul>
@@ -1588,45 +1590,43 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li>関連項目
 <ul>
 <li><a href="#commandplayer">commandPlayer</a></li>
+<li><a href="./gugle-carpet-addition.html">gugle-carpet-addition</a></li>
+<li>TIS / <a href="./carpet-TIS-addition.html#player">player</a></li>
 </ul>
 </li>
 </ul>
 <details>
   <summary>action</summary>
-<h4 id="attack"><a class="header" href="#attack">attack</a></h4>
-<p>なにも指定しなかった場合、<code>once</code>が指定される。</p>
 <ul>
-<li>continuous<br>
-<code>/player [mcid] attack continuous</code><br>
+<li>attack<br>
+<code>/player [mcid] attack &lt;conduct&gt;</code>で<code>&lt;conduct&gt;</code>に従って攻撃する。なにも指定しなかった場合、<code>once</code>が指定される。
+<ul>
+<li><code>&lt;conduct&gt;</code>
+<ul>
+<li><code>continuous</code><br>
 連続的に攻撃させる。</li>
-<li>interval<br>
-<code>/player [mcid] attack interval [count]</code><br>
-<code>[counter]</code>gt毎に攻撃させる。</li>
-<li>once<br>
-<code>/player [mcid] attack once</code><br>
+<li><code>interval</code><br>
+<code>/player [mcid] attack interval [count]</code>で<code>[count]</code>gt毎に攻撃させる。</li>
+<li><code>once</code><br>
 一回だけ攻撃させる。</li>
 </ul>
-<h4 id="dismount"><a class="header" href="#dismount">dismount</a></h4>
-<p>現在乗っているエンティティから降ろさせる。なににものっていなかった場合なにもおきない。<br>
-<code>/player [mcid] dismount</code></p>
-<h4 id="drop"><a class="header" href="#drop">drop</a></h4>
-<p>今メインハンドにもっているものを一つその場に落とさせる。<br>
-<code>/player [mcid] drop</code></p>
-<h4 id="dropstack"><a class="header" href="#dropstack">dropStack</a></h4>
-<p>今メインハンドにもっているものを1スタックその場に落させる。<br>
-<code>/player [mcid] dropStack</code></p>
-<h4 id="hotbar"><a class="header" href="#hotbar">hotbar</a></h4>
-<p>今手にもっているスロットを変更させる。<br>
-<code>/player [mcid] hotbar [number]</code></p>
-<h4 id="jump"><a class="header" href="#jump">jump</a></h4>
-<p>その場でジャンプさせる。<br>
-<code>/player [mcid] jump</code></p>
-<h4 id="kill"><a class="header" href="#kill">kill</a></h4>
-<p>対象をkillする。<br>
-<code>/player [mcid] kill</code></p>
-<h4 id="look"><a class="header" href="#look">look</a></h4>
-<p>特定の方向を向かせる。<br>
-<code>/player [mcid] look [[pitch yaw] | up | down | north | south | east | west | at [x y z]]</code></p>
+</li>
+</ul>
+</li>
+<li>dismount<br>
+<code>/player [mcid] dismount</code>で現在乗っているエンティティから降ろさせる。なににものっていなかった場合なにもおきない。</li>
+<li>drop<br>
+<code>/player [mcid] drop</code>で今メインハンドにもっているものを一つその場に落とさせる。</li>
+<li>dropStack<br>
+<code>/player [mcid] dropStack</code>で今メインハンドにもっているものを1スタックその場に落させる。</li>
+<li>hotbar<br>
+<code>/player [mcid] hotbar [number]</code>で今手にもっているスロットを<code>[number]</code>に変更させる。</li>
+<li>jump<br>
+<code>/player [mcid] jump</code>でその場でジャンプさせる。</li>
+<li>kill<br>
+<code>/player [mcid] kill</code>で対象をkillする。対象がbotである場合切断させる。</li>
+<li>look<br>
+<code>/player [mcid] look [[pitch yaw] | up | down | north | south | east | west | at [x y z]]</code>で特定の方向を向かせる。
 <ul>
 <li><code>[pitch yaw]</code><br>
 ピッチとヨーを指定する。数字はそれぞれ-90から90の間でなければいけない。</li>
@@ -1635,56 +1635,49 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li><code>at [x y z]</code><br>
 特定の座標に視線を向かせる。</li>
 </ul>
-<h4 id="mount"><a class="header" href="#mount">mount</a></h4>
-<p>一番近い乗ることができるエンティティに乗る。よみこまれているエンティティのすべてが乗れない場合、失敗する。<br>
-<code>/player [mcid] mount</code></p>
-<h4 id="move"><a class="header" href="#move">move</a></h4>
-<p>指定された方向へ移動する。
-<code>/player &lt;name&gt; move [backward | forward | left | right]</code></p>
-<h4 id="shadow"><a class="header" href="#shadow">shadow</a></h4>
-<p>全ての動作を引き継いで同名のbotを出す。
-<code>/player [mcid] shadow</code></p>
-<h4 id="sneak"><a class="header" href="#sneak">sneak</a></h4>
-<p>スニークをさせる。
-<code>/player [mcid] sneak</code></p>
-<h4 id="spawn"><a class="header" href="#spawn">spawn</a></h4>
-<p>botとしてplayerを召喚する。
-<code>/player [mcid] spawn</code></p>
-<h4 id="sprint"><a class="header" href="#sprint">sprint</a></h4>
-<p>ダッシュさせる。
-<code>/player [mcid] sprint</code></p>
-<h4 id="stop"><a class="header" href="#stop">stop</a></h4>
-<p>今<code>[mcid]</code>に<code>/player</code>によって実行されているコマンドを全て停止させる。
-<code>/player [mcid] stop</code></p>
-<h4 id="swaphands"><a class="header" href="#swaphands">swapHands</a></h4>
-<p>オフハンドとメインハンドを入れ替える。
-<code>/player [mcid] swapHands</code></p>
-<h4 id="turn"><a class="header" href="#turn">turn</a></h4>
-<p>指定した方向を向かせる。
-<code>/player [mcid] turn [back | left | right]</code></p>
-<h4 id="unsneak"><a class="header" href="#unsneak">unsneak</a></h4>
-<p>スニークを解除させる。
-<code>/player [mcid] unsneak</code></p>
-<h4 id="unsprint"><a class="header" href="#unsprint">unsprint</a></h4>
-<p>ダッシュを解除させる。
-<code>/player [mcid] unsprint</code></p>
-<h4 id="use"><a class="header" href="#use">use</a></h4>
-<p>なにも指定しなかった場合、<code>once</code>が指定される。</p>
+</li>
+<li>mount<br>
+<code>/player [mcid] mount</code>で一番近い乗ることができるエンティティに乗る。よみこまれているエンティティのすべてが乗れない場合、失敗する。</li>
+<li>move<br>
+<code>/player [mcid] move [backward | forward | left | right]</code>で指定された方向へ移動する。方向の中心および軸の取り方はexecuteで指定しない限り対象を中心とする。</li>
+<li>shadow<br>
+<code>/player [mcid] shadow</code>で全ての動作を引き継いで同名のbotを出す。<code>[mcid]</code>はbot以外でなければならない。</li>
+<li>sneak<br>
+<code>/player [mcid] sneak</code>スニークをさせる。</li>
+<li>spawn<br>
+<code>/player [mcid] spawn</code>でbotとしてplayerを召喚する。</li>
+<li>sprint<br>
+<code>/player [mcid] sprint</code>でダッシュさせる。</li>
+<li>stop<br>
+<code>/player [mcid] stop</code>で現在<code>[mcid]</code>に<code>/player</code>によって実行されているコマンドを全て停止させる。</li>
+<li>swapHands<br>
+<code>/player [mcid] swapHands</code>でオフハンドとメインハンドを入れ替える。</li>
+<li>turn<br>
+<code>/player [mcid] turn [back | left | right]</code>で指定した方向を向かせる。方向はexecuteで指定しない限り<code>[mcid]</code>の方向を中心にする。</li>
+<li>unsneak<br>
+<code>/player [mcid] unsneak</code>でスニークを解除させる。</li>
+<li>unsprint<br>
+<code>/player [mcid] unsprint</code>でダッシュを解除させる。</li>
+<li>use<br>
+<code>/player [mcid] use &lt;conduct&gt;</code>で<code>&lt;conduct&gt;</code>に従って使用させる。なにも指定しなかった場合、<code>once</code>が指定される。
+<ul>
+<li><code>&lt;conduct&gt;</code>
 <ul>
 <li>continuous<br>
-<code>/player [mcid] use continuous</code><br>
 連続的に使用させる。</li>
 <li>interval<br>
-<code>/player [mcid] use interval [count]</code><br>
-<code>[counter]</code>gt毎に使用させる。</li>
+<code>/player [mcid] use interval [count]</code>で<code>[count]</code>gt毎に使用させる。</li>
 <li>once<br>
-<code>/player [mcid] use once</code><br>
 一回だけ使用させる。</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </details>
 <h3 id="script"><a class="header" href="#script">script</a></h3>
 <p>carpet内で動作するスクリプトを操作する。ゲーム内で作成することができるが、ここでは省略。</p>
-<h3 id="spawn-1"><a class="header" href="#spawn-1">spawn</a></h3>
+<h3 id="spawn"><a class="header" href="#spawn">spawn</a></h3>
 <p><code>/spawn [subject]</code>によって実行可能。spawningに関する情報および設定を変更する。</p>
 <ul>
 <li><code>[subject]</code>
@@ -1700,23 +1693,26 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li>関連項目
 <ul>
 <li><a href="#commandspawn">commandSpawn</a></li>
+<li>TIS / <a href="./carpet-TIS-addition.html#spawn">spawn</a></li>
 </ul>
 </li>
 </ul>
 <details>
-    <summary>subject</summary>
-<h4 id="entities"><a class="header" href="#entities"><code>entities</code><br></a></h4>
-<p><code>/spawn entities &lt;mob_type&gt;</code>で実行可能。mobcapの占有率や<code>&lt;mob_type&gt;</code>を指定した場合そのmob_typeに属するmobの座標を取得できる。</p>
-<h4 id="list"><a class="header" href="#list"><code>list</code><br></a></h4>
-<p><code>/spawn list [coordinate]</code>で実行可能。そのブロックに対して理論上湧くことのできるentityを一覧形式で表示する。</p>
-<h4 id="mobcaps-1"><a class="header" href="#mobcaps-1"><code>mobcaps</code><br></a></h4>
-<p><code>/spawn mobcaps &lt;dimension&gt;</code>で実行可能。指定されたdimensionに対するmobcapを表示する。</p>
-<h4 id="mobcaplocal"><a class="header" href="#mobcaplocal"><code>mobcapLocal</code><br></a></h4>
-<p><code>/spawn mobcapLocal [selector]</code>で実行可能。プレイヤーの周りに発生するmobcapを計測する。</p>
-<h4 id="rate"><a class="header" href="#rate"><code>rate</code><br></a></h4>
-<p><code>/spawn rate [mob_type] [round]</code>で実行可能。<code>[mob_type]</code>の1tickに試行されるspawning回数を<code>[round]</code>の値に変更する。</p>
-<h4 id="tracking"><a class="header" href="#tracking"><code>tracking</code><br></a></h4>
-<p><code>/spawn tracking [mob_type | action]</code>で実行可能。<code>[mob_type]</code>のspawn回数やspawn率を表示す。 </p>
+  <summary>subject</summary>
+<ul>
+<li>entities<br>
+<code>/spawn entities &lt;mob_type&gt;</code>でmobcapの占有率や<code>&lt;mob_type&gt;</code>を指定した場合そのmob_typeに属するmobの座標を取得できる。</li>
+<li>list<br>
+<code>/spawn list [coordinate]</code>で<code>[coordinate]</code>に対して理論上湧くことのできるエンティティをその確率とともに一覧形式で表示する。</li>
+<li>mobcaps<br>
+<code>/spawn mobcaps &lt;dimension&gt;</code>で指定されたdimensionに対するmobcapを表示する。</li>
+<li>mobcapLocal<br>
+<code>/spawn mobcapLocal [selector]</code>でプレイヤーの周りに発生するmobcapを計測する。</li>
+<li><code>rate</code><br>
+<code>/spawn rate [mob_type] [round]</code>で<code>[mob_type]</code>の1tickに試行されるspawning回数を<code>[round]</code>の値に変更する。</li>
+<li><code>tracking</code><br>
+<code>/spawn tracking [mob_type | action]</code>で<code>[mob_type]</code>のspawn回数やspawn率を表示す。 </li>
+</ul>
 </details>
 <h3 id="tick"><a class="header" href="#tick">tick</a></h3>
 <p><code>/tick [action]</code>によりminecraftのtickに関する制御をする。</p>
@@ -1735,25 +1731,60 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li>関連項目
 <ul>
 <li><a href="#commandtick">commandTick</a></li>
+<li>TIS / <a href="./carpet.html#tick">tick</a></li>
 </ul>
 </li>
 </ul>
 <details>
-   <summary>action</summary>
-<h4 id="entities-1"><a class="header" href="#entities-1">entities</a></h4>
-<p><code>/tick entities &lt;tick&gt;</code>で実行可能。<code>&lt;tick&gt;</code>gtの間entityの量や種類などを計算し、その上位を表示する。指定しなかった場合300gtで計算する。</p>
-<h4 id="freeze"><a class="header" href="#freeze">freeze</a></h4>
-<p><code>/tick freeze &lt;true | false | deep | status&gt;</code>で実行可能。<code>true</code>もしくは<code>false</code>を選択することで現在のtickで停止もしくは再開させることができる。<code>status</code>は現在freezeしているかの確認ができ、<code>deep</code>ではより深いタイミングでのfreezeを可能にする。指定しなかった場合trueとfalseがトグルとなる。</p>
-<h4 id="health"><a class="header" href="#health">health</a></h4>
-<p><code>/tick health &lt;tick&gt;</code>で実行可能。<code>&lt;tick&gt;</code>gtの間どの処理が負荷となっているかを計測し、その上位を表示する。指定しなかった場合300gtで計測する。</p>
-<h4 id="rate-1"><a class="header" href="#rate-1">rate</a></h4>
-<p><code>/tick rate [count]</code>で実行可能。現在のtick rateを<code>[count]</code>の値にする。ただしtickはmsptに基づいて計算されるため正確な値が反映されるわけではないことに注意。</p>
-<h4 id="step"><a class="header" href="#step">step</a></h4>
-<p>freeze中に<code>\tick step [count]</code>で実行可能。<code>[count]</code>の数だけtickを進める。</p>
-<h4 id="superhot"><a class="header" href="#superhot">superHot</a></h4>
-<p><code>/tick superHot [true | false]</code>で実行可能。プレイヤーが移動するまでtickがfreezeするsuperHotモードを有効にできる。ゲーム「super hot」から。</p>
-<h4 id="warp"><a class="header" href="#warp">warp</a></h4>
-<p><code>/tick warp [count]</code>で実行可能。最適化をしたうえでできるだけ最速で<code>[count]</code>の数字分だけ早送りしようとする。</p>
+  <summary>action</summary>
+<ul>
+<li>
+<p>entities<br>
+<code>/tick entities &lt;tick&gt;</code>で<code>&lt;tick&gt;</code>gtの間読み込まれているエンティティの量や種類などを計算し、その上位を表示する。指定しなかった場合300gtで計算する。</p>
+</li>
+<li>
+<p>freeze<br>
+<code>/tick freeze &lt;true | false | deep | status&gt;</code>でゲームの進行を停止もしくは再開させる。</p>
+<ul>
+<li><code>&lt;true | false | deep | status&gt;</code><br>
+指定しなかった場合、<code>true</code>と<code>false</code>のトグルになる。
+<ul>
+<li><code>true</code><br>
+現在の状態がどうれあれ、ゲームの進行を停止させる。</li>
+<li><code>false</code><br>
+現在の状態がどうであれ、ゲームの進行を再開させる。</li>
+<li><code>status</code><br>
+現在ゲームが停止もしくは再開のどちらの状態であるかどうかを表示する。</li>
+<li><code>deep</code><br>
+<code>deep</code>ではより深いタイミングでのfreezeを可能にする。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>health<br>
+<code>/tick health &lt;tick&gt;</code>で<code>&lt;tick&gt;</code>gtの間どの処理でmsptがどれだけ上昇しているかを計測し、その上位を表示する。<code>&lt;tick&gt;</code>を指定しなかった場合300gtで計測する。</p>
+</li>
+<li>
+<p>rate<br>
+<code>/tick rate [count]</code>で現在のtick rateを<code>[count]</code>の値にする。ただしtickはmsptに基づいて丸めて計算されるため正確な値が反映されるわけではないことに注意。</p>
+</li>
+<li>
+<p>step<br>
+ゲームが停止している最中に<code>/tick step [count]</code>で実行可能。<code>[count]</code>の数だけゲームを進める。このとき進める速さは現在のtpsに基づく。</p>
+</li>
+<li>
+<p>superHot<br>
+<code>/tick superHot [true | false]</code>で実行可能。プレイヤーが静止しているときのみゲームを停止させるsuperHotモードを有効にする。ゲーム「super hot」から。</p>
+<div class="md-note">
+マルチプレイの場合、botを除く全てのプレイヤーが静止していなければゲームは停止しない。
+</div>
+</li>
+<li>
+<p>warp<br>
+<code>/tick warp [count]</code>で最適化をしたうえでできるだけ最速で<code>[count]</code>の時間分だけゲームを早送りしようとする。</p>
+</li>
+</ul>
 </details>
 <h3 id="track"><a class="header" href="#track">track</a></h3>
 <p><code>/track [entity_type] [tracker]</code>で実行可能。ただしscriptなしでは<code>[entity_type]</code>はvillagerのみとなっている。<code>[tracker]</code>によって表示するtracking情報はことなるが多いので割愛。</p>
@@ -1766,7 +1797,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="gugle-carpet-addition.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="gugle-carpet-addition.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -1780,7 +1811,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="gugle-carpet-addition.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="gugle-carpet-addition.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

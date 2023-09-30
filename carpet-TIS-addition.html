@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
         
         <meta name="description" content="Mod descriptions written in Markdown.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -34,7 +34,7 @@
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -64,24 +64,29 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -119,9 +124,9 @@
                                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -174,8 +179,8 @@
                     <main>
                         <h1 id="carpet-tis-addition"><a class="header" href="#carpet-tis-addition">carpet TIS addition</a></h1>
 <p>version : TIS 1.50.1</p>
-<p>このドキュメント内では
-<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
+<p><strong>carpetのaddonであるため、carpetが前提modとなる。</strong></p>
+<p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
 <p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
@@ -188,6 +193,10 @@
 <h2 id="目次"><a class="header" href="#目次">目次</a></h2>
 <details>
   <summary>general</summary>
+<ul>
+<li><a href="#carpet-rule-tweaks">carpet-rule-tweaks</a></li>
+<li><a href="#carpet-command-tweaks">carpet-command-tweaks</a></li>
+</ul>
 </details>
 <details>
   <summary>rules</summary>
@@ -291,8 +300,50 @@
 </details>
 <details>
 <summary>command</summary>
+<ul>
+<li><a href="#info">info</a></li>
+<li><a href="#lifetime">lifetime</a></li>
+<li><a href="#log">log</a></li>
+<li><a href="#manipulate">manipulate</a></li>
+<li><a href="#player">player</a></li>
+<li><a href="#raid">raid</a></li>
+<li><a href="#raycast">raycast</a></li>
+<li><a href="#reflesh">reflesh</a></li>
+<li><a href="#commandremoveentity">removeentity</a></li>
+<li><a href="#scounter">scounter</a></li>
+<li><a href="#sleep">sleep</a></li>
+<li><a href="#spawn">spawn</a></li>
+<li><a href="#tick">tick</a></li>
+</ul>
 </details>
 <h2 id="general"><a class="header" href="#general">general</a></h2>
+<h3 id="carpet-rule-tweaks"><a class="header" href="#carpet-rule-tweaks">carpet-rule-tweaks</a></h3>
+<ul>
+<li>tntRandomRangeの変更<br>
+carpetの<a href="./carpet.html#tntrandomrange">tntRandomRange</a>が<a href="https://modrinth.com/mod/lithium">lithium</a>もしくは<a href="./carpet.html#optimizedtnt">optimizedTNT</a>なしでも動くようになる。</li>
+<li>creativeNoClipの強化<br>
+creativeNoClipがtrueのときゲームは以下のリストにあるアクションをするときプレイヤーを無視するようにする。
+<ul>
+<li>Dispenser block placement<br>
+ディスペンサーがブロックを置く。</li>
+<li>Xp orb tracking<br>
+Xp orbがプレイヤーを追跡する。</li>
+<li>Tripwire and pressure plate detecting<br>
+トリップワイヤーもしくは感圧版がプレイヤーを検出する。</li>
+<li>Entity movement caused by block change, e.g. farmland being broken<br>
+プレイヤーの移動によるブロックの変更。</li>
+<li>Calculation of collision boxes from entities<br>
+当たり判定の計算。ボートやトロッコの移動や設置など。</li>
+</ul>
+</li>
+</ul>
+<h3 id="carpet-command-tweaks"><a class="header" href="#carpet-command-tweaks">Carpet-Command-Tweaks</a></h3>
+<ul>
+<li>tick<br>
+fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をなくす。v1.4.18以降ではcarpetがそれを廃止したため事実上無意味となった。</li>
+<li>carpet<br>
+<code>/carpet</code>を実行したときcarpet-TIS-additionのバージョンを表示する。</li>
+</ul>
 <h2 id="rules"><a class="header" href="#rules">rules</a></h2>
 <p>全てのルールは<code>/carpet [rule] &lt;value&gt;</code>によって変更することができる。</p>
 <h3 id="antispamdisabled"><a class="header" href="#antispamdisabled">antiSpamDisabled</a></h3>
@@ -615,6 +666,11 @@
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="#scounter">scounter</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="hudloggerupdateinterval"><a class="header" href="#hudloggerupdateinterval">HUDLoggerUpdateInterval</a></h3>
 <p>HUDとして表示されるloggerの更新頻度を変更する。単位はgtで、全てのloggerに対して適用される。</p>
@@ -684,15 +740,15 @@
 <h3 id="lightupdates"><a class="header" href="#lightupdates">lightUpdates</a></h3>
 <p>light updateに関するシミュレートをするようにする。
 <code>on</code>にするとバニラ同様に処理される。</p>
-<p>|              | light update | schedule |
-|:-------------|:---:|:---:|
-| <code>on</code>         |  O  |  O  |
-| <code>off</code>        |  X  |  X  |
-| <code>suppressed</code> |  X  |  O  |
-| <code>ignored</code>    |  O  |  X  |</p>
-<div class="md-warning">
-    <code>off</code>もしくは<code>suppressed</code>を指定すると、新しいチャンクが読み込まれなくなる。この状態で新しいチャンクを読み込もうとするとサーバーが恒常的なスタックを引き起こす。
-  </div>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left"></th><th style="text-align: center">light update</th><th style="text-align: center">schedule</th></tr></thead><tbody>
+<tr><td style="text-align: left"><code>on</code></td><td style="text-align: center">O</td><td style="text-align: center">O</td></tr>
+<tr><td style="text-align: left"><code>off</code></td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: left"><code>suppressed</code></td><td style="text-align: center">X</td><td style="text-align: center">O</td></tr>
+<tr><td style="text-align: left"><code>ignored</code></td><td style="text-align: center">O</td><td style="text-align: center">X</td></tr>
+</tbody></table>
+</div><div class="md-warning">
+<p><code>off</code>もしくは<code>suppressed</code>を指定すると、新しいチャンクが読み込まれなくなる。この状態で新しいチャンクを読み込もうとするとサーバーが恒常的なスタックを引き起こす。</p>
+</div>
 <ul>
 <li>初期値 : <code>on</code></li>
 <li>使用できる値 : <code>on</code> <code>off</code> <code>suppressed</code> <code>ignored</code></li>
@@ -711,7 +767,7 @@
 <h3 id="microtiming"><a class="header" href="#microtiming">microTiming</a></h3>
 <p><code>/log microtiming</code>を有効にする。レッドストーン・コンポーネントのアクション、blockUpdate、stack traceを染料アイテムでログに記録し、表示する。dye markerの使い方については<a href="#microtimingdyemarker">microTimingDyeMarker</a>を参照。またlogのメソッドの変更については<a href="#microtimingtarget">microTimingTarget</a>を参照。</p>
 <div class="md-note">
-    有効にすると、パフォーマンス面で甚大な影響を及ぼす可能性がある。
+  有効にすると、パフォーマンス面で甚大な影響を及ぼす可能性がある。
   </div>
 <ul>
 <li>初期値 : <code>false</code></li>
@@ -721,7 +777,7 @@
 <li><a href="#microtimingdyemarker">microTimingDyeMarker</a></li>
 <li><a href="#microtimingtarget">microTimingTarget</a></li>
 <li><a href="#microtimingtickdivision">microTimingTickDivision</a></li>
-<li>carpet / <a href="./carpet.html#log">log</a></li>
+<li><a href="#log">log</a></li>
 </ul>
 </li>
 </ul>
@@ -803,10 +859,10 @@
 <p>オークの木が条件を満たした時巨木になる確率をパーセンテージで指定する。負の数を指定することでバニラ準拠にできる。値は0~100もしくは負の数でなければならない。</p>
 <ul>
 <li>初期値 : <code>-1</code></li>
-<li>使用できる値 : <code>integer</code></li>
+<li>使用できる値 : <code>0 ~ 100</code> <code>-1</code></li>
 </ul>
 <h3 id="observernodetection"><a class="header" href="#observernodetection">observerNoDetection</a></h3>
-<p>オブザーバーがstate updateを検知しなくする。</p>
+<p>オブザーバーがstateUpdateを検知しなくする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -840,7 +896,7 @@
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="optimizedtnthighpriority"><a class="header" href="#optimizedtnthighpriority">optimizedTNTHighPriority</a></h3>
-<p>carpetのoptimizedTNTがlithiumの爆発物の最適化を上書きできるようにする。とうぜん<code>optimizedTNT</code>が有効でないと動作しない。</p>
+<p>carpetのoptimizedTNTがlithiumの爆発物の最適化を上書きできるようにする。<code>optimizedTNT</code>が有効でないと動作しない。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1145,7 +1201,7 @@
 <h2 id="command"><a class="header" href="#command">command</a></h2>
 <p>独自のコマンドもあるが、carpetのコマンドに変数を追加することも多い。その場合追加分のみを記載するが、関連項目よりほかの選択肢も見ることができる。</p>
 <h3 id="info"><a class="header" href="#info">info</a></h3>
-<p><code>/info world [ticking_order | weather]</code>を追加する。ワールドに関する情報を表示する。</p>
+<p><code>/info world [ticking_order | weather]</code>を追加する。ワールドに関する情報を表示する。また、<code>/info entity</code>を利用可能にする。さらに<code>/info block</code>にtick eventとblock eventの情報を追加する。</p>
 <ul>
 <li><code>[ticking_order | weather]</code>
 <ul>
@@ -1243,9 +1299,342 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
 <p>関連項目</p>
 <ul>
 <li><a href="#commandlifetime">commandLifetime</a></li>
+<li><a href="#log">log</a></li>
 </ul>
 </li>
 </ul>
+<h3 id="log"><a class="header" href="#log">log</a></h3>
+<p>carpetの<a href="./carpet.html#log">log</a>に様々な<code>[subject]</code>を追加する。また、<code>/log [loggerName] &lt;option&gt; [player]</code>および<code>/log clean [player]</code>にopレベル2を要求するようにする。</p>
+<ul>
+<li><code>[subject]</code>
+<ul>
+<li><code>commandBlock</code></li>
+<li><code>damage</code></li>
+<li><code>item</code></li>
+<li><code>lifetime</code></li>
+<li><code>lightQueue</code></li>
+<li><code>memory</code></li>
+<li><code>microTiming</code></li>
+<li><code>mobcapsLocal</code></li>
+<li><code>movement</code></li>
+<li><code>phantom</code></li>
+<li><code>raid</code></li>
+<li><code>scounter</code></li>
+<li><code>ticket</code></li>
+<li><code>tickWarp</code></li>
+<li><code>turtleEgg</code></li>
+<li><code>xporb</code></li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#log">log</a></li>
+</ul>
+</li>
+</ul>
+<details>
+<summary>subject</summary>
+<ul>
+<li>
+<p>commandBlock<br>
+<code>/log commandBlock &lt;throttled | all&gt;</code>でコマンドブロックもしくはコマンドブロック付きトロッコがいつどこでどのようなコマンドを実行したのかを表示する。</p>
+<p>また、表示されたコマンドに対して<font color=crimson>[X]</font>をクリックすることでそのコマンドブロックもしくはエンティティを削除するコマンドを生成する。</p>
+<ul>
+<li><code>&lt;throttled | all&gt;</code><br>
+指定しない場合、throttledが指定される。
+<ul>
+<li><code>throttled</code><br>
+三秒毎に一番最近実行されたコマンドを表示する。</li>
+<li><code>all</code>
+毎gt表示する。</li>
+</ul>
+</li>
+<li>表示場所<br>
+チャット</li>
+</ul>
+</li>
+<li>
+<p>damage<br>
+<code>/log damage &lt;option&gt;</code>でどのエンティティがどのエンティティにどれだけのダメージをどのように与えようとして、実際はどれだけのダメージ量でどれだけHPが残っているのかを表示する。</p>
+<ul>
+<li><code>[option]</code><br>
+どのダメージを表示するかを指定する。詳細は[英語doc]を参照。指定しない場合全てのダメージを表示する。
+<ul>
+<li>
+<p><code>&quot;&lt;entityA&gt;-&gt;&lt;entityB&gt;&quot;</code><br>
+<code>&lt;entityA&gt;</code>から<code>&lt;entityB&gt;</code>に対してのダメージのみを記録する。<code>&lt;entityA&gt;</code>および<code>&lt;entityB&gt;</code>を指定しなかった場合それぞれ全てを指定したものとする。<code>&quot;&lt;entityA&gt;&lt;-&gt;&lt;entityB&gt;&quot;</code>とするとどちらの場合でも表示する。</p>
+<p>エンティティの指定にはターゲットセレクタを用いることもでき、複数選択が可能である。</p>
+</li>
+<li>
+<p><code>&lt;entity_selector&gt;</code><br>
+そのエンティティに関するダメージを表示する。ターゲットセレクタを利用する場合複数選択可能で、<code>players</code>とするとプレイヤーに関するダメージを表示する。<code>zombie</code>のようにエンティティIDを使うことで省略することもできる。ただしopレベル2を要求する。</p>
+</li>
+<li>
+<p><code>me</code><br>
+自身に関するダメージを表示する。<code>entity_selector</code>で<code>@s</code>とするのと同義。</p>
+</li>
+<li>
+<p><code>all</code><br>
+全てを表示する。</p>
+</li>
+</ul>
+</li>
+<li>表示場所<br>
+チャット</li>
+</ul>
+</li>
+<li>
+<p>item<br>
+<code>/log item &lt;create | die | despawn&gt;</code>でitemに対して例えばデスポーンなどなにかがおきたときにそれの情報を表示する。</p>
+<ul>
+<li><code>&lt;create | die | despawn&gt;</code><br>
+それぞれを<code>,</code>でつなぐことで二つ以上のオプションを指定できる。
+<ul>
+<li><code>create</code><br>
+アイテムエンティティがワールドに生成されたときそのstack traceと理由とともに表示する。</li>
+<li><code>die</code><br>
+時間経過によるデスポーンではなく、ダメージを受けて消滅したときに表示する。</li>
+<li><code>despwan</code><br>
+アイテムが時間経過によってデスポーンしたときに表示する。</li>
+</ul>
+</li>
+<li>表示場所<br>
+チャット</li>
+</ul>
+</li>
+<li>
+<p>lifetime<br>
+<code>/lifetime &lt;entity_type&gt;</code>現在プレイヤーがいるディメンションでライフタイムトラッカーによって記録されている特定のエンティティについてその統計を表示する。</p>
+<ul>
+<li><code>&lt;entity_type&gt;</code><br>
+全てのトラッキングされているエンティティが有効。指定しなかった場合全てのエンティティを指定したものとされる。</li>
+<li>表示場所<br>
+プレイヤーリスト</li>
+<li>関連項目
+<ul>
+<li><a href="#lifetime">lifetime</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>lightQueue<br>
+<code>/log lightQueue &lt;dynamic | dimension&gt;</code>によって今のライトキューのサイズ、どれだけライトサプレッサーの推定使用可能時間、ライトキューの生成速度、処理速度を表示する。それぞれは</p>
+<ul>
+<li><code>&lt;dynamic | dimension&gt;</code><br>
+指定しなかった場合<code>dynamic</code>が指定される。
+<ul>
+<li><code>dynamic</code><br>
+現在表示させているプレイヤーがいるディメンションを表示する。</li>
+<li><code>dimension</code><br>
+特定のディメンションについて表示する。</li>
+</ul>
+</li>
+<li>表示場所<br>
+プレイヤーリスト</li>
+<li>関連項目
+<ul>
+<li><a href="#lightqueueloggersamplingduration">lightQueueLoggerSamplingDuration</a></li>
+<li><a href="#lightenginemaxbatchsize">lightEngineMaxBatchsize</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>memory<br>
+<code>/log memory</code>現在サーバーが占有しているRAMサイズを表示する。<code>Used memory / Allocated memory | Max memory</code>で表示される。</p>
+<ul>
+<li>表示場所<br>
+プレイヤーリスト</li>
+</ul>
+</li>
+<li>
+<p>microTiming<br>
+<code>/log microTiming &lt;type&gt;</code>でレッドストーンコンポーネントのマイクロタイミングを表示する。表示するコンポーネントがあるチャンクはチケットレベルが32以下でなければならない。</p>
+<ul>
+<li><code>&lt;type&gt;</code><br>
+指定しなかった場合<code>merged</code>が指定される。
+<ul>
+<li><code>all</code><br>
+全てのイベントについて表示する。</li>
+<li><code>merged</code><br>
+同じイベントは同じものとして表示される。</li>
+<li><code>unique</code><br>
+毎gt固有のイベントについて表示する。</li>
+</ul>
+</li>
+<li>表示場所<br>
+チャット</li>
+<li>関連項目
+<ul>
+<li><a href="#microtiming">microTiming</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>mobcapsLocal<br>
+<code>/log mobcapsLocal [player]</code>で<code>[player]</code>まわりに発生するmobcapsを表示させる。minecraft 1.18.2+で利用可能。</p>
+<ul>
+<li><code>[player]</code><br>
+全てのオンラインのプレイヤーが利用可能。指定したあとオフラインになった場合そのプレイヤーは存在しないと表示される。</li>
+<li>表示場所<br>
+プレイヤーリスト</li>
+<li>関連項目<br>
+<ul>
+<li><a href="#mobcapsdisplayignoremisc">mobcapsDisplayIgnoreMisc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>movement<br>
+<code>/log movement &lt;target&gt;</code>で<code>&lt;target&gt;</code>がどれだけ移動しようとして、実際にどれだけ移動したかを表示する。</p>
+<ul>
+<li>
+<p><code>&lt;target&gt;</code><br>
+ターゲットセレクタによって複数指定することができる。ただし適切に選択しなければログのスパムおよびラグの原因になる。
+指定しなかった場合<code>non_zero:@a[distance..10]</code>が指定されるが、opレベルがたりない場合実行できない。</p>
+<div class="md-note">
+指定するときに`non_zero:`を初めにくわえることで0ベクトルになったものは表示されなくなる。
+</div>
+</li>
+<li>
+<p>表示場所<br>
+チャット</p>
+</li>
+<li>
+<p>関連項目</p>
+<ul>
+<li><a href="#loggermovement">loggerMovement</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>phantom<br>
+<code>/log phantom &lt;spawning | reminder&gt;</code>でファントムのスポーンに関する変更をする。</p>
+<ul>
+<li><code>&lt;spawning | reminder&gt;</code><br>
+選択しなかった場合<code>spawning</code>が選択される。<code>&quot;spawning,reminder&quot;</code>とすることで両方を指定することができる。
+<ul>
+<li><code>spawning</code><br>
+だれかがファントムをスポーンさせたらそれを知らせる。</li>
+<li><code>reminder</code><br>
+だれかが45分もしくは60分寝なかった場合お知らせする。</li>
+</ul>
+</li>
+<li>表示場所<br>
+チャット</li>
+</ul>
+</li>
+<li>
+<p>raid<br>
+<code>/log raid</code>によって襲撃の作成、無効化、bad omen levelの増加、そしてセンターの移動情報を表示する。</p>
+<ul>
+<li>表示場所<br>
+チャット</li>
+<li>関連項目
+<ul>
+<li><a href="#raid">raid</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>scounter<br>
+<code>/log scounter &lt;color&gt;</code>でサプライカウンタの効率を表示する。</p>
+<ul>
+<li><code>&lt;color&gt;</code><br>
+16色が利用可能。指定しなかった場合有効なものを表示する。</li>
+<li>表示場所<br>
+プレイヤーリスト</li>
+<li>関連項目
+<ul>
+<li><a href="#hoppernoitemcost">hopperNoItemCost</a></li>
+<li><a href="#scounter">scounter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>ticket<br>
+<code>/log ticket &lt;type&gt;</code>でminecraftのチケットが作成され削除されたとき表示する。</p>
+<ul>
+<li>
+<p><code>&lt;type&gt;</code><br>
+<code>,</code>を使ってつなげることで複数の値を選択できる。指定しなかった場合<code>poartal</code>が選択される。</p>
+<ul>
+<li><code>portal</code></li>
+<li><code>dragon</code></li>
+<li><code>start</code></li>
+<li><code>player</code></li>
+<li><code>forced</code></li>
+<li><code>light</code></li>
+<li><code>post_teleport</code></li>
+<li><code>unknown</code></li>
+</ul>
+<div class="md-warning">
+unknown ticketはスパム判定をもらう可能性がある。
+</div>
+</li>
+<li>
+<p>表示場所<br>
+チャット</p>
+</li>
+</ul>
+</li>
+<li>
+<p>tickWarp<br>
+<code>/log tickWarp &lt;option&gt;</code>で現在のtickWarpのステータスを表示する。tickWrapが行われていない場合表示されない。<code>/tick warp status</code>よりは情報量がすくない。</p>
+<ul>
+<li><code>&lt;option&gt;</code><br>
+指定しなかった場合<code>bar</code>が指定される。
+<ul>
+<li><code>bar</code><br>
+バー形式で表示する。</li>
+<li><code>value</code><br>
+値を表示する。</li>
+</ul>
+</li>
+<li>表示場所<br>
+プレイヤーリスト</li>
+<li>関連項目
+<ul>
+<li><a href="#tick">tick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>turtleEgg<br>
+<code>/log turtleEgg</code>で亀の卵がいつ踏みつぶされたかを表示する。</p>
+<ul>
+<li>表示場所<br>
+チャット</li>
+</ul>
+</li>
+<li>
+<p>xporb<br>
+<code>/log xporb &lt;create | die | despawn&gt;</code>でexperience_orbに対して例えばデスポーンなどなにかがおきたときにそれの情報を表示する。</p>
+<ul>
+<li><code>&lt;create | die | despawn&gt;</code><br>
+それぞれを<code>,</code>でつなぐことで二つ以上のオプションを指定できる。
+<ul>
+<li><code>create</code><br>
+アイテムエンティティがワールドに生成されたときそのstack traceと理由とともに表示する。</li>
+<li><code>die</code><br>
+時間経過によるデスポーンではなく、ダメージを受けて消滅したときに表示する。</li>
+<li><code>despwan</code><br>
+アイテムが時間経過によってデスポーンしたときに表示する。</li>
+</ul>
+</li>
+<li>表示場所<br>
+チャット</li>
+</ul>
+</li>
+</ul>
+</details>
 <h3 id="manipulate"><a class="header" href="#manipulate">manipulate</a></h3>
 <p><code>/manipulate [container | entity]</code>で世界を操作する。</p>
 <ul>
@@ -1257,40 +1646,70 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
 <code>/manipulate container [data] [operation]</code>でコンテナの<code>[data]</code>を<code>[operation]</code>に従って操作する。</p>
 <details>
   <summary>操作とコマンドリスト</summary>
-<p>|container name|[data]|[operation]|
-|---|---|---|
-|Entity list|<code>entity</code>|<code>revert</code> <code>shuffle</code>|
-|Tickable tile entity list|<code>tileentity</code>|<code>revert</code> <code>shuffle</code> <code>querry</code> <code>statistic</code>|
-|Tile tick queue|<code>tiletick</code>|<code>add</code> <code>remove</code>|
-|Block event queue|<code>blockevent</code>|<code>add</code> <code>remove</code>|</p>
-<pre><code>/manipulate container entity [revert | shuffle]
+  <table>
+  <thead>
+  <tr>
+  <th align="center">container name</th>
+  <th align="center">[data]</th>
+  <th align="left">[operation]</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td align="center">Entity list</td>
+  <td align="center"><code>entity</code></td>
+  <td align="left"><code>revert</code> <code>shuffle</code></td>
+  </tr>
+  <tr>
+  <td align="center">Tickable tile entity list</td>
+  <td align="center"><code>tileentity</code></td>
+  <td align="left"><code>revert</code> <code>shuffle</code> <code>querry</code> <code>statistic</code></td>
+  </tr>
+  <tr>
+  <td align="center">Tile tick queue</td>
+  <td align="center"><code>tiletick</code></td>
+  <td align="left"><code>add</code> <code>remove</code></td>
+  </tr>
+  <tr>
+  <td align="center">Block event queue</td>
+  <td align="center"><code>blockevent</code></td>
+  <td align="left"><code>add</code> <code>remove</code></td>
+  </tr>
+  </tbody>
+  </table>
+<pre><code>
+/manipulate container entity [revert | shuffle]
 /manipulate container tileentity [query | revert | shuffle | statistic]
-/manipulate container tiletick add [pos] [block] [delay] [&lt;priority&gt;]
+/manipulate container tiletick add [pos] [block] [delay] [<priority>]
 /manipulate container tiletick remove [pos]
 /manipulate container blockevent add [pos] [block] [type] [data]
 /manipulate container blockevent remove [pos]
 </code></pre>
-<p>たとえば<code>/manipulate container tileentity shuffle</code>を使用すると、タイルエンティティは通常設置した順に処理されるが、この順番をランダムにさせることができる。これにより依存を調べることが可能になる。</p>
+たとえば<code>/manipulate container tileentity shuffle</code>を使用すると、タイルエンティティは通常設置した順に処理されるが、この順番をランダムにさせることができる。これにより依存を調べることが可能になる。
 </details>
 </li>
 <li>
 <p><code>entity</code><br>
 <code>/manipulate entity [target] [operation]</code>で<code>[target]</code>を<code>[operation]</code>に従って操作する。詳細は後述。</p>
+<p><code>[target]</code>はminecraftのターゲットセレクタによって指定することも可能だが、対象は必ず一つでなければならない。</p>
+<div class="md-note">
+<p>複数の可能性がある対象の指定をする場合には、例えば<code>@e[sort=nearest,limit=1]</code>とすることで対象を一つに絞ることができる。</p>
+</div>
 <details>
-<summary>コマンドリスト</summary>
+<summary>コマンド</summary>
 <p>customNameを変更もしくは削除する。 </p>
-<pre><code>/manipulate entity &lt;target&gt; rename &lt;text&gt;
-/manipulate entity &lt;target&gt; rename clear
+<pre><code>/manipulate entity [target] rename &lt;text&gt;
+/manipulate entity [target] rename clear
 </code></pre>
 <p>persistentタグを変更する。つまり、自然にデスポーンするかを変更することができる。</p>
-<pre><code>/manipulate entity &lt;target&gt; persistent [true | false]
+<pre><code>/manipulate entity [target] persistent [true | false]
 </code></pre>
 <p>エンティティに乗せる、もしくはエンティティからおろす。</p>
-<pre><code>/manipulate entity &lt;target&gt; mount &lt;vehicle&gt;
-/manipulate entity &lt;target&gt; dismount
+<pre><code>/manipulate entity [target] mount &lt;vehicle&gt;
+/manipulate entity [target] dismount
 </code></pre>
 <p>エンティティに対して速度を与える。</p>
-<pre><code>/manipulate entity &lt;target&gt; velocity [add | set] [x] [y] [z]
+<pre><code>/manipulate entity [target] velocity [add | set] [x] [y] [z]
 </code></pre>
 </details>
 </li>
@@ -1300,6 +1719,57 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
 <p>関連項目</p>
 <ul>
 <li><a href="#commandmanipulate">commandManipulate</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="player"><a class="header" href="#player">player</a></h3>
+<p><code>/player</code>の<code>[conduct]</code>に<code>randomly</code>、<code>after</code>および<code>perTick</code>を追加する。</p>
+<ul>
+<li><code>[conduct]</code>
+<ul>
+<li>
+<p><code>randomly</code><br>
+<code>/player [mcid] [action] randomly [method] [method_option]</code>によって<code>[method]</code>と<code>[method_option]</code>に基づいてランダムに指定の行動をとる。テストをする場合、<code>[method_option]</code>に<code>--simulate</code>を追加する。</p>
+<p><code>[method]</code>を指定しないとヘルプが出る。</p>
+<ul>
+<li><code>[method]</code><br>
+全ての値の単位はgt。
+<ul>
+<li>
+<p><code>gaussian</code><br>
+いわゆる正規分布もしくはガウス分布。<code>[method_option]</code>には\( μ \)および\( σ \)をこの順で指定する。</p>
+<details>
+<summary>gaussian</summary>
+平均を\\( μ \\)、分散を\\( σ^2>0 \\)とするとき、確率密度関数\\(f(x)\\)が以下の式
+<p>$$ f(x)=\frac{1}{\sqrt{π\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) $$</p>
+<p>で与えられる確率分布。</p>
+</details>
+</li>
+<li>
+<p><code>poisson</code><br>
+いわゆるポアソン分布。</p>
+</li>
+<li>
+<p><code>uniform</code><br>
+最小値と最大値をこの順で指定するとその間の数値で一様に選出する。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>after</code><br>
+<code>/player [mcid] [action] after [count]</code>でコマンド実行後から<code>[counter]</code>gt後にその動作が実行される。</p>
+</li>
+<li>
+<p><code>perTick</code><br>
+<code>/player [mcid] [action] perTick [count]</code>で1gtの間に<code>[count]</code>回その動作を実行する。<code>[count]</code>の値は1から64までをとる。</p>
+</li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
 </ul>
 </li>
 </ul>
@@ -1349,21 +1819,105 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
 </li>
 </ul>
 <h3 id="reflesh"><a class="header" href="#reflesh">reflesh</a></h3>
-<p><code>/reflesh [inventory | chunk]</code>でインベントリもしくはチャンクをリフレッシュする。</p>
+<p><code>/reflesh [inventory | chunk]</code>でインベントリもしくはチャンクを更新する。</p>
 <ul>
 <li><code>[inventory | chunk]</code>
 <ul>
 <li><code>inventory</code><br>
 <code>/reflesh inventory &lt;target&gt;</code>で<code>&lt;target&gt;</code>のインベントリを更新する。自分以外のエンティティを指定する場合opレベル2が必要。</li>
-<li><code>chunk</code><br></li>
+<li><code>chunk</code>
+<code>/reflesh chunk [location]</code>で<code>location</code>にあるチャンクを更新する。
+|<code>[location]</code>|<code>chunk</code>|
+|:---:|---|
+|<code>all</code>|読み込まれているすべてのチャンク|
+|<code>at</code>|特定の1チャンク、チャンク座標を用いて<code>at [X] [Z]</code>の形式で指定する|
+|<code>current</code>|現在の座標を含む1チャンク|
+|<code>inrange</code>|チェビシェフ距離を用いた範囲内にある全てのチャンク|</li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="#commandrefresh">commandReflesh</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="removeentity"><a class="header" href="#removeentity">removeentity</a></h3>
+<h3 id="remoteentity"><a class="header" href="#remoteentity">remoteentity</a></h3>
+<p><code>/removeentity [target]</code>で<code>[target]</code>をワールドから直接削除する。複数選択が可能であるが、プレイヤーは影響しない。</p>
+<div class="md-important">
+<p>似たコマンドである<code>/removeabove</code> <code>/removebelow</code> <code>/removenear</code>は全てWorldEditによるものである。</p>
+</div>
+<ul>
+<li>関連項目
+<ul>
+<li><a href="#commandremoveentity">commandRemoverntity</a></li>
+</ul>
+</li>
+</ul>
 <h3 id="scounter"><a class="header" href="#scounter">scounter</a></h3>
+<p>ホッパーの上に羊毛を置いて中にアイテムをいれることで、そのアイテムを無限に供給するようにする。ただし自身以外によってインベントリからアイテムが取り除かれた場合は供給されなくなる。</p>
+<p><code>/scounter &lt;color&gt; &lt;realtime | reset&gt;</code>で情報を表示する。</p>
+<ul>
+<li><code>&lt;color&gt;</code><br>
+割愛。色を使い分けることでチャンネルを湧けることができる。16色16チャンネルを同時に扱える。複数選択はできない。指定しなかった場合現在有効な全てのチャンネルを指定したものとする。</li>
+<li><code>&lt;reset | realtime&gt;</code><br>
+指定しなかった場合<code>&lt;color&gt;</code>で指定したチャンネルの効率を表示する。
+<ul>
+<li><code>reset</code><br>
+<code>&lt;color&gt;</code>で指定したチャンネルをリセットする。</li>
+<li><code>realtime</code><br>
+効率の計算をtickベースからhourベースに変更して表示する。</li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="#hoppernoitemcost">hopperNoItemCost</a></li>
+<li>carpet / <a href="./carpet.html#hoppercounter">hopperCounter</a></li>
+<li>carpet / <a href="./carpet.html#counter">counter</a></li>
+</ul>
+</li>
+</ul>
 <h3 id="sleep"><a class="header" href="#sleep">sleep</a></h3>
+<p><code>/sleep [duration] [unit]</code>でこのコマンド実行時から指定した時間ゲームを実行している<strong>スレッド</strong>に対してラグを発生させる。</p>
+<p><a href="#instantcommandblock">instantCommandBlock</a>をtrueにすることで好きなタイミングで好きな時間だけラグを発生させることができる。</p>
+<div class="md-warning">
+このコマンドはゲームを強制的に停止させるため、実行している間ほかのコマンドは受け付けないことに注意。
+</div>
+<div class="md-warning">
+スレッドに対して行われるため同じスレッドで動いているプロセスも同様に処理が停止されるはずである。
+</div>
+<ul>
+<li><code>[duration]</code><br>
+2147483647までの自然数。</li>
+<li><code>[unit]</code><br>
+<code>[time]</code>の単位。<code>s</code> <code>ms</code> <code>us</code>が利用可能。それぞれ秒、ミリ秒、マイクロ秒である。</li>
+<li>関連項目
+<ul>
+<li><a href="#commandsleep">commandSleep</a></li>
+</ul>
+</li>
+</ul>
 <h3 id="spawn"><a class="header" href="#spawn">spawn</a></h3>
+<p>carpetの<a href="./carpet.html#spawn">spawn</a>の<code>[subject]</code>に<code>mobcapsLocal</code>を追加する。
+また、<code>/spawn tracking restart</code>を追加する。<del>怠惰な奴め</del></p>
+<ul>
+<li><code>mobcapsLocal</code><br>
+<code>/spawn mobcapsLocal [player]</code>で<code>[player]</code>によるmobcapを表示する。</li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#spawn">spawn</a></li>
+<li>carpet / <a href="./carpet.html#commandspawn">commandSpawn</a></li>
+</ul>
+</li>
+</ul>
 <h3 id="tick"><a class="header" href="#tick">tick</a></h3>
+<p>carpetの<a href="./carpet.html#tick">tick</a>の<code>warp</code>に<code>status</code>を追加する。</p>
+<ul>
+<li><code>status</code><br>
+<code>/tick warp status</code>によって現在の進捗を表示する。</li>
+<li>carpet / <a href="./carpet.html#tick">tick</a></li>
+</ul>
+<h3 id="script"><a class="header" href="#script">script</a></h3>
+<p>スクリプトについては<a href="https://github.com/TISUnion/Carpet-TIS-Addition/blob/master/docs/misc.md#scarpet">TIS/misc/script</a>を参照。<del>説明できる自信がない</del></p>
 
                     </main>
 
@@ -1373,7 +1927,7 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="Minecraft Optimization/Minecraft_Optimization.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="Minecraft Optimization/Minecraft_Optimization.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -1387,7 +1941,7 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="Minecraft Optimization/Minecraft_Optimization.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="Minecraft Optimization/Minecraft_Optimization.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
