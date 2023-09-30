@@ -1,8 +1,7 @@
 # carpet
 version : carpet 1.4.1.12+v230608
 
-このドキュメント内では
-`[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
+このドキュメント内では`[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。
 
 以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
@@ -127,7 +126,7 @@ version : carpet 1.4.1.12+v230608
   + [profile](#profile)
   + [player](#player)
   + [script](#script)
-  + [spawn](#spawn-1)
+  + [spawn](#spawn)
   + [tick](#tick)
   + [track](#track)
 
@@ -145,7 +144,8 @@ version : carpet 1.4.1.12+v230608
   + `/carpet setDefault [rule] [value]`<br>
     `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。
     <div class="md-note">
-      `/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる`change permanently?`を右クリックすることでその値がすでに入力されたコマンドが準備される。
+
+    `/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる<code><font color=aqua>change permanently?</font></code>を右クリックすることでその値がすでに入力されたコマンドが準備される。
     </div>
 
   + `/carpet removeDefault <rule>`<br>
@@ -164,27 +164,23 @@ version : carpet 1.4.1.12+v230608
   + 使用できる値 : `true` `false`
 ### carpetCommandPermissionLevel
   `/carpet`コマンドを使用できるパーミッションレベルを指定する。`ops`では`/op`で付与された人のみであるが、`2` `4`はそれぞれの数値以上のパーミッションを保持しているプレイヤーにが使うことができる。
-  <div class="md-note">
-    現在たいち鯖では最大のパーミッションレベルが3になっている。
-  </div>
 
   + 初期値 : `ops`
   + 使用できる値 : `ops` `2` `4`
 ### carpets
-  carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。
-  以下は使用できるコマンドのリストである。
+  carpetを置くことで権限のない人でも特定のコマンドのみ使えるようにする。以下は使用できるコマンドのリストである。
 
-  | color  | command                                      |
-  |:------:|:---------------------------------------------|
-  | gray   | `/info block ~ ~-1 ~`                        |
-  | black  | `/spawn entities`                            |
-  | brown  | `/distance from ~ ~ ~ ` `/distance to ~ ~ ~` |
-  | pink   | `/spawn list ~ ~-1 ~`                        |
+| color  | command                                      |
+|:------:|:---------------------------------------------|
+| gray   | `/info block ~ ~-1 ~`                        |
+| black  | `/spawn entities`                            |
+| brown  | `/distance from ~ ~ ~ ` `/distance to ~ ~ ~` |
+| pink   | `/spawn list ~ ~-1 ~`                        |
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
     + [info](#info)
-    + [spawn](#spawn-1)
+    + [spawn](#spawn)
     + [distance](#distance)
 ### chainStone
 チェーンを長いほうの端でスライムのように接続でき、かつほかのブロックとも接続できるようにする。`stick_to_all`を指定するとすべての方向について接続する。
@@ -255,7 +251,7 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
-    + [spawn](#spawn-1)
+    + [spawn](#spawn)
 ### commandTick
   `/tick`を使用できるプレイヤーを指定する。
   + 初期値 : `ops`
@@ -269,11 +265,11 @@ version : carpet 1.4.1.12+v230608
   + 関連項目
     + [track](#track)
 ### creativeFlyDrag
-  クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、1でBEのようにストッピングができるようになる。
+  クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、`1`でBEのようにストッピングができるようになる。
 
   **クライアントのみ**
   + 初期値 : `0.09`
-  + 使用できる値 : `double`
+  + 使用できる値 : `0.00 ~ 1.00`
 ### creativeFlySpeed
   クリエイティブにおける浮遊時の飛行速度を設定する。
   
@@ -288,7 +284,8 @@ version : carpet 1.4.1.12+v230608
 ### creativePlayersLoadChunks
   クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。
   <div class="md-note">
-  スペクテイターモードについては`/gamerule spectatorsGenerateChunks`によって設定可能。
+
+  スペクテイターモードについては`/gamerule spectatorsGenerateChunks [true | false]`によって設定可能。
   </div>
 
   + 初期値 : `false`
@@ -297,17 +294,17 @@ version : carpet 1.4.1.12+v230608
   ctrlQによる一括排出をクラフトの結果欄でも機能するようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
-### ~customMOTD~
-  MOTD is なに
+### customMOTD
+  サーバー一覧に表示される情報をカスタマイズする。`_`のみでバニラのものを使用する。
   + 初期値 : `_`
   + 使用できる値 : `string`
 ### defaultLoggers
-  サーバーに入ったときに表示するログの初期値。ただしsetDefaultを設定しないと再起動によって初期値に戻る。
-  `tps,mobcaps,counter`のように、カンマで常げることでサジェストされたもの以外も指定できる。
+  サーバーに入ったときに表示するログの初期値。ただしsetDefaultを設定しないと再起動によって初期値に戻る。`tps,mobcaps,counter`のように、カンマで常げることでサジェストされたもの以外も指定できる。
   + 初期値 : `none`
   + 使用できる値 : `string`
   + 関連項目
     + [log](#log)
+    + TIS / [log](./carpet-TIS-addition.html#log)
 ### desertShrubs
   苗木が砂漠を含めた暑い気候および水のアクセスができない場所で枯れ木にする。
   + 初期値 : `false`
@@ -317,7 +314,7 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### fastRedstoneDust
-  redstone dustのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。 
+  レッドストーンのupdate orderを複数回更新される場所を一回のみにすることで最適化がされる。 
   <div class="md-note">
   壊れる回路があるので注意。
   </div>
@@ -325,7 +322,7 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `false`
   + 使用できる値 : `true` `false`  
 ### fillLimit
-  fillやcloneのブロック数制限を変更する。ただしゲームルールに同様の機能があり、そちらの数値に上書きされる。
+  fillやcloneのブロック数制限を変更する。ただしバニラに同様の機能である`/gamerule commandModificationBlockLimit [integer]`があり、そちらの数値に上書きされる。
   + 初期値 : `32768`
   + 使用できる値 : `integer`
 ### fillUpdates
@@ -342,7 +339,7 @@ version : carpet 1.4.1.12+v230608
   + 関連項目
     + [rotatorCactus](#rotatorblock)
 ### fogOff
-  ネザーにおよびエンドにおけるfog(霧)を消すようにする。
+  ネザーにおよびエンドにおける霧を消すようにする。
 
   **クライアントのみ**
   + 初期値 : `false`
@@ -352,9 +349,9 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `256`
   + 使用できる値 : `integer`
 ### hardcodeTNTangle
-  tntの着火時に起きる水平方向の移動の計算方式を変更する。デフォルトは-1.0であり、これは変更しない(=ランダムである)ことを意味する。0から2πの範囲でその回転を指定できる。
+  tntの着火時に起きる水平方向の移動の計算方式を変更する。デフォルトは`-1.0`であり、バニラのような座標依存のある疑似ランダムになる。0から2πの範囲でその回転を指定できる。
   + 初期値 : `-1.0`
-  + 使用できる値 : `double`
+  + 使用できる値 : `0.00 ~ 2π` `-1`
 ### hopperCounters
   `/counter`を有効にする。詳しくは[counter](#counter)を参照。
   + 初期値 : `false`
@@ -391,11 +388,11 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### maxEntityCollisions
-  一つのentityが持つ最大の当たり判定の数。0で無制限。非不整数でなければいけない。
+  一つのエンティティが持つ最大の当たり判定の数。0で無制限。非不整数でなければいけない。
   + 初期値 : `0`
   + 使用できる値 : `interger`
 ### mergeTNT
-  着火されたtntが同一のfuseを持つ場合それらを起爆したときに同様の爆発ダメージ及びモーメントを与える一つのentityとする。
+  着火されたtntが同一のfuseを持つ場合それらを起爆したときに同様の爆発ダメージ及びモーメントを与える一つのエンティティとする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### missingTools
@@ -429,7 +426,7 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### piglinsSpawningInBastions
-  ピグリン、ピグリンブルート、ホグリンがbastionで自然スポーンすることができるようにする。
+  ピグリン、ピグリンブルート、ホグリンがピグリン要塞で自然スポーンすることができるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### pingPlayerListLimit
@@ -441,29 +438,29 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### portalCreativeDelay
-  プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までをとる。
+  プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgt。
   + 初期値 : `0`
-  + 使用できる値 : `integer`
+  + 使用できる値 : `0 ~ 72000`
   + 関連項目
     + [portalSurvivalDelay](#portalsurvivaldelay)
 ### portalSurvivalDelay
-  プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgtで0から72000までの整数値をとる。
+  プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgt。
   + 初期値 : `80`
-  + 使用できる値 : `integer`
+  + 使用できる値 : `0 ~ 72000`
   + 関連項目
     + [creativePortalDelay](#portalcreativedelay)
 ### pushLimit
-  ピストンが押せるブロックの最大量を決める必要がある。1から1024までの整数値をとる。
+  ピストンが押せるブロックの最大量を決める必要がある。
   + 初期値 : `12`
-  + 使用できる値 : `integer`
+  + 使用できる値 : `1 ~ 1024`
 ### quasiConnectivity
   ピストンとドロッパー、ディスペンサーの準接続をおこさないようにする。
   + 初期値 : `true`
   + 使用できる値 : `true` `false`
 ### railPowerLimit
-  レールの動力がどこまで動力を伝達できるかを設定する。1から1024までの整数値をとる。
+  レールの動力がどこまで動力を伝達できるかを設定する。
   + 初期値 : `9`
-  + 使用できる値 : `integer`
+  + 使用できる値 : `1 ~ 1024`
 ### renewableBlackstone
 　溶岩流が青氷に流れるときブラックストーンを生成する。
   + 初期値 : `false`
@@ -519,7 +516,7 @@ version : carpet 1.4.1.12+v230608
 ### sculkSensorRange
   スカルくセンサーの振動を伝える半径を変更する。1から1024の整数値である必要がある。
   + 初期値 : `8`
-  + 使用できる値 : `integer`
+  + 使用できる値 : `0 ~ 72000`
 ### shulkerSpawningInEndCities
   シュルカーがエンドシティーでリスポーンするようにする。
   + 初期値 : `false`
@@ -531,7 +528,7 @@ version : carpet 1.4.1.12+v230608
 ### simulationDistance
   サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の間である必要があり、`0`にすると無効になる。  
   + 初期値 : `0`
-  + 使用できる値 : `integer`
+  + 使用できる値 : `0 ~ 32`
   + 関連項目
     + [viewDistance](#viewdistance)
 ### smoothClientAnimations
@@ -543,7 +540,7 @@ version : carpet 1.4.1.12+v230608
 ### spawnChunksSize
   スポーンチャンクの半径を指定する。`0`にするとスポーンチャンクを無効にできる。
   + 初期値 : `11`
-  + 使用できる値 : `integer`
+  + 使用できる値 : `0 ~ 255`
 ### stackableShulkerBoxes
   中身のはいっていないシュルカーを地面になげたとき重ねることができる。2から64までの数値または`true` `false`のみを受け付ける。`true`にすると64になる。
   + 初期値 : `false`
@@ -558,10 +555,11 @@ version : carpet 1.4.1.12+v230608
 ### structureBlockLimit
   各軸に対するストラクチャーブロックのサイズ制限を変更する。値は48以上でなければならない。  
   <div class="md-note">
-  値が大きい場合、負荷軽減の目的で[structureBlockIgnored](#structureblockignored)をminecraft:airにすることを推奨。
+
+  値が大きい場合、負荷軽減の目的で[structureBlockIgnored](#structureblockignored)を`minecraft:air`にすることを推奨。
   </div>
   <div class="md-note">
-  >ストラクチャーブロックが常に読み込まれていなければ正しく動かない。
+  ストラクチャーブロックが常に読み込まれていなければ正しく動かない。
   </div>
   
   + 初期値 : `48`
@@ -583,7 +581,7 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### superSecretSetting
-  u306Au3093u3082u308Fu304Bu3089u306Au3044u308821
+  2-7-883+3-4139+12391+2-2-2-1549+2-37-167+97-673+2-2-2-1549+89-139+3-3-1381+12391+89-139+2-2-13-239+3-4133+3-3-3-3-3-3-17+3-5-829+2-6197+3-29-313+3-3-3-1223+241-271
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### thickFungusGrowth
@@ -604,9 +602,10 @@ version : carpet 1.4.1.12+v230608
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### tntRandomRange
-  tntの爆発範囲をこの値に設定する。-1.0を除いて正の数でなければならない
+  tntの爆発範囲をこの値に設定する。`-1.0`を除いて正の数でなければならない
   <div class="md-important">
-  [optimizedTNT](#optimizedtnt)を有効にする必要がある。
+
+  [carpet-TIS-addition](https://github.com/TISUnion./carpet-TIS-Addition)を導入していない場合、[optimizedTNT](#optimizedtnt)を有効にする必要がある。
   </div>
 
   + 初期値 : `-1.0`
@@ -618,9 +617,9 @@ version : carpet 1.4.1.12+v230608
   + 関連項目
     + TIS / [updateSuppressionSimulator](./carpet-TIS-addition.html#updatesuppressionsimulator)
 ### viewDistance
-  サーバーの描画距離をこの値でオーバーライドする。0から32の間である必要があり、`0`にすると無効になる。  
+  サーバーの描画距離をこの値でオーバーライドする。`0`にすると無効になる。  
   + 初期値 : `0`
-  + 使用できる値 : `integer`
+  + 使用できる値 : `0 ~ 32`
   + 関連項目
     + [simulationDistance](#simulationdistance)
 ### xpFromExplosions
@@ -634,33 +633,31 @@ version : carpet 1.4.1.12+v230608
 
 ## command
 ### counter
-  `/counter <color> <realtime | reset>` <br>
-  で使用する。ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントし、それらから効率を計算する。複数のホッパーを同じチャンネルで作動させることも可能。羊毛16色を用いて16チャンネルを同時に使うことができる。
+  `/counter <color> <realtime | reset>`ホッパーが羊毛を向くように設置されているとき、そのホッパーが回収したアイテムと有効になっている時間をカウントしそれらから効率を計算し表示する。羊毛16色を用いて16チャンネルを同時に使うことができる。
   + `<color>` <br>
     割愛。複数選択はできない。選択しなかった場合すべての有効なチャンネルを表示する。
   + `<realtime | reset>`
     + `realtime` <br>
-      リアルタイムでの効率を計測する。このフラグをつけない場合、tpsが20以外になるとデフォルトの単位時間が72000gtなので実際の1hの効率ではなくなる。このフラグによってそれを是正し、実際の1hの効率を求めることができる。
+      計測をtickベースからhourベースに切り替えて計算する。
     + `reset` <br>
       指定したチャンネルもしくは指定しなかった場合すべてのチャンネルの計測をリセットする。
   + 関連項目
     + [hopperCounters](#hoppercounters)
+    + TIS / [hopperCountersUnlimitedSpeed](./carpet-TIS-addition.html#hoppercountersunlimitedspeed)
+    + TIS / [hopperNoItemCost](./carpet-TIS-addition.html#hoppernoitemcost)
+    + TIS / [scounter](./carpet-TIS-addition.html#scounter)
 
 ### distance
-`/distance <from> <to>`<br>
-で`<from>`から`<to>`までの距離を複数の方法で測ることができる。
-+ `<from>`<br>
-  距離の始点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合`~ ~ ~`が補われる。
-+ `<to>`<br>
-  距離の終点を指定する。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができる。座標を指定しなかった場合`~ ~ ~`が補われる。
+`/distance <from [coordinate]> <to [coordinate]>`で`<from>`から`<to>`までの距離を複数の方法で測ることができる。正しく計算されると三つの距離空間に基づく値が表示される。ただし計算には入力された座標を小数第二位までに丸めて使用され、出力は小数第一位までとなる。距離の定義は後述。
++ `<from [coordinate]>`<br>
+  距離の始点を指定する。座標を入力する場合`from`を入力する必要がある。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができ、座標を指定しなかった場合`~ ~ ~`が補われる。
++ `<to [coordinate]>`<br>
+  距離の終点を指定する。座標を入力する場合`to`を入力する必要がある。絶対座標、チルダ表記法、キャレット表記法の全てを使うことができ、座標を指定しなかった場合`~ ~ ~`が補われる。
 
   <div class="md-note">
-  `<from>`のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。
+
+  `<from　[coordinate]>`のみを入力した場合、その座標を保存して次回のコマンド使用時の始点として利用できる。
   </div>
-
-+ 実行結果<br>
-  正しく計算されると三つの距離空間に基づく値が表示される。ただし計算には入力された座標を小数第二位までに丸めて使用され、出力は小数第一位までとなる。
-
   <details>
   <summary>距離空間と定義</summary>
 
@@ -677,6 +674,7 @@ version : carpet 1.4.1.12+v230608
     $$d_M(P_1 , P_2):=|x_1-x_2|+|y_1-y_2|+|z_1-z_2|$$
   
   <div class="md-note">
+
   minecraftではほとんどがユークリッド距離を利用している。`CanSpawnArea`もユークリッド距離である。
   </div>
 
@@ -685,178 +683,163 @@ version : carpet 1.4.1.12+v230608
   + [commandDistance](#commanddistance)
 
 ### draw
-`/draw [shape] [coordinate]`で利用可能。`[shape]`の図形を生成できる。ときにはWorldEditに負ける。ほとんどにおいてWorldEditで代替可能であるが、diamondやconeなどはこれでつくったほうが　はやいだろう。
+`/draw [shape] [coordinate]`で利用可能。`[shape]`の図形を生成できる。ときにはWorldEditに負ける。ほとんどにおいてWorldEditで代替可能であるが、diamondやconeなどはこれでつくったほうがはやいだろう。
+<div class="md-important">
+WorldEditのように複数をランダムに指定することはできないが、あとからWorldEdit等を用いることでランダムに変更することができる。
+</div>
+
 + `[shape]`
-  + [ball](#ball)
-  + [cone](#cone)
-  + [cuboid](#cuboid)
-  + [cylinder](#cylinder)
-  + [diamond](#diamond)
-  + [pyramid](#pyramid)
-  + [sphere](#sphere)
+  + `ball`
+  + `cone`
+  + `cuboid`
+  + `cylinder`
+  + `diamond`
+  + `pyramid`
+  + `sphere`
 + 関連項目
   + [commandDraw](#commanddraw)
 <details>
-  <summary>詳細</summary>
+  <summary>shape</summary>
 
-#### ball
-  中が満たされた球体を生成する。
-  `/draw ball [center] [radius] [block] <replace>`<br>
-  で利用可能。
-  + `[center]`<br>
-    生成物、ここでは球体の中心となる座標を指定する。絶対座標と相対座標のどちらも使うことができる。小数で入力した場合その座標を含むブロックの座標が選択される。
-  + `[radius]`<br>
-    半径を指定する。値は0より大きい整数でなければならない。
-  + `[block]`<br>
-    描くブロックを指定する。WorldEditのように複数をランダムに指定することはできない。
-    <div class="md-important">
-    あとからWorldEdit等を用いることで割合指定でランダムに変更することができる。
-    </div>
+  + ball<br>
+    `/draw ball [center] [radius] [block] <replace>`で中が満たされた球体を生成する。
+    + `[center]`<br>
+      生成物、ここでは球体の中心となる座標を指定する。絶対座標と相対座標のどちらも使うことができる。小数で入力した場合その座標を含むブロックの座標が選択される。
+    + `[radius]`<br>
+      半径を指定する。値は0より大きい整数でなければならない。
+    + `[block]`<br>
+      使用するブロックを指定する。
+    + `<replace>`<br>
+      特定のブロック***を***置き換えるかを指定する。指定しなかった場合全てのブロックを置き換える。
+  + cone<br>
+    `/draw cone [center] [radius] [height] [pointing] [axis] [block] <replace>`で中が満たされた円柱を生成する。
+    + `[center]`<br>
+      生成物の底面の中心となる座標を指定する。
+    + `[radius]`<br>
+      底面の半径を指定する。
+    + `[height]`<br>
+      生成物の高さを指定する。
+    + `[pointing]`
+      + `down`<br>
+        先端が`[axis]`の座標マイナス方向を向く。
+      + `up`<br>
+        先端が`[axis]`の座標プラス方向を向く。
+    + `[axis]`<br>
+      生成物がx軸を基準とする。
+      + `x`
+      + `y`
+      + `z`
+    + `[block]`<br>
+      描くブロックを指定する。
+    + `<replace>`<br>
+      特定のブロック**を**置き換えるかを指定する。
+  + cuboid<br>
+    `/draw cuboid [center] [radius] [height] [pointing] [axis] [block] <replace>`で中が満たされた四角柱を生成する。
+    + `[center]`<br>
+      生成物の底面の中心となる座標を指定する。
+    + `[radius]`<br>
+      底面の一辺の長さを指定する。
+      <div class="md-note">
+      この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。
+      </div>
 
-  + `<replace>`<br>
-    特定のブロック***を***置き換えるかを指定する。指定しなかった場合全てのブロックを置き換える。
-  + 関連項目
-    + [draw sphere](#sphere)
-#### cone
-  中が満たされた円柱を生成する。
-  `/draw cone [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
-  で利用可能。
-  + `[center]`<br>
-    生成物の底面の中心となる座標を指定する。
-  + `[radius]`<br>
-    底面の半径を指定する。
-  + `[height]`<br>
-    生成物の高さを指定する。
-  + `[pointing]`
-    + `down`<br>
-      先端が`[axis]`の座標マイナス方向を向く。
-    + `up`<br>
-      先端が`[axis]`の座標プラス方向を向く。
-  + `[axis]`<br>
-    生成物がx軸を基準とする。
-    + `x`
-    + `y`
-    + `z`
-  + `[block]`<br>
-    描くブロックを指定する。
-  + `<replace>`<br>
-    特定のブロック**を**置き換えるかを指定する。
-#### cuboid
-  中が満たされた四角柱を生成する。
-  `/draw cuboid [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
-  で利用可能。
-  + `[center]`<br>
-    生成物の底面の中心となる座標を指定する。
-  + `[radius]`<br>
-    底面の一辺の長さを指定する。
-    <div class="md-note">
-    この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。
-    </div>
+    + `[height]`<br>
+      生成物の高さを指定する。
+    + `[pointing]`
+      + `down`<br>
+        先端が`[axis]`の座標マイナス方向を向く。
+      + `up`<br>
+        先端が`[axis]`の座標プラス方向を向く。
+    + `[axis]`<br>
+      生成物がその軸を中心にする。
+      + `x`
+      + `y`
+      + `z`
+    + `[block]`<br>
+      描くブロックを指定する。
+    + `<replace>`<br>
+      特定のブロック**を**置き換えるかを指定する。
+  + cylinder<br>
+    `/draw cylinder [center] [radius] [height] [pointing] [axis] [block] <replace>`で中が満たされた円柱を生成する。
+    + `[center]`<br>
+      生成物の中心となる座標を指定する。
+    + `[radius]`<br>
+      底面の半径を指定する。
+    + `[height]`<br>
+      生成物の高さを指定する。
+    + `[pointing]`<br>
+      + `down`<br>
+      `[axis]`の座標の負の方向に生成する。
+      + `up`<br>
+      `[axis]`の座標の正の方向に生成する。
+    + `[axis]`<br>
+      + `x`
+      + `y`
+      + `z`
+    + `[block]`<br>
+      描くブロックを指定する。
+    + `<replace>`<br>
+      特定のブロック***を***置き換えるかを指定する。
+  + diamond<br>
+    `/draw diamond [center] [radius] [block] <replace>`で中空の正八面体を生成する。
+    + `[center]`<br>
+      生成物の中心となる座標を指定する。
+    + `[radius]`<br>
+      中心からの最大距離を指定する。
+    + `[block]`<br>
+      描くブロックを指定する。
+    + `<replace>`<br>
+      特定のブロック***を***置き換えるかを指定する。
+  + pyramid<br>
+    `/draw pyramid [center] [radius] [height] [pointing] [axis] [block] <replace>`で中が満たされた円柱を生成する。
+    + `[center]`<br>
+      生成物の中心となる座標を指定する。
+    + `[radius]`<br>
+      底面の一辺の長さを指定する。
+      <div class="md-important">
+      この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。
+      </div>
 
-  + `[height]`<br>
-    生成物の高さを指定する。
-  + `[pointing]`
-    + `down`<br>
-      先端が`[axis]`の座標マイナス方向を向く。
-    + `up`<br>
-      先端が`[axis]`の座標プラス方向を向く。
-  + `[axis]`<br>
-    生成物がその軸を中心にする。
-    + `x`
-    + `y`
-    + `z`
-  + `[block]`<br>
-    描くブロックを指定する。
-  + `<replace>`<br>
-    特定のブロック**を**置き換えるかを指定する。
-#### cylinder
-  中が満たされた円柱を生成する。
-  `/draw cylinder [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
-  で利用可能。
-  + `[center]`<br>
-    生成物の中心となる座標を指定する。
-  + `[radius]`<br>
-    底面の半径を指定する。
-  + `[height]`<br>
-    生成物の高さを指定する。
-  + `[pointing]`<br>
-    + `down`<br>
-    `[axis]`の座標の負の方向に生成する。
-    + `up`<br>
-    `[axis]`の座標の正の方向に生成する。
-  + `[axis]`<br>
-    + `x`
-    + `y`
-    + `z`
-  + `[block]`<br>
-    描くブロックを指定する。
-  + `<replace>`<br>
-    特定のブロック***を***置き換えるかを指定する。
-#### diamond
-  中空の正八面体を生成する。
-  `/draw diamond [center] [radius] [block] <replace>`<br>
-  で利用可能。
-  + `[center]`<br>
-    生成物の中心となる座標を指定する。
-  + `[radius]`<br>
-    中心からの最大距離を指定する。
-  + `[block]`<br>
-    描くブロックを指定する。
-  + `<replace>`<br>
-    特定のブロック***を***置き換えるかを指定する。
-#### pyramid
-  中が満たされた円柱を生成する。
-  `/draw pyramid [center] [radius] [height] [pointing] [axis] [block] <replace>`<br>
-  で利用可能。
-  + `[center]`<br>
-    生成物の中心となる座標を指定する。
-  + `[radius]`<br>
-    底面の一辺の長さを指定する。
-    <div class="md-important">
-    この値を半径とする円に外接し、一辺が各軸にそうような正方形が底面となる。
-    </div>
-  + `[height]`<br>
-    生成物の高さを指定する。
-  + `[pointing]`<br>
-    + `down`<br>
-    `[axis]`の座標の負の方向に生成する。
-    + `up`<br>
-    `[axis]`の座標の正の方向に生成する。
-  + `[axis]`<br>
-    + `x`
-    + `y`
-    + `z`
-  + `[block]`<br>
-    描くブロックを指定する。
-  + `<replace>`<br>
-    特定のブロック***を***置き換えるかを指定する。
-#### sphere
-  中空の球体を生成する。
-  `/draw sphere [center] [radius] [block] <replace>`<br>
-  で利用可能。
-  + `[center]`<br>
-    球体の中心となる座標を指定する。
-  + `[radius]`<br>
-    半径を指定する。
-  + `[block]`<br>
-    描くブロックを指定する。
-  + `<replace>`<br>
-    特定のブロック**を**置き換えるかを指定する。
-  + 関連項目
-    + [draw ball](#ball)
-
+    + `[height]`<br>
+      生成物の高さを指定する。
+    + `[pointing]`<br>
+      + `down`<br>
+      `[axis]`の座標の負の方向に生成する。
+      + `up`<br>
+      `[axis]`の座標の正の方向に生成する。
+    + `[axis]`<br>
+      + `x`
+      + `y`
+      + `z`
+    + `[block]`<br>
+      描くブロックを指定する。
+    + `<replace>`<br>
+      特定のブロック***を***置き換えるかを指定する。
+  + sphere<br>
+    `/draw sphere [center] [radius] [block] <replace>`で中空の球体を生成する。
+    + `[center]`<br>
+      球体の中心となる座標を指定する。
+    + `[radius]`<br>
+      半径を指定する。
+    + `[block]`<br>
+      描くブロックを指定する。
+    + `<replace>`<br>
+      特定のブロック**を**置き換えるかを指定する。
 </details>
 
 ### info
-指定した情報を表示する。opレベル0を要求する。WorldEditによって完全に代替される予定であるとのこと。
-`/info [block | entity] [target] <grep>`
-で実行可能。`<grep>`によって表示する情報を制限することが可能。
+指定した情報を表示する。WorldEditによって完全に代替される予定であるとのこと。`/info [block | entity] [target] <grep>`で実行可能。`<grep>`によって表示する情報を制限することが可能。
 + `[block | entity]`
   + `block`<br>
     `[target]`は表示したいブロックの座標となる。絶対座標もしくは相対座標を使うことができる。
   + `entity`<br>
     `[target]`は表示したいエンティティとなる。一つのエンティティのみを選択する必要がある。
+    <div class="md-important">
+
+    [carpet-tIS-addition](https://github.com/TISUnion./carpet-TIS-Addition)を導入していない場合、`/info entity`は使用できない。
+    </div>
     <div class="md-note">
+
     ターゲットセレクタで指定する場合`[limit=1]`と追記することで一つのエンティティに絞ることができる。
     </div>
 
@@ -878,6 +861,7 @@ version : carpet 1.4.1.12+v230608
 + `/log clear`<br>
   全てのlogの表示を停止させることができる。
   <div class="md-note">
+
   `/log [subject] clear`とすることでそのlog表示を消すことができる。
   </div>
 
@@ -886,75 +870,76 @@ version : carpet 1.4.1.12+v230608
 + 関連項目
   + [commandLog](#commandlog)
   + [defaultLoggers](#defaultloggers)
+  + TIS / [log](./carpet-TIS-addition.html#log)
 <details>
   <summary>subject</summary>
   
-  #### `counter`
-  `/log counter <color> <mcid>`で利用可能。特定のチャンネルに対して収集されたアイテム数とその効率、計測時間を表示する。
-  + `<color | clear>`<br>
-    チャンネルを指定する。指定しなかった場合`white`もしくはそれが無効であるならばほかの有効なチャンネルが選択される。さらに有効なチャンネルが一切ない場合は`white`が表示される。
-  + 表示場所<br>
-    プレイヤーリスト
-  + 関連項目
-    + [counter](#counter)
-  #### `fallingBlocks`
-  `/log fallingBlocks <brief | full> <mcid>`で利用可能。falling blockの生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。
-  + `<brief | full>`<br>
-    表現の方法を指定する。指定しなかった場合`brief`が指定される。
-    + `brief`<br>
-      省略して表示する。ホバーすることで正確な情報が得られる。
-    + `full`<br>
-      省略せずにすべてを表示する。
-  + 表示場所<br>
-    チャット
-  #### `mobcaps`
-  `/log mobcaps <dimension | dynamic> <mcid>`で利用可能。指定したディメンションのmobcapを表示する。
-  + `<dimension | dynamic>`<br>
-  そのディメンションにおけるmobcapを表示する。指定しないと`dynamic`が指定される。
-    + `dimension`<br>
-      そのディメンションにおけるmobcapを表示する。カスタムディメンションをdatapack等であらたに作成した場合そのディメンションidが入力できるようになる。
-    + `dynamic`<br>
-      自身のいるディメンションが自動的に選択され、ディメンションを移動すると表示されるディメンションも変わる。
-  + 表示場所<br>
-    プレイヤーリスト
-  + 関連項目
-    + spawn
-  #### `packets`
-  `/log packets <mcid>`で利用可能。通信時のパケット量を単位を/sとして表示する.。Iがサーバーへ、Oがクライアントへのパケット量。
-  + 表示場所<br>
-    プレイヤーリスト
-  #### `pathfinding`
-  `/log pathfinding [count] <mcid>`で利用可能。pathfindingは行動探索であるが、どういった挙動を示すかは不明。
-  + `[count]`<br>
-    おそらくlogに流すentityの量。
-  + 表示場所<br>
-    わがらん
-  #### `projectiles`
-  `/log projectiles <brief | full> <mcid>`で利用可能。飛び道具、主にポーションや矢のentity生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。当たったとき、その座標も表示する。
-  + `<brief | full>`<br>
-    表現の方法を指定する。指定しなかった場合`brief`が指定される。
-    + `brief`<br>
-      省略して表示する。ホバーすることで正確な情報が得られる。
-    + `full`<br>
-      省略せずにすべてを表示する。
-  + 表示場所<br>
-    チャット
-  #### `tnt`
-  `/log tnt <brief | full> <mcid>`で利用可能。tntがいつ、どこで、誰によって、どのようにして、ベクトルの始点がどこであるかを表示する。
-  + `<brief | full>`<br>
-    表現の方法を指定する。指定しなかった場合`brief`が指定される。
-    + `brief`<br>
-      省略して表示する。ホバーすることで正確な情報が得られる。
-    + `full`<br>
-      省略せずにすべてを表示する。値がより詳細になる。
-  + 表示場所<br>
-    チャット
-  #### `tps`
-  `/log tps <mcid>`で利用可能。tpsとmsptを表示する。
-  + 表示場所<br>
-    プレイヤーリスト
-  + 関連項目
-    + tick
+  + counter<br>
+    `/log counter <color> <mcid>`で特定のチャンネルに対して収集されたアイテム数とその効率、計測時間を表示する。
+    + `<color | clear>`<br>
+      チャンネルを指定する。指定しなかった場合`white`もしくはそれが無効であるならばほかの有効なチャンネルが選択される。さらに有効なチャンネルが一切ない場合は`white`が表示される。
+    + 表示場所<br>
+      プレイヤーリスト
+    + 関連項目
+      + [counter](#counter)
+  + fallingBlocks<br>
+    `/log fallingBlocks <brief | full> <mcid>`でfalling blockの生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。
+    + `<brief | full>`<br>
+      表現の方法を指定する。指定しなかった場合`brief`が指定される。
+      + `brief`<br>
+        省略して表示する。ホバーすることで正確な情報が得られる。
+      + `full`<br>
+        省略せずにすべてを表示する。
+    + 表示場所<br>
+      チャット
+  + mobcaps<br>
+    `/log mobcaps <dimension | dynamic> <mcid>`で利用可能。指定したディメンションのmobcapを表示する。
+    + `<dimension | dynamic>`<br>
+    そのディメンションにおけるmobcapを表示する。指定しない場合`dynamic`が指定される。
+      + `dimension`<br>
+        そのディメンションにおけるmobcapを表示する。カスタムディメンションをdatapack等であらたに作成した場合そのディメンションidが入力できるようになる。
+      + `dynamic`<br>
+        自身のいるディメンションが自動的に選択され、ディメンションを移動すると表示されるディメンションも変わる。
+    + 表示場所<br>
+      プレイヤーリスト
+    + 関連項目
+      + [spawn](#spawn)
+  + packets<br>
+    `/log packets <mcid>`で通信時のパケット量を単位を/sとして表示する.。Iがサーバーへ、Oがクライアントへのパケット量。
+    + 表示場所<br>
+      プレイヤーリスト
+  + pathfinding<br>
+    `/log pathfinding [count] <mcid>`で利用可能。pathfindingは行動探索であるが、どういった挙動を示すかは不明。
+    + `[count]`<br>
+      おそらくlogに流すentityの量。
+    + 表示場所<br>
+      わがらん
+  + projectiles<br>
+    `/log projectiles <brief | full> <mcid>`で飛び道具、主にポーションや矢のentity生成時のtickから消失時のtickまで、各tickの正確な座標とそれぞれのモーメントを表示する。なにかに当たったとき、その座標も表示する。
+    + `<brief | full>`<br>
+      表現の方法を指定する。指定しなかった場合`brief`が指定される。
+      + `brief`<br>
+        省略して表示する。ホバーすることで正確な情報が得られる。
+      + `full`<br>
+        省略せずにすべてを表示する。
+    + 表示場所<br>
+      チャット
+  + tnt<br>
+    `/log tnt <brief | full> <mcid>`でtntが爆発したとき、いつ、どこで、誰によって、ベクトルの始点がどこであるかを表示する。
+    + `<brief | full>`<br>
+      表現の方法を指定する。指定しなかった場合`brief`が指定される。
+      + `brief`<br>
+        省略して表示する。ホバーすることで正確な情報が得られる。
+      + `full`<br>
+        省略せずにすべてを表示する。値がより詳細になる。
+    + 表示場所<br>
+      チャット
+  + tps<br>
+    `/log tps <mcid>`で現在のtpsとmsptを表示する。
+    + 表示場所<br>
+      プレイヤーリスト
+    + 関連項目
+      + [tick](#tick)
 
 </details>
 
@@ -968,7 +953,7 @@ version : carpet 1.4.1.12+v230608
   + [commandPerimeterInfo](#commandperimeterinfo)
 
 ### profile
-`/profile [entities | health]`で`/tick <entities | health>`と同様の働きをする。詳しくは[tick](#tick)を参照。
+`/profile [entities | health]`で`/tick [entities | health]`と同様の働きをする。詳しくは[tick](#tick)を参照。
 + 関連項目
   + [commandProfile](#commandprofile)
   + [tick](#tick)
@@ -998,93 +983,72 @@ version : carpet 1.4.1.12+v230608
     + `use`
   + 関連項目
     + [commandPlayer](#commandplayer)
+    + [gugle-carpet-addition](./gugle-carpet-addition.html)
+    + TIS / [player](./carpet-TIS-addition.html#player)
 
 <details>
   <summary>action</summary>
 
-#### attack
-  なにも指定しなかった場合、`once`が指定される。
-  + continuous<br>
-    `/player [mcid] attack continuous`<br>
-    連続的に攻撃させる。
-  + interval<br>
-    `/player [mcid] attack interval [count]`<br>
-    `[counter]`gt毎に攻撃させる。
-  + once<br>
-    `/player [mcid] attack once`<br>
-    一回だけ攻撃させる。
-#### dismount
-  現在乗っているエンティティから降ろさせる。なににものっていなかった場合なにもおきない。<br>
-  `/player [mcid] dismount`
-#### drop
-  今メインハンドにもっているものを一つその場に落とさせる。<br>
-  `/player [mcid] drop`
-#### dropStack
-  今メインハンドにもっているものを1スタックその場に落させる。<br>
-  `/player [mcid] dropStack`
-#### hotbar
-  今手にもっているスロットを変更させる。<br>
-  `/player [mcid] hotbar [number]`
-#### jump
-  その場でジャンプさせる。<br>
-  `/player [mcid] jump`
-#### kill
-  対象をkillする。<br>
-  `/player [mcid] kill`
-#### look
-  特定の方向を向かせる。<br>
-  `/player [mcid] look [[pitch yaw] | up | down | north | south | east | west | at [x y z]]`
-  + `[pitch yaw]`<br>
-    ピッチとヨーを指定する。数字はそれぞれ-90から90の間でなければいけない。
-  + `up | down | north | south | east | west`<br>
-    特定の方向を向かせる。
-  + `at [x y z]`<br>
-    特定の座標に視線を向かせる。
-#### mount
-  一番近い乗ることができるエンティティに乗る。よみこまれているエンティティのすべてが乗れない場合、失敗する。<br>
-  `/player [mcid] mount`
-#### move
-  指定された方向へ移動する。
-  `/player <name> move [backward | forward | left | right]`
-#### shadow
-  全ての動作を引き継いで同名のbotを出す。
-  `/player [mcid] shadow`
-#### sneak
-  スニークをさせる。
-  `/player [mcid] sneak`
-#### spawn
-  botとしてplayerを召喚する。
-  `/player [mcid] spawn`
-#### sprint
-  ダッシュさせる。
-  `/player [mcid] sprint`
-#### stop
-  今`[mcid]`に`/player`によって実行されているコマンドを全て停止させる。
-  `/player [mcid] stop`
-#### swapHands
-  オフハンドとメインハンドを入れ替える。
-  `/player [mcid] swapHands`
-#### turn
-  指定した方向を向かせる。
-  `/player [mcid] turn [back | left | right]`
-#### unsneak
-  スニークを解除させる。
-  `/player [mcid] unsneak`
-#### unsprint
-
-  ダッシュを解除させる。
-  `/player [mcid] unsprint`
-#### use
-  なにも指定しなかった場合、`once`が指定される。
-  + continuous<br>
-    `/player [mcid] use continuous`<br>
-    連続的に使用させる。
-  + interval<br>
-    `/player [mcid] use interval [count]`<br>
-    `[counter]`gt毎に使用させる。
-  + once<br>
-    `/player [mcid] use once`<br>
-    一回だけ使用させる。
+  + attack<br>
+    `/player [mcid] attack <conduct>`で`<conduct>`に従って攻撃する。なにも指定しなかった場合、`once`が指定される。
+    + `<conduct>`
+      + `continuous`<br>
+        連続的に攻撃させる。
+      + `interval`<br>
+        `/player [mcid] attack interval [count]`で`[count]`gt毎に攻撃させる。
+      + `once`<br>
+        一回だけ攻撃させる。
+  + dismount<br>
+    `/player [mcid] dismount`で現在乗っているエンティティから降ろさせる。なににものっていなかった場合なにもおきない。
+  + drop<br>
+    `/player [mcid] drop`で今メインハンドにもっているものを一つその場に落とさせる。
+  + dropStack<br>
+    `/player [mcid] dropStack`で今メインハンドにもっているものを1スタックその場に落させる。
+  + hotbar<br>
+    `/player [mcid] hotbar [number]`で今手にもっているスロットを`[number]`に変更させる。
+  + jump<br>
+    `/player [mcid] jump`でその場でジャンプさせる。
+  + kill<br>
+    `/player [mcid] kill`で対象をkillする。対象がbotである場合切断させる。
+  + look<br>
+    `/player [mcid] look [[pitch yaw] | up | down | north | south | east | west | at [x y z]]`で特定の方向を向かせる。
+    + `[pitch yaw]`<br>
+      ピッチとヨーを指定する。数字はそれぞれ-90から90の間でなければいけない。
+    + `up | down | north | south | east | west`<br>
+      特定の方向を向かせる。
+    + `at [x y z]`<br>
+      特定の座標に視線を向かせる。
+  + mount<br>
+    `/player [mcid] mount`で一番近い乗ることができるエンティティに乗る。よみこまれているエンティティのすべてが乗れない場合、失敗する。
+  + move<br>
+    `/player [mcid] move [backward | forward | left | right]`で指定された方向へ移動する。方向の中心および軸の取り方はexecuteで指定しない限り対象を中心とする。
+  + shadow<br>
+    `/player [mcid] shadow`で全ての動作を引き継いで同名のbotを出す。`[mcid]`はbot以外でなければならない。
+  + sneak<br>
+    `/player [mcid] sneak`スニークをさせる。
+  + spawn<br>
+    `/player [mcid] spawn`でbotとしてplayerを召喚する。
+  + sprint<br>
+    `/player [mcid] sprint`でダッシュさせる。
+  + stop<br>
+    `/player [mcid] stop`で現在`[mcid]`に`/player`によって実行されているコマンドを全て停止させる。
+  + swapHands<br>
+    `/player [mcid] swapHands`でオフハンドとメインハンドを入れ替える。
+  + turn<br>
+    `/player [mcid] turn [back | left | right]`で指定した方向を向かせる。方向はexecuteで指定しない限り`[mcid]`の方向を中心にする。
+  + unsneak<br>
+    `/player [mcid] unsneak`でスニークを解除させる。
+  + unsprint<br>
+    `/player [mcid] unsprint`でダッシュを解除させる。
+  + use<br>
+    `/player [mcid] use <conduct>`で`<conduct>`に従って使用させる。なにも指定しなかった場合、`once`が指定される。
+    + `<conduct>`
+      + continuous<br>
+        連続的に使用させる。
+      + interval<br>
+        `/player [mcid] use interval [count]`で`[count]`gt毎に使用させる。
+      + once<br>
+        一回だけ使用させる。
 
 </details>
 
@@ -1102,22 +1066,23 @@ version : carpet 1.4.1.12+v230608
     + `tracking`
   + 関連項目
     + [commandSpawn](#commandspawn)
-  <details>
-    <summary>subject</summary>
+    + TIS / [spawn](./carpet-TIS-addition.html#spawn)
+<details>
+  <summary>subject</summary>
 
-#### `entities`<br>
-`/spawn entities <mob_type>`で実行可能。mobcapの占有率や`<mob_type>`を指定した場合そのmob_typeに属するmobの座標を取得できる。
-#### `list`<br>
-`/spawn list [coordinate]`で実行可能。そのブロックに対して理論上湧くことのできるentityを一覧形式で表示する。
-#### `mobcaps`<br>
-`/spawn mobcaps <dimension>`で実行可能。指定されたdimensionに対するmobcapを表示する。
-#### `mobcapLocal`<br>
-`/spawn mobcapLocal [selector]`で実行可能。プレイヤーの周りに発生するmobcapを計測する。
-#### `rate`<br>
-`/spawn rate [mob_type] [round]`で実行可能。`[mob_type]`の1tickに試行されるspawning回数を`[round]`の値に変更する。
-#### `tracking`<br>
-`/spawn tracking [mob_type | action]`で実行可能。`[mob_type]`のspawn回数やspawn率を表示す。 
-  </details>
++ entities<br>
+  `/spawn entities <mob_type>`でmobcapの占有率や`<mob_type>`を指定した場合そのmob_typeに属するmobの座標を取得できる。
++ list<br>
+  `/spawn list [coordinate]`で`[coordinate]`に対して理論上湧くことのできるエンティティをその確率とともに一覧形式で表示する。
++ mobcaps<br>
+  `/spawn mobcaps <dimension>`で指定されたdimensionに対するmobcapを表示する。
++ mobcapLocal<br>
+  `/spawn mobcapLocal [selector]`でプレイヤーの周りに発生するmobcapを計測する。
++ `rate`<br>
+  `/spawn rate [mob_type] [round]`で`[mob_type]`の1tickに試行されるspawning回数を`[round]`の値に変更する。
++ `tracking`<br>
+  `/spawn tracking [mob_type | action]`で`[mob_type]`のspawn回数やspawn率を表示す。 
+</details>
 
 ### tick
 `/tick [action]`によりminecraftのtickに関する制御をする。
@@ -1131,24 +1096,39 @@ version : carpet 1.4.1.12+v230608
   + `warp`
 + 関連項目
   + [commandTick](#commandtick)
+  + TIS / [tick](./carpet.html#tick)
 
 <details>
-   <summary>action</summary>
+  <summary>action</summary>
 
-  #### entities
-  `/tick entities <tick>`で実行可能。`<tick>`gtの間entityの量や種類などを計算し、その上位を表示する。指定しなかった場合300gtで計算する。
-  #### freeze
-  `/tick freeze <true | false | deep | status>`で実行可能。`true`もしくは`false`を選択することで現在のtickで停止もしくは再開させることができる。`status`は現在freezeしているかの確認ができ、`deep`ではより深いタイミングでのfreezeを可能にする。指定しなかった場合trueとfalseがトグルとなる。
-  #### health
-  `/tick health <tick>`で実行可能。`<tick>`gtの間どの処理が負荷となっているかを計測し、その上位を表示する。指定しなかった場合300gtで計測する。
-  #### rate
-  `/tick rate [count]`で実行可能。現在のtick rateを`[count]`の値にする。ただしtickはmsptに基づいて計算されるため正確な値が反映されるわけではないことに注意。
-  #### step
-  freeze中に`\tick step [count]`で実行可能。`[count]`の数だけtickを進める。
-  #### superHot
-  `/tick superHot [true | false]`で実行可能。プレイヤーが移動するまでtickがfreezeするsuperHotモードを有効にできる。ゲーム「super hot」から。
-  #### warp
-  `/tick warp [count]`で実行可能。最適化をしたうえでできるだけ最速で`[count]`の数字分だけ早送りしようとする。
++ entities<br>
+  `/tick entities <tick>`で`<tick>`gtの間読み込まれているエンティティの量や種類などを計算し、その上位を表示する。指定しなかった場合300gtで計算する。
++ freeze<br>
+  `/tick freeze <true | false | deep | status>`でゲームの進行を停止もしくは再開させる。
+  + `<true | false | deep | status>`<br>
+    指定しなかった場合、`true`と`false`のトグルになる。
+    + `true`<br>
+      現在の状態がどうれあれ、ゲームの進行を停止させる。
+    + `false`<br>
+      現在の状態がどうであれ、ゲームの進行を再開させる。
+    + `status`<br>
+      現在ゲームが停止もしくは再開のどちらの状態であるかどうかを表示する。
+    + `deep`<br>
+      `deep`ではより深いタイミングでのfreezeを可能にする。
++ health<br>
+  `/tick health <tick>`で`<tick>`gtの間どの処理でmsptがどれだけ上昇しているかを計測し、その上位を表示する。`<tick>`を指定しなかった場合300gtで計測する。
++ rate<br>
+  `/tick rate [count]`で現在のtick rateを`[count]`の値にする。ただしtickはmsptに基づいて丸めて計算されるため正確な値が反映されるわけではないことに注意。
++ step<br>
+  ゲームが停止している最中に`/tick step [count]`で実行可能。`[count]`の数だけゲームを進める。このとき進める速さは現在のtpsに基づく。
++ superHot<br>
+  `/tick superHot [true | false]`で実行可能。プレイヤーが静止しているときのみゲームを停止させるsuperHotモードを有効にする。ゲーム「super hot」から。
+  <div class="md-note">
+  マルチプレイの場合、botを除く全てのプレイヤーが静止していなければゲームは停止しない。
+  </div>
+
++ warp<br>
+  `/tick warp [count]`で最適化をしたうえでできるだけ最速で`[count]`の時間分だけゲームを早送りしようとする。
 
 </details>
 
