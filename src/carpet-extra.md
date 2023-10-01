@@ -275,6 +275,7 @@ BEのようにピストンと粘着ピストンがレッドストーンダスト
 	+ [creeperSpawningInJungleTemples](#creeperspawninginjungletemples)
 ### variableWoodDelays
 木製のボタンと感圧版は固有の時間長のロングパルスを発生させる。感圧版は`powered=true`になってからこのgt経過したときに上に乗っているかをチェックし、なにものっていなければ`powered=false`にする。
+
 |variant|button delay(gt)|pressure_plate delay(gt)|
 |:---|:---|:---|
 |birch|1|1|
@@ -283,6 +284,7 @@ BEのようにピストンと粘着ピストンがレッドストーンダスト
 |oak<br>mangrove<br>cherry<br>bamboo<br>crimson<br>warped|30|20|
 |spruce|45|30|
 |darkoak|60|40|
+
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### xpPerSculkCatalyst
