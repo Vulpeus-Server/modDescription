@@ -10,4 +10,4 @@
 - [GugleCarpetAddition](./gugle-carpet-addition.md)
 - [Carpet TIS Addition](./carpet-TIS-addition.md)
 - [Carpet Extra](./carpet-extra.md)
-- [Minecraft Optimization](./Minecraft%20Optimization/Minecraft_Optimization.html)
+- [Minecraft Optimization](./Minecraft%20Optimization/Minecraft_Optimization_JP.html)
