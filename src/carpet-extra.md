@@ -1,13 +1,13 @@
-# carpet extra
+# carpet-extra
 
-version : GCA 2.7.0
+version :  1.20.1-1.4.115
 
 **carpetのaddonであるため、carpetが前提modとなる。**
 
 このドキュメント内では`[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。
 
-以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。
 
 |mod|download|document|docs-JP|
 |:---:|:---:|:---:|:---:|
@@ -121,7 +121,7 @@ F3デバッグモードがいくつかのブロックでアップデートを起
 ### comparatorBetterItemFrames
 コンパレータは背面に置かれた床もしくは屋根に設置された額縁を読み取れるようにする。
 |value|挙動|
-|---|---|
+|:---:|:---|
 |vanilla|バニラ同様の動作|
 |behind|背面にある額縁を読み取る|
 |lenient|背面もしくはフルブロックを挟んだ背面にある額縁を読み取る|
@@ -275,7 +275,6 @@ BEのようにピストンと粘着ピストンがレッドストーンダスト
 	+ [creeperSpawningInJungleTemples](#creeperspawninginjungletemples)
 ### variableWoodDelays
 木製のボタンと感圧版は固有の時間長のロングパルスを発生させる。感圧版は`powered=true`になってからこのgt経過したときに上に乗っているかをチェックし、なにものっていなければ`powered=false`にする。
-
 |variant|button delay(gt)|pressure_plate delay(gt)|
 |:---|:---|:---|
 |birch|1|1|
@@ -284,7 +283,6 @@ BEのようにピストンと粘着ピストンがレッドストーンダスト
 |oak<br>mangrove<br>cherry<br>bamboo<br>crimson<br>warped|30|20|
 |spruce|45|30|
 |darkoak|60|40|
-
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### xpPerSculkCatalyst

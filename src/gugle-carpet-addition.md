@@ -7,7 +7,7 @@ version : GCA 2.7.0
 このドキュメント内では`[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。
 
-以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。
+以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。
 
 |mod|download|document|docs-JP|
 |:---:|:---:|:---:|:---:|
@@ -22,56 +22,78 @@ version : GCA 2.7.0
 <details>
 <summary>rules</summary>
 
-+ [openFakePlayerInventory](#openfakeplayerinventory)
-+ [openFakePlayerEnderChest](#openfakeplayerenderchest)
-+ [fakePlayerResident](#fakeplayerresident)
-+ [fakePlayerAutoReplenishment](#fakeplayerautoreplenishment)
++ [betterFanceGatePlacement](#betterfancegateplacement)
++ [betterQuickCrafting](#betterquickcrafting)
++ [betterSignInteraction](#bettersigninteraction)
++ [betterWoodStrip](#betterwoodstrip)
 + [fakePlayerAutoFish](#fakeplayerautofish)
 + [fakePlayerAutoReplaceTool](#fakeplayerautoreplacetool)
++ [fakePlayerAutoReplenishment](#fakeplayerautoreplenishment)
++ [fakePlayerReloadAction](#fakeplayerreloadaction)
++ [fakePlayerResident](#fakeplayerresident)
++ [openFakePlayerEnderChest](#openfakeplayerenderchest)
++ [openFakePlayerInventory](#openfakeplayerinventory)
 </details>
 
 ## rules
 全てのルールは`/carpet [rule] [value]`によって変更することができる。
-### openFakePlayerInventory
-fake playerを右クリックすることでそのプレイヤーのインベントリをGUIで表示・操作できるようにする。すなわちcarpetの`/player`などを介して一つずつ操作する必要をなくすことができる。
+### betterFanceGatePlacement
+フェンスゲートを置くときに見ているフェンスゲートとおなじstateになるように設置するようにする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### betterQuickCrafting
+クイッククラフティングをするときインベントリにそのアイテムを残すようにする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### betterSignInteraction
+看板についているブロックを右クリックするとインタラクトすることができるようにする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### betterWoodStrip
+`Strip`と名の付く斧のみが原木もしくは木の表皮を剥ぐことができるようにする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### fakePlayerAutoFish
+botが釣りでなにかを引き当てたときに自動で釣り上げ、もう一度糸を垂らすようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
     + carpet / [player](./carpet.html#player)
-    + [openFakePlayerEnderChest](#openfakeplayerenderchest)
-
+### fakePlayerAutoReplaceTool
+botの使用しているツールがこわれかけているときに、同種のtoolに持ち変えるようにする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+  + 関連項目
+    + carpet / [player](./carpet.html#player)
+### fakePlayerAutoReplenishment
+botがtweakerooの`tweakHandRestock`と同様の操作をできるようにする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+  + 関連項目
+    + carpet / [player](./carpet.html#player)
+### fakePlayerReloadAction
+botのアクションが再ログイン時にもう一度実行される。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+  + 関連項目
+    + carpet / [player](./carpet.html#player)
+### fakePlayerResident
+botがサーバー再起動によっていなくなった時、もう一度同じ座標にスポーンさせる。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+  + 関連項目
+    + carpet / [player](./carpet.html#player)
 ### openFakePlayerEnderChest
-fake playerを右クリックすることでそのプレイヤーのエンダーチェストをGUIで表示・操作できるようにする。
+botを右クリックすることでそのプレイヤーのエンダーチェストをGUIで表示・操作できるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
     + carpet / [player](./carpet.html#player)
     + [openFakePlayerInventory](#openfakeplayerinventory)
-
-### fakePlayerResident
-fake playerがサーバー再起動によっていなくなった時、次回起動時に自動でplayerを配置し、そのplayerが実行しているactionを再実行させる。ただし正しいtickで実行されるのではなく、もう一度コマンドをたたいているだけなので信用はできない。
+### openFakePlayerInventory
+botを右クリックすることでそのプレイヤーのインベントリをGUIで表示・操作できるようにする。すなわちcarpetの`/player`などを介して一つずつ操作する必要をなくすことができる。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
   + 関連項目
     + carpet / [player](./carpet.html#player)
-
-### fakePlayerAutoReplenishment
-fake playerがtweakerooの`tweakHandRestock`と同様の操作をできるようにする。
-  + 初期値 : `false`
-  + 使用できる値 : `true` `false`
-  + 関連項目
-    + carpet / [player](./carpet.html#player)
-
-### fakePlayerAutoFish
-fake playerが釣りでなにかを引き当てたときに自動で釣り上げ、もう一度糸を垂らすようにする。
-  + 初期値 : `false`
-  + 使用できる値 : `true` `false`
-  + 関連項目
-    + carpet / [player](./carpet.html#player)
-
-### fakePlayerAutoReplaceTool
-fake playerの使用しているツールがこわれたときに、同種のtoolに持ち変えるようにする。ただし耐久が少し残る等はない。
-  + 初期値 : `false`
-  + 使用できる値 : `true` `false`
-  + 関連項目
-    + carpet / [player](./carpet.html#player)
+    + [openFakePlayerEnderChest](#openfakeplayerenderchest)
