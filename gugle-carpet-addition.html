@@ -182,7 +182,7 @@
 <p><strong>carpetのaddonであるため、carpetが前提modとなる。</strong></p>
 <p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
-<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
+<p>以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
 <tr><td style="text-align: center">carpet</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center"><a href="./carpet.html">carpet</a></td></tr>
 <tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center"><a href="./carpet-TIS-addition.html">TIS</a></td></tr>
@@ -194,64 +194,47 @@
 <details>
 <summary>rules</summary>
 <ul>
-<li><a href="#openfakeplayerinventory">openFakePlayerInventory</a></li>
-<li><a href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
-<li><a href="#fakeplayerresident">fakePlayerResident</a></li>
-<li><a href="#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></li>
+<li><a href="#betterfancegateplacement">betterFanceGatePlacement</a></li>
+<li><a href="#betterquickcrafting">betterQuickCrafting</a></li>
+<li><a href="#bettersigninteraction">betterSignInteraction</a></li>
+<li><a href="#betterwoodstrip">betterWoodStrip</a></li>
 <li><a href="#fakeplayerautofish">fakePlayerAutoFish</a></li>
 <li><a href="#fakeplayerautoreplacetool">fakePlayerAutoReplaceTool</a></li>
+<li><a href="#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></li>
+<li><a href="#fakeplayerreloadaction">fakePlayerReloadAction</a></li>
+<li><a href="#fakeplayerresident">fakePlayerResident</a></li>
+<li><a href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
+<li><a href="#openfakeplayerinventory">openFakePlayerInventory</a></li>
 </ul>
 </details>
 <h2 id="rules"><a class="header" href="#rules">rules</a></h2>
 <p>全てのルールは<code>/carpet [rule] [value]</code>によって変更することができる。</p>
-<h3 id="openfakeplayerinventory"><a class="header" href="#openfakeplayerinventory">openFakePlayerInventory</a></h3>
-<p>fake playerを右クリックすることでそのプレイヤーのインベントリをGUIで表示・操作できるようにする。すなわちcarpetの<code>/player</code>などを介して一つずつ操作する必要をなくすことができる。</p>
+<h3 id="betterfancegateplacement"><a class="header" href="#betterfancegateplacement">betterFanceGatePlacement</a></h3>
+<p>フェンスゲートを置くときに見ているフェンスゲートとおなじstateになるように設置するようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
-<li>関連項目
-<ul>
-<li>carpet / <a href="./carpet.html#player">player</a></li>
-<li><a href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
 </ul>
-</li>
-</ul>
-<h3 id="openfakeplayerenderchest"><a class="header" href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></h3>
-<p>fake playerを右クリックすることでそのプレイヤーのエンダーチェストをGUIで表示・操作できるようにする。</p>
+<h3 id="betterquickcrafting"><a class="header" href="#betterquickcrafting">betterQuickCrafting</a></h3>
+<p>クイッククラフティングをするときインベントリにそのアイテムを残すようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
-<li>関連項目
-<ul>
-<li>carpet / <a href="./carpet.html#player">player</a></li>
-<li><a href="#openfakeplayerinventory">openFakePlayerInventory</a></li>
 </ul>
-</li>
-</ul>
-<h3 id="fakeplayerresident"><a class="header" href="#fakeplayerresident">fakePlayerResident</a></h3>
-<p>fake playerがサーバー再起動によっていなくなった時、次回起動時に自動でplayerを配置し、そのplayerが実行しているactionを再実行させる。ただし正しいtickで実行されるのではなく、もう一度コマンドをたたいているだけなので信用はできない。</p>
+<h3 id="bettersigninteraction"><a class="header" href="#bettersigninteraction">betterSignInteraction</a></h3>
+<p>看板についているブロックを右クリックするとインタラクトすることができるようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
-<li>関連項目
-<ul>
-<li>carpet / <a href="./carpet.html#player">player</a></li>
 </ul>
-</li>
-</ul>
-<h3 id="fakeplayerautoreplenishment"><a class="header" href="#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></h3>
-<p>fake playerがtweakerooの<code>tweakHandRestock</code>と同様の操作をできるようにする。</p>
+<h3 id="betterwoodstrip"><a class="header" href="#betterwoodstrip">betterWoodStrip</a></h3>
+<p><code>Strip</code>と名の付く斧のみが原木もしくは木の表皮を剥ぐことができるようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
-<li>関連項目
-<ul>
-<li>carpet / <a href="./carpet.html#player">player</a></li>
-</ul>
-</li>
 </ul>
 <h3 id="fakeplayerautofish"><a class="header" href="#fakeplayerautofish">fakePlayerAutoFish</a></h3>
-<p>fake playerが釣りでなにかを引き当てたときに自動で釣り上げ、もう一度糸を垂らすようにする。</p>
+<p>botが釣りでなにかを引き当てたときに自動で釣り上げ、もう一度糸を垂らすようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -262,13 +245,70 @@
 </li>
 </ul>
 <h3 id="fakeplayerautoreplacetool"><a class="header" href="#fakeplayerautoreplacetool">fakePlayerAutoReplaceTool</a></h3>
-<p>fake playerの使用しているツールがこわれたときに、同種のtoolに持ち変えるようにする。ただし耐久が少し残る等はない。</p>
+<p>botの使用しているツールがこわれかけているときに、同種のtoolに持ち変えるようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
 <li>carpet / <a href="./carpet.html#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerautoreplenishment"><a class="header" href="#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></h3>
+<p>botがtweakerooの<code>tweakHandRestock</code>と同様の操作をできるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerreloadaction"><a class="header" href="#fakeplayerreloadaction">fakePlayerReloadAction</a></h3>
+<p>botのアクションが再ログイン時にもう一度実行される。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerresident"><a class="header" href="#fakeplayerresident">fakePlayerResident</a></h3>
+<p>botがサーバー再起動によっていなくなった時、もう一度同じ座標にスポーンさせる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="openfakeplayerenderchest"><a class="header" href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></h3>
+<p>botを右クリックすることでそのプレイヤーのエンダーチェストをGUIで表示・操作できるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+<li><a href="#openfakeplayerinventory">openFakePlayerInventory</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="openfakeplayerinventory"><a class="header" href="#openfakeplayerinventory">openFakePlayerInventory</a></h3>
+<p>botを右クリックすることでそのプレイヤーのインベントリをGUIで表示・操作できるようにする。すなわちcarpetの<code>/player</code>などを介して一つずつ操作する必要をなくすことができる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+<li><a href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
 </ul>
 </li>
 </ul>

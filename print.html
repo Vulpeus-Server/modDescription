@@ -892,7 +892,7 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <p>version : carpet 1.4.1.12+v230608</p>
 <p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
-<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
+<p>以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
 <tr><td style="text-align: center">carpet</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center">here</td></tr>
 <tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: center"><a href="https://modrinth.com/mod./carpet-TIS-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods./carpet-TIS-addition">curseforge</a><br><a href="https://github.com/TISUnion./carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion./carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center"><a href="./carpet-TIS-addition.html">TIS</a></td></tr>
@@ -2504,7 +2504,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <p><strong>carpetのaddonであるため、carpetが前提modとなる。</strong></p>
 <p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
-<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
+<p>以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
 <tr><td style="text-align: center">carpet</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center"><a href="./carpet.html">carpet</a></td></tr>
 <tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center"><a href="./carpet-TIS-addition.html">TIS</a></td></tr>
@@ -2516,64 +2516,47 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <details>
 <summary>rules</summary>
 <ul>
-<li><a href="gugle-carpet-addition.html#openfakeplayerinventory">openFakePlayerInventory</a></li>
-<li><a href="gugle-carpet-addition.html#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
-<li><a href="gugle-carpet-addition.html#fakeplayerresident">fakePlayerResident</a></li>
-<li><a href="gugle-carpet-addition.html#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></li>
+<li><a href="gugle-carpet-addition.html#betterfancegateplacement">betterFanceGatePlacement</a></li>
+<li><a href="gugle-carpet-addition.html#betterquickcrafting">betterQuickCrafting</a></li>
+<li><a href="gugle-carpet-addition.html#bettersigninteraction">betterSignInteraction</a></li>
+<li><a href="gugle-carpet-addition.html#betterwoodstrip">betterWoodStrip</a></li>
 <li><a href="gugle-carpet-addition.html#fakeplayerautofish">fakePlayerAutoFish</a></li>
 <li><a href="gugle-carpet-addition.html#fakeplayerautoreplacetool">fakePlayerAutoReplaceTool</a></li>
+<li><a href="gugle-carpet-addition.html#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></li>
+<li><a href="gugle-carpet-addition.html#fakeplayerreloadaction">fakePlayerReloadAction</a></li>
+<li><a href="gugle-carpet-addition.html#fakeplayerresident">fakePlayerResident</a></li>
+<li><a href="gugle-carpet-addition.html#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
+<li><a href="gugle-carpet-addition.html#openfakeplayerinventory">openFakePlayerInventory</a></li>
 </ul>
 </details>
 <h2 id="rules-1"><a class="header" href="#rules-1">rules</a></h2>
 <p>全てのルールは<code>/carpet [rule] [value]</code>によって変更することができる。</p>
-<h3 id="openfakeplayerinventory"><a class="header" href="#openfakeplayerinventory">openFakePlayerInventory</a></h3>
-<p>fake playerを右クリックすることでそのプレイヤーのインベントリをGUIで表示・操作できるようにする。すなわちcarpetの<code>/player</code>などを介して一つずつ操作する必要をなくすことができる。</p>
+<h3 id="betterfancegateplacement"><a class="header" href="#betterfancegateplacement">betterFanceGatePlacement</a></h3>
+<p>フェンスゲートを置くときに見ているフェンスゲートとおなじstateになるように設置するようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
-<li>関連項目
-<ul>
-<li>carpet / <a href="./carpet.html#player">player</a></li>
-<li><a href="gugle-carpet-addition.html#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
 </ul>
-</li>
-</ul>
-<h3 id="openfakeplayerenderchest"><a class="header" href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></h3>
-<p>fake playerを右クリックすることでそのプレイヤーのエンダーチェストをGUIで表示・操作できるようにする。</p>
+<h3 id="betterquickcrafting"><a class="header" href="#betterquickcrafting">betterQuickCrafting</a></h3>
+<p>クイッククラフティングをするときインベントリにそのアイテムを残すようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
-<li>関連項目
-<ul>
-<li>carpet / <a href="./carpet.html#player">player</a></li>
-<li><a href="gugle-carpet-addition.html#openfakeplayerinventory">openFakePlayerInventory</a></li>
 </ul>
-</li>
-</ul>
-<h3 id="fakeplayerresident"><a class="header" href="#fakeplayerresident">fakePlayerResident</a></h3>
-<p>fake playerがサーバー再起動によっていなくなった時、次回起動時に自動でplayerを配置し、そのplayerが実行しているactionを再実行させる。ただし正しいtickで実行されるのではなく、もう一度コマンドをたたいているだけなので信用はできない。</p>
+<h3 id="bettersigninteraction"><a class="header" href="#bettersigninteraction">betterSignInteraction</a></h3>
+<p>看板についているブロックを右クリックするとインタラクトすることができるようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
-<li>関連項目
-<ul>
-<li>carpet / <a href="./carpet.html#player">player</a></li>
 </ul>
-</li>
-</ul>
-<h3 id="fakeplayerautoreplenishment"><a class="header" href="#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></h3>
-<p>fake playerがtweakerooの<code>tweakHandRestock</code>と同様の操作をできるようにする。</p>
+<h3 id="betterwoodstrip"><a class="header" href="#betterwoodstrip">betterWoodStrip</a></h3>
+<p><code>Strip</code>と名の付く斧のみが原木もしくは木の表皮を剥ぐことができるようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
-<li>関連項目
-<ul>
-<li>carpet / <a href="./carpet.html#player">player</a></li>
-</ul>
-</li>
 </ul>
 <h3 id="fakeplayerautofish"><a class="header" href="#fakeplayerautofish">fakePlayerAutoFish</a></h3>
-<p>fake playerが釣りでなにかを引き当てたときに自動で釣り上げ、もう一度糸を垂らすようにする。</p>
+<p>botが釣りでなにかを引き当てたときに自動で釣り上げ、もう一度糸を垂らすようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -2584,7 +2567,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 </li>
 </ul>
 <h3 id="fakeplayerautoreplacetool"><a class="header" href="#fakeplayerautoreplacetool">fakePlayerAutoReplaceTool</a></h3>
-<p>fake playerの使用しているツールがこわれたときに、同種のtoolに持ち変えるようにする。ただし耐久が少し残る等はない。</p>
+<p>botの使用しているツールがこわれかけているときに、同種のtoolに持ち変えるようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -2594,12 +2577,69 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 </ul>
 </li>
 </ul>
+<h3 id="fakeplayerautoreplenishment"><a class="header" href="#fakeplayerautoreplenishment">fakePlayerAutoReplenishment</a></h3>
+<p>botがtweakerooの<code>tweakHandRestock</code>と同様の操作をできるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerreloadaction"><a class="header" href="#fakeplayerreloadaction">fakePlayerReloadAction</a></h3>
+<p>botのアクションが再ログイン時にもう一度実行される。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayerresident"><a class="header" href="#fakeplayerresident">fakePlayerResident</a></h3>
+<p>botがサーバー再起動によっていなくなった時、もう一度同じ座標にスポーンさせる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="openfakeplayerenderchest"><a class="header" href="#openfakeplayerenderchest">openFakePlayerEnderChest</a></h3>
+<p>botを右クリックすることでそのプレイヤーのエンダーチェストをGUIで表示・操作できるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+<li><a href="gugle-carpet-addition.html#openfakeplayerinventory">openFakePlayerInventory</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="openfakeplayerinventory"><a class="header" href="#openfakeplayerinventory">openFakePlayerInventory</a></h3>
+<p>botを右クリックすることでそのプレイヤーのインベントリをGUIで表示・操作できるようにする。すなわちcarpetの<code>/player</code>などを介して一つずつ操作する必要をなくすことができる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+<li><a href="gugle-carpet-addition.html#openfakeplayerenderchest">openFakePlayerEnderChest</a></li>
+</ul>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="carpet-tis-addition"><a class="header" href="#carpet-tis-addition">carpet TIS addition</a></h1>
 <p>version : TIS 1.50.1</p>
 <p><strong>carpetのaddonであるため、carpetが前提modとなる。</strong></p>
 <p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
-<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
+<p>以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
 <tr><td style="text-align: center">carpet</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center"><a href="./carpet.html">carpet</a></td></tr>
 <tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center">here</td></tr>
@@ -4336,12 +4376,12 @@ unknown ticketはスパム判定をもらう可能性がある。
 </ul>
 <h3 id="script-1"><a class="header" href="#script-1">script</a></h3>
 <p>スクリプトについては<a href="https://github.com/TISUnion/Carpet-TIS-Addition/blob/master/docs/misc.md#scarpet">TIS/misc/script</a>を参照。<del>説明できる自信がない</del></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="carpet-extra"><a class="header" href="#carpet-extra">carpet extra</a></h1>
-<p>version : GCA 2.7.0</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="carpet-extra"><a class="header" href="#carpet-extra">carpet-extra</a></h1>
+<p>version :  1.20.1-1.4.115</p>
 <p><strong>carpetのaddonであるため、carpetが前提modとなる。</strong></p>
 <p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
-<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
+<p>以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
 <tr><td style="text-align: center">carpet</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center"><a href="./carpet.html">carpet</a></td></tr>
 <tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center"><a href="./carpet-TIS-addition.html">TIS</a></td></tr>
@@ -4474,7 +4514,7 @@ unknown ticketはスパム判定をもらう可能性がある。
 <h3 id="comparatorbetteritemframes"><a class="header" href="#comparatorbetteritemframes">comparatorBetterItemFrames</a></h3>
 <p>コンパレータは背面に置かれた床もしくは屋根に設置された額縁を読み取れるようにする。
 |value|挙動|
-|---|---|
+|:---:|:---|
 |vanilla|バニラ同様の動作|
 |behind|背面にある額縁を読み取る|
 |lenient|背面もしくはフルブロックを挟んだ背面にある額縁を読み取る|
@@ -4705,16 +4745,15 @@ unknown ticketはスパム判定をもらう可能性がある。
 </li>
 </ul>
 <h3 id="variablewooddelays"><a class="header" href="#variablewooddelays">variableWoodDelays</a></h3>
-<p>木製のボタンと感圧版は固有の時間長のロングパルスを発生させる。感圧版は<code>powered=true</code>になってからこのgt経過したときに上に乗っているかをチェックし、なにものっていなければ<code>powered=false</code>にする。</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: left">variant</th><th style="text-align: left">button delay(gt)</th><th style="text-align: left">pressure_plate delay(gt)</th></tr></thead><tbody>
-<tr><td style="text-align: left">birch</td><td style="text-align: left">1</td><td style="text-align: left">1</td></tr>
-<tr><td style="text-align: left">acacia</td><td style="text-align: left">5</td><td style="text-align: left">4</td></tr>
-<tr><td style="text-align: left">jungle</td><td style="text-align: left">15</td><td style="text-align: left">10</td></tr>
-<tr><td style="text-align: left">oak<br>mangrove<br>cherry<br>bamboo<br>crimson<br>warped</td><td style="text-align: left">30</td><td style="text-align: left">20</td></tr>
-<tr><td style="text-align: left">spruce</td><td style="text-align: left">45</td><td style="text-align: left">30</td></tr>
-<tr><td style="text-align: left">darkoak</td><td style="text-align: left">60</td><td style="text-align: left">40</td></tr>
-</tbody></table>
-</div>
+<p>木製のボタンと感圧版は固有の時間長のロングパルスを発生させる。感圧版は<code>powered=true</code>になってからこのgt経過したときに上に乗っているかをチェックし、なにものっていなければ<code>powered=false</code>にする。
+|variant|button delay(gt)|pressure_plate delay(gt)|
+|:---|:---|:---|
+|birch|1|1|
+|acacia|5|4|
+|jungle|15|10|
+|oak<br>mangrove<br>cherry<br>bamboo<br>crimson<br>warped|30|20|
+|spruce|45|30|
+|darkoak|60|40|</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>

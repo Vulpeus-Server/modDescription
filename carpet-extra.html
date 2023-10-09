@@ -177,12 +177,12 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="carpet-extra"><a class="header" href="#carpet-extra">carpet extra</a></h1>
-<p>version : GCA 2.7.0</p>
+                        <h1 id="carpet-extra"><a class="header" href="#carpet-extra">carpet-extra</a></h1>
+<p>version :  1.20.1-1.4.115</p>
 <p><strong>carpetのaddonであるため、carpetが前提modとなる。</strong></p>
 <p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
-<p>以下はcarpetおよびそのaddonで日本語ドキュメントが存在もしくは作られる予定のリストである。</p>
+<p>以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: center">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
 <tr><td style="text-align: center">carpet</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center"><a href="./carpet.html">carpet</a></td></tr>
 <tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: center"><a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center"><a href="./carpet-TIS-addition.html">TIS</a></td></tr>
@@ -315,7 +315,7 @@
 <h3 id="comparatorbetteritemframes"><a class="header" href="#comparatorbetteritemframes">comparatorBetterItemFrames</a></h3>
 <p>コンパレータは背面に置かれた床もしくは屋根に設置された額縁を読み取れるようにする。
 |value|挙動|
-|---|---|
+|:---:|:---|
 |vanilla|バニラ同様の動作|
 |behind|背面にある額縁を読み取る|
 |lenient|背面もしくはフルブロックを挟んだ背面にある額縁を読み取る|
@@ -546,16 +546,15 @@
 </li>
 </ul>
 <h3 id="variablewooddelays"><a class="header" href="#variablewooddelays">variableWoodDelays</a></h3>
-<p>木製のボタンと感圧版は固有の時間長のロングパルスを発生させる。感圧版は<code>powered=true</code>になってからこのgt経過したときに上に乗っているかをチェックし、なにものっていなければ<code>powered=false</code>にする。</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: left">variant</th><th style="text-align: left">button delay(gt)</th><th style="text-align: left">pressure_plate delay(gt)</th></tr></thead><tbody>
-<tr><td style="text-align: left">birch</td><td style="text-align: left">1</td><td style="text-align: left">1</td></tr>
-<tr><td style="text-align: left">acacia</td><td style="text-align: left">5</td><td style="text-align: left">4</td></tr>
-<tr><td style="text-align: left">jungle</td><td style="text-align: left">15</td><td style="text-align: left">10</td></tr>
-<tr><td style="text-align: left">oak<br>mangrove<br>cherry<br>bamboo<br>crimson<br>warped</td><td style="text-align: left">30</td><td style="text-align: left">20</td></tr>
-<tr><td style="text-align: left">spruce</td><td style="text-align: left">45</td><td style="text-align: left">30</td></tr>
-<tr><td style="text-align: left">darkoak</td><td style="text-align: left">60</td><td style="text-align: left">40</td></tr>
-</tbody></table>
-</div>
+<p>木製のボタンと感圧版は固有の時間長のロングパルスを発生させる。感圧版は<code>powered=true</code>になってからこのgt経過したときに上に乗っているかをチェックし、なにものっていなければ<code>powered=false</code>にする。
+|variant|button delay(gt)|pressure_plate delay(gt)|
+|:---|:---|:---|
+|birch|1|1|
+|acacia|5|4|
+|jungle|15|10|
+|oak<br>mangrove<br>cherry<br>bamboo<br>crimson<br>warped|30|20|
+|spruce|45|30|
+|darkoak|60|40|</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
