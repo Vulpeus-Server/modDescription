@@ -3,6 +3,9 @@ name: Deploy
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - .gitignore
+      - README.md
   pull_request:
     branches: [ main ]
   workflow_dispatch:
