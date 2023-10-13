@@ -13,3 +13,4 @@ Currently supports the following mods:
 - Carpet
 - GugleCarpetAddition
 - Carpet TIS Addition
+- Carpet Extra
