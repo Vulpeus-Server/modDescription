@@ -1,7 +1,9 @@
 # carpet-extra
 
-version :  1.20.1-1.4.115
-
+version : 1.20.1-1.4.115
+<!--
+version : v1.0.0
+-->
 **carpetのaddonであるため、carpetが前提modとなる。**
 
 このドキュメント内では`[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
@@ -10,11 +12,13 @@ version :  1.20.1-1.4.115
 以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。
 
 |mod|download|document|docs-JP|
-|:---:|:---:|:---:|:---:|
+|:---:|:---|:---:|:---:|
 |carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|[carpet](./carpet.html)|
 |carpet TIS addition|[modrinth](https://modrinth.com/mod/carpet-tis-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition)<br>[github](https://github.com/TISUnion/Carpet-TIS-Addition)|[docs](https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs)|[TIS](./carpet-TIS-addition.html)|
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)|here|
 |gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|[GCA](./gugle-carpet-addition.html)|
+|Carpet-Fixes|[modrinth](https://modrinth.com/mod/carpet-fixes)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-fixes)❌<br>[github](https://github.com/fxmorin/carpet-fixes)||CF|
+|intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)||intri|
 
 
 
@@ -74,6 +78,14 @@ version :  1.20.1-1.4.115
 <summary>command</summary>
 
 + [ping](#ping)
+</details>
+<details>
+<summary>update-logs</summary>
+
++ [latest](#latest)<br>
+  version : `v1.0.0`<br>
+  extra : `1.20.1-1.4.115`
++ [previous](#previous)
 </details>
 
 ## rules
@@ -163,7 +175,6 @@ F3デバッグモードがいくつかのブロックでアップデートを起
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### dispensersPlaceBoatsOnIce
-Dispensers can place boats on ice
 ディスペンサーは正面のブロックがairでその一つ下のブロックに氷があり、ボートが抽選された場合ボートを設置するようにする。
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
@@ -275,6 +286,7 @@ BEのようにピストンと粘着ピストンがレッドストーンダスト
 	+ [creeperSpawningInJungleTemples](#creeperspawninginjungletemples)
 ### variableWoodDelays
 木製のボタンと感圧版は固有の時間長のロングパルスを発生させる。感圧版は`powered=true`になってからこのgt経過したときに上に乗っているかをチェックし、なにものっていなければ`powered=false`にする。
+
 |variant|button delay(gt)|pressure_plate delay(gt)|
 |:---|:---|:---|
 |birch|1|1|
@@ -283,6 +295,7 @@ BEのようにピストンと粘着ピストンがレッドストーンダスト
 |oak<br>mangrove<br>cherry<br>bamboo<br>crimson<br>warped|30|20|
 |spruce|45|30|
 |darkoak|60|40|
+
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### xpPerSculkCatalyst
@@ -301,3 +314,25 @@ y0もしくはy-64の岩盤をドラゴンの卵で破壊できるようにす�
 `/ping`でサーバーにpingを送信する。現在のpingが表示される。
 + 関連項目
 	+ [commandPing](#commandping)
+
+## update-logs
+### latest
++ version : `v1.0.0`<br>
++ extra : `1.4.115`
++ 変更点
+  + 誤字の訂正
++ 更新日<br>
+  `23/10/16 UTC+9`
+### previous
+<details>
+<summary>previous</summary>
+<details>
+<summary><code>v0.0.0</code></summary>
+
++ extra : `1.4.115`
++ 変更点
+  + ドキュメントの作成
++ 更新日<br>
+  `2023/10/16 UTC+9`
+</details>
+</details>

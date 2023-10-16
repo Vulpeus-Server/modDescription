@@ -1,7 +1,9 @@
 # gugle-carpet-addition
 
 version : GCA 2.7.0
-
+<!--
+version : v1.0.0
+-->
 **carpetのaddonであるため、carpetが前提modとなる。**
 
 このドキュメント内では`[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
@@ -10,11 +12,13 @@ version : GCA 2.7.0
 以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。
 
 |mod|download|document|docs-JP|
-|:---:|:---:|:---:|:---:|
+|:---:|:---|:---:|:---:|
 |carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|[carpet](./carpet.html)|
 |carpet TIS addition|[modrinth](https://modrinth.com/mod/carpet-tis-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition)<br>[github](https://github.com/TISUnion/Carpet-TIS-Addition)|[docs](https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs)|[TIS](./carpet-TIS-addition.html)|
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)|[extra](./carpet-extra.html)|
 |gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|here|
+|Carpet-Fixes|[modrinth](https://modrinth.com/mod/carpet-fixes)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-fixes)❌<br>[github](https://github.com/fxmorin/carpet-fixes)||CF|
+|intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)||intri|
 
 
 
@@ -33,6 +37,14 @@ version : GCA 2.7.0
 + [fakePlayerResident](#fakeplayerresident)
 + [openFakePlayerEnderChest](#openfakeplayerenderchest)
 + [openFakePlayerInventory](#openfakeplayerinventory)
+</details>
+<details>
+<summary>update-logs</summary>
+
++ [latest](#latest)<br>
+  version : `v1.0.0`<br>
+  GCA : `2.7.0`
++ [previous](#previous)
 </details>
 
 ## rules
@@ -97,3 +109,25 @@ botを右クリックすることでそのプレイヤーのインベントリ�
   + 関連項目
     + carpet / [player](./carpet.html#player)
     + [openFakePlayerEnderChest](#openfakeplayerenderchest)
+
+## update-logs
+### latest
++ version : `v1.0.0`<br>
++ GCA : `2.7.0`
++ 変更点
+  + 誤字の訂正
++ 更新日<br>
+  `23/10/16 UTC+9`
+### previous
+<details>
+<summary>previous</summary>
+<details>
+<summary><code>v0.0.0</code></summary>
+
++ GCA : `2.7.0`
++ 変更点
+  + ドキュメントの作成
++ 更新日<br>
+  `2023/10/16 UTC+9`
+</details>
+</details>

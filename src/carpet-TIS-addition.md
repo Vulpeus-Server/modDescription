@@ -1,6 +1,8 @@
 # carpet TIS addition
 version : TIS 1.50.1
-
+<!--
+version : v1.0.0
+-->
 **carpetのaddonであるため、carpetが前提modとなる。**
 
 このドキュメント内では`[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
@@ -9,11 +11,13 @@ version : TIS 1.50.1
 以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。
 
 |mod|download|document|docs-JP|
-|:---:|:---:|:---:|:---:|
+|:---:|:---|:---:|:---:|
 |carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|[carpet](./carpet.html)|
 |carpet TIS addition|[modrinth](https://modrinth.com/mod/carpet-tis-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition)<br>[github](https://github.com/TISUnion/Carpet-TIS-Addition)|[docs](https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs)|here|
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)|[extra](./carpet-extra.html)|
 |gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|[GCA](./gugle-carpet-addition.html)|
+|Carpet-Fixes|[modrinth](https://modrinth.com/mod/carpet-fixes)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-fixes)❌<br>[github](https://github.com/fxmorin/carpet-fixes)||CF|
+|intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)||intri|
 
 
 
@@ -139,7 +143,14 @@ version : TIS 1.50.1
   + [spawn](#spawn)
   + [tick](#tick)
 </details>
+<details>
+<summary>update-logs</summary>
 
++ [latest](#latest)<br>
+  version : `v1.0.0`<br>
+  TIS : `1.50.1`
++ [previous](#previous)
+</details>
 
 ## general
 これらはすべて設定などはなく、導入した時点ですべて適用される。
@@ -1206,3 +1217,25 @@ carpetの[tick](./carpet.html#tick)の`warp`に`status`を追加する。
 + carpet / [tick](./carpet.html#tick)
 ### script
 スクリプトについては[TIS/misc/script](https://github.com/TISUnion/Carpet-TIS-Addition/blob/master/docs/misc.md#scarpet)を参照。~~説明できる自信がない~~
+
+## update-logs
+### latest
++ version : `v1.0.0`
++ TIS : `1.50.1`
++ 変更点
+  + 誤字の訂正
++ 更新日<br>
+  `23/10/16 UTC+9`
+### previous
+<details>
+<summary>previous</summary>
+<details>
+<summary><code>v0.0.0</code></summary>
+
++ TIS : `1.50.1`
++ 変更点
+  + ドキュメントの作成
++ 更新日<br>
+  `2023/10/16 UTC+9`
+</details>
+</details>

@@ -1,5 +1,8 @@
 # carpet
 version : carpet 1.4.1.12+v230608
+<!--
+version : v1.0.0 - 1.4.1.12+v230608
+-->
 
 このドキュメント内では`[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。
@@ -7,149 +10,154 @@ version : carpet 1.4.1.12+v230608
 以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。
 
 |mod|download|document|docs-JP|
-|:---:|:---:|:---:|:---:|
+|:---:|:---|:---:|:---:|
 |carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|here|
 |carpet TIS addition|[modrinth](https://modrinth.com/mod./carpet-TIS-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods./carpet-TIS-addition)<br>[github](https://github.com/TISUnion./carpet-TIS-Addition)|[docs](https://github.com/TISUnion./carpet-TIS-Addition/tree/master/docs)|[TIS](./carpet-TIS-addition.html)|
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)|[extra](./carpet-extra.html)|
 |gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|[GCA](./gugle-carpet-addition.html)|
-
-
+|Carpet-Fixes|[modrinth](https://modrinth.com/mod/carpet-fixes)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-fixes)❌<br>[github](https://github.com/fxmorin/carpet-fixes)||CF|
+|intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)||intri|
 
 ## 目次
 <details>
-  <summary>general</summary>
+<summary>general</summary>
 
-  + [carpet](#carpet-1)
++ [carpet](#carpet-1)
 </details>
-
 <details>
-  <summary>rules</summary>
+<summary>rules</summary>
 
-  + [allowSpawningOfflinePlayers](#allowspawningofflineplayers)
-  + [antiCheatDisabled](#anticheatdisabled)
-  + [carpetCommandPermissionLevel](#carpetcommandpermissionlevel)
-  + [carpets](#carpets)
-  + [chainStone](#chainstone)
-  + [cleanLog](#cleanlog)
-  + [commandDistance](#commanddistance)
-  + [commandDraw](#commandDraw)
-  + [commandInfo](#commandInfo)
-  + [commandLog](#commandLog)
-  + [commandPerimeterInfo](#commandperimeterinfo)
-  + [commandPlayer](#commandplayer)
-  + [commandProfile](#commandprofile)
-  + [commandScript](#commandscript)
-  + [commandScriptACE](#commandscriptace)
-  + [commandSpawn](#commandspawn)
-  + [commandTick](#commandtick)
-  + [commandTrackingAI](#commandtrackingai)
-  + [creativeFlyDrag](#creativeflydrag)
-  + [creativeFlySpeed](#creativeflyspeed)
-  + [creativeNoClip](#creativenoclip)
-  + [creativePlayersLoadChunks](#creativeplayersloadchunks)
-  + [ctrlQCraftingFix](#ctrlqcraftingfix)
-  + [customMOTD](#custommotd)
-  + [defaultLoggers](#defaultloggers)
-  + [desertShrubs](#desertshrubs)
-  + [explosionNoBlockDamage](#explosionnoblockdamage)
-  + [fastRedstoneDust](#fastredstonedust)
-  + [fillLimit](#filllimit)
-  + [fillUpdates](#fillupdates)
-  + [flippinCactus](#flippincactus)
-  + [fogOff](#fogoff)
-  + [forceloadLimit](#forceloadlimit)
-  + [hardcodeTNTangle](#hardcodetntangle)
-  + [hopperCounters](#hoppercounters)
-  + [huskSpawningInTemples](#huskspawningintemples)
-  + [interactionUpdates](#interactionupdates)
-  + [lagFreeSpawning](#lagfreespawning)
-  + [lightningKillsDropsFix](#lightningkillsdropsfix)
-  + [liquidDamageDisabled](#liquiddamagedisabled)
-  + [maxEntityCollisions](#maxentitycollisions)
-  + [mergeTNT](#mergetnt)
-  + [missingTools](#missingtools)
-  + [moreBlueSkulls](#moreblueskulls)
-  + [movableAmethyst](#movableamethyst)
-  + [movableBlockEntities](#movableblockentities)
-  + [optimizedTNT](#optimizedtnt)
-  + [perfPermissionLevel](#perfpermissionlevel)
-  + [persistentParrots](#persistentparrots)
-  + [piglinsSpawningInBastions](#piglinsspawninginbastions)
-  + [pingPlayerListLimit](#pingplayerlistlimit)
-  + [placementRotationFix](#placementrotationfix)
-  + [portalCreativeDelay](#portalcreativedelay)
-  + [portalSurvivalDelay](#portalsurvivaldelay)
-  + [pushLimit](#pushlimit)
-  + [quasiConnectivity](#quasiconnectivity)
-  + [railPowerLimit](#railpowerlimit)
-  + [renewableBlackstone](#renewableblackstone)
-  + [renewableCoral](#renewablecoral)
-  + [renewableDeepslate](#renewabledeepslate)
-  + [renewableSponges](#renewablesponges)
-  + [rotatorBlock](#rotatorblock)
-  + [scriptsAppStore](#scriptsappstore)
-  + [scriptsAutoload](#scriptsautoload)
-  + [scriptsDebugging](#scriptsdebugging)
-  + [scriptsOptimization](#scriptsoptimization)
-  + [sculkSensorRange](#sculksensorrange)
-  + [shulkerSpawningInEndCities](#shulkerspawninginendcities)
-  + [silverFishDropGravel](#silverfishdropgravel)
-  + [simulationDistance](#simulationdistance)
-  + [smoothClientAnimations](#smoothclientanimations)
-  + [spawnChunksSize](#spawnchunkssize)
-  + [stackableShulkerBoxes](#stackableshulkerboxes)
-  + [structureBlockIgnored](#structureblockignored)
-  + [structureBlockLimit](#structureblocklimit)
-  + [structureBlockOutlineDistance](#structureblockoutlinedistance)
-  + [summonNaturalLightning](#summonnaturallightning)
-  + [superSecretSetting](#supersecretsetting)
-  + [thickFungusGrowth](#thickfungusgrowth)
-  + [tickSyncedWorldBorders](#ticksyncedworldborders)
-  + [tntDoNotUpdate](#tntdonotupdate)
-  + [tntPrimerMomentumRemoved](#tntprimermomentumremoved)
-  + [tntRandomRange](#tntrandomrange)
-  + [updateSuppressionBlock](#updatesuppressionblock)
-  + [viewDistance](#viewdistance)
-  + [xpFromExplosions](#xpfromexplosions)
-  + [xpNoCooldown](#xpnocooldown)
++ [allowSpawningOfflinePlayers](#allowspawningofflineplayers)
++ [antiCheatDisabled](#anticheatdisabled)
++ [carpetCommandPermissionLevel](#carpetcommandpermissionlevel)
++ [carpets](#carpets)
++ [chainStone](#chainstone)
++ [cleanLog](#cleanlog)
++ [commandDistance](#commanddistance)
++ [commandDraw](#commandDraw)
++ [commandInfo](#commandInfo)
++ [commandLog](#commandLog)
++ [commandPerimeterInfo](#commandperimeterinfo)
++ [commandPlayer](#commandplayer)
++ [commandProfile](#commandprofile)
++ [commandScript](#commandscript)
++ [commandScriptACE](#commandscriptace)
++ [commandSpawn](#commandspawn)
++ [commandTick](#commandtick)
++ [commandTrackingAI](#commandtrackingai)
++ [creativeFlyDrag](#creativeflydrag)
++ [creativeFlySpeed](#creativeflyspeed)
++ [creativeNoClip](#creativenoclip)
++ [creativePlayersLoadChunks](#creativeplayersloadchunks)
++ [ctrlQCraftingFix](#ctrlqcraftingfix)
++ [customMOTD](#custommotd)
++ [defaultLoggers](#defaultloggers)
++ [desertShrubs](#desertshrubs)
++ [explosionNoBlockDamage](#explosionnoblockdamage)
++ [fastRedstoneDust](#fastredstonedust)
++ [fillLimit](#filllimit)
++ [fillUpdates](#fillupdates)
++ [flippinCactus](#flippincactus)
++ [fogOff](#fogoff)
++ [forceloadLimit](#forceloadlimit)
++ [hardcodeTNTangle](#hardcodetntangle)
++ [hopperCounters](#hoppercounters)
++ [huskSpawningInTemples](#huskspawningintemples)
++ [interactionUpdates](#interactionupdates)
++ [lagFreeSpawning](#lagfreespawning)
++ [lightningKillsDropsFix](#lightningkillsdropsfix)
++ [liquidDamageDisabled](#liquiddamagedisabled)
++ [maxEntityCollisions](#maxentitycollisions)
++ [mergeTNT](#mergetnt)
++ [missingTools](#missingtools)
++ [moreBlueSkulls](#moreblueskulls)
++ [movableAmethyst](#movableamethyst)
++ [movableBlockEntities](#movableblockentities)
++ [optimizedTNT](#optimizedtnt)
++ [perfPermissionLevel](#perfpermissionlevel)
++ [persistentParrots](#persistentparrots)
++ [piglinsSpawningInBastions](#piglinsspawninginbastions)
++ [pingPlayerListLimit](#pingplayerlistlimit)
++ [placementRotationFix](#placementrotationfix)
++ [portalCreativeDelay](#portalcreativedelay)
++ [portalSurvivalDelay](#portalsurvivaldelay)
++ [pushLimit](#pushlimit)
++ [quasiConnectivity](#quasiconnectivity)
++ [railPowerLimit](#railpowerlimit)
++ [renewableBlackstone](#renewableblackstone)
++ [renewableCoral](#renewablecoral)
++ [renewableDeepslate](#renewabledeepslate)
++ [renewableSponges](#renewablesponges)
++ [rotatorBlock](#rotatorblock)
++ [scriptsAppStore](#scriptsappstore)
++ [scriptsAutoload](#scriptsautoload)
++ [scriptsDebugging](#scriptsdebugging)
++ [scriptsOptimization](#scriptsoptimization)
++ [sculkSensorRange](#sculksensorrange)
++ [shulkerSpawningInEndCities](#shulkerspawninginendcities)
++ [silverFishDropGravel](#silverfishdropgravel)
++ [simulationDistance](#simulationdistance)
++ [smoothClientAnimations](#smoothclientanimations)
++ [spawnChunksSize](#spawnchunkssize)
++ [stackableShulkerBoxes](#stackableshulkerboxes)
++ [structureBlockIgnored](#structureblockignored)
++ [structureBlockLimit](#structureblocklimit)
++ [structureBlockOutlineDistance](#structureblockoutlinedistance)
++ [summonNaturalLightning](#summonnaturallightning)
++ [superSecretSetting](#supersecretsetting)
++ [thickFungusGrowth](#thickfungusgrowth)
++ [tickSyncedWorldBorders](#ticksyncedworldborders)
++ [tntDoNotUpdate](#tntdonotupdate)
++ [tntPrimerMomentumRemoved](#tntprimermomentumremoved)
++ [tntRandomRange](#tntrandomrange)
++ [updateSuppressionBlock](#updatesuppressionblock)
++ [viewDistance](#viewdistance)
++ [xpFromExplosions](#xpfromexplosions)
++ [xpNoCooldown](#xpnocooldown)
 </details>
-
 <details>
 <summary>command</summary>
 
-  + [counter](#counter)
-  + [distance](#distance)
-  + [draw](#draw)
-  + [info](#info)
-  + [log](#log)
-  + [perimeterInfo](#perimeterinfo)
-  + [profile](#profile)
-  + [player](#player)
-  + [script](#script)
-  + [spawn](#spawn)
-  + [tick](#tick)
-  + [track](#track)
++ [counter](#counter)
++ [distance](#distance)
++ [draw](#draw)
++ [info](#info)
++ [log](#log)
++ [perimeterInfo](#perimeterinfo)
++ [profile](#profile)
++ [player](#player)
++ [script](#script)
++ [spawn](#spawn)
++ [tick](#tick)
++ [track](#track)
 
 </details>
+<details>
+<summary>update-logs</summary>
 
++ [latest](#latest)<br>
+  version : `v1.0.0`<br>
+  carpet : `1.4.1.12+v230608`
++ [previous](#previous)
+</details>
 
 ## general
 ### carpet
-  + `/carpet`<br>
-    現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。
-  + `/carpet list <category>`<br>
-    利用できるcarpet ruleを**すべて**表示する。`<category>`を指定した場合、紐づけられたruleを表示する。
-  + `/carpet list default`<br>
-    `carpet.conf`に記録されているルールを表示する。
-  + `/carpet setDefault [rule] [value]`<br>
-    `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。
-    <div class="md-note">
++ `/carpet`<br>
+  現在変更されているcarpetの設定、導入されているcarpetのバージョン、カテゴリーを表示する。
++ `/carpet list <category>`<br>
+  利用できるcarpet ruleを**すべて**表示する。`<category>`を指定した場合、紐づけられたruleを表示する。
++ `/carpet list default`<br>
+  `carpet.conf`に記録されているルールを表示する。
++ `/carpet setDefault [rule] [value]`<br>
+  `[rule]`で指定したcarpet ruleのデフォルトの値を`[value]`で指定した値にする。
+  <div class="md-note">
 
-    `/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる<code><font color=aqua>change permanently?</font></code>を右クリックすることでその値がすでに入力されたコマンドが準備される。
-    </div>
+  `/carpet [rule] [value]`を使用し値が正常に変更された場合、通知とともにそえられる<code><font color=aqua>change permanently?</font></code>を右クリックすることでその値がすでに入力されたコマンドが準備される。
+  </div>
 
-  + `/carpet removeDefault <rule>`<br>
-    `[rule]`で指定したcarpet ruleのデフォルトの値を`carpet.conf`から削除し、初期値にする。
++ `/carpet removeDefault <rule>`<br>
+  `[rule]`で指定したcarpet ruleのデフォルトの値を`carpet.conf`から削除し、初期値にする。
 
 ## rules
 全てのルールは`/carpet [rule] <value>`によって変更することができる。
@@ -332,6 +340,10 @@ version : carpet 1.4.1.12+v230608
   + 関連項目
     + [interactionUpdates](#interactionupdates)
     + TIS / [totallyNoBlockUpdate](./carpet-TIS-addition.html#totallynoblockupdate)
+<div class="md-note">
+WorldEditによる変更については<code>//perf neighbors off</code>によって可能。ただしこれはクライアント側であり、再ログインによってリセットされる。
+</div>
+
 ### flippinCactus
   サボテンをメインハンドに持っている時、ホッパーやオブザーバーなど、方向をもつブロックの一部を右クリックするとその方向をupdateなしで回転もしくは反転できるようにする。
   + 初期値 : `false`
@@ -1096,7 +1108,8 @@ WorldEditのように複数をランダムに指定することはできない�
   + `warp`
 + 関連項目
   + [commandTick](#commandtick)
-  + TIS / [tick](./carpet.html#tick)
+  + TIS / [tick](./carpet-TIS-addition.html#tick)
+  + TIS / [log](./carpet-TIS-addition.html#log)
 
 <details>
   <summary>action</summary>
@@ -1128,9 +1141,36 @@ WorldEditのように複数をランダムに指定することはできない�
   </div>
 
 + warp<br>
-  `/tick warp [count]`で最適化をしたうえでできるだけ最速で`[count]`の時間分だけゲームを早送りしようとする。
+  `/tick warp <count>`で最適化をしたうえでできるだけ最速で`<count>`の時間分だけゲームを早送りしようとする。`<count>`を指定しないもしくは`0`にした場合、無制限にwarpする。
+  <div class="md-note">
+  すでにwarpしている場合、そのwarpを上書きする。
+  </div>
 
 </details>
 
 ### track
 `/track [entity_type] [tracker]`で実行可能。ただしscriptなしでは`[entity_type]`はvillagerのみとなっている。`[tracker]`によって表示するtracking情報はことなるが多いので割愛。
+
+## update-logs
+### latest
++ version : `v1.0.0`<br>
++ carpet : `1.4.1.12+v230608`
++ 変更点
+  + 誤字の訂正
+  + `/tick`の`warp`に関する情報の修正
++ 更新日<br>
+  `23/10/16 UTC+9`
+### previous
+<details>
+<summary>previous</summary>
+<details>
+<summary><code>v0.0.0</code></summary>
+
++ carpet : `1.4.1.12+v230608`
++ 変更点
+  + ドキュメントの作成
++ 更新日<br>
+  `2023/10/16 UTC+9`
+</details>
+</details>
+
