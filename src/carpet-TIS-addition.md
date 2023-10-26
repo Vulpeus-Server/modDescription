@@ -19,7 +19,7 @@ TIS : `1.51.0`
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)|[extra](./carpet-extra.html)|
 |gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|[GCA](./gugle-carpet-addition.html)|
 |Carpet-Fixes|[modrinth](https://modrinth.com/mod/carpet-fixes)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-fixes)*<br>[github](https://github.com/fxmorin/carpet-fixes)|[docs](https://github.com/fxmorin/carpet-fixes/wiki/Available-Settings)|CF|
-|intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)|[docs](https://github.com/lntricate1/intricarpet#features)|[intri](./Intricarpet.html)|
+|intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)|[docs](https://github.com/lntricate1/intricarpet#features)|[intri](./intricarpet.html)|
 |subtick|[modrinth](https://modrinth.com/mod/subtick)<br>[github](https://github.com/chiraagChakravarthy/SubTick)|[docs](https://github.com/chiraagChakravarthy/SubTick#commands)|ST|
 
 \* そのサイトでは今後更新がされない

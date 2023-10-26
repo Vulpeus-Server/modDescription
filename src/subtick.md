@@ -1,7 +1,7 @@
 <!--
 version : v1.0.0
 -->
-# Intricarpet
+# SubTick
 minecraft : `1.20.1`<br>
 extra : `1.4.115`
 
@@ -19,8 +19,8 @@ extra : `1.4.115`
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)|[extra](./carpet-extra.html)|
 |gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|[GCA](./gugle-carpet-addition.html)|
 |Carpet-Fixes|[modrinth](https://modrinth.com/mod/carpet-fixes)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-fixes)*<br>[github](https://github.com/fxmorin/carpet-fixes)|[docs](https://github.com/fxmorin/carpet-fixes/wiki/Available-Settings)|CF|
-|intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)|[docs](https://github.com/lntricate1/intricarpet#features)|here|
-|subtick|[modrinth](https://modrinth.com/mod/subtick)<br>[github](https://github.com/chiraagChakravarthy/SubTick)|[docs](https://github.com/chiraagChakravarthy/SubTick#commands)|ST|
+|intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)|[docs](https://github.com/lntricate1/intricarpet#features)|[intri](./Intricarpet.html)|
+|subtick|[modrinth](https://modrinth.com/mod/subtick)<br>[github](https://github.com/chiraagChakravarthy/SubTick)|[docs](https://github.com/chiraagChakravarthy/SubTick#commands)|here|
 
 \* そのサイトでは今後更新がされない
 
@@ -56,35 +56,21 @@ extra : `1.4.115`
     + [interaction](#interaction)
 
 ## command
-### interaction
-`/interaction <interaction> <true | false>`でそれぞれのクライアントからサーバーへの各interactionの送信の可否を切り替えることができる。`<interaction>`を指定しなかった場合、現在の設定を表示する。クライアント事に決めることができる。また、`<true | false>`を指定しなかった場合そのinteractionの設定を表示する。
-<details>
-<summary>interaction</summary>
-
-+ `blocks`<br>
-  トリップワイヤーや感圧版の検知、耕地の踏み荒らしなどのブロックの変更をするものを変更する。
-+ `chunkloading`<br>
-  テレポートチケットを含むすべてのプレイヤーのチャンクの読み込みを変更する。
-+ `entities`<br>
-  他のプレイヤーを含むすべてのエンティティが自身に対して無視するように変更する。
-+ `mobSpawning`<br>
-  スポーンエッグを除くそのプレイヤーからのmobのスポーンを変更する。ただしmobcapsには影響を与えない。
-+ `randomTicks`<br>
-  そのプレイヤーからのrandom tickを変更する。
-+ `updates`<br>
-  全てのプレイヤーがワールドに与えるべきupdateを変更する。
-</details>
-
-+ 関連項目
-	+ [commandInteraction](#commandinteraction)
-  + carpet / [creativeNoClip](./carpet.html#crativenoclip)
-  + carpet / [creativePlayersLoadChunks](./carpet.html#creativeplayerloadchunks)
-  + TIS / [totallyNoBlockUpdate](./carpet-TIS-addition.html#totallynoblockupdate)
-
-### log
-carpetの`/log explosion`に`compact`を追加する。複数のtntが同じtickで爆発するとき、その爆発する座標でグルーピングするようにする。
-+ 関連項目
-  + carpet / [log](./carpet.html#log)
+### tick
+carpetの`/tick`の`freeze`もしくは`step`に対してどこで止めるか、どれだけ進めるかのより深い位置指定が可能になる。それぞれに対して`[phase]`等で指定することでその位置を指定できる。`phase`および`range`のデフォルトはそれぞれのruleで指定されたものを使用する。
++ freeze
+  + phase<br>
+    `/tick freeze [phase]`でそのフェーズの直前でfreezeもしくはunfreezeする。
++ step
+  + phase
+    `/tick step [count] [phase]`でそのフェーズの直前までstepさせる。`count`を`0`とすることでphase内でstepさせることができる。
+    
+tick step [count=1] [phase=subtickDefaultPhase]: Steps count ticks, ending right before phase. Supports tick step 0 [phase] to step to a later phase in the same tick.
+phaseStep [count=1]: Steps the count phases forward, stepping to the next tick if necessary.
+phaseStep [phase]: Steps to phase, within the current tick.
+phaseStep [phase] force: Steps to the next phase stepping to the next tick if necessary.
+queueStep <queue> [count=1] [range=subtickDefaultRange]: Steps through count elements in queue in range range, within the current tick. Set range to -1 for unlimited range.
+queueStep <queue> [count=1] [range=subtickDefaultRange] force: Steps through count elements in queue in range range, stepping to the next tick if necessary. Set range to -1 for unlimited range.
 
 ## update-logs
 ### latest
