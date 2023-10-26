@@ -1,8 +1,10 @@
-# carpet
-version : carpet 1.4.1.12+v230608
 <!--
-version : v1.0.0 - 1.4.1.12+v230608
+version : v1.0.1
 -->
+# carpet
+minecraft : `1.20.1`<br>
+carpet : `1.4.112+v230608`
+
 
 このドキュメント内では`[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。
@@ -15,8 +17,11 @@ version : v1.0.0 - 1.4.1.12+v230608
 |carpet TIS addition|[modrinth](https://modrinth.com/mod./carpet-TIS-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods./carpet-TIS-addition)<br>[github](https://github.com/TISUnion./carpet-TIS-Addition)|[docs](https://github.com/TISUnion./carpet-TIS-Addition/tree/master/docs)|[TIS](./carpet-TIS-addition.html)|
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)|[extra](./carpet-extra.html)|
 |gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|[GCA](./gugle-carpet-addition.html)|
-|Carpet-Fixes|[modrinth](https://modrinth.com/mod/carpet-fixes)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-fixes)❌<br>[github](https://github.com/fxmorin/carpet-fixes)||CF|
-|intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)||intri|
+|Carpet-Fixes|[modrinth](https://modrinth.com/mod/carpet-fixes)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-fixes)*<br>[github](https://github.com/fxmorin/carpet-fixes)|[docs](https://github.com/fxmorin/carpet-fixes/wiki/Available-Settings)|CF|
+|intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)|[docs](https://github.com/lntricate1/intricarpet#features)|[intri](./Intricarpet.html)|
+|subtick|[modrinth](https://modrinth.com/mod/subtick)<br>[github](https://github.com/chiraagChakravarthy/SubTick)|[docs](https://github.com/chiraagChakravarthy/SubTick#commands)|ST|
+
+\* そのサイトでは今後更新がされない
 
 ## 目次
 <details>
@@ -136,8 +141,9 @@ version : v1.0.0 - 1.4.1.12+v230608
 <summary>update-logs</summary>
 
 + [latest](#latest)<br>
-  version : `v1.0.0`<br>
-  carpet : `1.4.1.12+v230608`
+  version : `v1.0.1`<br>
+  minecraft : `1.20.1`<br>
+  carpet : `1.4.112+v230608`
 + [previous](#previous)
 </details>
 
@@ -1119,7 +1125,7 @@ WorldEditのように複数をランダムに指定することはできない�
 + freeze<br>
   `/tick freeze <true | false | deep | status>`でゲームの進行を停止もしくは再開させる。
   + `<true | false | deep | status>`<br>
-    指定しなかった場合、`true`と`false`のトグルになる。
+    指定しなかった場合、`true`と`false`のトグルになる。warp中であってもfreezeする。
     + `true`<br>
       現在の状態がどうれあれ、ゲームの進行を停止させる。
     + `false`<br>
@@ -1141,32 +1147,66 @@ WorldEditのように複数をランダムに指定することはできない�
   </div>
 
 + warp<br>
-  `/tick warp <count>`で最適化をしたうえでできるだけ最速で`<count>`の時間分だけゲームを早送りしようとする。`<count>`を指定しないもしくは`0`にした場合、無制限にwarpする。
+  `/tick warp <count> <tail command>`で最適化をしたうえでできるだけ最速で`<count>`の時間分だけゲームを早送りしようとする。`<count>`を指定しないもしくは`0`にした場合、無制限にwarpする。すでにwarpしている場合そのwarpを終了させる。
+
+  また、warp実行中に`/tick warp status`によって以下のことが確認できる。
+  <details>
+  <summary>表示される情報</summary>
+
+  + 実行者
+  + 平均tps
+  + 平均mspt
+  + ゲーム内経過時間/実経過時間
+  + 推定ゲーム内残り時間/推定実残り時間
+  + プログレスバー
+  </details>
+  
+  `<tail command>`を通常のコマンド形式で入力することでwarpすべきtickが終了した時にそのコマンドを実行する。warp実行者に対して`/execute as @s`として実行される。
+  <details>
+  <summary>例</summary>
+
+  MCID`test`が`/tick warp 3600 say warp finished`とすることで3600gt後に`/execute as test run say warp finished`が実行される。
+
+  </details>
   <div class="md-note">
   すでにwarpしている場合、そのwarpを上書きする。
   </div>
-
-</details>
+  </details>
 
 ### track
 `/track [entity_type] [tracker]`で実行可能。ただしscriptなしでは`[entity_type]`はvillagerのみとなっている。`[tracker]`によって表示するtracking情報はことなるが多いので割愛。
 
 ## update-logs
 ### latest
-+ version : `v1.0.0`<br>
-+ carpet : `1.4.1.12+v230608`
++ version : `v1.0.1`
++ minecraft : `1.20.1`
++ carpet : `1.4.112+v230608`
 + 変更点
-  + 誤字の訂正
-  + `/tick`の`warp`に関する情報の修正
+  + `/tick`の`warp`および`freeze`に関する情報の加筆
+  + Carpet-FixesおよびIntricarpetの参考の追加
+  + 表記の変更
+  + バージョン表記の変更
 + 更新日<br>
-  `23/10/16 UTC+9`
+  `23/10/26 UTC+9`
 ### previous
 <details>
 <summary>previous</summary>
 <details>
+<summary><code>v1.0.0</code></summary>
+
++ minecraft : `1.20.1`
++ carpet : `1.4.112+v230608`
++ 変更点
+  + 誤字の訂正
+  + `/tick`の`warp`に関する情報の修正
++ 更新日<br>
+  `2023/10/16 UTC+9`
+</details>
+<details>
 <summary><code>v0.0.0</code></summary>
 
-+ carpet : `1.4.1.12+v230608`
++ minecaft : `1.20.1`
++ carpet : `1.4.112+v230608`
 + 変更点
   + ドキュメントの作成
 + 更新日<br>
