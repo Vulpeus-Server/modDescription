@@ -5070,7 +5070,121 @@ extra : <code>1.4.115</code></li>
 <code>2023/10/16 UTC+9</code></li>
 </ul>
 </details>
-</details><div style="break-before: page; page-break-before: always;"></div><h1 id="intricarpet"><a class="header" href="#intricarpet">Intricarpet</a></h1>
+</details><div style="break-before: page; page-break-before: always;"></div><!--
+version : v1.0.0
+-->
+<h1 id="intricarpet"><a class="header" href="#intricarpet">Intricarpet</a></h1>
+<p>minecraft : <code>1.20.1</code><br>
+extra : <code>1.4.115</code></p>
+<p><strong>carpetのaddonであるため、carpetが前提modとなる。</strong></p>
+<p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
+編集段階で未解決なものはストライクラインで示す。</p>
+<p>以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">mod</th><th style="text-align: left">download</th><th style="text-align: center">document</th><th style="text-align: center">docs-JP</th></tr></thead><tbody>
+<tr><td style="text-align: center">carpet</td><td style="text-align: left"><a href="https://modrinth.com/mod/carpet">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet">curseforge</a><br><a href="https://github.com/gnembon/fabric-carpet">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/fabric-carpet/wiki">wiki</a></td><td style="text-align: center"><a href="./carpet.html">carpet</a></td></tr>
+<tr><td style="text-align: center">carpet TIS addition</td><td style="text-align: left"><a href="https://modrinth.com/mod/carpet-tis-addition">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition">curseforge</a><br><a href="https://github.com/TISUnion/Carpet-TIS-Addition">github</a></td><td style="text-align: center"><a href="https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs">docs</a></td><td style="text-align: center"><a href="./carpet-TIS-addition.html">TIS</a></td></tr>
+<tr><td style="text-align: center">carpet extra</td><td style="text-align: left"><a href="https://modrinth.com/mod/carpet-extra">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra">curseforge</a><br><a href="https://github.com/gnembon/carpet-extra">github</a></td><td style="text-align: center"><a href="https://github.com/gnembon/carpet-extra#carpet-mod-settings">docs</a></td><td style="text-align: center"><a href="./carpet-extra.html">extra</a></td></tr>
+<tr><td style="text-align: center">gugle-carpet-addition</td><td style="text-align: left"><a href="https://modrinth.com/mod/gca">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition">curseforge</a><br><a href="https://github.com/Gu-ZT/gugle-carpet-addition">github</a></td><td style="text-align: center"><a href="https://github.com/Gu-ZT/gugle-carpet-addition#gca">docs</a></td><td style="text-align: center"><a href="./gugle-carpet-addition.html">GCA</a></td></tr>
+<tr><td style="text-align: center">Carpet-Fixes</td><td style="text-align: left"><a href="https://modrinth.com/mod/carpet-fixes">modrinth</a><br><a href="https://www.curseforge.com/minecraft/mc-mods/carpet-fixes">curseforge</a>*<br><a href="https://github.com/fxmorin/carpet-fixes">github</a></td><td style="text-align: center"><a href="https://github.com/fxmorin/carpet-fixes/wiki/Available-Settings">docs</a></td><td style="text-align: center">CF</td></tr>
+<tr><td style="text-align: center">intricarpet</td><td style="text-align: left"><a href="https://modrinth.com/mod/intricarpet">modrinth</a><br><a href="https://github.com/lntricate1/intricarpet">github</a></td><td style="text-align: center"><a href="https://github.com/lntricate1/intricarpet#features">docs</a></td><td style="text-align: center">here</td></tr>
+<tr><td style="text-align: center">subtick</td><td style="text-align: left"><a href="https://modrinth.com/mod/subtick">modrinth</a><br><a href="https://github.com/chiraagChakravarthy/SubTick">github</a></td><td style="text-align: center"><a href="https://github.com/chiraagChakravarthy/SubTick#commands">docs</a></td><td style="text-align: center">ST</td></tr>
+</tbody></table>
+</div>
+<p>* そのサイトでは今後更新がされない</p>
+<h2 id="目次-5"><a class="header" href="#目次-5">目次</a></h2>
+<details>
+<summary>rules</summary>
+<ul>
+<li><a href="intricarpet.html#commandinteraction">commandInteraction</a></li>
+</ul>
+</details>
+<details>
+<summary>command</summary>
+<ul>
+<li><a href="intricarpet.html#interaction">interaction</a></li>
+<li><a href="intricarpet.html#log">log</a></li>
+</ul>
+</details>
+<details>
+<summary>update-logs</summary>
+<ul>
+<li><a href="intricarpet.html#latest">latest</a><br>
+version : <code>v1.0.0</code><br>
+minecraft : <code>1.20.1</code><br>
+extra : <code>v2.0.1</code></li>
+<li><a href="intricarpet.html#previous">previous</a></li>
+</ul>
+</details>
+<h2 id="rules-4"><a class="header" href="#rules-4">rules</a></h2>
+<p>全てのルールは<code>/carpet [rule] [value]</code>によって変更することができる。</p>
+<h3 id="commandinteraction"><a class="header" href="#commandinteraction">commandInteraction</a></h3>
+<p><code>/interaction</code>を使用できるプレイヤーを指定する。</p>
+<ul>
+<li>初期値 : <code>ops</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code></li>
+<li>関連項目
+<ul>
+<li><a href="intricarpet.html#interaction">interaction</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="command-3"><a class="header" href="#command-3">command</a></h2>
+<h3 id="interaction"><a class="header" href="#interaction">interaction</a></h3>
+<p><code>/interaction &lt;interaction&gt; &lt;true | false&gt;</code>でそれぞれのクライアントからサーバーへの各interactionの送信の可否を切り替えることができる。<code>&lt;interaction&gt;</code>を指定しなかった場合、現在の設定を表示する。クライアント事に決めることができる。また、<code>&lt;true | false&gt;</code>を指定しなかった場合そのinteractionの設定を表示する。</p>
+<details>
+<summary>interaction</summary>
+<ul>
+<li><code>blocks</code><br>
+トリップワイヤーや感圧版の検知、耕地の踏み荒らしなどのブロックの変更をするものを変更する。</li>
+<li><code>chunkloading</code><br>
+テレポートチケットを含むすべてのプレイヤーのチャンクの読み込みを変更する。</li>
+<li><code>entities</code><br>
+他のプレイヤーを含むすべてのエンティティが自身に対して無視するように変更する。</li>
+<li><code>mobSpawning</code><br>
+スポーンエッグを除くそのプレイヤーからのmobのスポーンを変更する。ただしmobcapsには影響を与えない。</li>
+<li><code>randomTicks</code><br>
+そのプレイヤーからのrandom tickを変更する。</li>
+<li><code>updates</code><br>
+全てのプレイヤーがワールドに与えるべきupdateを変更する。</li>
+</ul>
+</details>
+<ul>
+<li>関連項目
+<ul>
+<li><a href="intricarpet.html#commandinteraction">commandInteraction</a></li>
+<li>carpet / <a href="./carpet.html#crativenoclip">creativeNoClip</a></li>
+<li>carpet / <a href="./carpet.html#creativeplayerloadchunks">creativePlayersLoadChunks</a></li>
+<li>TIS / <a href="./carpet-TIS-addition.html#totallynoblockupdate">totallyNoBlockUpdate</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="log-2"><a class="header" href="#log-2">log</a></h3>
+<p>carpetの<code>/log explosion</code>に<code>compact</code>を追加する。複数のtntが同じtickで爆発するとき、その爆発する座標でグルーピングするようにする。</p>
+<ul>
+<li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#log">log</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="update-logs-4"><a class="header" href="#update-logs-4">update-logs</a></h2>
+<h3 id="latest-4"><a class="header" href="#latest-4">latest</a></h3>
+<ul>
+<li>version : <code>v1.0.0</code></li>
+<li>minecraft : <code>1.20.1</code></li>
+<li>extra : <code>v2.0.1</code></li>
+<li>変更点
+<ul>
+<li>ドキュメントの作成</li>
+</ul>
+</li>
+<li>更新日<br>
+<code>23/10/26 UTC+9</code></li>
+</ul>
+<h3 id="previous-4"><a class="header" href="#previous-4">previous</a></h3>
+<details>
+<summary>previous</summary>
+</details>
 <div style="break-before: page; page-break-before: always;"></div><!DOCTYPE html>
 <html>
 <head>
