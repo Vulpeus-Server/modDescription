@@ -14,3 +14,4 @@ Currently supports the following mods:
 - GugleCarpetAddition
 - Carpet TIS Addition
 - Carpet Extra
+- intricarpet
