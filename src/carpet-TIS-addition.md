@@ -1,9 +1,9 @@
 <!--
-version : v1.0.1
+version : v1.0.2
 -->
 # carpet TIS addition
-minecraft : `1.20.1`<br>
-TIS : `1.51.0`
+minecraft : `1.20.3`<br>
+TIS : `1.54.1`
 
 **carpetのaddonであるため、carpetが前提modとなる。**
 
@@ -15,12 +15,10 @@ TIS : `1.51.0`
 |mod|download|document|docs-JP|
 |:---:|:---|:---:|:---:|
 |carpet|[modrinth](https://modrinth.com/mod/carpet)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet)<br>[github](https://github.com/gnembon/fabric-carpet)|[wiki](https://github.com/gnembon/fabric-carpet/wiki)|[carpet](./carpet.html)|
-|carpet TIS addition|[modrinth](https://modrinth.com/mod/carpet-tis-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition)<br>[github](https://github.com/TISUnion/Carpet-TIS-Addition)|[docs](https://github.com/TISUnion/Carpet-TIS-Addition/tree/master/docs)|here|
+|carpet TIS addition|[modrinth](https://modrinth.com/mod/carpet-tis-addition)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-tis-addition)<br>[github](https://github.com/TISUnion/Carpet-TIS-Addition)|[docs](https://tisunion.github.io/Carpet-TIS-Addition/docs)|here|
 |carpet extra|[modrinth](https://modrinth.com/mod/carpet-extra)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-extra)<br>[github](https://github.com/gnembon/carpet-extra)|[docs](https://github.com/gnembon/carpet-extra#carpet-mod-settings)|[extra](./carpet-extra.html)|
 |gugle-carpet-addition|[modrinth](https://modrinth.com/mod/gca)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)<br>[github](https://github.com/Gu-ZT/gugle-carpet-addition)|[docs](https://github.com/Gu-ZT/gugle-carpet-addition#gca)|[GCA](./gugle-carpet-addition.html)|
-|Carpet-Fixes|[modrinth](https://modrinth.com/mod/carpet-fixes)<br>[curseforge](https://www.curseforge.com/minecraft/mc-mods/carpet-fixes)*<br>[github](https://github.com/fxmorin/carpet-fixes)|[docs](https://github.com/fxmorin/carpet-fixes/wiki/Available-Settings)|CF|
 |intricarpet|[modrinth](https://modrinth.com/mod/intricarpet)<br>[github](https://github.com/lntricate1/intricarpet)|[docs](https://github.com/lntricate1/intricarpet#features)|[intri](./intricarpet.html)|
-|subtick|[modrinth](https://modrinth.com/mod/subtick)<br>[github](https://github.com/chiraagChakravarthy/SubTick)|[docs](https://github.com/chiraagChakravarthy/SubTick#commands)|ST|
 
 \* そのサイトでは今後更新がされない
 
@@ -48,13 +46,16 @@ TIS : `1.51.0`
   + [commandRefresh](#commandrefresh)
   + [commandRemoveEntity](#commandremoveentity)
   + [commandSleep](#commandsleep)
+  + [commandSpeedTest](#commandspeedtest)
   + [creativeNetherWaterPlacement](#creativenetherwaterplacement)
+  + [creativeInstantTame](#creativeinstanttame)
   + [creativeNoItemCooldown](#creativenoitemcooldown)
   + [creativeOpenContainerForcibly](#creativeopencontainerforcibly)
   + [deobfuscateCrashReportStackTrace](#deobfuscatecrashreportstacktrace)
   + [dispenserNoItemCost](#dispensernoitemcost)
   + [dispensersFireDragonBreath](#dispensersfiredragonbreath)
   + [enchantCommandNoRestriction](#enchantcommandnorestriction)
+  + [entityInstantDeathRemoval](#entityinstantdeathremoval)
   + [entityMomentumLoss](#entitymomentumloss)
   + [entityPlacementIgnoreCollision](#entityplacementignorecollision)
   + [entityTrackerDistance](#entitytrackerdistance)
@@ -105,10 +106,16 @@ TIS : `1.51.0`
   + [repeaterHalfDelay](#repeaterhalfdelay)
   + [sandDupingFix](#sanddupingfix)
   + [snowMeltMinLightLevel](#snowmeltminlightlevel)
+  + [speedTestCommandMaxSize](#speedtestcommandmaxsize)
   + [stopCommandDoubleConfirmation](#stopcommanddoubleconfirmation)
   + [structureBlockDoNotPreserveFluid](#structureblockdonotpreservefluid)
   + [synchronizedLightThread](#synchronizedlightthread)
   + [syncServerMsptMetricsData](#syncservermsptmetricsdata)
+  + [tickCommandEnhance](#tickcommandenhance)
+  + [tickCommandPermission](#tickcommandpermission)
+  + [tickFreezeCommandToggleable](#tickfreezecommandtoggleable)
+  + [tickProfilerCommandReintroduced](#tickprofilercommandreintroduced)
+  + [tickWarpCommandAsAnAlias](#tickwarpcommandasanalias)
   + [tileTickLimit](#tileticklimit)
   + [tiscmNetworkProtocol](#tiscmnetworkprotocol)
   + [tntDupingFix](#tntdupingfix)
@@ -125,6 +132,7 @@ TIS : `1.51.0`
   + [voidDamageIgnorePlayer](#voiddamageignoreplayer)
   + [voidRelatedAltitude](#voidrelatedaltitude)
   + [witherSpawnedSoundDisabled](#witherspawnedsounddisabled)
+  + [xpTrackingDistance](#xptrackingdistance)
   + [ported-rules](#ported-rules)
     + [lightEngineMaxBatchSize](#lightenginemaxbatchsize)
     + [yeetUpdateSuppressionCrash](#yeetupdatesuppressioncrash)
@@ -145,15 +153,16 @@ TIS : `1.51.0`
   + [scounter](#scounter)
   + [sleep](#sleep)
   + [spawn](#spawn)
+  + [speedtest](#speedtest)
   + [tick](#tick)
 </details>
 <details>
 <summary>update-logs</summary>
 
 + [latest](#latest)<br>
-  version : `v1.0.1`<br>
-  minecraft : `1.20.1`<br>
-  TIS : `1.51.0`
+  version : `v1.0.2`<br>
+  minecraft : `1.20.3`<br>
+  TIS : `1.54.1`
 + [previous](#previous)
 </details>
 
@@ -254,6 +263,16 @@ TIS : `1.51.0`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [sleep](#sleep)
+### commandSpeedTest
+  `/speedtest`を使用できるプレイヤーを指定する。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+  + 関連項目
+    + [speedtest](#speedtest)
+### creativeInstantTame
+  クリエイティブで動物を即時にてなずけることができるようにする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 ### creativeNetherWaterPlacement
   クリエイティブのプレイヤーがネザーで水を置けるようにする。
   + 初期値 : `false`
@@ -282,6 +301,10 @@ TIS : `1.51.0`
   + 使用できる値 : `true` `false`
 ### enchantCommandNoRestriction
   `/enchant`コマンドはいかなるエンチャントの競合を無視するようにする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### entityInstantDeathRemoval
+  エンティティが死んだとき即時にワールドから削除されるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### entityMomentumLoss
@@ -535,7 +558,7 @@ TIS : `1.51.0`
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### optimizedHardHitBoxEntityCollision
-  硬い当たり判定をもつボートとシュルカーについて、多くの不必要な反復処理を省くことで最適化を図るようにする。
+  硬い当たり判定をもつボートとシュルカーについて、多くの不必要な反復処理を省くことで最適化を図るようにする。そのたチャンクがロードされる前に有効にするとportal based mob farmが20%程度の負荷軽減になることがある。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### optimizedTNTHighPriority
@@ -603,6 +626,10 @@ TIS : `1.51.0`
   雪のレイヤーがrandom tickによって融解する最小のlight levelを指定する。雪が積もる最大のlight levelである`10`を指定するとsnow proofを検証することができる。
   + 初期値 : `12`
   + 使用できる値 : `integer`
+### speedTestCommandMaxSize
+  [speedtest](#speedtest)におけるテスト時の最大サイズをMiBで指定する。
+  + 初期値 : `10`
+  + 使用できる値 : `int`
 ### stopCommandDoubleConfirmation
   サーバーを閉じるためには`/stop`を1分間に2回入力しないととじれないようにする。
   + 初期値 : `false`
@@ -623,6 +650,34 @@ TIS : `1.51.0`
   + 使用できる値 : `true` `false`
 ### syncServerMsptMetricsData
   `alt+F3`によってみれるmsptの表示を実際のmsptと同期させる。クライアントにcarpet TIS additionが必要。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### tickCommandEnhance
+  minecraft 1.20.3以降において以前の`/tick warp status`を`/tick sprint status`として再実装するようにする。
+
+  1.20.3以降でのみ有効。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### tickCommandPermission
+  minecraft 1.20.3以降の`/tick`コマンドの権限をオーバーライドする。
+
+  1.20.3以降でのみ有効。
+  + 初期値 : `ops`
+  + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
+### tickFreezeCommandToggleable
+  minecraft 1.20.3以降の`/tick freeze`コマンドによってfreeze状態をトグル可能にするようにする。
+
+  1.20.3以降でのみ有効。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### tickProfilerCommandReintroduced
+  minecraft 1.20.3以降で`/tick entities`および`/tick health`を再実装するようにする。
+
+  1.20.3以降でのみ有効。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### tickWarpCommandAsAnAlias
+  minecraft 1.20.3以降で`/tick warp`コマンドを`/tick sprint`のエイリアスとして有効にする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### tileTickLimit
@@ -711,6 +766,10 @@ TIS : `1.51.0`
   witherのスポーンする音を無効にする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
+### xpTrackingDistance
+  xpオーブがプレイヤーをトラッキングできる距離を指定する。`0`にすることでトラッキングを無効にできる。
+  + 初期値 : `8`
+  + 使用できる値 : `double`
 ### ported-rules
 ほかのmodから移植されたrule。TISなりの変更が加えられている場合がある。
 <details>
@@ -826,6 +885,7 @@ carpetの[log](./carpet.html#log)に様々な`[subject]`を追加する。また
   + `ticket`
   + `tickWarp`
   + `turtleEgg`
+  + `wanderingTrader`
   + `xporb`
 + 関連項目
   + carpet / [log](./carpet.html#log)
@@ -1005,6 +1065,10 @@ carpetの[log](./carpet.html#log)に様々な`[subject]`を追加する。また
       アイテムが時間経過によってデスポーンしたときに表示する。
   + 表示場所<br>
     チャット
++ wanderingTrader<br>
+  `/log wanderingTrader`で誰かがいつ行商人を湧かせたのかを表示する。
+  + 表示場所<br>
+    チャット
 </details>
 
 ### manipulate
@@ -1090,6 +1154,19 @@ carpetの[log](./carpet.html#log)に様々な`[subject]`を追加する。また
 
 + 関連項目
   + [commandManipulate](#commandmanipulate)
+### speedtest
+`/speedtest [download | upload | ping | abort]`でクライアントの回線速度を測定する。
+  + `[download | upload | ping | abort]`
+    + download<br>
+      `/speedtest download [size_MiB]`で`[size_MiB]`分のダウンロードテストをする。
+    + upload<br>
+      `/speedtest upload [size_MiB]`で`[size_MiB]`分のアップロードテストをする。
+    + ping<br>
+      `/speedtest ping <count> <interval>`でpingをサーバーから送信する。<br>
+      `<count>`によってその回数を指定する。デフォルトで4。<br>
+      `<interval>`によってping同士の間隔を秒単位で指定するデフォルトで1。
+    + abort<br>
+      `/speedtest abort`で今行われてるテストを中断させる。
 ### player
 `/player`の`[conduct]`に`randomly`、`after`および`perTick`を追加する。
 + `[conduct]`
@@ -1225,7 +1302,39 @@ carpetの[tick](./carpet.html#tick)の`warp`に`status`を追加する。
 
 ## update-logs
 ### latest
-+ version : `v1.0.1`
++ version : `v1.0.2`
++ minecraft : `1.20.3`
++ TIS : `1.54.1`
++ 変更点
+  + TISのversionの変更
+  + バージョン表記の変更
+  + carpet fixesおよびsub tickの参考を削除
+  + アップデートに伴う情報の修正
+    <details>
+    <summary>追加</summary>
+
+    + [commandSpeedTest](#commandspeedtest)
+    + [creativeInstantTame](#creativeinstanttame)
+    + [entityInstantDeathRemoval](#entityinstantdeathremoval)
+    + [speedTestCommandMaxSize](#speedtestcommandmaxsize)
+    + [tickCommandEnhance](#tickcommandenhance)
+    + [tickCommandPermission](#tickcommandpermission)
+    + [tickFreezeCommandToggleable](#tickfreezecommandtoggleable)
+    + [tickProfilerCommandReintroduced](#tickprofilercommandreintroduced)
+    + [tickWarpCommandAsAnAlias](#tickwarpcommandasanalias)
+    + [xpTrackingDistance](#xptrackingdistance)
+    + [log](#log)
+      + wanderingTrader
+    + [speedtest](#speedtest)
+  </details>
++ 更新日<br>
+  `23/12/27 UTC+9`
+### previous
+<details>
+<summary>previous</summary>
+<details>
+<summary><code>v1.0.1</code></summary>
+
 + minecraft : `1.20.1`
 + TIS : `1.51.0`
 + 変更点
@@ -1234,9 +1343,7 @@ carpetの[tick](./carpet.html#tick)の`warp`に`status`を追加する。
   + intricarpetおよびCarpet Fixesの参考を追加
 + 更新日<br>
   `23/10/26 UTC+9`
-### previous
-<details>
-<summary>previous</summary>
+</details>
 <details>
 <summary><code>v1.0.0</code></summary>
 
