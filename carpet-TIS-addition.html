@@ -398,7 +398,7 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 </ul>
 </li>
 </ul>
-<div class="md-note">
+  <div class="md-note">
     これは実際に見えるだけであり、実際には処理される。シングルではシミュレーション距離で上書きされる。
   </div>
 <h3 id="blockplacementignoreentity"><a class="header" href="#blockplacementignoreentity">blockPlacementIgnoreEntity</a></h3>
@@ -599,11 +599,11 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 </ul>
 </li>
 </ul>
-<details>
+  <details>
   <summary>チェビシェフ距離の定義</summary>
 <p>\(xz\)座標平面上にある点\(P_1(x_1,z_1),P_2(x_2,z_2)\)において、チェビシェフ距離 \(d(P_1,P_2)\)は</p>
 <p>$$d(P_1,P_2):=max(|x_1-x_2|,|z_1-z_2|)$$</p>
-</details>
+  </details>
 <h3 id="entitytrackerinterval"><a class="header" href="#entitytrackerinterval">entityTrackerInterval</a></h3>
 <p>エンティティの同期の周期を設定する。負の数を指定した場合バニラの挙動にすることができる。</p>
 <ul>
@@ -799,9 +799,9 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <tr><td style="text-align: left"><code>suppressed</code></td><td style="text-align: center">X</td><td style="text-align: center">O</td></tr>
 <tr><td style="text-align: left"><code>ignored</code></td><td style="text-align: center">O</td><td style="text-align: center">X</td></tr>
 </tbody></table>
-</div><div class="md-warning">
+</div>  <div class="md-warning">
 <p><code>off</code>もしくは<code>suppressed</code>を指定すると、新しいチャンクが読み込まれなくなる。この状態で新しいチャンクを読み込もうとするとサーバーが恒常的なスタックを引き起こす。</p>
-</div>
+  </div>
 <ul>
 <li>初期値 : <code>on</code></li>
 <li>使用できる値 : <code>on</code> <code>off</code> <code>suppressed</code> <code>ignored</code></li>
@@ -819,7 +819,7 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 </ul>
 <h3 id="microtiming"><a class="header" href="#microtiming">microTiming</a></h3>
 <p><code>/log microtiming</code>を有効にする。レッドストーン・コンポーネントのアクション、blockUpdate、stack traceを染料アイテムでログに記録し、表示する。dye markerの使い方については<a href="#microtimingdyemarker">microTimingDyeMarker</a>を参照。またlogのメソッドの変更については<a href="#microtimingtarget">microTimingTarget</a>を参照。</p>
-<div class="md-note">
+  <div class="md-note">
   有効にすると、パフォーマンス面で甚大な影響を及ぼす可能性がある。
   </div>
 <ul>
@@ -897,7 +897,7 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <li>使用できる値 : <code>NaN</code> <code>double</code></li>
 </ul>
 <h3 id="mobcapsdisplayignoremisc"><a class="header" href="#mobcapsdisplayignoremisc">mobcapsDisplayIgnoreMisc</a></h3>
-<p>mobcapsから~~存在するだけでなにもしない哀れな~~<code>misc</code>を除外する。<code>log</code>と<code>/spawn mobcaps</code>に影響を与える。</p>
+<p>mobcapsから<del>存在するだけでなにもしない哀れな</del><code>misc</code>を除外する。<code>log</code>と<code>/spawn mobcaps</code>に影響を与える。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1461,8 +1461,8 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
 どのダメージを表示するかを指定する。詳細は[英語doc]を参照。指定しない場合全てのダメージを表示する。
 <ul>
 <li>
-<p><code>&quot;&lt;entityA&gt;-&gt;&lt;entityB&gt;&quot;</code><br>
-<code>&lt;entityA&gt;</code>から<code>&lt;entityB&gt;</code>に対してのダメージのみを記録する。<code>&lt;entityA&gt;</code>および<code>&lt;entityB&gt;</code>を指定しなかった場合それぞれ全てを指定したものとする。<code>&quot;&lt;entityA&gt;&lt;-&gt;&lt;entityB&gt;&quot;</code>とするとどちらの場合でも表示する。</p>
+<p><code>"&lt;entityA&gt;-&gt;&lt;entityB&gt;"</code><br>
+<code>&lt;entityA&gt;</code>から<code>&lt;entityB&gt;</code>に対してのダメージのみを記録する。<code>&lt;entityA&gt;</code>および<code>&lt;entityB&gt;</code>を指定しなかった場合それぞれ全てを指定したものとする。<code>"&lt;entityA&gt;&lt;-&gt;&lt;entityB&gt;"</code>とするとどちらの場合でも表示する。</p>
 <p>エンティティの指定にはターゲットセレクタを用いることもでき、複数選択が可能である。</p>
 </li>
 <li>
@@ -1616,7 +1616,7 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
 <code>/log phantom &lt;spawning | reminder&gt;</code>でファントムのスポーンに関する変更をする。</p>
 <ul>
 <li><code>&lt;spawning | reminder&gt;</code><br>
-選択しなかった場合<code>spawning</code>が選択される。<code>&quot;spawning,reminder&quot;</code>とすることで両方を指定することができる。
+選択しなかった場合<code>spawning</code>が選択される。<code>"spawning,reminder"</code>とすることで両方を指定することができる。
 <ul>
 <li><code>spawning</code><br>
 だれかがファントムをスポーンさせたらそれを知らせる。</li>
@@ -1805,7 +1805,7 @@ unknown ticketはスパム判定をもらう可能性がある。
 </div>
 <details>
 <summary>コマンド</summary>
-<p>customNameを変更もしくは削除する。 </p>
+<p>customNameを変更もしくは削除する。</p>
 <pre><code>/manipulate entity [target] rename &lt;text&gt;
 /manipulate entity [target] rename clear
 </code></pre>
@@ -1952,13 +1952,13 @@ unknown ticketはスパム判定をもらう可能性がある。
 <li><code>inventory</code><br>
 <code>/reflesh inventory &lt;target&gt;</code>で<code>&lt;target&gt;</code>のインベントリを更新する。自分以外のエンティティを指定する場合opレベル2が必要。</li>
 <li><code>chunk</code>
-<code>/reflesh chunk [location]</code>で<code>location</code>にあるチャンクを更新する。
-|<code>[location]</code>|<code>chunk</code>|
-|:---:|---|
-|<code>all</code>|読み込まれているすべてのチャンク|
-|<code>at</code>|特定の1チャンク、チャンク座標を用いて<code>at [X] [Z]</code>の形式で指定する|
-|<code>current</code>|現在の座標を含む1チャンク|
-|<code>inrange</code>|チェビシェフ距離を用いた範囲内にある全てのチャンク|</li>
+<code>/reflesh chunk [location]</code>で<code>location</code>にあるチャンクを更新する。<div class="table-wrapper"><table><thead><tr><th style="text-align: center"><code>[location]</code></th><th><code>chunk</code></th></tr></thead><tbody>
+<tr><td style="text-align: center"><code>all</code></td><td>読み込まれているすべてのチャンク</td></tr>
+<tr><td style="text-align: center"><code>at</code></td><td>特定の1チャンク、チャンク座標を用いて<code>at [X] [Z]</code>の形式で指定する</td></tr>
+<tr><td style="text-align: center"><code>current</code></td><td>現在の座標を含む1チャンク</td></tr>
+<tr><td style="text-align: center"><code>inrange</code></td><td>チェビシェフ距離を用いた範囲内にある全てのチャンク</td></tr>
+</tbody></table>
+</div></li>
 </ul>
 </li>
 <li>関連項目
