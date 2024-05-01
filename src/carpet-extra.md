@@ -81,9 +81,9 @@ extra : `1.4.115`
 <summary>update-logs</summary>
 
 + [latest](#latest)<br>
-  version : `v1.0.1`<br>
-  minecraft : `1.20.1`<br>
-  extra : `1.4.115`
+  version : `v1.0.2`<br>
+  minecraft : `1.20.2`<br>
+  extra : `1.4.118`
 + [previous](#previous)
 </details>
 
@@ -108,7 +108,7 @@ extra : `1.4.115`
 ### blockStateSyncing
 F3デバッグモードがいくつかのブロックでアップデートを起こさないバグを修正する。ネットワークのトラフィックを増加させる可能性がある。
 
-このバグはmineraft 1.20.2にてバニラで修正済み。
+このバグはmineraft 1.20.2にてバニラで修正済み。1.20.2以上では苗木のみの同期になる。
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 + 影響を与えるブロック
@@ -316,19 +316,32 @@ y0もしくはy-64の岩盤をドラゴンの卵で破壊できるようにす�
 
 ## update-logs
 ### latest
-+ version : `v1.0.1`
-+ minecraft : `1.20.1`
-+ extra : `1.4.115`
++ version : `v1.0.2`
++ minecraft : `1.20.2`
++ extra : `1.4.118`
 + 変更点
-  + Carpet FixesおよびIntricarpetの参考への追加
   + バージョン表記の変更
+  + アップデートに伴う情報の修正
+    + [blockStateSyncing](#blockstatesyncing)
 + 更新日<br>
-  `23/10/26 UTC+9`
+  `24/5/1 UTC+9`
 ### previous
 <details>
 <summary>previous</summary>
 <details>
-<summary><code>v1.0.0</code></summary>
+<summary><code>v1.0.1</code></summary>
+
++ version : `v1.0.1`
++ minecraft : `1.20.1`
++ extra : `1.4.115`
++ 変更点
+    + Carpet FixesおよびIntricarpetの参考への追加
+    + バージョン表記の変更
++ 更新日<br>
+  `23/10/26 UTC+9`
+</details>
+<details>
+<summary><code>v1.0.1</code></summary>
 
 + minecraft : `1.20.1`
 + extra : `1.4.115`
