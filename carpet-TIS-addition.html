@@ -184,7 +184,7 @@ version : v1.0.2
 -->
 <h1 id="carpet-tis-addition"><a class="header" href="#carpet-tis-addition">carpet TIS addition</a></h1>
 <p>minecraft : <code>1.20.3</code><br>
-TIS : <code>1.54.1</code></p>
+TIS : <code>1.57</code></p>
 <p><strong>carpetのaddonであるため、carpetが前提modとなる。</strong></p>
 <p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
@@ -212,6 +212,7 @@ TIS : <code>1.54.1</code></p>
 <li><a href="#antispamdisabled">antiSpamDisabled</a></li>
 <li><a href="#blockeventpacketrange">blockEventPacketRange</a></li>
 <li><a href="#blockplacementignoreentity">blockPlacementIgnoreEntity</a></li>
+<li><a href="#chatmessagelengthlimitunlocked">chatMessageLengthLimitUnlocked</a></li>
 <li><a href="#chunktickspeed">chunkTickSpeed</a></li>
 <li><a href="#clientsettingslostonrespawnfix">clientSettingsLostOnRespawnFix</a></li>
 <li><a href="#commandlifetime">commandLifeTime</a></li>
@@ -227,8 +228,10 @@ TIS : <code>1.54.1</code></p>
 <li><a href="#creativenoitemcooldown">creativeNoItemCooldown</a></li>
 <li><a href="#creativeopencontainerforcibly">creativeOpenContainerForcibly</a></li>
 <li><a href="#deobfuscatecrashreportstacktrace">deobfuscateCrashReportStackTrace</a></li>
+<li><a href="#debugnbtquerynopermission">debugNbtQueryNonPermission</a></li>
 <li><a href="#dispensernoitemcost">dispenserNoItemCost</a></li>
 <li><a href="#dispensersfiredragonbreath">dispensersFireDragonBreath</a></li>
+<li><a href="#dusttrapdoorreintroduced">dustTrapdoorReintroduced</a></li>
 <li><a href="#enchantcommandnorestriction">enchantCommandNoRestriction</a></li>
 <li><a href="#entityinstantdeathremoval">entityInstantDeathRemoval</a></li>
 <li><a href="#entitymomentumloss">entityMomentumLoss</a></li>
@@ -241,6 +244,7 @@ TIS : <code>1.54.1</code></p>
 <li><a href="#fakeplayernameprefix">fakePlayerNamePrefix</a></li>
 <li><a href="#fakeplayernamesuffix">fakePlayerNameSuffix</a></li>
 <li><a href="#fakeplayerremotespawning">fakePlayerRemoteSpawning</a></li>
+<li><a href="#fakeplayertickslikerealplayer">fakePlayerTicksLikeRealPlayer</a></li>
 <li><a href="#farmlandtrampleddisabled">farmlandTrampledDisabled</a></li>
 <li><a href="#fillcommandmodeenhance">fillCommandModeEnhance</a></li>
 <li><a href="#flattentriangulardistribution">flattenTriangularDistribution</a></li>
@@ -262,8 +266,10 @@ TIS : <code>1.54.1</code></p>
 <li><a href="#microtimingtarget">microTimingTarget</a></li>
 <li><a href="#microtimingtickdivision">microTimingTickDivision</a></li>
 <li><a href="#minecartfulldropbackport">minecartFullDropBackport</a></li>
+<li><a href="#minecartplaceableonground">minecartPlaceableOnGround</a></li>
 <li><a href="#minecarttakepassengerminvelocity">minecartTakePassengerMinVelocity</a></li>
 <li><a href="#mobcapsdisplayignoremisc">mobcapsDisplayIgnoreMisc</a></li>
+<li><a href="#moveablereinforceddeepslate">moveableReinforcedDeepslate</a></li>
 <li><a href="#oakballoonpercent">oakBalloonPercent</a></li>
 <li><a href="#observernodetection">observerNoDetection</a></li>
 <li><a href="#opplayernocheat">opPlayerNoCheat</a></li>
@@ -280,7 +286,10 @@ TIS : <code>1.54.1</code></p>
 <li><a href="#renewableelytra">renewableElytra</a></li>
 <li><a href="#repeaterhalfdelay">repeaterHalfDelay</a></li>
 <li><a href="#sanddupingfix">sandDupingFix</a></li>
+<li><a href="#shulkerboxccereintroduced">shulkerBoxCCEReintroduced</a></li>
 <li><a href="#snowmeltminlightlevel">snowMeltMinLightLevel</a></li>
+<li><a href="#spawnbabyprobably">spawnBabyProbably</a></li>
+<li><a href="#spawnjockeyprobably">spawnJockeyProbably</a></li>
 <li><a href="#speedtestcommandmaxsize">speedTestCommandMaxSize</a></li>
 <li><a href="#stopcommanddoubleconfirmation">stopCommandDoubleConfirmation</a></li>
 <li><a href="#structureblockdonotpreservefluid">structureBlockDoNotPreserveFluid</a></li>
@@ -288,6 +297,7 @@ TIS : <code>1.54.1</code></p>
 <li><a href="#syncservermsptmetricsdata">syncServerMsptMetricsData</a></li>
 <li><a href="#tickcommandenhance">tickCommandEnhance</a></li>
 <li><a href="#tickcommandpermission">tickCommandPermission</a></li>
+<li><a href="#tickcommandcarpetfied">tickCommandCarpetfied</a></li>
 <li><a href="#tickfreezecommandtoggleable">tickFreezeCommandToggleable</a></li>
 <li><a href="#tickprofilercommandreintroduced">tickProfilerCommandReintroduced</a></li>
 <li><a href="#tickwarpcommandasanalias">tickWarpCommandAsAnAlias</a></li>
@@ -307,6 +317,7 @@ TIS : <code>1.54.1</code></p>
 <li><a href="#voiddamageignoreplayer">voidDamageIgnorePlayer</a></li>
 <li><a href="#voidrelatedaltitude">voidRelatedAltitude</a></li>
 <li><a href="#witherspawnedsounddisabled">witherSpawnedSoundDisabled</a></li>
+<li><a href="#yeetoutoforderchatkick">yeetOutOfOrderChatKick</a></li>
 <li><a href="#xptrackingdistance">xpTrackingDistance</a></li>
 <li><a href="#ported-rules">ported-rules</a>
 <ul>
@@ -339,9 +350,9 @@ TIS : <code>1.54.1</code></p>
 <summary>update-logs</summary>
 <ul>
 <li><a href="#latest">latest</a><br>
-version : <code>v1.0.2</code><br>
+version : <code>v1.0.3</code><br>
 minecraft : <code>1.20.3</code><br>
-TIS : <code>1.54.1</code></li>
+TIS : <code>1.57</code></li>
 <li><a href="#previous">previous</a></li>
 </ul>
 </details>
@@ -411,6 +422,12 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <li><a href="#entityplacementignorecollision">entityPlacementIgnoreCollision</a></li>
 </ul>
 </li>
+</ul>
+<h3 id="chatmessagelengthlimitunlocked"><a class="header" href="#chatmessagelengthlimitunlocked">chatMessageLengthLimitUnlocked</a></h3>
+<p>チャットメッセージにおける文字数制限を256から32000まで増加させる。carpet TIS additionがクライアントに必要。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="chunktickspeed"><a class="header" href="#chunktickspeed">chunkTickSpeed</a></h3>
 <p>chunk tickの1チャンク*gtにおける発生量を制御する。<code>0</code>にすることで無効にできる。落雷が発生する場所や積雪、水源の氷結、そしてrandom tickが効果を受ける。random tickでは1chunk tickに対して<code>randomTickSpeed</code>の数だけ発生する。</p>
@@ -536,6 +553,13 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
+<h3 id="debugnbtquerynopermission"><a class="header" href="#debugnbtquerynopermission">debugNbtQueryNoPermission</a></h3>
+<p>F3+Iによるdebug nbtのリクエストに必要なop level 2の制限を撤廃する。</p>
+<p>クライアントにもcarpet TIS additionが必要。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
 <h3 id="deobfuscatecrashreportstacktrace"><a class="header" href="#deobfuscatecrashreportstacktrace">deobfuscateCrashReportStackTrace</a></h3>
 <p>クラッシュレポートのstack traceの難読化を解除する。</p>
 <ul>
@@ -555,6 +579,13 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 </ul>
 <h3 id="dispensersfiredragonbreath"><a class="header" href="#dispensersfiredragonbreath">dispensersFireDragonBreath</a></h3>
 <p>ディスペンサーがドラゴンブレスをトリガーしたとき、正面のブロックに対してドラゴンブレスを生成させることができるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="dusttrapdoorreintroduced"><a class="header" href="#dusttrapdoorreintroduced">dustTrapdoorReintroduced</a></h3>
+<p>dust-trapdoorのinstant update looperを1.20以上でも使うことができるようにする。nicnac suppressorもしくはnicnac skipperと呼ばれるものがこれに該当する。
+mc1.20+のみ。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -640,7 +671,11 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="fakeplayernameprefix"><a class="header" href="#fakeplayernameprefix">fakePlayerNamePrefix</a></h3>
-<p><code>/player</code>によって召喚されたbotに前置詞をつける。botの名前に付与されるので、16文字以内かつ英数字と<code>_</code>のみしか使用できない。<code>#none</code>とするとprefixを無効にできる。</p>
+<p><code>/player</code>によって召喚されたbotに前置詞をつける。botの名前に付与されるので、16文字以内かつ英数字と<code>_+-</code>のみしか使用できない。<code>#none</code>とするとprefixを無効にできる。</p>
+<blockquote>
+<p>[!WARNING]
+使えない文字も二回続けてコマンドを入力することで設定することができるが、<code>/player</code>や<code>/kill</code>でmcidを用いた選択はできなくなることに注意。特にplayer commandはUUID指定ができないために実質的にそのbotに対して使うことができなくなる。</p>
+</blockquote>
 <ul>
 <li>初期値 : <code>#none</code></li>
 <li>使用できる値 : <code>string</code></li>
@@ -651,7 +686,11 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 </li>
 </ul>
 <h3 id="fakeplayernamesuffix"><a class="header" href="#fakeplayernamesuffix">fakePlayerNameSuffix</a></h3>
-<p><code>/player</code>によって召喚されたbotに後置詞をつける。botの名前に付与されるので、16文字以内かつ英数字と<code>_</code>のみしか使用できない。<code>#none</code>とするとsuffixを無効にできる。</p>
+<p><code>/player</code>によって召喚されたbotに後置詞をつける。botの名前に付与されるので、16文字以内かつ英数字と<code>_+-</code>のみしか使用できない。<code>#none</code>とするとsuffixを無効にできる。</p>
+<blockquote>
+<p>[!WARNING]
+使えない文字も二回続けてコマンドを入力することで設定することができるが、<code>/player</code>や<code>/kill</code>でmcidを用いた選択はできなくなることに注意。特にplayer commandはUUID指定ができないために実質的にそのbotに対して使うことができなくなる。</p>
+</blockquote>
 <ul>
 <li>初期値 : <code>#none</code></li>
 <li>使用できる値 : <code>string</code></li>
@@ -667,6 +706,22 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <li>初期値 : <code>true</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
 <li>関連項目
+<ul>
+<li>carpet / <a href="./carpet.html#player">player</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="fakeplayertickslikerealplayer"><a class="header" href="#fakeplayertickslikerealplayer">fakePlayerTicksLikeRealPlayer</a></h3>
+<p>carpet botの仕組みと<code>/player [&lt;action&gt;]</code>のパケットがいつtickingされるかを実際のプレイヤーのアクションが実行されるフェーズによせることで可能なかぎり実際のプレイヤーに似た動作をさせる。
+変更されたフェーズは以下を参照のこと。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">変更箇所</th><th style="text-align: center">変更前</th><th style="text-align: center">変更後</th></tr></thead><tbody>
+<tr><td style="text-align: center">Fake player entity-related ticking</td><td style="text-align: center">Entity Phase</td><td style="text-align: center">Network Phase</td></tr>
+<tr><td style="text-align: center">/player command action packs</td><td style="text-align: center">Entity Phase</td><td style="text-align: center">Asynchronous Task Phase</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code>
 <ul>
 <li>carpet / <a href="./carpet.html#player">player</a></li>
 </ul>
@@ -888,6 +943,12 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
+<h3 id="minecartplaceableonground"><a class="header" href="#minecartplaceableonground">minecartPlaceableOnGround</a></h3>
+<p>トロッコをボートのようにレールなしで直接おけるようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
 <h3 id="minecarttakepassengerminvelocity"><a class="header" href="#minecarttakepassengerminvelocity">minecartTakePassengerMinVelocity</a></h3>
 <p>トロッコがmobを乗せるために必要な最小水平速度(m/gt)を指定する。
 <code>0</code>に指定するとボートのように静止していても常にmobを乗せることができる。
@@ -907,6 +968,13 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <li>carpet / <a href="./carpet.html#spawn">spawn</a></li>
 </ul>
 </li>
+</ul>
+<h3 id="moveablereinforceddeepslate"><a class="header" href="#moveablereinforceddeepslate">moveableReinforcedDeepslate</a></h3>
+<p>reinforced deepslate(強化された深層岩)をピストンで動かせるようにする。</p>
+<p>mc1.19+のみ。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="oakballoonpercent"><a class="header" href="#oakballoonpercent">oakBalloonPercent</a></h3>
 <p>オークの木が条件を満たした時巨木になる確率をパーセンテージで指定する。負の数を指定することでバニラ準拠にできる。値は0~100もしくは負の数でなければならない。</p>
@@ -1049,11 +1117,39 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 </ul>
 </li>
 </ul>
+<h3 id="shulkerboxccereintroduced"><a class="header" href="#shulkerboxccereintroduced">shulkerBoxCCEReintroduced</a></h3>
+<p>コンパレーターがシュルカーの信号強度を読みよるときに発生するClassCastExceptionをmc1.20.2+でも利用可能にする。</p>
+<p>voidの魔法の箱よ、永遠に。</p>
+<p>mc1.20.2+のみ。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
 <h3 id="snowmeltminlightlevel"><a class="header" href="#snowmeltminlightlevel">snowMeltMinLightLevel</a></h3>
 <p>雪のレイヤーがrandom tickによって融解する最小のlight levelを指定する。雪が積もる最大のlight levelである<code>10</code>を指定するとsnow proofを検証することができる。</p>
 <ul>
 <li>初期値 : <code>12</code></li>
 <li>使用できる値 : <code>integer</code></li>
+</ul>
+<h3 id="spawnbabyprobably"><a class="header" href="#spawnbabyprobably">spawnBabyProbably</a></h3>
+<p>子供としてスポーンできるmobがスポーンするとき、子供になる確率を変更する。<code>-1</code>にすることでバニラの仕様にすることができる。</p>
+<ul>
+<li>初期値 : <code>-1</code></li>
+<li>使用できる値 : <code>double</code></li>
+</ul>
+<h3 id="spawnjockeyprobably"><a class="header" href="#spawnjockeyprobably">spawnJockeyProbably</a></h3>
+<p>jockeyとしてスポーンできるmobがスポーンするとき、その確率を変更する。ストライダーにおいては、ゾンビピグリンとその子供の比率は1:3のままである。
+<code>-1</code>にすることでバニラの仕様にすることができる。</p>
+<ul>
+<li>初期値 : <code>-1</code></li>
+<li>使用できる値 : <code>double</code></li>
+<li>影響をうけるエンティティ
+<ul>
+<li>chicken jockey</li>
+<li>spider jockey</li>
+<li>strider jockey</li>
+</ul>
+</li>
 </ul>
 <h3 id="speedtestcommandmaxsize"><a class="header" href="#speedtestcommandmaxsize">speedTestCommandMaxSize</a></h3>
 <p><a href="#speedtest">speedtest</a>におけるテスト時の最大サイズをMiBで指定する。</p>
@@ -1092,6 +1188,29 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="tickcommandcarpetfied"><a class="header" href="#tickcommandcarpetfied">tickCommandCarpetfied</a></h3>
+<p><code>/tick</code>コマンドの仕様を1.20.3以前のcarpet modの仕様に戻す。</p>
+<p>このルールを<code>true</code>にすることと以下のルールがその値になることは同値である。</p>
+<pre><code>tickCommandEnhance = true
+tickCommandPermission = 2
+tickFreezeCommandToggleable = true
+tickProfilerCommandsReintroduced = true
+tickWarpCommandAsAnAlias = true
+</code></pre>
+<p>1.20.3以降でのみ有効。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連っ項目
+<ul>
+<li><a href="#tickcommandenhance">tickCommandEnhance</a></li>
+<li><a href="#tickcommandpermission">tickCommandPermission</a></li>
+<li><a href="#tickfreezecommandtoggleable">tickFreezeCommandToggleable</a></li>
+<li><a href="#tickprofilercommandreintroduced">tickProfilerCommandReintroduced</a></li>
+<li><a href="#tickwarpcommandasanalias">tickWarpCommandAsAnAlias</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="tickcommandenhance"><a class="header" href="#tickcommandenhance">tickCommandEnhance</a></h3>
 <p>minecraft 1.20.3以降において以前の<code>/tick warp status</code>を<code>/tick sprint status</code>として再実装するようにする。</p>
@@ -1275,6 +1394,13 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <li>初期値 : <code>8</code></li>
 <li>使用できる値 : <code>double</code></li>
 </ul>
+<h3 id="yeetoutoforderchatkick"><a class="header" href="#yeetoutoforderchatkick">yeetOutOfOrderChatKick</a></h3>
+<p>プレイヤーがいかなる理由であっても"Out-of-order chat packet received..."によるキックを防ぐ。</p>
+<p>mc1.19+のみ。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
 <h3 id="ported-rules"><a class="header" href="#ported-rules">ported-rules</a></h3>
 <p>ほかのmodから移植されたrule。TISなりの変更が加えられている場合がある。</p>
 <details>
@@ -1368,6 +1494,9 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <a href="#lifetimetrackerconsidersmobcap">lifeTimeTrackerConsidersMobcap</a>が<code>true</code>であることを要求</li>
 <li>Mob conversion</li>
 <li>Trans-dimension from portal</li>
+<li>jockey</li>
+<li>jockey_mount</li>
+<li>player_login</li>
 </ul>
 </details>
 <details>
@@ -1389,6 +1518,7 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
 <li>Picked up by player or mob (item and xp orb only)</li>
 <li>Mob conversion</li>
 <li>Trans-dimension through portal</li>
+<li>player_logout</li>
 <li>Other<br>
 もしほかの理由をトラッキングしたい場合、issueをあげれば対応するとのこと。</li>
 </ul>
@@ -1849,7 +1979,7 @@ unknown ticketはスパム判定をもらう可能性がある。
 </li>
 </ul>
 <h3 id="player"><a class="header" href="#player">player</a></h3>
-<p><code>/player</code>の<code>[conduct]</code>に<code>randomly</code>、<code>after</code>および<code>perTick</code>を追加する。</p>
+<p><code>/player</code>の<code>[conduct]</code>に<code>randomly</code>、<code>rejoin</code>、<code>after</code>および<code>perTick</code>を追加する。</p>
 <ul>
 <li><code>[conduct]</code>
 <ul>
@@ -1882,6 +2012,10 @@ unknown ticketはスパム判定をもらう可能性がある。
 </ul>
 </li>
 </ul>
+</li>
+<li>
+<p><code>rejoin</code><br>
+<code>/player [mcid] rejoin</code>でそのプレイヤーを同じ場所、向きで再ログインさせる。</p>
 </li>
 <li>
 <p><code>after</code><br>
@@ -2047,14 +2181,53 @@ unknown ticketはスパム判定をもらう可能性がある。
 <h2 id="update-logs"><a class="header" href="#update-logs">update-logs</a></h2>
 <h3 id="latest"><a class="header" href="#latest">latest</a></h3>
 <ul>
-<li>version : <code>v1.0.2</code></li>
+<li>version : <code>v1.0.3</code></li>
 <li>minecraft : <code>1.20.3</code></li>
-<li>TIS : <code>1.54.1</code></li>
+<li>TIS : <code>1.57</code></li>
 <li>変更点
 <ul>
 <li>
 <p>TISのversionの変更</p>
 </li>
+<li>
+<p>バージョン表記の変更</p>
+</li>
+<li>
+<p>アップデートに伴う情報の修正</p>
+<details>
+<summary>追加</summary>
+<ul>
+<li><a href="#fakeplayertickslikerealplayer">fakePlayerTicksLikeRealPlayer</a></li>
+<li><a href="#spawnjockeyprobably">spawnJockeyProbably</a></li>
+<li><a href="#spawnbabyprobably">spawnBabyProbably</a></li>
+<li><a href="#tickcommandcarpetfied">tickCommandCarpetfied</a></li>
+<li><a href="#chatmessagelengthlimitunlocked">chatMessageLengthLimitUnlocked</a></li>
+<li><a href="#debugnbtquerynopermission">debugNbtQueryNoPermission</a></li>
+<li><a href="#minecartplaceableonground">minecartPlaceableOnGround</a></li>
+<li><a href="#yeetoutoforderchatkick">yeetOutOfOrderChatKick</a></li>
+<li><a href="#moveablereinforceddeepslate">moveableReinforcedDeepslate</a></li>
+<li><a href="#dusttrapdoorreintroduced">dustTrapdoorReintroduced</a></li>
+<li><a href="#shulkerboxccereintroduced">shulkerBoxCCEReintroduced</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</li>
+<li>更新日<br>
+<code>24/5/1 UTC+9</code></li>
+</ul>
+<h3 id="previous"><a class="header" href="#previous">previous</a></h3>
+<details>
+<summary>previous</summary>
+<details>
+<summary><code>v1.0.2</code></summary>
+<ul>
+<li>minecraft : <code>1.20.3</code></li>
+<li>TIS : <code>1.54.1</code></li>
+<li>変更点
+<ul>
+<li>TISのversionの変更
+<ul>
 <li>
 <p>バージョン表記の変更</p>
 </li>
@@ -2083,16 +2256,16 @@ unknown ticketはスパム判定をもらう可能性がある。
 </li>
 <li><a href="#speedtest">speedtest</a></li>
 </ul>
+</details>
 </li>
 </ul>
-</details>
+</li>
+</ul>
 </li>
 <li>更新日<br>
 <code>23/12/27 UTC+9</code></li>
 </ul>
-<h3 id="previous"><a class="header" href="#previous">previous</a></h3>
-<details>
-<summary>previous</summary>
+</details>
 <details>
 <summary><code>v1.0.1</code></summary>
 <ul>
