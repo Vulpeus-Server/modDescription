@@ -3,7 +3,7 @@ version : v1.0.2
 -->
 # carpet TIS addition
 minecraft : `1.20.3`<br>
-TIS : `1.54.1`
+TIS : `1.57`
 
 **carpetのaddonであるため、carpetが前提modとなる。**
 
@@ -37,6 +37,7 @@ TIS : `1.54.1`
   + [antiSpamDisabled](#antispamdisabled)
   + [blockEventPacketRange](#blockeventpacketrange)
   + [blockPlacementIgnoreEntity](#blockplacementignoreentity)
+  + [chatMessageLengthLimitUnlocked](#chatmessagelengthlimitunlocked)
   + [chunkTickSpeed](#chunktickspeed)
   + [clientSettingsLostOnRespawnFix](#clientsettingslostonrespawnfix)
   + [commandLifeTime](#commandlifetime)
@@ -52,8 +53,10 @@ TIS : `1.54.1`
   + [creativeNoItemCooldown](#creativenoitemcooldown)
   + [creativeOpenContainerForcibly](#creativeopencontainerforcibly)
   + [deobfuscateCrashReportStackTrace](#deobfuscatecrashreportstacktrace)
+  + [debugNbtQueryNonPermission](#debugnbtquerynopermission)
   + [dispenserNoItemCost](#dispensernoitemcost)
   + [dispensersFireDragonBreath](#dispensersfiredragonbreath)
+  + [dustTrapdoorReintroduced](#dusttrapdoorreintroduced)
   + [enchantCommandNoRestriction](#enchantcommandnorestriction)
   + [entityInstantDeathRemoval](#entityinstantdeathremoval)
   + [entityMomentumLoss](#entitymomentumloss)
@@ -66,6 +69,7 @@ TIS : `1.54.1`
   + [fakePlayerNamePrefix](#fakeplayernameprefix)
   + [fakePlayerNameSuffix](#fakeplayernamesuffix)
   + [fakePlayerRemoteSpawning](#fakeplayerremotespawning)
+  + [fakePlayerTicksLikeRealPlayer](#fakeplayertickslikerealplayer)
   + [farmlandTrampledDisabled](#farmlandtrampleddisabled)
   + [fillCommandModeEnhance](#fillcommandmodeenhance)
   + [flattenTriangularDistribution](#flattentriangulardistribution)
@@ -87,8 +91,10 @@ TIS : `1.54.1`
   + [microTimingTarget](#microtimingtarget)
   + [microTimingTickDivision](#microtimingtickdivision)
   + [minecartFullDropBackport](#minecartfulldropbackport)
+  + [minecartPlaceableOnGround](#minecartplaceableonground)
   + [minecartTakePassengerMinVelocity](#minecarttakepassengerminvelocity)
   + [mobcapsDisplayIgnoreMisc](#mobcapsdisplayignoremisc)
+  + [moveableReinforcedDeepslate](#moveablereinforceddeepslate)
   + [oakBalloonPercent](#oakballoonpercent)
   + [observerNoDetection](#observernodetection)
   + [opPlayerNoCheat](#opplayernocheat)
@@ -105,7 +111,10 @@ TIS : `1.54.1`
   + [renewableElytra](#renewableelytra)
   + [repeaterHalfDelay](#repeaterhalfdelay)
   + [sandDupingFix](#sanddupingfix)
+  + [shulkerBoxCCEReintroduced](#shulkerboxccereintroduced)
   + [snowMeltMinLightLevel](#snowmeltminlightlevel)
+  + [spawnBabyProbably](#spawnbabyprobably)
+  + [spawnJockeyProbably](#spawnjockeyprobably)
   + [speedTestCommandMaxSize](#speedtestcommandmaxsize)
   + [stopCommandDoubleConfirmation](#stopcommanddoubleconfirmation)
   + [structureBlockDoNotPreserveFluid](#structureblockdonotpreservefluid)
@@ -113,6 +122,7 @@ TIS : `1.54.1`
   + [syncServerMsptMetricsData](#syncservermsptmetricsdata)
   + [tickCommandEnhance](#tickcommandenhance)
   + [tickCommandPermission](#tickcommandpermission)
+  + [tickCommandCarpetfied](#tickcommandcarpetfied)
   + [tickFreezeCommandToggleable](#tickfreezecommandtoggleable)
   + [tickProfilerCommandReintroduced](#tickprofilercommandreintroduced)
   + [tickWarpCommandAsAnAlias](#tickwarpcommandasanalias)
@@ -132,6 +142,7 @@ TIS : `1.54.1`
   + [voidDamageIgnorePlayer](#voiddamageignoreplayer)
   + [voidRelatedAltitude](#voidrelatedaltitude)
   + [witherSpawnedSoundDisabled](#witherspawnedsounddisabled)
+  + [yeetOutOfOrderChatKick](#yeetoutoforderchatkick)
   + [xpTrackingDistance](#xptrackingdistance)
   + [ported-rules](#ported-rules)
     + [lightEngineMaxBatchSize](#lightenginemaxbatchsize)
@@ -160,9 +171,9 @@ TIS : `1.54.1`
 <summary>update-logs</summary>
 
 + [latest](#latest)<br>
-  version : `v1.0.2`<br>
+  version : `v1.0.3`<br>
   minecraft : `1.20.3`<br>
-  TIS : `1.54.1`
+  TIS : `1.57`
 + [previous](#previous)
 </details>
 
@@ -213,6 +224,10 @@ TIS : `1.54.1`
   + 使用できる値 : `true` `false`
   + 関連項目
     + [entityPlacementIgnoreCollision](#entityplacementignorecollision)
+### chatMessageLengthLimitUnlocked
+チャットメッセージにおける文字数制限を256から32000まで増加させる。carpet TIS additionがクライアントに必要。
++ 初期値 : `false`
++ 使用できる値 : `true` `false`
 ### chunkTickSpeed
   chunk tickの1チャンク*gtにおける発生量を制御する。`0`にすることで無効にできる。落雷が発生する場所や積雪、水源の氷結、そしてrandom tickが効果を受ける。random tickでは1chunk tickに対して`randomTickSpeed`の数だけ発生する。
   + 初期値 : `1`
@@ -285,6 +300,12 @@ TIS : `1.54.1`
   クリエイティブのプレイヤーがブロックされたコンテナを強制的にあけられるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
+### debugNbtQueryNoPermission
+F3+Iによるdebug nbtのリクエストに必要なop level 2の制限を撤廃する。
+
+クライアントにもcarpet TIS additionが必要。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 ### deobfuscateCrashReportStackTrace
   クラッシュレポートのstack traceの難読化を解除する。
   + 初期値 : `false`
@@ -299,6 +320,11 @@ TIS : `1.54.1`
   ディスペンサーがドラゴンブレスをトリガーしたとき、正面のブロックに対してドラゴンブレスを生成させることができるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
+### dustTrapdoorReintroduced
+dust-trapdoorのinstant update looperを1.20以上でも使うことができるようにする。nicnac suppressorもしくはnicnac skipperと呼ばれるものがこれに該当する。
+mc1.20+のみ。
++ 初期値 : `false`
++ 使用できる値 : `true` `false`
 ### enchantCommandNoRestriction
   `/enchant`コマンドはいかなるエンチャントの競合を無視するようにする。
   + 初期値 : `false`
@@ -354,13 +380,19 @@ TIS : `1.54.1`
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### fakePlayerNamePrefix
-  `/player`によって召喚されたbotに前置詞をつける。botの名前に付与されるので、16文字以内かつ英数字と`_`のみしか使用できない。`#none`とするとprefixを無効にできる。
+  `/player`によって召喚されたbotに前置詞をつける。botの名前に付与されるので、16文字以内かつ英数字と`_+-`のみしか使用できない。`#none`とするとprefixを無効にできる。
+
+> [!WARNING]
+> 使えない文字も二回続けてコマンドを入力することで設定することができるが、`/player`や`/kill`でmcidを用いた選択はできなくなることに注意。特にplayer commandはUUID指定ができないために実質的にそのbotに対して使うことができなくなる。
   + 初期値 : `#none`
   + 使用できる値 : `string`
   + 関連項目
     + [fakePlayerNameSuffix](#fakeplayernamesuffix)
 ### fakePlayerNameSuffix
-  `/player`によって召喚されたbotに後置詞をつける。botの名前に付与されるので、16文字以内かつ英数字と`_`のみしか使用できない。`#none`とするとsuffixを無効にできる。
+  `/player`によって召喚されたbotに後置詞をつける。botの名前に付与されるので、16文字以内かつ英数字と`_+-`のみしか使用できない。`#none`とするとsuffixを無効にできる。
+
+> [!WARNING]
+> 使えない文字も二回続けてコマンドを入力することで設定することができるが、`/player`や`/kill`でmcidを用いた選択はできなくなることに注意。特にplayer commandはUUID指定ができないために実質的にそのbotに対して使うことができなくなる。
   + 初期値 : `#none`
   + 使用できる値 : `string`
   + 関連項目
@@ -371,6 +403,19 @@ TIS : `1.54.1`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + carpet / [player](./carpet.html#player)
+### fakePlayerTicksLikeRealPlayer
+  carpet botの仕組みと`/player [<action>]`のパケットがいつtickingされるかを実際のプレイヤーのアクションが実行されるフェーズによせることで可能なかぎり実際のプレイヤーに似た動作をさせる。
+  変更されたフェーズは以下を参照のこと。
+
+|変更箇所|変更前|変更後|
+|:---:|:---:|:---:|
+|Fake player entity-related ticking|Entity Phase|Network Phase| 
+|/player command action packs|Entity Phase|Asynchronous Task Phase|
+
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+    + carpet / [player](./carpet.html#player)
+
 ### farmlandTrampledDisabled
   耕地がmobやplayerの踏み荒らしによって土へと戻る仕様を無効にする。
   + 初期値 : `false`
@@ -521,6 +566,10 @@ TIS : `1.54.1`
   トロッコがアイテムになるとき、コンポーネントとトロッコで分離せずコンポーネントつきトロッコとしてドロップする仕様をバックポートする。minecraft <1.19で有効。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
+### minecartPlaceableOnGround
+トロッコをボートのようにレールなしで直接おけるようにする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 ### minecartTakePassengerMinVelocity
   トロッコがmobを乗せるために必要な最小水平速度(m/gt)を指定する。
   `0`に指定するとボートのように静止していても常にmobを乗せることができる。
@@ -534,6 +583,12 @@ TIS : `1.54.1`
   + 関連項目
     + carpet / [log](./carpet.html#log)
     + carpet / [spawn](./carpet.html#spawn)
+### moveableReinforcedDeepslate
+reinforced deepslate(強化された深層岩)をピストンで動かせるようにする。
+
+mc1.19+のみ。
++ 初期値 : `false`
++ 使用できる値 : `true` `false`
 ### oakBalloonPercent
   オークの木が条件を満たした時巨木になる確率をパーセンテージで指定する。負の数を指定することでバニラ準拠にできる。値は0~100もしくは負の数でなければならない。
   + 初期値 : `-1`
@@ -622,10 +677,31 @@ TIS : `1.54.1`
   + 関連項目
     + [railDupingFix](#raildupingfix)
     + [tntDupingFix](#tntdupingfix)
+### shulkerBoxCCEReintroduced
+コンパレーターがシュルカーの信号強度を読みよるときに発生するClassCastExceptionをmc1.20.2+でも利用可能にする。
+
+voidの魔法の箱よ、永遠に。
+
+mc1.20.2+のみ。
++ 初期値 : `false`
++ 使用できる値 : `true` `false`
 ### snowMeltMinLightLevel
   雪のレイヤーがrandom tickによって融解する最小のlight levelを指定する。雪が積もる最大のlight levelである`10`を指定するとsnow proofを検証することができる。
   + 初期値 : `12`
   + 使用できる値 : `integer`
+### spawnBabyProbably
+子供としてスポーンできるmobがスポーンするとき、子供になる確率を変更する。`-1`にすることでバニラの仕様にすることができる。
++ 初期値 : `-1`
++ 使用できる値 : `double`
+### spawnJockeyProbably
+jockeyとしてスポーンできるmobがスポーンするとき、その確率を変更する。ストライダーにおいては、ゾンビピグリンとその子供の比率は1:3のままである。
+`-1`にすることでバニラの仕様にすることができる。
+  + 初期値 : `-1`
+  + 使用できる値 : `double`
+  + 影響をうけるエンティティ
+    + chicken jockey
+    + spider jockey
+    + strider jockey
 ### speedTestCommandMaxSize
   [speedtest](#speedtest)におけるテスト時の最大サイズをMiBで指定する。
   + 初期値 : `10`
@@ -652,6 +728,26 @@ TIS : `1.54.1`
   `alt+F3`によってみれるmsptの表示を実際のmsptと同期させる。クライアントにcarpet TIS additionが必要。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
+### tickCommandCarpetfied
+`/tick`コマンドの仕様を1.20.3以前のcarpet modの仕様に戻す。
+
+このルールを`true`にすることと以下のルールがその値になることは同値である。
+```
+tickCommandEnhance = true
+tickCommandPermission = 2
+tickFreezeCommandToggleable = true
+tickProfilerCommandsReintroduced = true
+tickWarpCommandAsAnAlias = true
+```
+1.20.3以降でのみ有効。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+  + 関連っ項目
+    + [tickCommandEnhance](#tickcommandenhance)
+    + [tickCommandPermission](#tickcommandpermission)
+    + [tickFreezeCommandToggleable](#tickfreezecommandtoggleable)
+    + [tickProfilerCommandReintroduced](#tickprofilercommandreintroduced)
+    + [tickWarpCommandAsAnAlias](#tickwarpcommandasanalias)
 ### tickCommandEnhance
   minecraft 1.20.3以降において以前の`/tick warp status`を`/tick sprint status`として再実装するようにする。
 
@@ -770,6 +866,12 @@ TIS : `1.54.1`
   xpオーブがプレイヤーをトラッキングできる距離を指定する。`0`にすることでトラッキングを無効にできる。
   + 初期値 : `8`
   + 使用できる値 : `double`
+### yeetOutOfOrderChatKick
+プレイヤーがいかなる理由であっても"Out-of-order chat packet received..."によるキックを防ぐ。
+
+mc1.19+のみ。
++ 初期値 : `false`
++ 使用できる値 : `true` `false`
 ### ported-rules
 ほかのmodから移植されたrule。TISなりの変更が加えられている場合がある。
 <details>
@@ -841,6 +943,9 @@ TIS : `1.54.1`
       [lifeTimeTrackerConsidersMobcap](#lifetimetrackerconsidersmobcap)が`true`であることを要求
     + Mob conversion
     + Trans-dimension from portal
+    + jockey
+    + jockey_mount
+    + player_login
   </details>
   <details>
     <summary>削除された理由</summary>
@@ -861,6 +966,7 @@ TIS : `1.54.1`
     + Picked up by player or mob (item and xp orb only)
     + Mob conversion
     + Trans-dimension through portal
+    + player_logout
     + Other<br>
       もしほかの理由をトラッキングしたい場合、issueをあげれば対応するとのこと。
   </details>
@@ -1168,7 +1274,7 @@ carpetの[log](./carpet.html#log)に様々な`[subject]`を追加する。また
     + abort<br>
       `/speedtest abort`で今行われてるテストを中断させる。
 ### player
-`/player`の`[conduct]`に`randomly`、`after`および`perTick`を追加する。
+`/player`の`[conduct]`に`randomly`、`rejoin`、`after`および`perTick`を追加する。
 + `[conduct]`
   + `randomly`<br>
     `/player [mcid] [action] randomly [method] [method_option]`によって`[method]`と`[method_option]`に基づいてランダムに指定の行動をとる。テストをする場合、`[method_option]`に`--simulate`を追加する。
@@ -1191,6 +1297,8 @@ carpetの[log](./carpet.html#log)に様々な`[subject]`を追加する。また
         いわゆるポアソン分布。
       + `uniform`<br>
         最小値と最大値をこの順で指定するとその間の数値で一様に選出する。
+  + `rejoin`<br>
+    `/player [mcid] rejoin`でそのプレイヤーを同じ場所、向きで再ログインさせる。
   + `after`<br>
     `/player [mcid] [action] after [count]`でコマンド実行後から`[counter]`gt後にその動作が実行される。
   + `perTick`<br>
@@ -1302,36 +1410,63 @@ carpetの[tick](./carpet.html#tick)の`warp`に`status`を追加する。
 
 ## update-logs
 ### latest
-+ version : `v1.0.2`
++ version : `v1.0.3`
++ minecraft : `1.20.3`
++ TIS : `1.57`
++ 変更点
+  + TISのversionの変更
+  + バージョン表記の変更
+  + アップデートに伴う情報の修正
+    <details>
+    <summary>追加</summary>
+    
+    + [fakePlayerTicksLikeRealPlayer](#fakeplayertickslikerealplayer)
+    + [spawnJockeyProbably](#spawnjockeyprobably)
+    + [spawnBabyProbably](#spawnbabyprobably)
+    + [tickCommandCarpetfied](#tickcommandcarpetfied)
+    + [chatMessageLengthLimitUnlocked](#chatmessagelengthlimitunlocked)
+    + [debugNbtQueryNoPermission](#debugnbtquerynopermission)
+    + [minecartPlaceableOnGround](#minecartplaceableonground)
+    + [yeetOutOfOrderChatKick](#yeetoutoforderchatkick)
+    + [moveableReinforcedDeepslate](#moveablereinforceddeepslate)
+    + [dustTrapdoorReintroduced](#dusttrapdoorreintroduced)
+    + [shulkerBoxCCEReintroduced](#shulkerboxccereintroduced)
+    </details>
++ 更新日<br>
+  `24/5/1 UTC+9`
+### previous
+<details>
+<summary>previous</summary>
+<details>
+<summary><code>v1.0.2</code></summary>
+
 + minecraft : `1.20.3`
 + TIS : `1.54.1`
 + 変更点
   + TISのversionの変更
-  + バージョン表記の変更
-  + carpet fixesおよびsub tickの参考を削除
-  + アップデートに伴う情報の修正
-    <details>
-    <summary>追加</summary>
+    + バージョン表記の変更
+    + carpet fixesおよびsub tickの参考を削除
+    + アップデートに伴う情報の修正
+      <details>
+      <summary>追加</summary>
 
-    + [commandSpeedTest](#commandspeedtest)
-    + [creativeInstantTame](#creativeinstanttame)
-    + [entityInstantDeathRemoval](#entityinstantdeathremoval)
-    + [speedTestCommandMaxSize](#speedtestcommandmaxsize)
-    + [tickCommandEnhance](#tickcommandenhance)
-    + [tickCommandPermission](#tickcommandpermission)
-    + [tickFreezeCommandToggleable](#tickfreezecommandtoggleable)
-    + [tickProfilerCommandReintroduced](#tickprofilercommandreintroduced)
-    + [tickWarpCommandAsAnAlias](#tickwarpcommandasanalias)
-    + [xpTrackingDistance](#xptrackingdistance)
-    + [log](#log)
-      + wanderingTrader
-    + [speedtest](#speedtest)
-  </details>
+        + [commandSpeedTest](#commandspeedtest)
+        + [creativeInstantTame](#creativeinstanttame)
+        + [entityInstantDeathRemoval](#entityinstantdeathremoval)
+        + [speedTestCommandMaxSize](#speedtestcommandmaxsize)
+        + [tickCommandEnhance](#tickcommandenhance)
+        + [tickCommandPermission](#tickcommandpermission)
+        + [tickFreezeCommandToggleable](#tickfreezecommandtoggleable)
+        + [tickProfilerCommandReintroduced](#tickprofilercommandreintroduced)
+        + [tickWarpCommandAsAnAlias](#tickwarpcommandasanalias)
+        + [xpTrackingDistance](#xptrackingdistance)
+        + [log](#log)
+            + wanderingTrader
+        + [speedtest](#speedtest)
+      </details>
 + 更新日<br>
   `23/12/27 UTC+9`
-### previous
-<details>
-<summary>previous</summary>
+</details>
 <details>
 <summary><code>v1.0.1</code></summary>
 
