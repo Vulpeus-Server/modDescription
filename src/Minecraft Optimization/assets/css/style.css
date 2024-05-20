@@ -132,6 +132,10 @@ table > tbody > tr + tr > td {
 	color: #ff3ea3;
 }
 
+.option {
+	color: #3d7ff1;
+}
+
 .pare {
 	font-size: 9px;
 }
