@@ -1195,7 +1195,7 @@ WorldEditのように複数をランダムに指定することはできない�
   + 表現の変更
   + バージョン表記の変更
 + 更新日<br>
-  `23/10/26 UTC+9`
+  `24/09/26 UTC+9`
 ### previous
 <details>
 <summary>versions</summary>
