@@ -1,9 +1,9 @@
 <!--
-version : v1.0.1
+version : v1.1.0
 -->
 # carpet
-minecraft : `1.20.1`<br>
-carpet : `1.4.112+v230608`
+minecraft : `1.21.1`<br>
+carpet : `1.4.153+v240918`
 
 
 このドキュメント内では`[]`を設定必須の値、`<>`を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
@@ -163,10 +163,13 @@ carpet : `1.4.112+v230608`
 
 ## rules
 全てのルールは`/carpet [rule] <value>`によって変更することができる。
-### ~~allowSpawningOfflinePlayers~~
-  オフラインのプレイヤーを召喚できるかを設定できる。
-  オフラインのプレイヤーは`/player [mcid] [spawn | shadow]`によるものではないことを確認。
+### allowListingFakePlayers
+  マルチプレイ画面でbotをプレイヤーリストに表示する。
   + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### allowSpawningOfflinePlayers
+  オフラインのプレイヤーを召喚できるようにする。
+  + 初期値 : `true`
   + 使用できる値 : `true` `false`
 ### antiCheatDisabled
   バニラ標準のアンチチートを無効化する。アンチチートにはプレイヤーのリーチ制限や移動量制限などが含まれ、それぞれが数値上の最大値まで許容することができるようになる。
@@ -196,92 +199,92 @@ carpet : `1.4.112+v230608`
 チェーンを長いほうの端でスライムのように接続でき、かつほかのブロックとも接続できるようにする。`stick_to_all`を指定するとすべての方向について接続する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false` `stick_to_all`
-### ~~cleanLog~~
- どのログがどのように消されるかは謎。
+### cleanLog
+`Maximum sound pool size 247 reached`というログを表示しないようにする。
 
  **クライアントのみ**
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### commandDistance
-  `/distance`を使用できるプレイヤーを指定する。`true` `false`ではopの所持の如何を問わず指定することができる。
+  `/distance`を使用できるようにする。`true` `false`ではopの所持の如何を問わず指定することができる。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [distance](#distance)
 ### commandDraw
-  `/draw`を使用できるプレイヤーを指定する。
+  `/draw`を使用できるようにする。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [draw](#draw)
 ### commandInfo
-  `/info`を使用できるプレイヤーを指定する。
+  `/info`を使用できるようにする。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [info](#info)
 ### commandLog
-  `/log`を使用できるプレイヤーを指定する。
+  `/log`を使用できるようにする。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [log](#log)
 ### commandPerimeterInfo
-  `/perimeterinfo`を使用できるプレイヤーを指定する。
+  `/perimeterinfo`を使用できるようにする。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [perimeterInfo](#perimeterinfo)
 ### commandPlayer
-  `/player`を使用できるプレイヤーを指定する。
+  `/player`を使用できるようにする。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [player](#player)
 ### commandProfile
-  `/profile`を使用できるプレイヤーを指定する。
+  `/profile`を使用できるようにする。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [profile](#profile)
 ### commandScript
-  `/script`のscript作成を使用できるプレイヤーを指定する。
+  `/script`のうち`/script download` `/script load` `/script unload` `/script run`以外を使用できるようにする。
   + 初期値 : `true`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [script](#script)
 ### commandScriptACE
-  `/script load` `/script run`を使用できるプレイヤーを指定する。appが実行するときのopレベルでもある。
+  `/script download` `/script load` `/script unload` `/script run`を使用できるようにする。`/script run`でappが実行されるときの権限レベルでもある。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [script](#script)
 ### commandSpawn
-  `/spawn`を使用できるプレイヤーを指定する。
+  `/spawn`を使用できるようにする。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [spawn](#spawn)
 ### commandTick
-  `/tick`を使用できるプレイヤーを指定する。
+  `/tick`を使用できるようにする。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [tick](#tick)
-### commandTrackingAI
-  `/track`を使用できるプレイヤーを指定する。
+### commandTrackAI
+  `/track`を使用できるようにする。
   + 初期値 : `ops`
   + 使用できる値 : `true` `false` `ops` `0` `1` `2` `3` `4`
   + 関連項目
     + [track](#track)
 ### creativeFlyDrag
-  クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、`1`でBEのようにストッピングができるようになる。
+  クリエイティブにおける空気抵抗(慣性の減衰度合い)を指定する。0で一切減衰せず、`1`でBEのようにストッピングができるようになる。
 
   **クライアントのみ**
   + 初期値 : `0.09`
   + 使用できる値 : `0.00 ~ 1.00`
 ### creativeFlySpeed
-  クリエイティブにおける浮遊時の飛行速度を設定する。
+  クリエイティブにおける浮遊時の飛行速度を指定する。
   
   **クライアントのみ**
   + 初期値 : `1.0`
@@ -291,8 +294,10 @@ carpet : `1.4.112+v230608`
   クライアントとサーバーの双方に設定があるため、同じ設定にしないと動作が不安定になる。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
+  + 関連項目
+    + extra / [disablePlayerCollision](./carpet-extra.md#disableplayercollision)
 ### creativePlayersLoadChunks
-  クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。
+  クリエイティブのプレイヤーが周囲のチャンクをロードしないようにする。
   <div class="md-note">
 
   スペクテイターモードについては`/gamerule spectatorsGenerateChunks [true | false]`によって設定可能。
@@ -305,7 +310,7 @@ carpet : `1.4.112+v230608`
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### customMOTD
-  サーバー一覧に表示される情報をカスタマイズする。`_`のみでバニラのものを使用する。
+  サーバー一覧に表示されるMOTDをカスタマイズする。`_`で`server.properties`にあるものを使用する。
   + 初期値 : `_`
   + 使用できる値 : `string`
 ### defaultLoggers
@@ -332,7 +337,9 @@ carpet : `1.4.112+v230608`
   + 初期値 : `false`
   + 使用できる値 : `true` `false`  
 ### fillLimit
-  fillやcloneのブロック数制限を変更する。ただしバニラに同様の機能である`/gamerule commandModificationBlockLimit [integer]`があり、そちらの数値に上書きされる。
+  fillやcloneのブロック数制限を変更する。23w03a(1.19.4 snap)から`/gamerule commandModificationBlockLimit [integer]`が追加されたため、ゲームはこのゲームルールの値とcarpetルールの値のうちどちらか大きいほうの値を利用する。
+ 
+  **1.20-**
   + 初期値 : `32768`
   + 使用できる値 : `integer`
 ### fillUpdates
@@ -359,7 +366,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### forceloadLimit
-  `/forceload`の上限を変更する。
+  `/forceload`のチャンク数上限を変更する。
   + 初期値 : `256`
   + 使用できる値 : `integer`
 ### hardcodeTNTangle
@@ -375,7 +382,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
     + TIS / [hopperCountersUnlimitedSpeed](./carpet-TIS-addition.html#hoppercountersunlimitedspeed)
     + TIS / [hopperNoItemCost](./carpet-TIS-addition.html#hoppernoitemcost)
 ### huskSpawningInTemples
-  ピラミッドではハスクのみがスポーンできるようにする。
+  ハスクがピラミッドでのみスポーンできるようにする。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### interactionUpdates
@@ -384,12 +391,14 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   + 使用できる値 : `true` `false`
   + 関連項目
     + [fillUpdates](#fillupdates)
+    + intri / [interaction](./intricarpet.md#interaction)
+    + TIS / [totallyNoBlockUpdate](./carpet-TIS-addition.md#totallynoblockupdate)
 ### lagFreeSpawning
   mobのスポーンを最適化する。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### language
-  carpetで使用する言語を変更する。
+  carpetのdescriptionで使用する言語を変更する。
   + 初期値 : `en_us`
   + 使用できる値 : `en_us` `fr_fr` `pt_br` `zh_cn` `zh_tw`
 ### lightningKillsDropsFix
@@ -403,6 +412,8 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   + 使用できる値 : `true` `false`
 ### maxEntityCollisions
   一つのエンティティが持つ最大の当たり判定の数。0で無制限。非不整数でなければいけない。
+  > [!NOTE]
+  > maxEntityCrammingは窒息しない最大のエンティティ数であり、この値とは関係ない。
   + 初期値 : `0`
   + 使用できる値 : `interger`
 ### mergeTNT
@@ -452,19 +463,20 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### portalCreativeDelay
-  プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgt。
+  プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgt。carpet 1.4.122 (23w42a, 1.20.3 snap)よりバニラで同等のgameruleが追加されたため削除。
   + 初期値 : `0`
   + 使用できる値 : `0 ~ 72000`
   + 関連項目
     + [portalSurvivalDelay](#portalsurvivaldelay)
 ### portalSurvivalDelay
   プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgt。
+  carpet 1.4.122 (23w42a, 1.20.3 snap)よりバニラで同等のgameruleが追加されたため削除。
   + 初期値 : `80`
   + 使用できる値 : `0 ~ 72000`
   + 関連項目
     + [creativePortalDelay](#portalcreativedelay)
 ### pushLimit
-  ピストンが押せるブロックの最大量を決める必要がある。
+  ピストンが押せるブロックの最大量。
   + 初期値 : `12`
   + 使用できる値 : `1 ~ 1024`
 ### quasiConnectivity
@@ -472,7 +484,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   + 初期値 : `true`
   + 使用できる値 : `true` `false`
 ### railPowerLimit
-  レールの動力がどこまで動力を伝達できるかを設定する。
+  レールがどこまで動力を伝達できるかを設定する。
   + 初期値 : `9`
   + 使用できる値 : `1 ~ 1024`
 ### renewableBlackstone
@@ -480,7 +492,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### renewableCoral
-  サンゴに骨粉を与えることでサンゴブロック(ストラクチャー)になるようにする。`expanded`にするとウチワサンゴでも可能になる。
+  サンゴに骨粉を与えることでサンゴブロック(ストラクチャー)になるようにする。`expanded`にすると暖かい海以外でも可能になる。
   + 初期値 : `false`
   + 使用できる値 : `true` `false` `expanded`
 ### renewableDeepslate
@@ -498,7 +510,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   + 関連項目
     + [flippinCactus](#flippincactus)
 ### scriptsAppStore
-  scriptをゲーム内でダウンロードするさいの場所を指定する。コンソールにおける`cd`に同じ。github上の有効なパブリックリポジトリのリンクのみ受け付ける。`none`とした場合無効になる。
+  scriptをゲーム内でダウンロードする際のダウンロード場所を指定する。github上の有効なパブリックリポジトリのリンクのみ受け付ける。`none`とした場合無効になる。
   + 初期値 : `gnembon/scarpet/contents/programs`
   + 使用できる値 : `string`
   + 関連項目
@@ -506,7 +518,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
     + [script](#script)
 ### scriptsAutoload
   `/script`が有効になっている場合、serverがリスタートもしくはワールドが読み込まれたときに自動的に読み込まれるようにする。
-  + 初期値 : `false`
+  + 初期値 : `true`
   + 使用できる値 : `true` `false`
   + 関連項目
     + [commandScript](#commandscript)
@@ -522,15 +534,15 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   スクリプトを最適化する。
   
   **一部正常に起動しなくなるスクリプトがあることに注意。**
-  + 初期値 : `false`
+  + 初期値 : `true`
   + 使用できる値 : `true` `false`
   + 関連項目
     + [commandScript](#commandscript)
     + [script](#script)
 ### sculkSensorRange
-  スカルくセンサーの振動を伝える半径を変更する。1から1024の整数値である必要がある。
+  スカルくセンサーの振動を伝える半径を変更する。
   + 初期値 : `8`
-  + 使用できる値 : `0 ~ 72000`
+  + 使用できる値 : `0 ~ 1024`
 ### shulkerSpawningInEndCities
   シュルカーがエンドシティーでリスポーンするようにする。
   + 初期値 : `false`
@@ -540,7 +552,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### simulationDistance
-  サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の間である必要があり、`0`にすると無効になる。  
+  サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の間である必要があり、`0`にすると無効になる。carpet 1.4.60より有効。
   + 初期値 : `0`
   + 使用できる値 : `0 ~ 32`
   + 関連項目
@@ -552,7 +564,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### spawnChunksSize
-  スポーンチャンクの半径を指定する。`0`にするとスポーンチャンクを無効にできる。
+  スポーンチャンクの半径を指定する。`0`にするとスポーンチャンクを無効にできる。carpet 1.4.130 (24w03a, 1.20.5 snap)よりバニラで同等のゲームルールが追加されたため削除。
   + 初期値 : `11`
   + 使用できる値 : `0 ~ 255`
 ### stackableShulkerBoxes
@@ -625,7 +637,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
   + 初期値 : `-1.0`
   + 使用できる値 : `double`
 ### updateSuppressionBlock
-  アクティベータレールをバリアブロックの上に置くと、レールがオフになったときに`neighor update stack`が埋められる。この値はスタックに残すべき更新の量。
+  アクティベータレールをバリアブロックの上に置くと、レールがオフになったときに`neighor update stack`が埋められる。この値はスタックに残すべき更新の量。`-1`で無効。1.19以降では`server.properties`の`maxChainNeighborUpdate`の値を参照する。
   + 初期値 : `-1`
   + 使用できる値 : `integer`
   + 関連項目
@@ -1143,7 +1155,7 @@ WorldEditのように複数をランダムに指定することはできない�
   </div>
 
 + warp<br>
-  `/tick warp <count> <tail command>`で最適化をしたうえでできるだけ最速で`<count>`の時間分だけゲームを早送りしようとする。`<count>`を指定しないもしくは`0`にした場合、無制限にwarpする。すでにwarpしている場合そのwarpを終了させる。
+  `/tick warp <count> <tail command>`で最適化をしたうえでできるだけ最速で`<count>`の時間分だけゲームを早送りしようとする。`<count>`を指定しないもしくは`0`にした場合、warpを中止する。すでにwarpしている場合そのwarpを終了させる。
 
   また、warp実行中に`/tick warp status`によって以下のことが確認できる。
   <details>
@@ -1174,19 +1186,31 @@ WorldEditのように複数をランダムに指定することはできない�
 
 ## update-logs
 ### latest
-+ version : `v1.0.1`
-+ minecraft : `1.20.1`
-+ carpet : `1.4.112+v230608`
++ version : `v1.1.0`
++ minecraft : `1.21.1`
++ carpet : `1.4.153+v240918`
 + 変更点
-  + `/tick`の`warp`および`freeze`に関する情報の加筆
-  + Carpet-FixesおよびIntricarpetの参考の追加
-  + 表記の変更
+  + 削除されたルールのバージョンを追記
+  + 表現の変更
   + バージョン表記の変更
 + 更新日<br>
   `23/10/26 UTC+9`
 ### previous
 <details>
-<summary>previous</summary>
+<summary>versions</summary>
+<details>
+<summary><code>v1.0.1</code></summary>
+
++ minecraft : `1.20.1`
++ carpet : `1.4.112+v230608`
++ 変更点
+  + `/tick`の`warp`および`freeze`に関する情報の加筆
+  + Intricarpetの参考の追加
+  + 表記の変更
+  + バージョン表記の変更
++ 更新日<br>
+  `23/10/26 UTC+9`
+</details>
 <details>
 <summary><code>v1.0.0</code></summary>
 
