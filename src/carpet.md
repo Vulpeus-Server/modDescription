@@ -28,6 +28,7 @@ carpet : `1.4.153+v240918`
 <details>
 <summary>rules</summary>
 
++ [allowListingFakePlayers](#allowlistingfakeplayers)
 + [allowSpawningOfflinePlayers](#allowspawningofflineplayers)
 + [antiCheatDisabled](#anticheatdisabled)
 + [carpetCommandPermissionLevel](#carpetcommandpermissionlevel)
