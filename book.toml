@@ -1,13 +1,13 @@
 [book]
 title = "Mod Description"
-authors = ["TaichiServer"]
+authors = ["Vulpeus-Server"]
 description = "Mod descriptions written in Markdown."
 language = "ja"
 multilingual = false
 src = "src"
 
 [output.html]
-git-repository-url = "https://github.com/TaichiServer/modDescription"
+git-repository-url = "https://github.com/Vulpeus-Server/modDescription"
 mathjax-support = true
 additional-css = ["theme/style.css"]
 additional-js = ["theme/md_alert.js"]
