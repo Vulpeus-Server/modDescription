@@ -1,9 +1,9 @@
 <!--
-version : v1.0.1
+version : v1.1.0
 -->
 # carpet-extra
-minecraft : `1.20.1`<br>
-extra : `1.4.115`
+minecraft : `1.21.1`<br>
+extra : `1.4.147`
 
 **carpetのaddonであるため、carpetが前提modとなる。**
 
@@ -206,11 +206,11 @@ F3デバッグモードがいくつかのブロックでアップデートを起
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### emptyShulkerBoxStackAlways
-インベントリを含め常に空のシュルカーボックスはスタックできるようにする。
+インベントリを含め常に空のシュルカーボックスはスタックできるようにする。シュルカーは64stackableのアイテムと同等に扱われるため、コンパレータの読み取りも64stackableのときと同じ割合になる。
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### enderPearlChunkLoading
-水平方向に移動するエンダーパールはentity tickingの段階でチャンクをロードするようにする。
+水平方向に移動するエンダーパールは移動後のチャンクをロードするようにする。
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### fallingBlockDispensers
@@ -242,7 +242,7 @@ BEのようにピストンと粘着ピストンがレッドストーンダスト
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### reloadSuffocationFix
-エンティティがリロードしたときにブロックにめり込むバグを修正するようにする。
+エンティティがリロードしたときにブロックにめり込むバグを修正するようにする。[MC-2025](https://bugs.mojang.com/browse/MC-2025)を修正する.
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### renewableEndstone
@@ -250,7 +250,7 @@ BEのようにピストンと粘着ピストンがレッドストーンダスト
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### renewableIce
-金床が複数の氷の上におちてきたときより密度の高い氷に変換するようにする。
+金床が複数の氷または氷塊の上におちてきたときに、氷は氷塊に、氷塊は青い氷に変換するようにする。
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
 ### renewableNetherrack
@@ -316,7 +316,20 @@ y0もしくはy-64の岩盤をドラゴンの卵で破壊できるようにす�
 
 ## update-logs
 ### latest
-+ version : `v1.0.2`
++ version : `v1.1.0`
++ minecraft : `1.21.1`
++ extra : `1.4.147`
++ 変更点
+  + バージョン表記の変更
+  + アップデートに伴う情報の修正
++ 更新日<br>
+  `24/9/26 UTC+9`
+### previous
+<details>
+<summary>previous</summary>
+<details>
+<summary><code>v1.0.2</code></summary>
+
 + minecraft : `1.20.2`
 + extra : `1.4.118`
 + 変更点
@@ -325,9 +338,7 @@ y0もしくはy-64の岩盤をドラゴンの卵で破壊できるようにす�
     + [blockStateSyncing](#blockstatesyncing)
 + 更新日<br>
   `24/5/1 UTC+9`
-### previous
-<details>
-<summary>previous</summary>
+</details>
 <details>
 <summary><code>v1.0.1</code></summary>
 
