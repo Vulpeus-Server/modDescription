@@ -74,8 +74,10 @@ TIS : `1.57`
   + [fillCommandModeEnhance](#fillcommandmodeenhance)
   + [flattenTriangularDistribution](#flattentriangulardistribution)
   + [fluidDestructionDisabled](#fluiddestructiondisabled)
+  + [fortressNetherBricksPackSpawningFix](#fortressnetherbrickspackspawningfix)
   + [hopperCountersUnlimitedSpeed](#hoppercountersunlimitedspeed)
   + [hopperNoItemCost](#hoppernoitemcost)
+  + [hopperXpCounters](#hopperxpcounters)
   + [HUDLoggerUpdateInterval](#hudloggerupdateinterval)
   + [instantBlockUpdaterReintroduced](#instantblockupdaterreintroduced)
   + [instantCommandBlock](#instantcommandblock)
@@ -95,8 +97,11 @@ TIS : `1.57`
   + [minecartTakePassengerMinVelocity](#minecarttakepassengerminvelocity)
   + [mobcapsDisplayIgnoreMisc](#mobcapsdisplayignoremisc)
   + [moveableReinforcedDeepslate](#moveablereinforceddeepslate)
+  + [natualSpawningUse13Heightmap](#natualspawninguse13heightmap)
+  + [natualSpawningUse13HeightmapExtra](#natualspawninguse13heightmapextra)
   + [oakBalloonPercent](#oakballoonpercent)
   + [observerNoDetection](#observernodetection)
+  + [obsidianPlatformBlockBreakerBackport](#obsidianplatformblockbreakerbackport)
   + [opPlayerNoCheat](#opplayernocheat)
   + [optimizedFastEntityMovement](#optimizedfastentitymovement)
   + [optimizedHardHitBoxEntityCollision](#optimizedhardhitboxentitycollision)
@@ -106,12 +111,14 @@ TIS : `1.57`
   + [preciseEntityPlacement](#preciseentityplacement)
   + [railDupingFix](#raildupingfix)
   + [redstoneDustRandomUpdateOrder](#redstonedustrandomupdateorder)
+  + [redstoneDustRepeaterComparatorIgnoreUpwardsStateUpdate](#redstonedustrepeatercomparatorignoreupwardsstateupdate)
   + [renewableDragonEgg](#renewabledragonegg)
   + [renewableDragonHead](#renewabledragonhead)
   + [renewableElytra](#renewableelytra)
   + [repeaterHalfDelay](#repeaterhalfdelay)
   + [sandDupingFix](#sanddupingfix)
   + [shulkerBoxCCEReintroduced](#shulkerboxccereintroduced)
+  + [shulkerBoxContentDropBackport](#shulkerboxcontentdropbackport)
   + [snowMeltMinLightLevel](#snowmeltminlightlevel)
   + [spawnBabyProbably](#spawnbabyprobably)
   + [spawnJockeyProbably](#spawnjockeyprobably)
@@ -171,9 +178,9 @@ TIS : `1.57`
 <summary>update-logs</summary>
 
 + [latest](#latest)<br>
-  version : `v1.0.3`<br>
-  minecraft : `1.20.3`<br>
-  TIS : `1.57`
+  version : `v1.1.0`<br>
+  minecraft : `1.21.1`<br>
+  TIS : `1.63`
 + [previous](#previous)
 </details>
 
@@ -1488,9 +1495,9 @@ carpetの[tick](./carpet.html#tick)の`warp`に`status`を追加する。
 
 ## update-logs
 ### latest
-+ version : `v1.0.3`
-+ minecraft : `1.20.3`
-+ TIS : `1.57`
++ version : `v1.1.0`
++ minecraft : `1.21.1`
++ TIS : `1.63`
 + 変更点
   + TISのversionの変更
   + バージョン表記の変更
@@ -1511,7 +1518,7 @@ carpetの[tick](./carpet.html#tick)の`warp`に`status`を追加する。
     + [shulkerBoxCCEReintroduced](#shulkerboxccereintroduced)
     </details>
 + 更新日<br>
-  `24/5/1 UTC+9`
+  `24/10/17 UTC+9`
 ### previous
 <details>
 <summary>previous</summary>
