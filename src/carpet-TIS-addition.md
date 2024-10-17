@@ -301,7 +301,7 @@ TIS : `1.57`
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### debugNbtQueryNoPermission
-F3+Iによるdebug nbtのリクエストに必要なop level 2の制限を撤廃する。
+F3+Iによるdebug nbtのリクエストに必要なop level 2の制限を撤廃する。tweakerooのinventory previewやlitematicaのinventory overlay等のdebug nbtのメソッドを使っているものはこれによりopを必要としなくなる。
 
 クライアントにもcarpet TIS additionが必要。
   + 初期値 : `false`
@@ -435,6 +435,15 @@ mc1.20+のみ。
   流体によるブロックの破壊を無効にする。流体は本来破壊されるべきブロックも破壊されないブロックとして扱うになる。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
+### fortressNetherBricksPackSpawningFix
+  ネザー要塞におけるpack spawnの分離を再導入する。
+  1.18.2-pre1でネザーレンガの上で最初のpack spawningの試行があると、ネザー要塞のコンポーネントの内側にないネザーレンガ以外のブロックに遷移したときに要塞mob(ウィザースケルトン、ブレイズ、マグマキューブ)はスポーン吸うrことができない。
+
+  この問題が影響する具体的な例として、天井の岩盤を削除しないwither skeleton farmではネザーレンガのpack spawn skirtをつけると逆に効率が低下する可能性がある。
+
+  mc1.18.2+
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 ### hopperCountersUnlimitedSpeed
   `/counter`によって有効になったカウンタのホッパーとしてのクールダウンを無効にする。hopperCountersが有効になっている場合にのみ動作する。
   + 初期値 : `false`
@@ -448,6 +457,16 @@ mc1.20+のみ。
   + 使用できる値 : `true` `false`
   + 関連項目
     + [scounter](#scounter)
+### hopperXpCounters
+  `/xcounter`を有効にする。xp orbのホッパーカウンター。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+  + 関連項目
+    + [xcounter](#xcounter)
+    + [hopperNoItemCost](#hoppernoitemcost)
+    + [scounter](#scounter)
+    + carpet / [hopperCounter](./carpet.md#hoppercounters)
+    + carpet / [counter](./carpet.md#counter)
 ### HUDLoggerUpdateInterval
   HUDとして表示されるloggerの更新頻度を変更する。単位はgtで、全てのloggerに対して適用される。
   + 初期値 : `20`
@@ -584,17 +603,34 @@ mc1.20+のみ。
     + carpet / [log](./carpet.html#log)
     + carpet / [spawn](./carpet.html#spawn)
 ### moveableReinforcedDeepslate
-reinforced deepslate(強化された深層岩)をピストンで動かせるようにする。
+  reinforced deepslate(強化された深層岩)をピストンで動かせるようにする。
 
-mc1.19+のみ。
+  mc1.19+のみ。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### natualSpawningUse13Heightmap
+  自然スポーンに使用するheightmapを自然光のheightmapを利用するようにする。基本的に1.13以前の湧き方になる。
 + 初期値 : `false`
 + 使用できる値 : `true` `false`
++ 関連項目
+  + [natualSpawningUse13HeightmapExtra](#natualspawninguse13heightmapextra)
+### natualSpawningUse13HeightmapExtra
+  naturalSpawningUse13Heightmapにおいて、ピストン、スライム、はちみつブロックを無視したheightmapを利用するようにする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+  + 関連項目
+    + [natualSpawningUse13Heightmap](#natualspawninguse13heightmap)
 ### oakBalloonPercent
   オークの木が条件を満たした時巨木になる確率をパーセンテージで指定する。負の数を指定することでバニラ準拠にできる。値は0~100もしくは負の数でなければならない。
   + 初期値 : `-1`
   + 使用できる値 : `0 ~ 100` `-1`
 ### observerNoDetection
   オブザーバーがstateUpdateを検知しなくする。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### obsidianPlatformBlockBreakerBackport
+  黒曜石のプラットフォームがブロックを壊したときにアイテムをドロップする仕様をバックポートする。
+  mc1.21-
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
 ### opPlayerNoCheat
@@ -652,6 +688,13 @@ mc1.19+のみ。
   レッドストーンダストの更新順を座標依存ではなくランダムにする。座標依存を調べる場合に有用。
   + 初期値 : `false`
   + 使用できる値 : `true` `false`
+### redstoneDustRepeaterComparatorIgnoreUpwardsStateUpdate
+  レッドストーンダスト、リピーター、コンパレータは下からのstate updateを無視するようにする。23w35aの変更をもとに戻す。これにより浮いたコンパレータを作りやすくすることができる。
+> [!NOTE]
+> [dustTrapdoorReintroduced](#dusttrapdoorreintroduced)はダストのみ戻す。
+  mc1.20.2+
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 ### renewableDragonEgg
   ドラゴンの卵がドラゴンブレスにあたったとき、ドラゴンの卵が新しく生成されるようにする。
   + 初期値 : `false`
@@ -678,21 +721,26 @@ mc1.19+のみ。
     + [railDupingFix](#raildupingfix)
     + [tntDupingFix](#tntdupingfix)
 ### shulkerBoxCCEReintroduced
-コンパレーターがシュルカーの信号強度を読みよるときに発生するClassCastExceptionをmc1.20.2+でも利用可能にする。
+  コンパレーターがシュルカーの信号強度を読みよるときに発生するClassCastExceptionをmc1.20.2+でも利用可能にする。
 
-voidの魔法の箱よ、永遠に。
+  voidの魔法の箱よ、永遠に。
 
-mc1.20.2+のみ。
-+ 初期値 : `false`
-+ 使用できる値 : `true` `false`
+  mc1.20.2+のみ。
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
+### shulkerBoxContentDropBackport
+  シュルカーボックスアイテムがなんらかの方法により死んだとき、その中身をドロップする仕様をバックポートする。
+  mc1.17-
+  + 初期値 : `false`
+  + 使用できる値 : `true` `false`
 ### snowMeltMinLightLevel
   雪のレイヤーがrandom tickによって融解する最小のlight levelを指定する。雪が積もる最大のlight levelである`10`を指定するとsnow proofを検証することができる。
   + 初期値 : `12`
   + 使用できる値 : `integer`
 ### spawnBabyProbably
-子供としてスポーンできるmobがスポーンするとき、子供になる確率を変更する。`-1`にすることでバニラの仕様にすることができる。
-+ 初期値 : `-1`
-+ 使用できる値 : `double`
+  子供としてスポーンできるmobがスポーンするとき、子供になる確率を変更する。`-1`にすることでバニラの仕様にすることができる。
+  + 初期値 : `-1`
+  + 使用できる値 : `double`
 ### spawnJockeyProbably
 jockeyとしてスポーンできるmobがスポーンするとき、その確率を変更する。ストライダーにおいては、ゾンビピグリンとその子供の比率は1:3のままである。
 `-1`にすることでバニラの仕様にすることができる。
@@ -946,6 +994,7 @@ mc1.19+のみ。
     + jockey
     + jockey_mount
     + player_login
+    + status effect (oozing, infested)
   </details>
   <details>
     <summary>削除された理由</summary>
@@ -993,6 +1042,7 @@ carpetの[log](./carpet.html#log)に様々な`[subject]`を追加する。また
   + `turtleEgg`
   + `wanderingTrader`
   + `xporb`
+  + `xcounter`
 + 関連項目
   + carpet / [log](./carpet.html#log)
 <details>
@@ -1159,6 +1209,15 @@ carpetの[log](./carpet.html#log)に様々な`[subject]`を追加する。また
   `/log turtleEgg`で亀の卵がいつ踏みつぶされたかを表示する。
   + 表示場所<br>
     チャット
++ xcounter<br>
+  `/log xcounter <color>`でオーブカウンタの効率を表示する。
+  + `<color>`<br>
+    16色が利用可能。指定しなかった場合有効なものを表示する。
+  + 表示場所<br>
+    プレイヤーリスト
+  + 関連項目
+    + [hopperXpCounter](#hopperxpcounters)
+    + [xcounter](#xcounter)
 + xporb<br>
   `/log xporb <create | die | despawn>`でexperience_orbに対して例えばデスポーンなどなにかがおきたときにそれの情報を表示する。
   + `<create | die | despawn>`<br>
@@ -1372,6 +1431,8 @@ carpetの[log](./carpet.html#log)に様々な`[subject]`を追加する。また
     効率の計算をtickベースからhourベースに変更して表示する。
 + 関連項目
   + [hopperNoItemCost](#hoppernoitemcost)
+  + [hopperXpCounter](#hopperxpcounters)
+  + [xcounter](#xcounter)
   + carpet / [hopperCounter](./carpet.html#hoppercounter)
   + carpet / [counter](./carpet.html#counter)
 ### sleep
@@ -1407,6 +1468,23 @@ carpetの[tick](./carpet.html#tick)の`warp`に`status`を追加する。
 + carpet / [tick](./carpet.html#tick)
 ### script
 スクリプトについては[TIS/misc/script](https://github.com/TISUnion/Carpet-TIS-Addition/blob/master/docs/misc.md#scarpet)を参照。~~説明できる自信がない~~
+### xcounter
+ホッパーの上を通ったxpオーブの量を計測する。
+`/xcounter <color> <realtime | reset>`で情報を表示する。
++ `<color>`<br>
+  割愛。色を使い分けることでチャンネルを湧けることができる。16色16チャンネルを同時に扱える。複数選択はできない。指定しなかった場合現在有効な全てのチャンネルを指定したものとする。
++ `<reset | realtime>`<br>
+  指定しなかった場合`<color>`で指定したチャンネルの効率を表示する。
+  + `reset`<br>
+    `<color>`で指定したチャンネルをリセットする。
+  + `realtime`<br>
+    効率の計算をtickベースからhourベースに変更して表示する。
++ 関連項目
+  + [hopperXpCounter](#hopperxpcounters)
+  + [hopperNoItemCost](#hoppernoitemcost)
+  + [scounter](#scounter)
+  + carpet / [hopperCounter](./carpet.html#hoppercounter)
+  + carpet / [counter](./carpet.html#counter)
 
 ## update-logs
 ### latest
