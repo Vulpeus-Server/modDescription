@@ -893,11 +893,11 @@ configに保存されたプレイヤーを指定してスポーンさせる。�
 <li>初期値:<code>[HH:mm:ss]</code></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><!--
-version : v1.0.1
+version : v1.1.0
 -->
 <h1 id="carpet"><a class="header" href="#carpet">carpet</a></h1>
-<p>minecraft : <code>1.20.1</code><br>
-carpet : <code>1.4.112+v230608</code></p>
+<p>minecraft : <code>1.21.1</code><br>
+carpet : <code>1.4.153+v240918</code></p>
 <p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
 <p>以下はこのリポジトリ内で作成されているcarpetおよびそのaddonのリストである。</p>
@@ -919,6 +919,7 @@ carpet : <code>1.4.112+v230608</code></p>
 <details>
 <summary>rules</summary>
 <ul>
+<li><a href="carpet.html#allowlistingfakeplayers">allowListingFakePlayers</a></li>
 <li><a href="carpet.html#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></li>
 <li><a href="carpet.html#anticheatdisabled">antiCheatDisabled</a></li>
 <li><a href="carpet.html#carpetcommandpermissionlevel">carpetCommandPermissionLevel</a></li>
@@ -1064,11 +1065,16 @@ carpet : <code>1.4.112+v230608</code></li>
 </ul>
 <h2 id="rules"><a class="header" href="#rules">rules</a></h2>
 <p>全てのルールは<code>/carpet [rule] &lt;value&gt;</code>によって変更することができる。</p>
-<h3 id="allowspawningofflineplayers"><a class="header" href="#allowspawningofflineplayers"><del>allowSpawningOfflinePlayers</del></a></h3>
-<p>オフラインのプレイヤーを召喚できるかを設定できる。
-オフラインのプレイヤーは<code>/player [mcid] [spawn | shadow]</code>によるものではないことを確認。</p>
+<h3 id="allowlistingfakeplayers"><a class="header" href="#allowlistingfakeplayers">allowListingFakePlayers</a></h3>
+<p>マルチプレイ画面でbotをプレイヤーリストに表示する。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="allowspawningofflineplayers"><a class="header" href="#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></h3>
+<p>オフラインのプレイヤーを召喚できるようにする。</p>
+<ul>
+<li>初期値 : <code>true</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="anticheatdisabled"><a class="header" href="#anticheatdisabled">antiCheatDisabled</a></h3>
@@ -1109,15 +1115,15 @@ carpet : <code>1.4.112+v230608</code></li>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>stick_to_all</code></li>
 </ul>
-<h3 id="cleanlog"><a class="header" href="#cleanlog"><del>cleanLog</del></a></h3>
-<p>どのログがどのように消されるかは謎。</p>
+<h3 id="cleanlog"><a class="header" href="#cleanlog">cleanLog</a></h3>
+<p><code>Maximum sound pool size 247 reached</code>というログを表示しないようにする。</p>
 <p><strong>クライアントのみ</strong></p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="commanddistance"><a class="header" href="#commanddistance">commandDistance</a></h3>
-<p><code>/distance</code>を使用できるプレイヤーを指定する。<code>true</code> <code>false</code>ではopの所持の如何を問わず指定することができる。</p>
+<p><code>/distance</code>を使用できるようにする。<code>true</code> <code>false</code>ではopの所持の如何を問わず指定することができる。</p>
 <ul>
 <li>初期値 : <code>true</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1128,7 +1134,7 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="commanddraw"><a class="header" href="#commanddraw">commandDraw</a></h3>
-<p><code>/draw</code>を使用できるプレイヤーを指定する。</p>
+<p><code>/draw</code>を使用できるようにする。</p>
 <ul>
 <li>初期値 : <code>ops</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1139,7 +1145,7 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="commandinfo"><a class="header" href="#commandinfo">commandInfo</a></h3>
-<p><code>/info</code>を使用できるプレイヤーを指定する。</p>
+<p><code>/info</code>を使用できるようにする。</p>
 <ul>
 <li>初期値 : <code>true</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1150,7 +1156,7 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="commandlog"><a class="header" href="#commandlog">commandLog</a></h3>
-<p><code>/log</code>を使用できるプレイヤーを指定する。</p>
+<p><code>/log</code>を使用できるようにする。</p>
 <ul>
 <li>初期値 : <code>true</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1161,7 +1167,7 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="commandperimeterinfo"><a class="header" href="#commandperimeterinfo">commandPerimeterInfo</a></h3>
-<p><code>/perimeterinfo</code>を使用できるプレイヤーを指定する。</p>
+<p><code>/perimeterinfo</code>を使用できるようにする。</p>
 <ul>
 <li>初期値 : <code>true</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1172,7 +1178,7 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="commandplayer"><a class="header" href="#commandplayer">commandPlayer</a></h3>
-<p><code>/player</code>を使用できるプレイヤーを指定する。</p>
+<p><code>/player</code>を使用できるようにする。</p>
 <ul>
 <li>初期値 : <code>ops</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1183,7 +1189,7 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="commandprofile"><a class="header" href="#commandprofile">commandProfile</a></h3>
-<p><code>/profile</code>を使用できるプレイヤーを指定する。</p>
+<p><code>/profile</code>を使用できるようにする。</p>
 <ul>
 <li>初期値 : <code>true</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1194,7 +1200,7 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="commandscript"><a class="header" href="#commandscript">commandScript</a></h3>
-<p><code>/script</code>のscript作成を使用できるプレイヤーを指定する。</p>
+<p><code>/script</code>のうち<code>/script download</code> <code>/script load</code> <code>/script unload</code> <code>/script run</code>以外を使用できるようにする。</p>
 <ul>
 <li>初期値 : <code>true</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1205,7 +1211,7 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="commandscriptace"><a class="header" href="#commandscriptace">commandScriptACE</a></h3>
-<p><code>/script load</code> <code>/script run</code>を使用できるプレイヤーを指定する。appが実行するときのopレベルでもある。</p>
+<p><code>/script download</code> <code>/script load</code> <code>/script unload</code> <code>/script run</code>を使用できるようにする。<code>/script run</code>でappが実行されるときの権限レベルでもある。</p>
 <ul>
 <li>初期値 : <code>ops</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1216,7 +1222,7 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="commandspawn"><a class="header" href="#commandspawn">commandSpawn</a></h3>
-<p><code>/spawn</code>を使用できるプレイヤーを指定する。</p>
+<p><code>/spawn</code>を使用できるようにする。</p>
 <ul>
 <li>初期値 : <code>ops</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1227,7 +1233,7 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="commandtick"><a class="header" href="#commandtick">commandTick</a></h3>
-<p><code>/tick</code>を使用できるプレイヤーを指定する。</p>
+<p><code>/tick</code>を使用できるようにする。</p>
 <ul>
 <li>初期値 : <code>ops</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1237,8 +1243,8 @@ carpet : <code>1.4.112+v230608</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="commandtrackingai"><a class="header" href="#commandtrackingai">commandTrackingAI</a></h3>
-<p><code>/track</code>を使用できるプレイヤーを指定する。</p>
+<h3 id="commandtrackai"><a class="header" href="#commandtrackai">commandTrackAI</a></h3>
+<p><code>/track</code>を使用できるようにする。</p>
 <ul>
 <li>初期値 : <code>ops</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>ops</code> <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code></li>
@@ -1249,14 +1255,14 @@ carpet : <code>1.4.112+v230608</code></li>
 </li>
 </ul>
 <h3 id="creativeflydrag"><a class="header" href="#creativeflydrag">creativeFlyDrag</a></h3>
-<p>クリエイティブにおける空気抵抗(慣性の減衰度合い)を設定する。0で一切減衰せず、<code>1</code>でBEのようにストッピングができるようになる。</p>
+<p>クリエイティブにおける空気抵抗(慣性の減衰度合い)を指定する。0で一切減衰せず、<code>1</code>でBEのようにストッピングができるようになる。</p>
 <p><strong>クライアントのみ</strong></p>
 <ul>
 <li>初期値 : <code>0.09</code></li>
 <li>使用できる値 : <code>0.00 ~ 1.00</code></li>
 </ul>
 <h3 id="creativeflyspeed"><a class="header" href="#creativeflyspeed">creativeFlySpeed</a></h3>
-<p>クリエイティブにおける浮遊時の飛行速度を設定する。</p>
+<p>クリエイティブにおける浮遊時の飛行速度を指定する。</p>
 <p><strong>クライアントのみ</strong></p>
 <ul>
 <li>初期値 : <code>1.0</code></li>
@@ -1268,9 +1274,14 @@ carpet : <code>1.4.112+v230608</code></li>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li>extra / <a href="./carpet-extra.html#disableplayercollision">disablePlayerCollision</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="creativeplayersloadchunks"><a class="header" href="#creativeplayersloadchunks">creativePlayersLoadChunks</a></h3>
-<p>クリエイティブのプレイヤーが周囲のチャンクをロードするかを設定する。</p>
+<p>クリエイティブのプレイヤーが周囲のチャンクをロードしないようにする。</p>
   <div class="md-note">
 <p>スペクテイターモードについては<code>/gamerule spectatorsGenerateChunks [true | false]</code>によって設定可能。</p>
   </div>
@@ -1285,7 +1296,7 @@ carpet : <code>1.4.112+v230608</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="custommotd"><a class="header" href="#custommotd">customMOTD</a></h3>
-<p>サーバー一覧に表示される情報をカスタマイズする。<code>_</code>のみでバニラのものを使用する。</p>
+<p>サーバー一覧に表示されるMOTDをカスタマイズする。<code>_</code>で<code>server.properties</code>にあるものを使用する。</p>
 <ul>
 <li>初期値 : <code>_</code></li>
 <li>使用できる値 : <code>string</code></li>
@@ -1324,7 +1335,8 @@ carpet : <code>1.4.112+v230608</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="filllimit"><a class="header" href="#filllimit">fillLimit</a></h3>
-<p>fillやcloneのブロック数制限を変更する。ただしバニラに同様の機能である<code>/gamerule commandModificationBlockLimit [integer]</code>があり、そちらの数値に上書きされる。</p>
+<p>fillやcloneのブロック数制限を変更する。23w03a(1.19.4 snap)から<code>/gamerule commandModificationBlockLimit [integer]</code>が追加されたため、ゲームはこのゲームルールの値とcarpetルールの値のうちどちらか大きいほうの値を利用する。</p>
+<p><strong>1.20-</strong></p>
 <ul>
 <li>初期値 : <code>32768</code></li>
 <li>使用できる値 : <code>integer</code></li>
@@ -1363,7 +1375,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="forceloadlimit"><a class="header" href="#forceloadlimit">forceloadLimit</a></h3>
-<p><code>/forceload</code>の上限を変更する。</p>
+<p><code>/forceload</code>のチャンク数上限を変更する。</p>
 <ul>
 <li>初期値 : <code>256</code></li>
 <li>使用できる値 : <code>integer</code></li>
@@ -1388,7 +1400,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 </li>
 </ul>
 <h3 id="huskspawningintemples"><a class="header" href="#huskspawningintemples">huskSpawningInTemples</a></h3>
-<p>ピラミッドではハスクのみがスポーンできるようにする。</p>
+<p>ハスクがピラミッドでのみスポーンできるようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1401,6 +1413,8 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <li>関連項目
 <ul>
 <li><a href="carpet.html#fillupdates">fillUpdates</a></li>
+<li>intri / <a href="./intricarpet.html#interaction">interaction</a></li>
+<li>TIS / <a href="./carpet-TIS-addition.html#totallynoblockupdate">totallyNoBlockUpdate</a></li>
 </ul>
 </li>
 </ul>
@@ -1411,7 +1425,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="language"><a class="header" href="#language">language</a></h3>
-<p>carpetで使用する言語を変更する。</p>
+<p>carpetのdescriptionで使用する言語を変更する。</p>
 <ul>
 <li>初期値 : <code>en_us</code></li>
 <li>使用できる値 : <code>en_us</code> <code>fr_fr</code> <code>pt_br</code> <code>zh_cn</code> <code>zh_tw</code></li>
@@ -1431,6 +1445,10 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 </ul>
 <h3 id="maxentitycollisions"><a class="header" href="#maxentitycollisions">maxEntityCollisions</a></h3>
 <p>一つのエンティティが持つ最大の当たり判定の数。0で無制限。非不整数でなければいけない。</p>
+<blockquote>
+<p>[!NOTE]
+maxEntityCrammingは窒息しない最大のエンティティ数であり、この値とは関係ない。</p>
+</blockquote>
 <ul>
 <li>初期値 : <code>0</code></li>
 <li>使用できる値 : <code>interger</code></li>
@@ -1507,7 +1525,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="portalcreativedelay"><a class="header" href="#portalcreativedelay">portalCreativeDelay</a></h3>
-<p>プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgt。</p>
+<p>プレイヤーがクリエイティブでネザーポータルを通過するために必要な時間を設定する。単位はgt。carpet 1.4.122 (23w42a, 1.20.3 snap)よりバニラで同等のgameruleが追加されたため削除。</p>
 <ul>
 <li>初期値 : <code>0</code></li>
 <li>使用できる値 : <code>0 ~ 72000</code></li>
@@ -1518,7 +1536,8 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 </li>
 </ul>
 <h3 id="portalsurvivaldelay"><a class="header" href="#portalsurvivaldelay">portalSurvivalDelay</a></h3>
-<p>プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgt。</p>
+<p>プレイヤーがサバイバルでネザーポータルを通過するために必要な時間を設定する。単位はgt。
+carpet 1.4.122 (23w42a, 1.20.3 snap)よりバニラで同等のgameruleが追加されたため削除。</p>
 <ul>
 <li>初期値 : <code>80</code></li>
 <li>使用できる値 : <code>0 ~ 72000</code></li>
@@ -1529,7 +1548,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 </li>
 </ul>
 <h3 id="pushlimit"><a class="header" href="#pushlimit">pushLimit</a></h3>
-<p>ピストンが押せるブロックの最大量を決める必要がある。</p>
+<p>ピストンが押せるブロックの最大量。</p>
 <ul>
 <li>初期値 : <code>12</code></li>
 <li>使用できる値 : <code>1 ~ 1024</code></li>
@@ -1541,7 +1560,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="railpowerlimit"><a class="header" href="#railpowerlimit">railPowerLimit</a></h3>
-<p>レールの動力がどこまで動力を伝達できるかを設定する。</p>
+<p>レールがどこまで動力を伝達できるかを設定する。</p>
 <ul>
 <li>初期値 : <code>9</code></li>
 <li>使用できる値 : <code>1 ~ 1024</code></li>
@@ -1553,7 +1572,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="renewablecoral"><a class="header" href="#renewablecoral">renewableCoral</a></h3>
-<p>サンゴに骨粉を与えることでサンゴブロック(ストラクチャー)になるようにする。<code>expanded</code>にするとウチワサンゴでも可能になる。</p>
+<p>サンゴに骨粉を与えることでサンゴブロック(ストラクチャー)になるようにする。<code>expanded</code>にすると暖かい海以外でも可能になる。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code> <code>expanded</code></li>
@@ -1582,7 +1601,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 </li>
 </ul>
 <h3 id="scriptsappstore"><a class="header" href="#scriptsappstore">scriptsAppStore</a></h3>
-<p>scriptをゲーム内でダウンロードするさいの場所を指定する。コンソールにおける<code>cd</code>に同じ。github上の有効なパブリックリポジトリのリンクのみ受け付ける。<code>none</code>とした場合無効になる。</p>
+<p>scriptをゲーム内でダウンロードする際のダウンロード場所を指定する。github上の有効なパブリックリポジトリのリンクのみ受け付ける。<code>none</code>とした場合無効になる。</p>
 <ul>
 <li>初期値 : <code>gnembon/scarpet/contents/programs</code></li>
 <li>使用できる値 : <code>string</code></li>
@@ -1596,7 +1615,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <h3 id="scriptsautoload"><a class="header" href="#scriptsautoload">scriptsAutoload</a></h3>
 <p><code>/script</code>が有効になっている場合、serverがリスタートもしくはワールドが読み込まれたときに自動的に読み込まれるようにする。</p>
 <ul>
-<li>初期値 : <code>false</code></li>
+<li>初期値 : <code>true</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
@@ -1621,7 +1640,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <p>スクリプトを最適化する。</p>
 <p><strong>一部正常に起動しなくなるスクリプトがあることに注意。</strong></p>
 <ul>
-<li>初期値 : <code>false</code></li>
+<li>初期値 : <code>true</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 <li>関連項目
 <ul>
@@ -1631,10 +1650,10 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 </li>
 </ul>
 <h3 id="sculksensorrange"><a class="header" href="#sculksensorrange">sculkSensorRange</a></h3>
-<p>スカルくセンサーの振動を伝える半径を変更する。1から1024の整数値である必要がある。</p>
+<p>スカルくセンサーの振動を伝える半径を変更する。</p>
 <ul>
 <li>初期値 : <code>8</code></li>
-<li>使用できる値 : <code>0 ~ 72000</code></li>
+<li>使用できる値 : <code>0 ~ 1024</code></li>
 </ul>
 <h3 id="shulkerspawninginendcities"><a class="header" href="#shulkerspawninginendcities">shulkerSpawningInEndCities</a></h3>
 <p>シュルカーがエンドシティーでリスポーンするようにする。</p>
@@ -1649,7 +1668,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="simulationdistance"><a class="header" href="#simulationdistance">simulationDistance</a></h3>
-<p>サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の間である必要があり、<code>0</code>にすると無効になる。</p>
+<p>サーバーのシミュレーション距離をこの値でオーバーライドする。0から32の間である必要があり、<code>0</code>にすると無効になる。carpet 1.4.60より有効。</p>
 <ul>
 <li>初期値 : <code>0</code></li>
 <li>使用できる値 : <code>0 ~ 32</code></li>
@@ -1667,7 +1686,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="spawnchunkssize"><a class="header" href="#spawnchunkssize">spawnChunksSize</a></h3>
-<p>スポーンチャンクの半径を指定する。<code>0</code>にするとスポーンチャンクを無効にできる。</p>
+<p>スポーンチャンクの半径を指定する。<code>0</code>にするとスポーンチャンクを無効にできる。carpet 1.4.130 (24w03a, 1.20.5 snap)よりバニラで同等のゲームルールが追加されたため削除。</p>
 <ul>
 <li>初期値 : <code>11</code></li>
 <li>使用できる値 : <code>0 ~ 255</code></li>
@@ -1768,7 +1787,7 @@ WorldEditによる変更については<code>//perf neighbors off</code>によ�
 <li>使用できる値 : <code>double</code></li>
 </ul>
 <h3 id="updatesuppressionblock"><a class="header" href="#updatesuppressionblock">updateSuppressionBlock</a></h3>
-<p>アクティベータレールをバリアブロックの上に置くと、レールがオフになったときに<code>neighor update stack</code>が埋められる。この値はスタックに残すべき更新の量。</p>
+<p>アクティベータレールをバリアブロックの上に置くと、レールがオフになったときに<code>neighor update stack</code>が埋められる。この値はスタックに残すべき更新の量。<code>-1</code>で無効。1.19以降では<code>server.properties</code>の<code>maxChainNeighborUpdate</code>の値を参照する。</p>
 <ul>
 <li>初期値 : <code>-1</code></li>
 <li>使用できる値 : <code>integer</code></li>
@@ -2516,7 +2535,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 </li>
 <li>
 <p>warp<br>
-<code>/tick warp &lt;count&gt; &lt;tail command&gt;</code>で最適化をしたうえでできるだけ最速で<code>&lt;count&gt;</code>の時間分だけゲームを早送りしようとする。<code>&lt;count&gt;</code>を指定しないもしくは<code>0</code>にした場合、無制限にwarpする。すでにwarpしている場合そのwarpを終了させる。</p>
+<code>/tick warp &lt;count&gt; &lt;tail command&gt;</code>で最適化をしたうえでできるだけ最速で<code>&lt;count&gt;</code>の時間分だけゲームを早送りしようとする。<code>&lt;count&gt;</code>を指定しないもしくは<code>0</code>にした場合、warpを中止する。すでにwarpしている場合そのwarpを終了させる。</p>
 <p>また、warp実行中に<code>/tick warp status</code>によって以下のことが確認できる。</p>
 <details>
 <summary>表示される情報</summary>
@@ -2545,13 +2564,31 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <h2 id="update-logs"><a class="header" href="#update-logs">update-logs</a></h2>
 <h3 id="latest"><a class="header" href="#latest">latest</a></h3>
 <ul>
-<li>version : <code>v1.0.1</code></li>
+<li>version : <code>v1.1.0</code></li>
+<li>minecraft : <code>1.21.1</code></li>
+<li>carpet : <code>1.4.153+v240918</code></li>
+<li>変更点
+<ul>
+<li>削除されたルールのバージョンを追記</li>
+<li>表現の変更</li>
+<li>バージョン表記の変更</li>
+</ul>
+</li>
+<li>更新日<br>
+<code>24/09/26 UTC+9</code></li>
+</ul>
+<h3 id="previous"><a class="header" href="#previous">previous</a></h3>
+<details>
+<summary>versions</summary>
+<details>
+<summary><code>v1.0.1</code></summary>
+<ul>
 <li>minecraft : <code>1.20.1</code></li>
 <li>carpet : <code>1.4.112+v230608</code></li>
 <li>変更点
 <ul>
 <li><code>/tick</code>の<code>warp</code>および<code>freeze</code>に関する情報の加筆</li>
-<li>Carpet-FixesおよびIntricarpetの参考の追加</li>
+<li>Intricarpetの参考の追加</li>
 <li>表記の変更</li>
 <li>バージョン表記の変更</li>
 </ul>
@@ -2559,9 +2596,7 @@ perimeterの中心、プレイヤーが立つ座標を入力する。この座�
 <li>更新日<br>
 <code>23/10/26 UTC+9</code></li>
 </ul>
-<h3 id="previous"><a class="header" href="#previous">previous</a></h3>
-<details>
-<summary>previous</summary>
+</details>
 <details>
 <summary><code>v1.0.0</code></summary>
 <ul>
@@ -2857,8 +2892,10 @@ TIS : <code>1.57</code></p>
 <li><a href="carpet-TIS-addition.html#fillcommandmodeenhance">fillCommandModeEnhance</a></li>
 <li><a href="carpet-TIS-addition.html#flattentriangulardistribution">flattenTriangularDistribution</a></li>
 <li><a href="carpet-TIS-addition.html#fluiddestructiondisabled">fluidDestructionDisabled</a></li>
+<li><a href="carpet-TIS-addition.html#fortressnetherbrickspackspawningfix">fortressNetherBricksPackSpawningFix</a></li>
 <li><a href="carpet-TIS-addition.html#hoppercountersunlimitedspeed">hopperCountersUnlimitedSpeed</a></li>
 <li><a href="carpet-TIS-addition.html#hoppernoitemcost">hopperNoItemCost</a></li>
+<li><a href="carpet-TIS-addition.html#hopperxpcounters">hopperXpCounters</a></li>
 <li><a href="carpet-TIS-addition.html#hudloggerupdateinterval">HUDLoggerUpdateInterval</a></li>
 <li><a href="carpet-TIS-addition.html#instantblockupdaterreintroduced">instantBlockUpdaterReintroduced</a></li>
 <li><a href="carpet-TIS-addition.html#instantcommandblock">instantCommandBlock</a></li>
@@ -2878,8 +2915,11 @@ TIS : <code>1.57</code></p>
 <li><a href="carpet-TIS-addition.html#minecarttakepassengerminvelocity">minecartTakePassengerMinVelocity</a></li>
 <li><a href="carpet-TIS-addition.html#mobcapsdisplayignoremisc">mobcapsDisplayIgnoreMisc</a></li>
 <li><a href="carpet-TIS-addition.html#moveablereinforceddeepslate">moveableReinforcedDeepslate</a></li>
+<li><a href="carpet-TIS-addition.html#natualspawninguse13heightmap">natualSpawningUse13Heightmap</a></li>
+<li><a href="carpet-TIS-addition.html#natualspawninguse13heightmapextra">natualSpawningUse13HeightmapExtra</a></li>
 <li><a href="carpet-TIS-addition.html#oakballoonpercent">oakBalloonPercent</a></li>
 <li><a href="carpet-TIS-addition.html#observernodetection">observerNoDetection</a></li>
+<li><a href="carpet-TIS-addition.html#obsidianplatformblockbreakerbackport">obsidianPlatformBlockBreakerBackport</a></li>
 <li><a href="carpet-TIS-addition.html#opplayernocheat">opPlayerNoCheat</a></li>
 <li><a href="carpet-TIS-addition.html#optimizedfastentitymovement">optimizedFastEntityMovement</a></li>
 <li><a href="carpet-TIS-addition.html#optimizedhardhitboxentitycollision">optimizedHardHitBoxEntityCollision</a></li>
@@ -2889,12 +2929,14 @@ TIS : <code>1.57</code></p>
 <li><a href="carpet-TIS-addition.html#preciseentityplacement">preciseEntityPlacement</a></li>
 <li><a href="carpet-TIS-addition.html#raildupingfix">railDupingFix</a></li>
 <li><a href="carpet-TIS-addition.html#redstonedustrandomupdateorder">redstoneDustRandomUpdateOrder</a></li>
+<li><a href="carpet-TIS-addition.html#redstonedustrepeatercomparatorignoreupwardsstateupdate">redstoneDustRepeaterComparatorIgnoreUpwardsStateUpdate</a></li>
 <li><a href="carpet-TIS-addition.html#renewabledragonegg">renewableDragonEgg</a></li>
 <li><a href="carpet-TIS-addition.html#renewabledragonhead">renewableDragonHead</a></li>
 <li><a href="carpet-TIS-addition.html#renewableelytra">renewableElytra</a></li>
 <li><a href="carpet-TIS-addition.html#repeaterhalfdelay">repeaterHalfDelay</a></li>
 <li><a href="carpet-TIS-addition.html#sanddupingfix">sandDupingFix</a></li>
 <li><a href="carpet-TIS-addition.html#shulkerboxccereintroduced">shulkerBoxCCEReintroduced</a></li>
+<li><a href="carpet-TIS-addition.html#shulkerboxcontentdropbackport">shulkerBoxContentDropBackport</a></li>
 <li><a href="carpet-TIS-addition.html#snowmeltminlightlevel">snowMeltMinLightLevel</a></li>
 <li><a href="carpet-TIS-addition.html#spawnbabyprobably">spawnBabyProbably</a></li>
 <li><a href="carpet-TIS-addition.html#spawnjockeyprobably">spawnJockeyProbably</a></li>
@@ -2958,9 +3000,9 @@ TIS : <code>1.57</code></p>
 <summary>update-logs</summary>
 <ul>
 <li><a href="carpet-TIS-addition.html#latest">latest</a><br>
-version : <code>v1.0.3</code><br>
-minecraft : <code>1.20.3</code><br>
-TIS : <code>1.57</code></li>
+version : <code>v1.1.0</code><br>
+minecraft : <code>1.21.1</code><br>
+TIS : <code>1.63</code></li>
 <li><a href="carpet-TIS-addition.html#previous">previous</a></li>
 </ul>
 </details>
@@ -3162,7 +3204,7 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="debugnbtquerynopermission"><a class="header" href="#debugnbtquerynopermission">debugNbtQueryNoPermission</a></h3>
-<p>F3+Iによるdebug nbtのリクエストに必要なop level 2の制限を撤廃する。</p>
+<p>F3+Iによるdebug nbtのリクエストに必要なop level 2の制限を撤廃する。tweakerooのinventory previewやlitematicaのinventory overlay等のdebug nbtのメソッドを使っているものはこれによりopを必要としなくなる。</p>
 <p>クライアントにもcarpet TIS additionが必要。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
@@ -3365,6 +3407,15 @@ mc1.20+のみ。</p>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
+<h3 id="fortressnetherbrickspackspawningfix"><a class="header" href="#fortressnetherbrickspackspawningfix">fortressNetherBricksPackSpawningFix</a></h3>
+<p>ネザー要塞におけるpack spawnの分離を再導入する。
+1.18.2-pre1でネザーレンガの上で最初のpack spawningの試行があると、ネザー要塞のコンポーネントの内側にないネザーレンガ以外のブロックに遷移したときに要塞mob(ウィザースケルトン、ブレイズ、マグマキューブ)はスポーン吸うrことができない。</p>
+<p>この問題が影響する具体的な例として、天井の岩盤を削除しないwither skeleton farmではネザーレンガのpack spawn skirtをつけると逆に効率が低下する可能性がある。</p>
+<p>mc1.18.2+</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
 <h3 id="hoppercountersunlimitedspeed"><a class="header" href="#hoppercountersunlimitedspeed">hopperCountersUnlimitedSpeed</a></h3>
 <p><code>/counter</code>によって有効になったカウンタのホッパーとしてのクールダウンを無効にする。hopperCountersが有効になっている場合にのみ動作する。</p>
 <ul>
@@ -3385,6 +3436,21 @@ mc1.20+のみ。</p>
 <li>関連項目
 <ul>
 <li><a href="carpet-TIS-addition.html#scounter">scounter</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="hopperxpcounters"><a class="header" href="#hopperxpcounters">hopperXpCounters</a></h3>
+<p><code>/xcounter</code>を有効にする。xp orbのホッパーカウンター。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#xcounter">xcounter</a></li>
+<li><a href="carpet-TIS-addition.html#hoppernoitemcost">hopperNoItemCost</a></li>
+<li><a href="carpet-TIS-addition.html#scounter">scounter</a></li>
+<li>carpet / <a href="./carpet.html#hoppercounters">hopperCounter</a></li>
+<li>carpet / <a href="./carpet.html#counter">counter</a></li>
 </ul>
 </li>
 </ul>
@@ -3584,6 +3650,28 @@ mc1.20+のみ。</p>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
+<h3 id="natualspawninguse13heightmap"><a class="header" href="#natualspawninguse13heightmap">natualSpawningUse13Heightmap</a></h3>
+<p>自然スポーンに使用するheightmapを自然光のheightmapを利用するようにする。基本的に1.13以前の湧き方になる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#natualspawninguse13heightmapextra">natualSpawningUse13HeightmapExtra</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="natualspawninguse13heightmapextra"><a class="header" href="#natualspawninguse13heightmapextra">natualSpawningUse13HeightmapExtra</a></h3>
+<p>naturalSpawningUse13Heightmapにおいて、ピストン、スライム、はちみつブロックを無視したheightmapを利用するようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#natualspawninguse13heightmap">natualSpawningUse13Heightmap</a></li>
+</ul>
+</li>
+</ul>
 <h3 id="oakballoonpercent"><a class="header" href="#oakballoonpercent">oakBalloonPercent</a></h3>
 <p>オークの木が条件を満たした時巨木になる確率をパーセンテージで指定する。負の数を指定することでバニラ準拠にできる。値は0~100もしくは負の数でなければならない。</p>
 <ul>
@@ -3592,6 +3680,13 @@ mc1.20+のみ。</p>
 </ul>
 <h3 id="observernodetection"><a class="header" href="#observernodetection">observerNoDetection</a></h3>
 <p>オブザーバーがstateUpdateを検知しなくする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="obsidianplatformblockbreakerbackport"><a class="header" href="#obsidianplatformblockbreakerbackport">obsidianPlatformBlockBreakerBackport</a></h3>
+<p>黒曜石のプラットフォームがブロックを壊したときにアイテムをドロップする仕様をバックポートする。
+mc1.21-</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -3684,6 +3779,17 @@ mc1.20+のみ。</p>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
+<h3 id="redstonedustrepeatercomparatorignoreupwardsstateupdate"><a class="header" href="#redstonedustrepeatercomparatorignoreupwardsstateupdate">redstoneDustRepeaterComparatorIgnoreUpwardsStateUpdate</a></h3>
+<p>レッドストーンダスト、リピーター、コンパレータは下からのstate updateを無視するようにする。23w35aの変更をもとに戻す。これにより浮いたコンパレータを作りやすくすることができる。</p>
+<blockquote>
+<p>[!NOTE]
+<a href="carpet-TIS-addition.html#dusttrapdoorreintroduced">dustTrapdoorReintroduced</a>はダストのみ戻す。
+mc1.20.2+</p>
+</blockquote>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
 <h3 id="renewabledragonegg"><a class="header" href="#renewabledragonegg">renewableDragonEgg</a></h3>
 <p>ドラゴンの卵がドラゴンブレスにあたったとき、ドラゴンの卵が新しく生成されるようにする。</p>
 <ul>
@@ -3729,6 +3835,13 @@ mc1.20+のみ。</p>
 <p>コンパレーターがシュルカーの信号強度を読みよるときに発生するClassCastExceptionをmc1.20.2+でも利用可能にする。</p>
 <p>voidの魔法の箱よ、永遠に。</p>
 <p>mc1.20.2+のみ。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="shulkerboxcontentdropbackport"><a class="header" href="#shulkerboxcontentdropbackport">shulkerBoxContentDropBackport</a></h3>
+<p>シュルカーボックスアイテムがなんらかの方法により死んだとき、その中身をドロップする仕様をバックポートする。
+mc1.17-</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -4105,6 +4218,7 @@ tickWarpCommandAsAnAlias = true
 <li>jockey</li>
 <li>jockey_mount</li>
 <li>player_login</li>
+<li>status effect (oozing, infested)</li>
 </ul>
 </details>
 <details>
@@ -4162,6 +4276,7 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
 <li><code>turtleEgg</code></li>
 <li><code>wanderingTrader</code></li>
 <li><code>xporb</code></li>
+<li><code>xcounter</code></li>
 </ul>
 </li>
 <li>関連項目
@@ -4453,6 +4568,22 @@ unknown ticketはスパム判定をもらう可能性がある。
 </ul>
 </li>
 <li>
+<p>xcounter<br>
+<code>/log xcounter &lt;color&gt;</code>でオーブカウンタの効率を表示する。</p>
+<ul>
+<li><code>&lt;color&gt;</code><br>
+16色が利用可能。指定しなかった場合有効なものを表示する。</li>
+<li>表示場所<br>
+プレイヤーリスト</li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#hopperxpcounters">hopperXpCounter</a></li>
+<li><a href="carpet-TIS-addition.html#xcounter">xcounter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
 <p>xporb<br>
 <code>/log xporb &lt;create | die | despawn&gt;</code>でexperience_orbに対して例えばデスポーンなどなにかがおきたときにそれの情報を表示する。</p>
 <ul>
@@ -4739,6 +4870,8 @@ unknown ticketはスパム判定をもらう可能性がある。
 <li>関連項目
 <ul>
 <li><a href="carpet-TIS-addition.html#hoppernoitemcost">hopperNoItemCost</a></li>
+<li><a href="carpet-TIS-addition.html#hopperxpcounters">hopperXpCounter</a></li>
+<li><a href="carpet-TIS-addition.html#xcounter">xcounter</a></li>
 <li>carpet / <a href="./carpet.html#hoppercounter">hopperCounter</a></li>
 <li>carpet / <a href="./carpet.html#counter">counter</a></li>
 </ul>
@@ -4786,12 +4919,37 @@ unknown ticketはスパム判定をもらう可能性がある。
 </ul>
 <h3 id="script-1"><a class="header" href="#script-1">script</a></h3>
 <p>スクリプトについては<a href="https://github.com/TISUnion/Carpet-TIS-Addition/blob/master/docs/misc.md#scarpet">TIS/misc/script</a>を参照。<del>説明できる自信がない</del></p>
+<h3 id="xcounter"><a class="header" href="#xcounter">xcounter</a></h3>
+<p>ホッパーの上を通ったxpオーブの量を計測する。
+<code>/xcounter &lt;color&gt; &lt;realtime | reset&gt;</code>で情報を表示する。</p>
+<ul>
+<li><code>&lt;color&gt;</code><br>
+割愛。色を使い分けることでチャンネルを湧けることができる。16色16チャンネルを同時に扱える。複数選択はできない。指定しなかった場合現在有効な全てのチャンネルを指定したものとする。</li>
+<li><code>&lt;reset | realtime&gt;</code><br>
+指定しなかった場合<code>&lt;color&gt;</code>で指定したチャンネルの効率を表示する。
+<ul>
+<li><code>reset</code><br>
+<code>&lt;color&gt;</code>で指定したチャンネルをリセットする。</li>
+<li><code>realtime</code><br>
+効率の計算をtickベースからhourベースに変更して表示する。</li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="carpet-TIS-addition.html#hopperxpcounters">hopperXpCounter</a></li>
+<li><a href="carpet-TIS-addition.html#hoppernoitemcost">hopperNoItemCost</a></li>
+<li><a href="carpet-TIS-addition.html#scounter">scounter</a></li>
+<li>carpet / <a href="./carpet.html#hoppercounter">hopperCounter</a></li>
+<li>carpet / <a href="./carpet.html#counter">counter</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="update-logs-2"><a class="header" href="#update-logs-2">update-logs</a></h2>
 <h3 id="latest-2"><a class="header" href="#latest-2">latest</a></h3>
 <ul>
-<li>version : <code>v1.0.3</code></li>
-<li>minecraft : <code>1.20.3</code></li>
-<li>TIS : <code>1.57</code></li>
+<li>version : <code>v1.1.0</code></li>
+<li>minecraft : <code>1.21.1</code></li>
+<li>TIS : <code>1.63</code></li>
 <li>変更点
 <ul>
 <li>
@@ -4822,7 +4980,7 @@ unknown ticketはスパム判定をもらう可能性がある。
 </ul>
 </li>
 <li>更新日<br>
-<code>24/5/1 UTC+9</code></li>
+<code>24/10/17 UTC+9</code></li>
 </ul>
 <h3 id="previous-2"><a class="header" href="#previous-2">previous</a></h3>
 <details>
@@ -4919,11 +5077,11 @@ unknown ticketはスパム判定をもらう可能性がある。
 </ul>
 </details>
 </details><div style="break-before: page; page-break-before: always;"></div><!--
-version : v1.0.1
+version : v1.1.0
 -->
 <h1 id="carpet-extra"><a class="header" href="#carpet-extra">carpet-extra</a></h1>
-<p>minecraft : <code>1.20.1</code><br>
-extra : <code>1.4.115</code></p>
+<p>minecraft : <code>1.21.1</code><br>
+extra : <code>1.4.147</code></p>
 <p><strong>carpetのaddonであるため、carpetが前提modとなる。</strong></p>
 <p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
@@ -5183,13 +5341,13 @@ extra : <code>1.4.118</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="emptyshulkerboxstackalways"><a class="header" href="#emptyshulkerboxstackalways">emptyShulkerBoxStackAlways</a></h3>
-<p>インベントリを含め常に空のシュルカーボックスはスタックできるようにする。</p>
+<p>インベントリを含め常に空のシュルカーボックスはスタックできるようにする。シュルカーは64stackableのアイテムと同等に扱われるため、コンパレータの読み取りも64stackableのときと同じ割合になる。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="enderpearlchunkloading"><a class="header" href="#enderpearlchunkloading">enderPearlChunkLoading</a></h3>
-<p>水平方向に移動するエンダーパールはentity tickingの段階でチャンクをロードするようにする。</p>
+<p>水平方向に移動するエンダーパールは移動後のチャンクをロードするようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -5237,7 +5395,7 @@ extra : <code>1.4.118</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="reloadsuffocationfix"><a class="header" href="#reloadsuffocationfix">reloadSuffocationFix</a></h3>
-<p>エンティティがリロードしたときにブロックにめり込むバグを修正するようにする。</p>
+<p>エンティティがリロードしたときにブロックにめり込むバグを修正するようにする。<a href="https://bugs.mojang.com/browse/MC-2025">MC-2025</a>を修正する.</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -5249,7 +5407,7 @@ extra : <code>1.4.118</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="renewableice"><a class="header" href="#renewableice">renewableIce</a></h3>
-<p>金床が複数の氷の上におちてきたときより密度の高い氷に変換するようにする。</p>
+<p>金床が複数の氷または氷塊の上におちてきたときに、氷は氷塊に、氷塊は青い氷に変換するようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -5346,7 +5504,24 @@ extra : <code>1.4.118</code></li>
 <h2 id="update-logs-3"><a class="header" href="#update-logs-3">update-logs</a></h2>
 <h3 id="latest-3"><a class="header" href="#latest-3">latest</a></h3>
 <ul>
-<li>version : <code>v1.0.2</code></li>
+<li>version : <code>v1.1.0</code></li>
+<li>minecraft : <code>1.21.1</code></li>
+<li>extra : <code>1.4.147</code></li>
+<li>変更点
+<ul>
+<li>バージョン表記の変更</li>
+<li>アップデートに伴う情報の修正</li>
+</ul>
+</li>
+<li>更新日<br>
+<code>24/9/26 UTC+9</code></li>
+</ul>
+<h3 id="previous-3"><a class="header" href="#previous-3">previous</a></h3>
+<details>
+<summary>previous</summary>
+<details>
+<summary><code>v1.0.2</code></summary>
+<ul>
 <li>minecraft : <code>1.20.2</code></li>
 <li>extra : <code>1.4.118</code></li>
 <li>変更点
@@ -5362,9 +5537,7 @@ extra : <code>1.4.118</code></li>
 <li>更新日<br>
 <code>24/5/1 UTC+9</code></li>
 </ul>
-<h3 id="previous-3"><a class="header" href="#previous-3">previous</a></h3>
-<details>
-<summary>previous</summary>
+</details>
 <details>
 <summary><code>v1.0.1</code></summary>
 <ul>

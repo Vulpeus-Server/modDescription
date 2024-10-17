@@ -249,8 +249,10 @@ TIS : <code>1.57</code></p>
 <li><a href="#fillcommandmodeenhance">fillCommandModeEnhance</a></li>
 <li><a href="#flattentriangulardistribution">flattenTriangularDistribution</a></li>
 <li><a href="#fluiddestructiondisabled">fluidDestructionDisabled</a></li>
+<li><a href="#fortressnetherbrickspackspawningfix">fortressNetherBricksPackSpawningFix</a></li>
 <li><a href="#hoppercountersunlimitedspeed">hopperCountersUnlimitedSpeed</a></li>
 <li><a href="#hoppernoitemcost">hopperNoItemCost</a></li>
+<li><a href="#hopperxpcounters">hopperXpCounters</a></li>
 <li><a href="#hudloggerupdateinterval">HUDLoggerUpdateInterval</a></li>
 <li><a href="#instantblockupdaterreintroduced">instantBlockUpdaterReintroduced</a></li>
 <li><a href="#instantcommandblock">instantCommandBlock</a></li>
@@ -270,8 +272,11 @@ TIS : <code>1.57</code></p>
 <li><a href="#minecarttakepassengerminvelocity">minecartTakePassengerMinVelocity</a></li>
 <li><a href="#mobcapsdisplayignoremisc">mobcapsDisplayIgnoreMisc</a></li>
 <li><a href="#moveablereinforceddeepslate">moveableReinforcedDeepslate</a></li>
+<li><a href="#natualspawninguse13heightmap">natualSpawningUse13Heightmap</a></li>
+<li><a href="#natualspawninguse13heightmapextra">natualSpawningUse13HeightmapExtra</a></li>
 <li><a href="#oakballoonpercent">oakBalloonPercent</a></li>
 <li><a href="#observernodetection">observerNoDetection</a></li>
+<li><a href="#obsidianplatformblockbreakerbackport">obsidianPlatformBlockBreakerBackport</a></li>
 <li><a href="#opplayernocheat">opPlayerNoCheat</a></li>
 <li><a href="#optimizedfastentitymovement">optimizedFastEntityMovement</a></li>
 <li><a href="#optimizedhardhitboxentitycollision">optimizedHardHitBoxEntityCollision</a></li>
@@ -281,12 +286,14 @@ TIS : <code>1.57</code></p>
 <li><a href="#preciseentityplacement">preciseEntityPlacement</a></li>
 <li><a href="#raildupingfix">railDupingFix</a></li>
 <li><a href="#redstonedustrandomupdateorder">redstoneDustRandomUpdateOrder</a></li>
+<li><a href="#redstonedustrepeatercomparatorignoreupwardsstateupdate">redstoneDustRepeaterComparatorIgnoreUpwardsStateUpdate</a></li>
 <li><a href="#renewabledragonegg">renewableDragonEgg</a></li>
 <li><a href="#renewabledragonhead">renewableDragonHead</a></li>
 <li><a href="#renewableelytra">renewableElytra</a></li>
 <li><a href="#repeaterhalfdelay">repeaterHalfDelay</a></li>
 <li><a href="#sanddupingfix">sandDupingFix</a></li>
 <li><a href="#shulkerboxccereintroduced">shulkerBoxCCEReintroduced</a></li>
+<li><a href="#shulkerboxcontentdropbackport">shulkerBoxContentDropBackport</a></li>
 <li><a href="#snowmeltminlightlevel">snowMeltMinLightLevel</a></li>
 <li><a href="#spawnbabyprobably">spawnBabyProbably</a></li>
 <li><a href="#spawnjockeyprobably">spawnJockeyProbably</a></li>
@@ -350,9 +357,9 @@ TIS : <code>1.57</code></p>
 <summary>update-logs</summary>
 <ul>
 <li><a href="#latest">latest</a><br>
-version : <code>v1.0.3</code><br>
-minecraft : <code>1.20.3</code><br>
-TIS : <code>1.57</code></li>
+version : <code>v1.1.0</code><br>
+minecraft : <code>1.21.1</code><br>
+TIS : <code>1.63</code></li>
 <li><a href="#previous">previous</a></li>
 </ul>
 </details>
@@ -554,7 +561,7 @@ fabric-carpet v1.4.18以前の<code>/tick warp</code>における最大値をな
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="debugnbtquerynopermission"><a class="header" href="#debugnbtquerynopermission">debugNbtQueryNoPermission</a></h3>
-<p>F3+Iによるdebug nbtのリクエストに必要なop level 2の制限を撤廃する。</p>
+<p>F3+Iによるdebug nbtのリクエストに必要なop level 2の制限を撤廃する。tweakerooのinventory previewやlitematicaのinventory overlay等のdebug nbtのメソッドを使っているものはこれによりopを必要としなくなる。</p>
 <p>クライアントにもcarpet TIS additionが必要。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
@@ -757,6 +764,15 @@ mc1.20+のみ。</p>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
+<h3 id="fortressnetherbrickspackspawningfix"><a class="header" href="#fortressnetherbrickspackspawningfix">fortressNetherBricksPackSpawningFix</a></h3>
+<p>ネザー要塞におけるpack spawnの分離を再導入する。
+1.18.2-pre1でネザーレンガの上で最初のpack spawningの試行があると、ネザー要塞のコンポーネントの内側にないネザーレンガ以外のブロックに遷移したときに要塞mob(ウィザースケルトン、ブレイズ、マグマキューブ)はスポーン吸うrことができない。</p>
+<p>この問題が影響する具体的な例として、天井の岩盤を削除しないwither skeleton farmではネザーレンガのpack spawn skirtをつけると逆に効率が低下する可能性がある。</p>
+<p>mc1.18.2+</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
 <h3 id="hoppercountersunlimitedspeed"><a class="header" href="#hoppercountersunlimitedspeed">hopperCountersUnlimitedSpeed</a></h3>
 <p><code>/counter</code>によって有効になったカウンタのホッパーとしてのクールダウンを無効にする。hopperCountersが有効になっている場合にのみ動作する。</p>
 <ul>
@@ -777,6 +793,21 @@ mc1.20+のみ。</p>
 <li>関連項目
 <ul>
 <li><a href="#scounter">scounter</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="hopperxpcounters"><a class="header" href="#hopperxpcounters">hopperXpCounters</a></h3>
+<p><code>/xcounter</code>を有効にする。xp orbのホッパーカウンター。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="#xcounter">xcounter</a></li>
+<li><a href="#hoppernoitemcost">hopperNoItemCost</a></li>
+<li><a href="#scounter">scounter</a></li>
+<li>carpet / <a href="./carpet.html#hoppercounters">hopperCounter</a></li>
+<li>carpet / <a href="./carpet.html#counter">counter</a></li>
 </ul>
 </li>
 </ul>
@@ -976,6 +1007,28 @@ mc1.20+のみ。</p>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
+<h3 id="natualspawninguse13heightmap"><a class="header" href="#natualspawninguse13heightmap">natualSpawningUse13Heightmap</a></h3>
+<p>自然スポーンに使用するheightmapを自然光のheightmapを利用するようにする。基本的に1.13以前の湧き方になる。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="#natualspawninguse13heightmapextra">natualSpawningUse13HeightmapExtra</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="natualspawninguse13heightmapextra"><a class="header" href="#natualspawninguse13heightmapextra">natualSpawningUse13HeightmapExtra</a></h3>
+<p>naturalSpawningUse13Heightmapにおいて、ピストン、スライム、はちみつブロックを無視したheightmapを利用するようにする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+<li>関連項目
+<ul>
+<li><a href="#natualspawninguse13heightmap">natualSpawningUse13Heightmap</a></li>
+</ul>
+</li>
+</ul>
 <h3 id="oakballoonpercent"><a class="header" href="#oakballoonpercent">oakBalloonPercent</a></h3>
 <p>オークの木が条件を満たした時巨木になる確率をパーセンテージで指定する。負の数を指定することでバニラ準拠にできる。値は0~100もしくは負の数でなければならない。</p>
 <ul>
@@ -984,6 +1037,13 @@ mc1.20+のみ。</p>
 </ul>
 <h3 id="observernodetection"><a class="header" href="#observernodetection">observerNoDetection</a></h3>
 <p>オブザーバーがstateUpdateを検知しなくする。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="obsidianplatformblockbreakerbackport"><a class="header" href="#obsidianplatformblockbreakerbackport">obsidianPlatformBlockBreakerBackport</a></h3>
+<p>黒曜石のプラットフォームがブロックを壊したときにアイテムをドロップする仕様をバックポートする。
+mc1.21-</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1076,6 +1136,17 @@ mc1.20+のみ。</p>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
+<h3 id="redstonedustrepeatercomparatorignoreupwardsstateupdate"><a class="header" href="#redstonedustrepeatercomparatorignoreupwardsstateupdate">redstoneDustRepeaterComparatorIgnoreUpwardsStateUpdate</a></h3>
+<p>レッドストーンダスト、リピーター、コンパレータは下からのstate updateを無視するようにする。23w35aの変更をもとに戻す。これにより浮いたコンパレータを作りやすくすることができる。</p>
+<blockquote>
+<p>[!NOTE]
+<a href="#dusttrapdoorreintroduced">dustTrapdoorReintroduced</a>はダストのみ戻す。
+mc1.20.2+</p>
+</blockquote>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
 <h3 id="renewabledragonegg"><a class="header" href="#renewabledragonegg">renewableDragonEgg</a></h3>
 <p>ドラゴンの卵がドラゴンブレスにあたったとき、ドラゴンの卵が新しく生成されるようにする。</p>
 <ul>
@@ -1121,6 +1192,13 @@ mc1.20+のみ。</p>
 <p>コンパレーターがシュルカーの信号強度を読みよるときに発生するClassCastExceptionをmc1.20.2+でも利用可能にする。</p>
 <p>voidの魔法の箱よ、永遠に。</p>
 <p>mc1.20.2+のみ。</p>
+<ul>
+<li>初期値 : <code>false</code></li>
+<li>使用できる値 : <code>true</code> <code>false</code></li>
+</ul>
+<h3 id="shulkerboxcontentdropbackport"><a class="header" href="#shulkerboxcontentdropbackport">shulkerBoxContentDropBackport</a></h3>
+<p>シュルカーボックスアイテムがなんらかの方法により死んだとき、その中身をドロップする仕様をバックポートする。
+mc1.17-</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -1497,6 +1575,7 @@ tickWarpCommandAsAnAlias = true
 <li>jockey</li>
 <li>jockey_mount</li>
 <li>player_login</li>
+<li>status effect (oozing, infested)</li>
 </ul>
 </details>
 <details>
@@ -1554,6 +1633,7 @@ immediately despawn、random despawn、difficulty despawn、timeout despawnを�
 <li><code>turtleEgg</code></li>
 <li><code>wanderingTrader</code></li>
 <li><code>xporb</code></li>
+<li><code>xcounter</code></li>
 </ul>
 </li>
 <li>関連項目
@@ -1845,6 +1925,22 @@ unknown ticketはスパム判定をもらう可能性がある。
 </ul>
 </li>
 <li>
+<p>xcounter<br>
+<code>/log xcounter &lt;color&gt;</code>でオーブカウンタの効率を表示する。</p>
+<ul>
+<li><code>&lt;color&gt;</code><br>
+16色が利用可能。指定しなかった場合有効なものを表示する。</li>
+<li>表示場所<br>
+プレイヤーリスト</li>
+<li>関連項目
+<ul>
+<li><a href="#hopperxpcounters">hopperXpCounter</a></li>
+<li><a href="#xcounter">xcounter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
 <p>xporb<br>
 <code>/log xporb &lt;create | die | despawn&gt;</code>でexperience_orbに対して例えばデスポーンなどなにかがおきたときにそれの情報を表示する。</p>
 <ul>
@@ -2131,6 +2227,8 @@ unknown ticketはスパム判定をもらう可能性がある。
 <li>関連項目
 <ul>
 <li><a href="#hoppernoitemcost">hopperNoItemCost</a></li>
+<li><a href="#hopperxpcounters">hopperXpCounter</a></li>
+<li><a href="#xcounter">xcounter</a></li>
 <li>carpet / <a href="./carpet.html#hoppercounter">hopperCounter</a></li>
 <li>carpet / <a href="./carpet.html#counter">counter</a></li>
 </ul>
@@ -2178,12 +2276,37 @@ unknown ticketはスパム判定をもらう可能性がある。
 </ul>
 <h3 id="script"><a class="header" href="#script">script</a></h3>
 <p>スクリプトについては<a href="https://github.com/TISUnion/Carpet-TIS-Addition/blob/master/docs/misc.md#scarpet">TIS/misc/script</a>を参照。<del>説明できる自信がない</del></p>
+<h3 id="xcounter"><a class="header" href="#xcounter">xcounter</a></h3>
+<p>ホッパーの上を通ったxpオーブの量を計測する。
+<code>/xcounter &lt;color&gt; &lt;realtime | reset&gt;</code>で情報を表示する。</p>
+<ul>
+<li><code>&lt;color&gt;</code><br>
+割愛。色を使い分けることでチャンネルを湧けることができる。16色16チャンネルを同時に扱える。複数選択はできない。指定しなかった場合現在有効な全てのチャンネルを指定したものとする。</li>
+<li><code>&lt;reset | realtime&gt;</code><br>
+指定しなかった場合<code>&lt;color&gt;</code>で指定したチャンネルの効率を表示する。
+<ul>
+<li><code>reset</code><br>
+<code>&lt;color&gt;</code>で指定したチャンネルをリセットする。</li>
+<li><code>realtime</code><br>
+効率の計算をtickベースからhourベースに変更して表示する。</li>
+</ul>
+</li>
+<li>関連項目
+<ul>
+<li><a href="#hopperxpcounters">hopperXpCounter</a></li>
+<li><a href="#hoppernoitemcost">hopperNoItemCost</a></li>
+<li><a href="#scounter">scounter</a></li>
+<li>carpet / <a href="./carpet.html#hoppercounter">hopperCounter</a></li>
+<li>carpet / <a href="./carpet.html#counter">counter</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="update-logs"><a class="header" href="#update-logs">update-logs</a></h2>
 <h3 id="latest"><a class="header" href="#latest">latest</a></h3>
 <ul>
-<li>version : <code>v1.0.3</code></li>
-<li>minecraft : <code>1.20.3</code></li>
-<li>TIS : <code>1.57</code></li>
+<li>version : <code>v1.1.0</code></li>
+<li>minecraft : <code>1.21.1</code></li>
+<li>TIS : <code>1.63</code></li>
 <li>変更点
 <ul>
 <li>
@@ -2214,7 +2337,7 @@ unknown ticketはスパム判定をもらう可能性がある。
 </ul>
 </li>
 <li>更新日<br>
-<code>24/5/1 UTC+9</code></li>
+<code>24/10/17 UTC+9</code></li>
 </ul>
 <h3 id="previous"><a class="header" href="#previous">previous</a></h3>
 <details>

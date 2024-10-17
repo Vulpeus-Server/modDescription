@@ -180,11 +180,11 @@
                 <div id="content" class="content">
                     <main>
                         <!--
-version : v1.0.1
+version : v1.1.0
 -->
 <h1 id="carpet-extra"><a class="header" href="#carpet-extra">carpet-extra</a></h1>
-<p>minecraft : <code>1.20.1</code><br>
-extra : <code>1.4.115</code></p>
+<p>minecraft : <code>1.21.1</code><br>
+extra : <code>1.4.147</code></p>
 <p><strong>carpetのaddonであるため、carpetが前提modとなる。</strong></p>
 <p>このドキュメント内では<code>[]</code>を設定必須の値、<code>&lt;&gt;</code>を必須ではないが設定しなかった場合デフォルトの値が入力される値とする。
 編集段階で未解決なものはストライクラインで示す。</p>
@@ -444,13 +444,13 @@ extra : <code>1.4.118</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="emptyshulkerboxstackalways"><a class="header" href="#emptyshulkerboxstackalways">emptyShulkerBoxStackAlways</a></h3>
-<p>インベントリを含め常に空のシュルカーボックスはスタックできるようにする。</p>
+<p>インベントリを含め常に空のシュルカーボックスはスタックできるようにする。シュルカーは64stackableのアイテムと同等に扱われるため、コンパレータの読み取りも64stackableのときと同じ割合になる。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="enderpearlchunkloading"><a class="header" href="#enderpearlchunkloading">enderPearlChunkLoading</a></h3>
-<p>水平方向に移動するエンダーパールはentity tickingの段階でチャンクをロードするようにする。</p>
+<p>水平方向に移動するエンダーパールは移動後のチャンクをロードするようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -498,7 +498,7 @@ extra : <code>1.4.118</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="reloadsuffocationfix"><a class="header" href="#reloadsuffocationfix">reloadSuffocationFix</a></h3>
-<p>エンティティがリロードしたときにブロックにめり込むバグを修正するようにする。</p>
+<p>エンティティがリロードしたときにブロックにめり込むバグを修正するようにする。<a href="https://bugs.mojang.com/browse/MC-2025">MC-2025</a>を修正する.</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -510,7 +510,7 @@ extra : <code>1.4.118</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="renewableice"><a class="header" href="#renewableice">renewableIce</a></h3>
-<p>金床が複数の氷の上におちてきたときより密度の高い氷に変換するようにする。</p>
+<p>金床が複数の氷または氷塊の上におちてきたときに、氷は氷塊に、氷塊は青い氷に変換するようにする。</p>
 <ul>
 <li>初期値 : <code>false</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
@@ -607,7 +607,24 @@ extra : <code>1.4.118</code></li>
 <h2 id="update-logs"><a class="header" href="#update-logs">update-logs</a></h2>
 <h3 id="latest"><a class="header" href="#latest">latest</a></h3>
 <ul>
-<li>version : <code>v1.0.2</code></li>
+<li>version : <code>v1.1.0</code></li>
+<li>minecraft : <code>1.21.1</code></li>
+<li>extra : <code>1.4.147</code></li>
+<li>変更点
+<ul>
+<li>バージョン表記の変更</li>
+<li>アップデートに伴う情報の修正</li>
+</ul>
+</li>
+<li>更新日<br>
+<code>24/9/26 UTC+9</code></li>
+</ul>
+<h3 id="previous"><a class="header" href="#previous">previous</a></h3>
+<details>
+<summary>previous</summary>
+<details>
+<summary><code>v1.0.2</code></summary>
+<ul>
 <li>minecraft : <code>1.20.2</code></li>
 <li>extra : <code>1.4.118</code></li>
 <li>変更点
@@ -623,9 +640,7 @@ extra : <code>1.4.118</code></li>
 <li>更新日<br>
 <code>24/5/1 UTC+9</code></li>
 </ul>
-<h3 id="previous"><a class="header" href="#previous">previous</a></h3>
-<details>
-<summary>previous</summary>
+</details>
 <details>
 <summary><code>v1.0.1</code></summary>
 <ul>
