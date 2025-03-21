@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="light" dir="ltr">
+<html lang="ja" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="Mod descriptions written in Markdown.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -25,24 +25,26 @@
         <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="theme/style.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
+
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -64,19 +66,16 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -86,45 +85,25 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Mod Description</a></li><li class="chapter-item expanded "><a href="EssentialClient.html"><strong aria-hidden="true">1.</strong> EssentialClient</a></li><li class="chapter-item expanded "><a href="Tweakeroo.html"><strong aria-hidden="true">2.</strong> Tweakeroo</a></li><li class="chapter-item expanded "><a href="carpet.html"><strong aria-hidden="true">3.</strong> Carpet</a></li><li class="chapter-item expanded "><a href="gugle-carpet-addition.html"><strong aria-hidden="true">4.</strong> GugleCarpetAddition</a></li><li class="chapter-item expanded "><a href="carpet-TIS-addition.html"><strong aria-hidden="true">5.</strong> Carpet TIS Addition</a></li><li class="chapter-item expanded "><a href="carpet-extra.html"><strong aria-hidden="true">6.</strong> Carpet Extra</a></li><li class="chapter-item expanded "><a href="intricarpet.html"><strong aria-hidden="true">7.</strong> Intricarpet</a></li></ol>
-            </div>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
-
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -919,6 +898,16 @@ carpet : <code>1.4.153+v240918</code></p>
 <details>
 <summary>rules</summary>
 <ul>
+<li><a href="carpet.html#carpet">carpet</a>
+<ul>
+<li><a href="carpet.html#%E7%9B%AE%E6%AC%A1">目次</a></li>
+<li><a href="carpet.html#general">general</a>
+<ul>
+<li><a href="carpet.html#carpet-1">carpet</a></li>
+</ul>
+</li>
+<li><a href="carpet.html#rules">rules</a>
+<ul>
 <li><a href="carpet.html#allowlistingfakeplayers">allowListingFakePlayers</a></li>
 <li><a href="carpet.html#allowspawningofflineplayers">allowSpawningOfflinePlayers</a></li>
 <li><a href="carpet.html#anticheatdisabled">antiCheatDisabled</a></li>
@@ -927,9 +916,9 @@ carpet : <code>1.4.153+v240918</code></p>
 <li><a href="carpet.html#chainstone">chainStone</a></li>
 <li><a href="carpet.html#cleanlog">cleanLog</a></li>
 <li><a href="carpet.html#commanddistance">commandDistance</a></li>
-<li><a href="carpet.html#commandDraw">commandDraw</a></li>
-<li><a href="carpet.html#commandInfo">commandInfo</a></li>
-<li><a href="carpet.html#commandLog">commandLog</a></li>
+<li><a href="carpet.html#commanddraw">commandDraw</a></li>
+<li><a href="carpet.html#commandinfo">commandInfo</a></li>
+<li><a href="carpet.html#commandlog">commandLog</a></li>
 <li><a href="carpet.html#commandperimeterinfo">commandPerimeterInfo</a></li>
 <li><a href="carpet.html#commandplayer">commandPlayer</a></li>
 <li><a href="carpet.html#commandprofile">commandProfile</a></li>
@@ -937,7 +926,7 @@ carpet : <code>1.4.153+v240918</code></p>
 <li><a href="carpet.html#commandscriptace">commandScriptACE</a></li>
 <li><a href="carpet.html#commandspawn">commandSpawn</a></li>
 <li><a href="carpet.html#commandtick">commandTick</a></li>
-<li><a href="carpet.html#commandtrackingai">commandTrackingAI</a></li>
+<li><a href="carpet.html#commandtrackai">commandTrackAI</a></li>
 <li><a href="carpet.html#creativeflydrag">creativeFlyDrag</a></li>
 <li><a href="carpet.html#creativeflyspeed">creativeFlySpeed</a></li>
 <li><a href="carpet.html#creativenoclip">creativeNoClip</a></li>
@@ -958,6 +947,7 @@ carpet : <code>1.4.153+v240918</code></p>
 <li><a href="carpet.html#huskspawningintemples">huskSpawningInTemples</a></li>
 <li><a href="carpet.html#interactionupdates">interactionUpdates</a></li>
 <li><a href="carpet.html#lagfreespawning">lagFreeSpawning</a></li>
+<li><a href="carpet.html#language">language</a></li>
 <li><a href="carpet.html#lightningkillsdropsfix">lightningKillsDropsFix</a></li>
 <li><a href="carpet.html#liquiddamagedisabled">liquidDamageDisabled</a></li>
 <li><a href="carpet.html#maxentitycollisions">maxEntityCollisions</a></li>
@@ -967,7 +957,7 @@ carpet : <code>1.4.153+v240918</code></p>
 <li><a href="carpet.html#movableamethyst">movableAmethyst</a></li>
 <li><a href="carpet.html#movableblockentities">movableBlockEntities</a></li>
 <li><a href="carpet.html#optimizedtnt">optimizedTNT</a></li>
-<li><a href="carpet.html#perfpermissionlevel">perfPermissionLevel</a></li>
+<li><a href="carpet.html#perfpermissionlevel"><del>perfPermissionLevel</del></a></li>
 <li><a href="carpet.html#persistentparrots">persistentParrots</a></li>
 <li><a href="carpet.html#piglinsspawninginbastions">piglinsSpawningInBastions</a></li>
 <li><a href="carpet.html#pingplayerlistlimit">pingPlayerListLimit</a></li>
@@ -1007,6 +997,32 @@ carpet : <code>1.4.153+v240918</code></p>
 <li><a href="carpet.html#viewdistance">viewDistance</a></li>
 <li><a href="carpet.html#xpfromexplosions">xpFromExplosions</a></li>
 <li><a href="carpet.html#xpnocooldown">xpNoCooldown</a></li>
+</ul>
+</li>
+<li><a href="carpet.html#command">command</a>
+<ul>
+<li><a href="carpet.html#counter">counter</a></li>
+<li><a href="carpet.html#distance">distance</a></li>
+<li><a href="carpet.html#draw">draw</a></li>
+<li><a href="carpet.html#info">info</a></li>
+<li><a href="carpet.html#log">log</a></li>
+<li><a href="carpet.html#perimeterinfo">perimeterInfo</a></li>
+<li><a href="carpet.html#profile">profile</a></li>
+<li><a href="carpet.html#player">player</a></li>
+<li><a href="carpet.html#script">script</a></li>
+<li><a href="carpet.html#spawn">spawn</a></li>
+<li><a href="carpet.html#tick">tick</a></li>
+<li><a href="carpet.html#track">track</a></li>
+</ul>
+</li>
+<li><a href="carpet.html#update-logs">update-logs</a>
+<ul>
+<li><a href="carpet.html#latest">latest</a></li>
+<li><a href="carpet.html#previous">previous</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </details>
 <details>
@@ -1650,7 +1666,7 @@ carpet 1.4.122 (23w42a, 1.20.3 snap)よりバニラで同等のgameruleが追加
 </li>
 </ul>
 <h3 id="sculksensorrange"><a class="header" href="#sculksensorrange">sculkSensorRange</a></h3>
-<p>スカルくセンサーの振動を伝える半径を変更する。</p>
+<p>スカルクセンサーの振動を伝える半径を変更する。</p>
 <ul>
 <li>初期値 : <code>8</code></li>
 <li>使用できる値 : <code>0 ~ 1024</code></li>
@@ -5098,6 +5114,11 @@ extra : <code>1.4.147</code></p>
 <details>
 <summary>rules</summary>
 <ul>
+<li><a href="carpet-extra.html#carpet-extra">carpet-extra</a>
+<ul>
+<li><a href="carpet-extra.html#%E7%9B%AE%E6%AC%A1">目次</a></li>
+<li><a href="carpet-extra.html#rules">rules</a>
+<ul>
 <li><a href="carpet-extra.html#accurateblockplacement">accurateBlockPlacement</a></li>
 <li><a href="carpet-extra.html#autocraftingdropper">autoCraftingDropper</a></li>
 <li><a href="carpet-extra.html#betterbonemeal">betterBonemeal</a></li>
@@ -5107,8 +5128,8 @@ extra : <code>1.4.147</code></p>
 <li><a href="carpet-extra.html#clericsfarmwarts">clericsFarmWarts</a></li>
 <li><a href="carpet-extra.html#commandping">commandPing</a></li>
 <li><a href="carpet-extra.html#comparatorbetteritemframes">comparatorBetterItemFrames</a></li>
-<li><a href="carpet-extra.html#comparatorreadsclock">commparatorReadsClock</a></li>
-<li><a href="carpet-extra.html#creeperspawninginjungletemples">creeperSpawningInJungleTemplates</a></li>
+<li><a href="carpet-extra.html#comparatorreadsclock">comparatorReadsClock</a></li>
+<li><a href="carpet-extra.html#creeperspawninginjungletemples">creeperSpawningInJungleTemples</a></li>
 <li><a href="carpet-extra.html#disableplayercollision">disablePlayerCollision</a></li>
 <li><a href="carpet-extra.html#dispenserplacesblocks">dispenserPlacesBlocks</a></li>
 <li><a href="carpet-extra.html#dispenserscarvepumpkins">dispensersCarvePumpkins</a></li>
@@ -5145,6 +5166,21 @@ extra : <code>1.4.147</code></p>
 <li><a href="carpet-extra.html#variablewooddelays">variableWoodDelays</a></li>
 <li><a href="carpet-extra.html#xppersculkcatalyst">xpPerSculkCatalyst</a></li>
 <li><a href="carpet-extra.html#y0dragoneggbedrockbreaking">y0DragonEggBedrockBreaking</a></li>
+</ul>
+</li>
+<li><a href="carpet-extra.html#command">command</a>
+<ul>
+<li><a href="carpet-extra.html#ping">ping</a></li>
+</ul>
+</li>
+<li><a href="carpet-extra.html#update-logs">update-logs</a>
+<ul>
+<li><a href="carpet-extra.html#latest">latest</a></li>
+<li><a href="carpet-extra.html#previous">previous</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </details>
 <details>
@@ -5475,7 +5511,7 @@ extra : <code>1.4.118</code></li>
 <li>使用できる値 : <code>true</code> <code>false</code></li>
 </ul>
 <h3 id="xppersculkcatalyst"><a class="header" href="#xppersculkcatalyst">xpPerSculkCatalyst</a></h3>
-<p>スカルくカタリストが破壊されたときに出されるxpの量を設定する。</p>
+<p>スカルクカタリストが破壊されたときに出されるxpの量を設定する。</p>
 <ul>
 <li>初期値 : <code>5</code></li>
 <li>使用できる値 : <code>0 ~</code></li>
